@@ -5,8 +5,9 @@ import javax.swing.JFrame;
 public class CreandoMarcos {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		@SuppressWarnings("unused")
 		MiMarco marco = new MiMarco();
+		@SuppressWarnings("unused")
 		MiMarco2 marco2 = new MiMarco2();
 	}
 	
@@ -17,6 +18,8 @@ public class CreandoMarcos {
 
 //Plantilla 1
 class MiMarco extends JFrame{
+	private static final long serialVersionUID = 1L;
+
 	//Creamos el constructor
 	public MiMarco() {
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -30,7 +33,8 @@ class MiMarco extends JFrame{
 
 //Plantilla 2
 class MiMarco2 extends JFrame {
-	
+	private static final long serialVersionUID = 1L;
+
 	public MiMarco2() {
 		setDefaultCloseOperation(HIDE_ON_CLOSE);
 		setBounds(100, 100, 400, 600);
