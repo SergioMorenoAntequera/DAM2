@@ -9,50 +9,33 @@ public class Main {
     public static void main(String[] args){
         
         Scanner sc = new Scanner(System.in);
-        ArrayList<File> directorios = new ArrayList<File>();
+        //ArrayList<File> directorios = new ArrayList<File>();
         
         System.out.println("Introduce el directorio para borrar los archivos");
         String ruta = sc.next();
-        directorios.add(new File(ruta));
+        File d1 = new File(ruta);
         
-        for(int i = 0; i<directorios.size(); i++){
-            if(!directorios.get(i).exists()){
-            System.out.println("Directorio no válido");
-            } else {
-                if(!directorios.get(i).isDirectory()){
-                    System.out.println("Se tiene que introducir un directorio");
+        borrarInterior(d1);
+    }
+    
+    public static void borrarInterior(File d1){
+        ArrayList<File> directorios = new ArrayList<File>();
+        directorios.add(d1);
+        //Entra en el arrayList
+        for(int i = 0; i < directorios.size(); i++){
+            File[] d2 = directorios.get(i).listFiles();
+            for(int j = 0; j < d2.length; j++){
+                if(d2[j].isFile()){
+                    d2[j].delete();
                 } else {
-                    while(directorios.get(i).delete()){
-                        directorios.get(i).delete();
-                    }
-                    directorios.remove(directorios.size()-1);
+                    directorios.add(d2[j]);
                 }
             }
+            directorios.get(directorios.size()-1).delete();
         }
-        
-                
-                
-                /*File[] ficheros = directorio.listFiles();
-                for(int i = 0; i < ficheros.length; i++){
-                    if(!ficheros[i].isDirectory()){
-                        ficheros[i].delete();
-                    } else {
-                        while(!ficheros[i].delete()){
-                            
-                        }
-                        
-                        /*System.out.println("Fichero numero " + (i+1) + "(" + ficheros[i].getName() + ")" + " es un directorio, mostrando interior");
-                        
-                        File directorio2 = new File(ruta + "/" + ficheros[i].getName());
-                        File[] ficheros2 = directorio2.listFiles();
-                        for(int j = 0; j < ficheros2.length; j++){
-                            System.out.println("    Fichero numero " + (j+1) + ": " + ficheros2[j].getName());
-                        }
-                        
-                    }
-                }*/
-            
-        
+    }
+    
+    public static void borrarDirectoriosVacios(){
         
     }
 }
