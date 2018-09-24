@@ -31,6 +31,7 @@ class MiMarco3 extends JFrame {
 		//Para ponerle un icono también se hace con ToolKit
 		Image icono = miPantalla.getImage("src/graficos/icono.png");
 		setIconImage(icono);
+		setTitle("Ventana de mitad de tamanio");
 		
 		setVisible(true);
 	}

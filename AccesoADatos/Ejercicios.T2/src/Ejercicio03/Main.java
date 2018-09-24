@@ -31,11 +31,13 @@ public class Main {
                     directorios.add(d2[j]);
                 }
             }
-            directorios.get(directorios.size()-1).delete();
         }
-    }
-    
-    public static void borrarDirectoriosVacios(){
+        //Esta parte borra las carpetas
+        int tam = directorios.size();
+        for(int i = 0; i < tam; i++){
+            directorios.get(directorios.size()-1).delete();
+            tam--;
+        }
         
     }
 }
