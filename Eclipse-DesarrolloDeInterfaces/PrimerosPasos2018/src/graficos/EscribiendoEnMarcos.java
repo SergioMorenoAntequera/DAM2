@@ -1,5 +1,4 @@
 package graficos;
-import java.awt.Color;
 import java.awt.Graphics;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -22,7 +21,8 @@ public class EscribiendoEnMarcos {
 
 //Crear plantilla de la ventana
 class MarcoVentanaTexto extends JFrame {
-	
+	private static final long serialVersionUID = 1L;
+
 	public MarcoVentanaTexto(){
 		
 		setBounds(100, 200, 400, 400);
@@ -33,7 +33,8 @@ class MarcoVentanaTexto extends JFrame {
 
 //Crer plantilla del panel
 class LaminaTexto extends JPanel {
-	
+	private static final long serialVersionUID = 1L;
+
 	//Utilizamos constructor po defecto
 	//Vamos a sobreescribir e método paintComponent para escrbir dentro de la lámina
 	public void paintComponent(Graphics g) {

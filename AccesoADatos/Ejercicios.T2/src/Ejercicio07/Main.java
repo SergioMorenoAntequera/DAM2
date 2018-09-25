@@ -23,7 +23,7 @@ public class Main {
             fl = new FileWriter(archivo);
             pw = new PrintWriter(fl);
         } catch (IOException ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("Ha surgido un error");
         }
         
         
@@ -38,6 +38,7 @@ public class Main {
             }
         }
         pw.println("");
+        pw.close();
     }
     
 }
