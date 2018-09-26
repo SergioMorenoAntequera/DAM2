@@ -19,8 +19,8 @@ public class PanelBotones extends JPanel {
         btnSalir = new JButton("SALIR");
         btnSaludo = new JButton("SALUDO");
         
-        btnSalir.setForeground(Color.red);
-        btnSaludo.setForeground(Color.green);
+        btnSalir.setForeground(Color.RED);
+        btnSaludo.setForeground(Color.BLUE);
         
         btnSalir.setPreferredSize(new Dimension(100, 60));
         btnSaludo.setPreferredSize(new Dimension(100, 60));
@@ -46,6 +46,10 @@ public class PanelBotones extends JPanel {
     
     public void salir(){
         System.exit(0);
+    }
+
+    public JButton getBtnSaludo() {
+        return btnSaludo;
     }
 
     public JButton getBtnSalir() {
