@@ -3,12 +3,12 @@ import java.io.*;
 import javax.naming.spi.DirStateFactory.Result;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.transform.Source;
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerFactory;
-import javax.xml.transform.dom.DOMSource
-        ;
+import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
+import static jdk.nashorn.internal.runtime.Debug.id;
+import jdk.nashorn.internal.runtime.Source;
 import org.w3c.dom.DOMImplementation;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -19,12 +19,12 @@ public class EjemploApuntes {
         
         //Ruta de los ficheros origen y destino
         File ficheroIn = new File("C:\\Users\\seran\\Desktop/In.dat");
-        File ficheroOut = new File("C:\\Users\\seran\\Desktop/Out.xml");
+        File ficheroOu = new File("C:\\Users\\seran\\Desktop/Out.xml");
         
         RandomAccessFile file = new RandomAccessFile(ficheroIn, "r"); //Fichero de acceso aleatorio
         
-        
-        
+        Source source;
+        Result result;
         
         int id, dep, posicion;
         Double salario;
@@ -81,12 +81,14 @@ public class EjemploApuntes {
             //Una vez ccreada en memoria la estructura del arbol XML
             //Creamos la fuente y el resultado de la trasnformacion XML
            
-            Source source = new DOMSource(document);
-            StreamResult result = new StreamResult(ficheroOut);
+            /************ ERROR
+            source = new DOMSource(document);
+            result = new StreamResult(ficheroOut);
             
             //Objeto para realizar la ppransformacion
             Transformer transformer = TransformerFactory.newInstance().newTransformer( ) ;
             transformer.transform(source, result);
+            *****************ERROR/
 
             /*
             //Para crear el nodo hijo (<id> o <apellido> o <dep> o <salario>) se escribe:

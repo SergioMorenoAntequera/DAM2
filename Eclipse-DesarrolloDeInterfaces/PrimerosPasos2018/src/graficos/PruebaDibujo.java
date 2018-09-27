@@ -66,6 +66,9 @@ class panel01 extends JPanel {
 		
 		//Creamos una linea *** el resto también se puede hacer asi para escribir menos
 		g2.draw(new Line2D.Double(100, 100, 300, 250));
+		
+		
+		
 	}
 }
 
