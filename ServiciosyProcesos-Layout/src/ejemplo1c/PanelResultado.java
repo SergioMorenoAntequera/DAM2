@@ -23,8 +23,10 @@ public class PanelResultado extends JPanel{
         jbResultado = new JLabel("Tu resultado es: ");
         tfResultado = new JTextField();
         btnSalir = new JButton("SALIR");
+        btnSalir.addActionListener(e->salir());
         
         tfResultado.setPreferredSize(new Dimension(80, 30));
+        tfResultado.setEditable(false);
         
         FlowLayout fl = new FlowLayout(FlowLayout.RIGHT);
         setLayout(fl);
@@ -39,6 +41,10 @@ public class PanelResultado extends JPanel{
         return btnSalir;
     }
 
+    public JTextField getTfResultado() {
+        return tfResultado;
+    }
+
     public void setTfResultado(JTextField tfResultado) {
         this.tfResultado = tfResultado;
     }
@@ -49,5 +55,9 @@ public class PanelResultado extends JPanel{
 
     public JLabel getJbResultado() {
         return jbResultado;
+    }
+    
+    public void salir(){
+        System.exit(WIDTH);
     }
 }

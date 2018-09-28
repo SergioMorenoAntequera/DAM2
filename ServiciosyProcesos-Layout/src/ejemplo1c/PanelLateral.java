@@ -20,7 +20,6 @@ public class PanelLateral extends JPanel{
         
         btnReset = new JButton("RESET");
         btnCalcular = new JButton("CALCULAR");
-        setBackground(Color.RED);
         btnReset.setPreferredSize(new Dimension(100, 80));
         btnCalcular.setPreferredSize(new Dimension(100, 80));
         
