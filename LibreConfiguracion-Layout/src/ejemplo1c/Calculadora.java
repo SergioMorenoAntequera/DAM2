@@ -1,7 +1,6 @@
 package ejemplo1c;
 import java.awt.BorderLayout;
 import java.awt.Container;
-import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import javax.swing.JButton;
