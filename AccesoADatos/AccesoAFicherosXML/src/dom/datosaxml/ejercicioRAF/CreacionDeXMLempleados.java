@@ -11,8 +11,10 @@ public class CreacionDeXMLempleados {
 
     public static void main(String[] args) {
         //Ruta de salida y entrada
-        File ficheroIn = new File("C:/Users/windiurno/Desktop/e1.dat");
-        File ficheroOut = new File("C:/Users/windiurno/Desktop/e2.xml");
+        //File ficheroIn = new File("C:/Users/windiurno/Desktop/e1.dat");
+        //File ficheroOut = new File("C:/Users/windiurno/Desktop/e2.xml");
+        File ficheroIn = new File("C:/Users/windiurno/seran/e1.dat");
+        File ficheroOut = new File("C:/Users/windiurno/seran/e2.xml");
         
         //Declaraciones
         Source source;  //Origen

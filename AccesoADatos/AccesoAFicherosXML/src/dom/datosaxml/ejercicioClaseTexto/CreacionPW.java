@@ -9,7 +9,8 @@ public class CreacionPW {
     
     public static void main(String[] args) {
         
-        File directorio = new File("C:/Users/windiurno/Desktop/e1.dat");
+        //File directorio = new File("C:/Users/windiurno/Desktop/e1.dat");
+        File directorio = new File("C:/Users/seran/Desktop/e1.dat");
         
         FileWriter fw = null;
         PrintWriter pw = null;
