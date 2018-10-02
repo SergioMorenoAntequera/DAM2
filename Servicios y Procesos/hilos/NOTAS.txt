@@ -1,0 +1,11 @@
+Esto no es un proyecto de netbeans
+Se tiene que ejecutar desde consola.
+
+Hacer paquete -> javac ej.../Principal.java
+	Así se compilan todas las clases que tengan
+	que ver algo con la clase Principal
+
+Ejecutar -> java ej.../Principal
+
+Cambiar repositorio -> cd (repositorio)
+	Ir patrás -> cd ..

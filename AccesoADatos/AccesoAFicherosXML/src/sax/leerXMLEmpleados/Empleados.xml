@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Empleados>
+	<Empleado id = '1'>
+		<apellido>Moreno</apellido>
+		<departamento>Informatica</departamento>
+		<salario comision = '10'>1200</salario>
+	</Empleado>
+	
+	<Empleado id = '2'>
+		<id>11245</id>
+		<apellido>Antequera</apellido>
+		<departamento>Charcuteria</departamento>
+		<salario comision = '20'>1350</salario>
+	</Empleado>
+	
+	<Empleado id = '3'>
+		<id>66985</id>
+		<apellido>Lopez</apellido>
+		<departamento>Instalaciones</departamento>
+		<salario comision = '30'>1260</salario>
+	</Empleado>
+		
+	<Empleado id = '4'>
+		<id>42150</id>
+		<apellido>Caparros</apellido>
+		<departamento>AtencionCliente</departamento>
+		<salario comision = '40'>1400</salario>
+	</Empleado>
+</Empleados>

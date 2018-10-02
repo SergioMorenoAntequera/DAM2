@@ -1,4 +1,4 @@
-package dom.datosaxml.ejercicioClaseTexto;
+package dom.xmladatos.numerosaBinario;
 import java.io.*;
 import javax.xml.parsers.*;
 import javax.xml.transform.*;

@@ -1,4 +1,5 @@
-package dom.datosaxml.ejercicioRAF;
+package dom.xmladatos.EmpleadosATexto;
+import dom.datosaxml.ejercicioRAF.*;
 import java.io.*;
 import javax.xml.parsers.*;
 import javax.xml.transform.*;
@@ -14,7 +15,7 @@ public class CreacionDeXMLempleados {
         //File ficheroIn = new File("C:/Users/windiurno/Desktop/e1.dat");
         //File ficheroOut = new File("C:/Users/windiurno/Desktop/e2.xml");
         File ficheroIn = new File("C:\\Users\\windiurno\\Desktop\\e1.dat");
-        File ficheroOut = new File("C:\\Users\\windiurno\\Desktop\\empleados.xml");
+        File ficheroOut = new File("C:\\Users\\windiurno\\Desktop\\e2.xml");
         
         //Declaraciones
         Source source;  //Origen
