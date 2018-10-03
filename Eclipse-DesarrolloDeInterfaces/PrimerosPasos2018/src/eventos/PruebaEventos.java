@@ -18,7 +18,8 @@ public class PruebaEventos {
 }
 
 class Ventana extends JFrame {
-	
+	private static final long serialVersionUID = 1L;
+
 	public Ventana() {
 		setTitle("Probando los eventos");
 		setBounds(200, 200, 400, 400);
@@ -30,6 +31,8 @@ class Ventana extends JFrame {
 }
 
 class Panel1 extends JPanel{
+	private static final long serialVersionUID = 1L;
+
 	public Panel1() {
 		//setBackground(Color.BLUE);
 		JButton botonAzul = new JButton("Azul");

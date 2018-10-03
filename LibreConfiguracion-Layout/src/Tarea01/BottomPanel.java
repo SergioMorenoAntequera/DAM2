@@ -1,4 +1,5 @@
 package Tarea01;
+import java.awt.Color;
 import java.awt.FlowLayout;
 import javax.swing.JButton;
 import javax.swing.JPanel;
@@ -6,7 +7,7 @@ import javax.swing.JPanel;
 
 public class BottomPanel extends JPanel {
         
-    JButton BottomButton;
+    JButton bottomButton0, bottomButton1, bottomButton2;
     
     public BottomPanel(){
         iniciarComponentes();
@@ -16,12 +17,29 @@ public class BottomPanel extends JPanel {
         
         FlowLayout fl = new FlowLayout(FlowLayout.CENTER);
         setLayout(fl);
-        BottomButton = new JButton();
+        bottomButton0 = new JButton("Vamos que ya queda poco");
+        bottomButton1 = new JButton("EL ULTIMO");
+        bottomButton2 = new JButton("ESTA SI QUE SI");
         
-        add(BottomButton);
+        add(bottomButton0);
+        bottomButton0.setVisible(false);
+        add(bottomButton1);
+        bottomButton1.setVisible(false);
+        add(bottomButton2);
+        bottomButton2.setVisible(false);
     }
 
-    public JButton getBottomButton() {
-        return BottomButton;
+    public JButton getBottomButton0() {
+        return bottomButton0;
     }
+
+    public JButton getBottomButton1() {
+        return bottomButton1;
+    }
+
+    public JButton getBottomButton2() {
+        return bottomButton2;
+    }
+
+  
 }

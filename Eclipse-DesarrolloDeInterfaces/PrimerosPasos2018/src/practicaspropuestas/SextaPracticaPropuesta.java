@@ -1,5 +1,4 @@
 package practicaspropuestas;
-import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
@@ -44,8 +43,9 @@ class Panel6 extends JPanel implements ActionListener{
 		/*JButton bSaludo = new JButton("SALUDO");
 		JButton bDespedida = new JButton("DESPEDIDA");*/
 		
-		bSaludo.addActionListener(null);
-		bDespedida.addActionListener(null);
+		
+		bSaludo.addActionListener(this);
+		bDespedida.addActionListener(this);
 		
 		/*
 		 * botonAzul.addActionListener(fondoAzul);

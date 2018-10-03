@@ -1,4 +1,4 @@
-com.example.windiurno.holamundosergiomoreno
+com.example.windiurno.p00holamundo.app
 anim abc_fade_in
 anim abc_fade_out
 anim abc_grow_fade_in_from_bottom
@@ -650,7 +650,6 @@ id FUNCTION
 id META
 id SHIFT
 id SYM
-id TVMensaje
 id action_bar
 id action_bar_activity_content
 id action_bar_container

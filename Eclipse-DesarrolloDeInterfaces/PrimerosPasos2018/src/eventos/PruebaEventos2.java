@@ -10,7 +10,7 @@ import javax.swing.JPanel;
 public class PruebaEventos2 {
 
 	public static void main(String[] args) {
-		Ventana miVentana = new Ventana();
+		Ventana2 miVentana = new Ventana2();
 		miVentana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		miVentana.setVisible(true);
 	}
@@ -18,18 +18,21 @@ public class PruebaEventos2 {
 }
 
 class Ventana2 extends JFrame {
-	
+	private static final long serialVersionUID = 1L;
+
 	public Ventana2() {
 		setTitle("El oyente es: Un objeto de la clase que define el contenedor principal (panel), lo declara e imokementa");
 		setBounds(200, 200, 400, 400);
 		
-		Panel1 miPanel = new Panel1();
+		Panel2 miPanel = new Panel2();
 		add(miPanel);
 	}
 	
 }
 
 class Panel2 extends JPanel implements ActionListener{
+	private static final long serialVersionUID = 1L;
+
 	public Panel2() {
 		//setBackground(Color.BLUE);
 		JButton botonAzul = new JButton("Azul");

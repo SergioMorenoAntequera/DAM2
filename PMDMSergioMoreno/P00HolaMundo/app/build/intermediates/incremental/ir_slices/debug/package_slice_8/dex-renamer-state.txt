@@ -1,4 +1,0 @@
-#Thu Sep 27 12:45:33 CEST 2018
-base.0=C\:\\Repositorios\\DAM2\\PMDMSergioMoreno\\P00HolaMundo\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\8
-path.0=classes.dex
-renamed.0=classes.dex

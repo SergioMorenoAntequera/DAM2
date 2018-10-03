@@ -1,5 +1,6 @@
 package Tarea01;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
 import static java.awt.Font.BOLD;
@@ -19,10 +20,11 @@ public class TopPanel extends JPanel{
         FlowLayout fl = new FlowLayout(FlowLayout.CENTER);
         setLayout(fl);
         
-        titulo = new JLabel("Haz click en el boton");
+        titulo = new JLabel("HAZ CLICK EN EL BOTON");
         Font fuente = new Font("Consolas", BOLD, 18);
         
         titulo.setFont(fuente);
+        titulo.setPreferredSize(new Dimension(220, 50));
         add(titulo);
         
         setBackground(new Color(51, 153, 255));
@@ -31,4 +33,9 @@ public class TopPanel extends JPanel{
     public JLabel getTitulo() {
         return titulo;
     }
+
+    public void setTitulo(String titulo) {
+        this.titulo.setText(titulo);
+    }
+    
 }
