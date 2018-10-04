@@ -7,7 +7,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 
-public class SextaPracticaPropuesta {
+public class SextaPracticaPropuestaBis {
 	
 	//Crea una ventana en la que se muestre un boton con e titulo "saludo" y otro Con el 
 	//titulo despedida al pulsar el primero aparecerá un JOptionPane.ShomessageDialog
@@ -17,40 +17,29 @@ public class SextaPracticaPropuesta {
 		Ventana6Bis miVentana = new Ventana6Bis();
 		miVentana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		miVentana.setVisible(true);
+		
+		Ventana6Bis2 miVentana2 = new Ventana6Bis2();
+		miVentana2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		miVentana2.setVisible(true);
 	}
 }
 
-class Ventana6 extends JFrame {
+class Ventana6Bis extends JFrame {
 	private static final long serialVersionUID = 1L;
-	public Ventana6() {
+
+	public Ventana6Bis() {
 		setTitle("PracticaPropuesta6");
 		setBounds(200, 200, 300, 300);
-		
-		Panel6 miPanel = new Panel6();
-		add(miPanel);
+
 	}
 }
 
-class Panel6 extends JPanel implements ActionListener{
+class Ventana6Bis2 extends JFrame {
 	private static final long serialVersionUID = 1L;
 
-	JButton bSaludo = new JButton("SALUDO");
-	JButton bDespedida = new JButton("DESPEDIDA");
-	
-	public Panel6() {
-		bSaludo.addActionListener(this);
-		bDespedida.addActionListener(this);
-		
-		add(bSaludo);
-		add(bDespedida);
-	}
-	
-	@Override
-	public void actionPerformed(ActionEvent e) {
-		if(e.getSource()==bSaludo) 
-			JOptionPane.showMessageDialog(null, "HOLA");
-		
-		if(e.getSource()==bDespedida) 
-			JOptionPane.showMessageDialog(null, "ADIOS");	
+	public Ventana6Bis2() {
+		setTitle("PracticaPropuesta6");
+		setBounds(550, 200, 300, 300);
+
 	}
 }
