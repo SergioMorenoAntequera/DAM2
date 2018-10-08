@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Libros>
+    <libro ISBN = '1'>
+        <titulo>El ultimo conocido</titulo>
+        <paginas>250</paginas>
+        <Editorial>ED1</Editorial>
+    </libro>
+    
+    <libro ISBN = '2'>
+        <titulo>El origen del universo </titulo>
+        <paginas>150</paginas>
+        <Editorial>ED2</Editorial>
+    </libro>
+    
+    <libro ISBN = '3'>
+        <titulo>El universo</titulo>
+        <paginas>300</paginas>
+        <Editorial>ED3</Editorial>
+    </libro>
+</Libros>
