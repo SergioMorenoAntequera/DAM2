@@ -10,7 +10,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         CuentaAtras ca = new CuentaAtras("hilo1");
         long ti=System.currentTimeMillis();
-        ca.start();
+        
         int numero = 0, i = 0, j = 0, divisor = 0, raiz = 0;
         
         System.out.println("Introduce un numero mayor que 10");
@@ -26,7 +26,7 @@ public class Main {
             System.out.println("Ha surgido un error");
             System.exit(0);
         }
-        
+        ca.start();
         for (i = 1; i < numero; i++) {
             divisor = 0;
             raiz = (int)sqrt(i);
