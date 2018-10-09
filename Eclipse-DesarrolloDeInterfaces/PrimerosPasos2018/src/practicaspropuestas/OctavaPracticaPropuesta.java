@@ -8,7 +8,7 @@ import javax.swing.JFrame;
 public class OctavaPracticaPropuesta {
 	
 	/*
-	 * HAcer una ventana que te diga si estas arrastrando o solo moviendo el raton
+	 * Hacer ventana que te diga con que boton haces click
 	 */
 	public static void main(String[] args) {
 		VentanaEventosR1 miVentana = new VentanaEventosR1();
@@ -23,7 +23,7 @@ class VentanaEventosR1 extends JFrame implements MouseListener{
 	
 	int c1 = 0, c2= 0;
 	public VentanaEventosR1() {
-		setTitle("Arrastrar o moviendo");
+		setTitle("Octaba practica");
 		setBounds(200, 200, 400, 400);
 		addMouseListener(this);
 

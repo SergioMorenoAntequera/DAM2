@@ -1,10 +1,17 @@
 package practicaspropuestas;
+import java.awt.LayoutManager;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseMotionListener;
+import java.awt.event.WindowStateListener;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 
 
 public class SextaPracticaPropuestaBis {
@@ -17,29 +24,55 @@ public class SextaPracticaPropuestaBis {
 		Ventana6Bis miVentana = new Ventana6Bis();
 		miVentana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		miVentana.setVisible(true);
-		
-		Ventana6Bis2 miVentana2 = new Ventana6Bis2();
-		miVentana2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		miVentana2.setVisible(true);
+
 	}
 }
 
-class Ventana6Bis extends JFrame {
+class Ventana6Bis extends JFrame{
 	private static final long serialVersionUID = 1L;
 
+	
 	public Ventana6Bis() {
 		setTitle("PracticaPropuesta6");
 		setBounds(200, 200, 300, 300);
-
+		Panel6Bis panel = new Panel6Bis();
+		
+		add(panel);
 	}
 }
 
-class Ventana6Bis2 extends JFrame {
+class Panel6Bis extends JPanel implements ActionListener {
 	private static final long serialVersionUID = 1L;
-
-	public Ventana6Bis2() {
-		setTitle("PracticaPropuesta6");
-		setBounds(550, 200, 300, 300);
-
+	
+	
+	JButton botonHola = new JButton("Saludo");
+	JButton botonAdios = new JButton("Adios");
+	JLabel texto = new JLabel("Prueba");
+	
+	public Panel6Bis() {
+		add(botonHola);
+		add(botonAdios);
+		add(texto);
+		
+		botonHola.addActionListener(this);
+		botonAdios.addActionListener(this);
+		
+		
+		
 	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		if(e.getSource() == botonHola) {
+			texto.setText("HOLA");
+		}
+		if(e.getSource() == botonAdios) {
+			texto.setText("ADIOS");
+		}
+		
+		
+	}
+
+
+	
 }
