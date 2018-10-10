@@ -18,9 +18,9 @@ public class Principal {
         Ventana miVentana = new Ventana();
         miVentana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         miVentana.setTitle("Ejemplo BorderLayout");
-        miVentana.setVisible(true);
-        //miVentana.setResizable(true/false); *** Para que se pueda cambiar tamaño
         miVentana.pack();
+        //miVentana.setResizable(true/false); *** Para que se pueda cambiar tamaño
+        miVentana.setVisible(true);
     }
     
     public static void main(String[] args){
