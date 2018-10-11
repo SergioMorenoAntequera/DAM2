@@ -1,6 +1,6 @@
 package practicaspropuestas;
-import java.awt.event.FocusEvent;
-import java.awt.event.FocusListener;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.*;
 
 public class PracticaPropuesta10 {
@@ -28,7 +28,8 @@ class Ventana10 extends JFrame {
 	}
 }
 
-class Panel10 extends JPanel implements FocusListener{
+class Panel10 extends JPanel implements ActionListener {
+	private static final long serialVersionUID = 1L;
 	
 	JLabel etiquetaEmail;
 	JLabel etiquetaComprobacion;
@@ -48,6 +49,8 @@ class Panel10 extends JPanel implements FocusListener{
 		etiquetaComprobacion.setBounds(10, 40, 150, 20);
 		campoComprobacion.setBounds(120, 40, 150, 20);
 		
+		campoEmail.addActionListener(this);
+		
 		add(campoEmail);
 		add(campoComprobacion);
 		add(etiquetaEmail);
@@ -55,15 +58,12 @@ class Panel10 extends JPanel implements FocusListener{
 	}
 
 	@Override
-	public void focusGained(FocusEvent arg0) {
-		// TODO Auto-generated method stub
-		
+	public void actionPerformed(ActionEvent e) {
+		if(e.getSource() == campoEmail) {
+			String email = campoEmail.getText();
+			this.campoComprobacion.setText(email);
+		}
 	}
 
-	@Override
-	public void focusLost(FocusEvent arg0) {
-		String email = campoEmail.getText();
-		
-	}
 	
 }

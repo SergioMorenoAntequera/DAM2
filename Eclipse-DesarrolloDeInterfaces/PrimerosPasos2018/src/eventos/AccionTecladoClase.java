@@ -55,8 +55,8 @@ class PanelaccionTeclado extends JPanel{
 		botonRojo.setIcon(new ImageIcon("iRojo"));
 	}
 	
-	class ColorFondo implements ActionListener{
-		
+	class ColorFondo implements ActionListener {
+		 
 		private Color colorFondo;
 		public ColorFondo(Color c) {
 			colorFondo = c;
