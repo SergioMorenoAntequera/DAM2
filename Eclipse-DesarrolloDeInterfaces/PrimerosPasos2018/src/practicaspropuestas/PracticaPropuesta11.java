@@ -49,7 +49,7 @@ class Panel11 extends JPanel{
 		bBasico.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				PracticaPropuesta11.miVentana.setTitle(Panel11.bBasico.getText());				
+				PracticaPropuesta11.miVentana.setTitle(Panel11.bBasico.getText());			
 			}
 		});
 		
