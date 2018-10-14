@@ -14,7 +14,7 @@ public class SextaPracticaPropuesta {
 	//Diciendo hola y en el otro al conrario.
  	
 	public static void main(String[] args) {
-		Ventana6Bis miVentana = new Ventana6Bis();
+		Ventana6 miVentana = new Ventana6();
 		miVentana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		miVentana.setVisible(true);
 	}

@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="48dp"
-        android:layout_marginTop="84dp"
+        android:layout_marginTop="108dp"
         android:text="@string/sETitulo"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -26,6 +26,7 @@
         android:ems="10"
         android:hint="@string/sEOperando1"
         android:inputType="number"
+        android:text="8"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvTitulo" />
@@ -39,18 +40,19 @@
         android:ems="10"
         android:hint="@string/sEOperando2"
         android:inputType="number"
+        android:text="3"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etOperando1" />
 
     <Button
-        android:id="@+id/bSumar"
+        android:id="@+id/bCalcular"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="56dp"
         android:layout_marginTop="40dp"
-        android:onClick="sumar"
-        android:text="@string/sESumar"
+        android:onClick="Calcular"
+        android:text="@string/sECalcular"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etOperando2" />
@@ -64,22 +66,7 @@
         android:text="@string/sEResultado"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bSumar" />
-
-    <Button
-        android:id="@+id/bRestar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="56dp"
-        android:onClick="restar"
-        android:text="@string/sERestar"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.717"
-        app:layout_constraintStart_toEndOf="@+id/bSumar"
-        app:layout_constraintTop_toBottomOf="@+id/etOperando2" />
+        app:layout_constraintTop_toBottomOf="@+id/bCalcular" />
 
     <RadioGroup
         android:id="@+id/rbIdioma"
@@ -127,5 +114,16 @@
             android:text=" Kurdî" />
 
     </RadioGroup>
+
+    <Spinner
+        android:id="@+id/spOpciones"
+        android:layout_width="349dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.541"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rbIdioma" />
 
 </android.support.constraint.ConstraintLayout>
