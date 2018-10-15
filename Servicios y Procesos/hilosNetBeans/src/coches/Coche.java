@@ -27,6 +27,33 @@ public class Coche extends Thread {
         tiempoExtra += operario.getTiempoExtra();
     }
     
+    public Coche(String nombre, int num, Operario operario){
+        super(nombre);
+        switch (num) {
+            case 1: {
+                this.tipoCoche = TiposCoches.NORMAL;
+            }
+            break;
+            case 2: {
+                this.tipoCoche = TiposCoches.MEDIANO;
+            }
+            break;
+            case 3: {
+                this.tipoCoche = TiposCoches.GRANDE;
+            }
+            break;
+        }
+        this.operario = operario;
+        if(this.tipoCoche == TiposCoches.MEDIANO){
+            tiempoExtra += 4;
+        }
+        if(this.tipoCoche == TiposCoches.GRANDE){
+            tiempoExtra += 4;
+            tiempoExtra += 4;
+        }
+        tiempoExtra += operario.getTiempoExtra();
+    }
+    
     @Override
     public void run(){
         long TInicio, TFin, tiempo;

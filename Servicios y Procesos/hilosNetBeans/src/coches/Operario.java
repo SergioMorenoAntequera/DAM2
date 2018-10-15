@@ -17,6 +17,32 @@ public class Operario {
             tiempoExtra += 2;
         }
     }
+    
+    Operario(int num, String nombre){
+        this.tipoLavado = tipoLavado;
+        switch (num) {
+            case 1: {
+                this.tipoLavado = tipoLavado.NORMAL;
+            }
+            break;
+            case 2: {
+                this.tipoLavado = tipoLavado.EXTRA;
+            }
+            break;
+            case 3: {
+                this.tipoLavado = tipoLavado.SUPER;
+            }
+            break;
+        }
+        this.nombre = nombre;
+        if(this.tipoLavado == TiposLavados.EXTRA){
+            tiempoExtra += 2;
+        }
+        if(this.tipoLavado == TiposLavados.SUPER){
+            tiempoExtra += 2;
+            tiempoExtra += 2;
+        }
+    }
 
     public void setTipoLavado(TiposLavados tipoLavado) {
         this.tipoLavado = tipoLavado;
