@@ -13,7 +13,7 @@ public class PracticaPropuesta12 {
 	 *  pierdan el foco. Trata el posible error que se pueda generar al convertir String en Float.
 	 */
 	public static void main(String[] args) {
-		Ventana12 miVentana = new Ventana12();
+		Ventana13 miVentana = new Ventana13();
 		miVentana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		miVentana.setVisible(true);
 	}
@@ -24,7 +24,7 @@ class Ventana12 extends JFrame {
 	public Ventana12() {
 		setTitle("Practica Propuesta 12");
 		setBounds(200, 200, 400, 400);
-		Panel12 panel = new Panel12();
+		Panel13 panel = new Panel13();
 		add(panel);
 	}
 }
