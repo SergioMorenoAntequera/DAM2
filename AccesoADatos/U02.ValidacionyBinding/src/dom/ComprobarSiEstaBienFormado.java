@@ -1,4 +1,4 @@
-package dom;
+/*package dom;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import jdk.internal.org.xml.sax.InputSource;
@@ -23,3 +23,4 @@ public class ComprobarEstructura {
         }
     }
 }
+*/
