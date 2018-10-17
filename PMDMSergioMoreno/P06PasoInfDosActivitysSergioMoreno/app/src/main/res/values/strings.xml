@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">P06PasoInfDosActivitysSergioMoreno</string>
+
+    //Primer activity
+    <string name="etNombre">Inrtoduzca su nombre </string>
+    <string name="bEnviar">Enviar</string>
+
+    //Segundo activity
+    <string name ="bRegresar">Regresar</string>
+</resources>

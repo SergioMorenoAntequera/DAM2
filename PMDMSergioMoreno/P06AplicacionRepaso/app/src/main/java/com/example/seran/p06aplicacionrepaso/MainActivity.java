@@ -27,9 +27,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void comprobar(View view){
-        //if(usuario.getText().toString() == "Maria" && pass.getText().toString() == "maria2018"){
+        if(usuario.getText().toString().equals("Maria") && pass.getText().toString().equals("maria2018")){
             Intent siguienteActivity = new Intent(this, Activity2.class);
             startActivity(siguienteActivity);
-        //}
+        }
     }
+
 }

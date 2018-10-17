@@ -47,6 +47,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:onClick="cambio"
             android:text="Enero" />
 
         <RadioButton
@@ -54,6 +55,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:onClick="cambio"
             android:text="Febrero" />
 
         <RadioButton
@@ -61,6 +63,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:onClick="cambio"
             android:text="Marzo" />
 
         <RadioButton
@@ -68,13 +71,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:onClick="cambio"
             android:text="Abril" />
     </RadioGroup>
 
     <TextView
         android:id="@+id/tvResultado"
-        android:layout_width="251dp"
-        android:layout_height="44dp"
+        android:layout_width="250dp"
+        android:layout_height="68dp"
         android:layout_marginStart="162dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="164dp"

@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">P07WebView</string>
+    <string name="etUrl">Introduce pagina web</string>
+    <string name="bIr">Ir al sitio</string>
+
+    <string name="bCer">Cerrar</string>
+
+</resources>
