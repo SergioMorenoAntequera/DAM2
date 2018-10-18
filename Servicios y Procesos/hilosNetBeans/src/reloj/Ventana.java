@@ -1,23 +1,35 @@
 package reloj;
+import java.awt.Container;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 
 public class Ventana extends JFrame {
     
-    MainPanel panel = new MainPanel();
-    Control control = new Control();
+    MainPanel mainPanel;
+    int min, sec, msec;
+    
+    Control control;
+    JButton btnStart, btnStop;
+    
     
     public Ventana(){
         iniciarComponentes();
-        setVisible(true);
     }
     
     private void iniciarComponentes(){
-        setTitle("Practica cronometros");
-        setSize(300, 200);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        Container lienzo = this.getContentPane();
+        mainPanel = new MainPanel();
+        control = new Control(this);
         
-        //add(control);
-        add(panel);
-        //pack();
+        btnStart = mainPanel.getbStart();
+        btnStart.addActionListener(control);
+        
+        btnStop = mainPanel.getbStop();
+       
+        
+        
+       
+        lienzo.add(mainPanel);
+        pack();
     }
 }

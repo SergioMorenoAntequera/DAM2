@@ -9,13 +9,17 @@ public class Control implements ActionListener{
     private JButton bStop;
     private JButton bExit;
     private String min, sec, msec;*/
-    Botones panelBotones = new Botones();
+    //Botones panelBotones = new Botones();
+    
+    Ventana v;
+    public Control(Ventana v){
+        this.v = v;
+    }
     
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(e.getSource() == panelBotones.bStart){
-            System.out.println("QAAAAAAA");
+        if(e.getSource() == v.btnStart){
+            System.out.println("AAAAAAA");
         }
-        
     }
 }

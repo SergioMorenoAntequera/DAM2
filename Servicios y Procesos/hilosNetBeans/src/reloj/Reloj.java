@@ -10,7 +10,7 @@ import javax.swing.border.LineBorder;
 public class Reloj extends JPanel {
     
     JLabel clock;
-    public String min = "00", sec = "00", msec = "00";
+    public int min = 23, sec = 0, msec = 0;
     
     public Reloj(){
         iniciarComponentes();
@@ -29,6 +29,8 @@ public class Reloj extends JPanel {
         add(clock);
     }
 
+    
+    //******GETTERS Y SETTERS*******
     public JLabel getClock() {
         return clock;
     }
@@ -37,27 +39,27 @@ public class Reloj extends JPanel {
         this.clock = clock;
     }
 
-    public String getMin() {
+    public int getMin() {
         return min;
     }
 
-    public void setMin(String min) {
+    public void setMin(int min) {
         this.min = min;
     }
 
-    public String getSec() {
+    public int getSec() {
         return sec;
     }
 
-    public void setSec(String sec) {
+    public void setSec(int sec) {
         this.sec = sec;
     }
 
-    public String getMsec() {
+    public int getMsec() {
         return msec;
     }
 
-    public void setMsec(String msec) {
+    public void setMsec(int msec) {
         this.msec = msec;
     }
     

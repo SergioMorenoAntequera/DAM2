@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">P10FicherosDeTextoSergioMoreno</string>
+    <string name ="sNombreFichero">Inrtoduzca nombre del fichero</string>
+    <string name ="sAbrir">Abrir</string>
+    <string name ="sGuardar">Guardar</string>
+
+</resources>

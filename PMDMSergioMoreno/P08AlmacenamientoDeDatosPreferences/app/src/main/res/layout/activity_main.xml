@@ -14,7 +14,7 @@
         android:layout_marginTop="112dp"
         android:ems="10"
         android:hint="@string/eMail"
-        android:inputType="textPersonName"
+        android:inputType="textEmailAddress"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -24,6 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="140dp"
         android:layout_marginTop="72dp"
+        android:onClick="guardarClick"
         android:text="@string/bConfirmar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etEmail" />
