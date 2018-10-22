@@ -1,10 +1,11 @@
 package practica;
 import java.awt.Container;
+import javax.swing.BoxLayout;
 import javax.swing.JFrame;
 
 public class Ventana extends JFrame{
     
-    Panel p;
+    Panel p1, p2;
     
     public Ventana(){
         iniciarComponentes();
@@ -12,8 +13,12 @@ public class Ventana extends JFrame{
     
     private void iniciarComponentes(){
         Container lienzo = getContentPane();
-        p = new Panel();
+        lienzo.setLayout(new BoxLayout(lienzo, BoxLayout.Y_AXIS));
         
-        lienzo.add(p);
+        p1= new Panel();
+        p2 = new Panel();
+        
+        lienzo.add(p1);
+        lienzo.add(p2);
     }
 }

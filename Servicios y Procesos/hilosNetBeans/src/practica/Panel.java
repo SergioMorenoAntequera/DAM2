@@ -1,5 +1,4 @@
 package practica;
-
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -7,26 +6,26 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class Panel extends JPanel implements ActionListener{
+public class Panel extends JPanel{
    
-    private JLabel texto;
-    private JButton boton;
-    
+    public JLabel texto;
+    public int numero;
+    public JButton boton;
+
     public Panel() {
         iniciarComponentes();
     }
     
     private void iniciarComponentes(){
         this.setLayout(new FlowLayout(FlowLayout.CENTER));
-        texto = new JLabel("CUENTA ATRAS");
+        this.numero = 10;
+        texto = new JLabel("PANEL1");
         boton = new JButton("GO");
+        boton.addActionListener(new Control(this));
         
         add(texto);
-        boton.addActionListener(this);
         add(boton);
-        
     }
-
     
     public JLabel getTexto() {
         return texto;
@@ -34,12 +33,7 @@ public class Panel extends JPanel implements ActionListener{
     public JButton getBoton() {
         return boton;
     }
-
-    
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        if(e.getSource() == boton){
-            texto.setText("AAAAAA");
-        }
+    public void setTexto(JLabel texto) {
+        this.texto = texto;
     }
 }

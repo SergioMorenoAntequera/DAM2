@@ -25,8 +25,8 @@ public class Botones extends JPanel {
         bStart = new JButton("START");
         bSalir = new JButton("SALIR");
         //Añadimos los Action
-        bStart.addActionListener(new Control(this));
-        bSalir.addActionListener(new Control(this));
+        //bStart.addActionListener(new Control(this));
+        //bSalir.addActionListener(new Control(this));
         //Los ñadimos al panel
         this.add(bStart);
         this.add(bSalir);

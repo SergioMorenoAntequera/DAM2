@@ -5,27 +5,54 @@
  */
 package carreraCronometros;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author seran
  */
-public class Hilo implements Runnable{
+public class Hilo extends Thread{
     
-    int numeroInicial;
-    Cronometro pc;
+    static boolean terminado;
+    int numero;
+    String espacios = "   ";
+    JLabel txt;
+    JButton bStart;
+    int nJugador;
 
-    public Hilo(Cronometro pc){
-        this.pc = pc;
+    public Hilo(JLabel txt, JButton bStart, int nJugador){
+        this.txt = txt;
+        this.bStart = bStart;
+        this.nJugador = nJugador;
     }
 
     @Override
     public void run() {
-        numeroInicial = (int)(Math.random() * 40 + 1);
-        String numeroTxt = numeroInicial + "";
-        
-        System.out.println(numeroTxt);
-        pc.txtCrono.setText("01");
-    }
-    
+        terminado = false;
+        numero = (int)(Math.random() * 40 + 1);
+        while (numero < 100) {
+            dormir(80);
+            numero++;
+            String numeroTxt = espacios + numero;
+            txt.setText(numeroTxt);
+        }
+        if (!terminado) {
+            terminado = true;
+            bStart.setEnabled(true);
+            JOptionPane.showMessageDialog(null, "Ha ganado el jugador " + nJugador);
+        }
 
+    }
+
+    public void dormir(int numero) {
+        try {
+            Thread.sleep(numero);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Hilo.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 }

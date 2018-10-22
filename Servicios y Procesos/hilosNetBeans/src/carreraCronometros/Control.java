@@ -13,20 +13,26 @@ import java.awt.event.ActionListener;
  */
 public class Control implements ActionListener{
     
-    static Cronometro pc;
-    Botones pb;
-    Hilo hilo;
-
-    public Control(Botones pb){
-        this.pb = pb;
+    Ventana v;
+    Hilo hilo1, hilo2;
+    boolean terminado;
+    
+    public Control(Ventana v){
+        this.v = v;
     }
     
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(e.getSource() == pb.bStart){
-            hilo.run();
+        
+        if(e.getSource() == v.bStart){
+            hilo1 = new Hilo(v.cronometro1.txtCrono, v.bStart, 1);
+            hilo2 = new Hilo(v.cronometro2.txtCrono, v.bStart, 2);
+            hilo1.start();
+            hilo2.start();
+            v.bStart.setEnabled(false);
         }
-        if(e.getSource() == pb.bSalir){
+        
+        if(e.getSource() == v.bSalir){
             System.exit(0);
         }
     }
