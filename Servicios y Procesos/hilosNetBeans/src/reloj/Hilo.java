@@ -8,9 +8,6 @@ public class Hilo implements Runnable{
     Ventana v;
     public Hilo(Ventana v){
         this.v = v;
-        min = v.min;
-        sec = v.sec;
-        msec = v.msec;
     }
     
     @Override

@@ -5,12 +5,13 @@ import java.awt.Dimension;
 import java.awt.Font;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 import javax.swing.border.LineBorder;
 
 public class Reloj extends JPanel {
     
-    JLabel clock;
-    public int min = 23, sec = 0, msec = 0;
+    JTextField clock;
+    private int min = 23, sec = 0, msec = 0;
     
     public Reloj(){
         iniciarComponentes();
@@ -18,12 +19,14 @@ public class Reloj extends JPanel {
     
     private void iniciarComponentes(){
 
-        clock = new JLabel(min + ":" + sec + ":" + msec);
+        clock = new JTextField(min + ":" + sec + ":" + msec);
         clock.setPreferredSize(new Dimension(200, 50));
         clock.setBackground(Color.BLACK);
         clock.setForeground(Color.GREEN);
         clock.setFont(new Font("Consolas", 0, 25));
         clock.setBorder(new LineBorder(Color.BLACK));
+        clock.setEditable(false);
+        clock.setAlignmentX(CENTER_ALIGNMENT);
         
         
         add(clock);
@@ -31,11 +34,11 @@ public class Reloj extends JPanel {
 
     
     //******GETTERS Y SETTERS*******
-    public JLabel getClock() {
+    public JTextField getClock() {
         return clock;
     }
 
-    public void setClock(JLabel clock) {
+    public void setClock(JTextField clock) {
         this.clock = clock;
     }
 

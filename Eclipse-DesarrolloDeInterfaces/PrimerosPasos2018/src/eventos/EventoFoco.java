@@ -27,6 +27,10 @@ class VentanaEventosFoco extends JFrame {
 
 class LaminaFoco extends JPanel implements FocusListener{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	JLabel etiquetaEmail;
 	JLabel etiquetaComprobacion;
 	JTextField campoEmail;
@@ -59,6 +63,7 @@ class LaminaFoco extends JPanel implements FocusListener{
 
 	@Override
 	public void focusLost(FocusEvent arg0) {
+		@SuppressWarnings("unused")
 		String email = campoEmail.getText();
 		
 	}

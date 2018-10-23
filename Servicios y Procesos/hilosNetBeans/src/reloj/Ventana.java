@@ -21,14 +21,16 @@ public class Ventana extends JFrame {
         mainPanel = new MainPanel();
         control = new Control(this);
         
+        min = mainPanel.min;
+        sec = mainPanel.sec;
+        msec = mainPanel.msec;
+        
         btnStart = mainPanel.getbStart();
         btnStart.addActionListener(control);
-        
         btnStop = mainPanel.getbStop();
-       
-        
-        
-       
+        btnStop.addActionListener(control);
+        btnStop.setEnabled(false);
+
         lienzo.add(mainPanel);
         pack();
     }

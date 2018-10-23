@@ -20,10 +20,10 @@ public class Consultas {
             Connection conexion = DriverManager.getConnection(connectionUrl);
             
             Statement sentencia = conexion.createStatement();
-            
+
             String consultaDepartamentos = "SELECT * FROM departamentos";
             result = sentencia.executeQuery(consultaDepartamentos);
-            
+
             while(result.next()){
                 System.out.printf("%2d  %-15s  %s\n", result.getInt(1),
                         result.getString("dNombre"), result.getString(3));

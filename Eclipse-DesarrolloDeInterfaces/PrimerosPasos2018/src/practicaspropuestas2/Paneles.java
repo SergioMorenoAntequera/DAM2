@@ -92,6 +92,7 @@ public class Paneles extends JFrame {
 	}
 	
 	public static void main(String[] args) {
+		@SuppressWarnings("unused")
 		Paneles paneles = new Paneles();
 	}
 }

@@ -6,7 +6,7 @@ import javax.swing.JPanel;
 public class MainPanel extends JPanel{
     
     Reloj pReloj;
-    int min, sec, msec;
+    public int min, sec, msec;
     
     Botones pBotones;
     JButton bStart, bStop;

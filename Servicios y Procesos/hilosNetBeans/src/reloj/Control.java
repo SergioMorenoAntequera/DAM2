@@ -19,7 +19,14 @@ public class Control implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == v.btnStart){
-            System.out.println("AAAAAAA");
+            v.btnStart.setEnabled(false);
+            v.btnStop.setEnabled(true);
+            
+        }
+        if(e.getSource() == v.btnStop){
+            v.btnStop.setEnabled(false);
+            v.btnStart.setEnabled(true);
+            
         }
     }
 }

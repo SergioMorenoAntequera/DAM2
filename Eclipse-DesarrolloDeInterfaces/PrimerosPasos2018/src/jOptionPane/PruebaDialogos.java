@@ -16,7 +16,8 @@ public class PruebaDialogos {
 }
 
 class Panel extends JPanel{
-	
+	private static final long serialVersionUID = 1L;
+
 	public Panel() {
 		JButton boton = new JButton("Aceptar");
 		add(boton);
@@ -25,7 +26,8 @@ class Panel extends JPanel{
 }
 
 class Ventana extends JFrame{
-	
+	private static final long serialVersionUID = 1L;
+
 	public Ventana() {
 		setTitle("Prueba de dialogos con botones");
 		setBounds(200, 200, 400, 400);
