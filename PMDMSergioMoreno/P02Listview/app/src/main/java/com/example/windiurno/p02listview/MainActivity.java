@@ -33,8 +33,8 @@ public class MainActivity extends AppCompatActivity {
             //Programamos el evennto click de los items de la lista
             //Este metodo te da ya la "i" como position(p), no tienes que hacer ningun ni nada para recorrerlo
             public void onItemClick(AdapterView<?> parent, View view, int p, long id) {
-                //programamos el evento click de los items de la lista
-                tvInformacion.setText("La edad de " + lvLista.getItemAtPosition(p) + " es " + edades[p] + " años");
+            //programamos el evento click de los items de la lista
+            tvInformacion.setText("La edad de " + lvLista.getItemAtPosition(p) + " es " + edades[p] + " años");
             }
         });
     }

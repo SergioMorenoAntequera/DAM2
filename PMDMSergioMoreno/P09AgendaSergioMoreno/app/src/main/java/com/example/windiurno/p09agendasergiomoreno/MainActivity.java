@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //Busca una clave que será el nombre y si la encuentra la pone en el edittext datos
-    public void buscarClick(View view){
+    public void RegistrarClick(View view){
         SharedPreferences preferencias = getSharedPreferences("Agenda", Context.MODE_PRIVATE);
         //
         String datos = preferencias.getString(etNombre.getText().toString(), "");

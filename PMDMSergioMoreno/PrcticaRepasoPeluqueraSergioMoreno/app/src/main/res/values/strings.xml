@@ -1,0 +1,26 @@
+<resources>
+
+    <string name="app_name">Práctica Repaso PeluqueríaSergioMoreno</string>
+    <string name="etUsuario">Usuario</string>
+    <string name="usuario">Introduce usuario</string>
+    <string name="etPass">Contraseña</string>
+    <string name="pass">Introduce Contraseña</string>
+    <string name="bRegistrar">Registrar</string>
+    <string name="bEntrar">Entrar</string>
+
+    <string name="etNombre">(Nombre Aqui)</string>
+    <string name="etColor">Color del pelo</string>
+        <string name="rbMoreno">Moreno</string>
+        <string name="rbRubio">Rubio</string>
+        <string name="rbPelirrojo">Pelirrojo</string>
+        <string name="rbCastaño">Castaño</string>
+        <string name="rbNada">Sin pelo</string>
+    <string name="etSemana">Dia de la semana</string>
+    <string name="etTelefono">Telefono</string>
+    <string name="multiComentario">Observaciones</string>
+    <string name="bAtras">Atras</string>
+    <string name="bGuardar">Guardar</string>
+
+
+
+</resources>
