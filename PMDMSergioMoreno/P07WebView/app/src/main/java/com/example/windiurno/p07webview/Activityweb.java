@@ -36,4 +36,6 @@ public class Activityweb extends AppCompatActivity {
         //Como funciona el boton de echar patras
         finish();
     }
+
+
 }

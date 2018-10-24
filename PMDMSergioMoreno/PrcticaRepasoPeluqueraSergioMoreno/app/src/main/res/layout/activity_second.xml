@@ -49,6 +49,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:checked="true"
             android:text="@string/rbMoreno" />
 
         <RadioButton
@@ -89,7 +90,7 @@
         app:layout_constraintTop_toBottomOf="@+id/etDiaSemana" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/etTelefono"
         android:layout_width="77dp"
         android:layout_height="26dp"
         android:layout_marginStart="28dp"
@@ -99,7 +100,7 @@
         app:layout_constraintTop_toBottomOf="@+id/rgGrupo" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/areaTelefono"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -110,41 +111,43 @@
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.333"
-        app:layout_constraintStart_toEndOf="@+id/textView5"
+        app:layout_constraintStart_toEndOf="@+id/etTelefono"
         app:layout_constraintTop_toBottomOf="@+id/lSemana" />
 
     <EditText
         android:id="@+id/multiComentario"
-        android:layout_width="365dp"
-        android:layout_height="80dp"
+        android:layout_width="299dp"
+        android:layout_height="66dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="8dp"
         android:ems="10"
         android:hint="@string/multiComentario"
         android:inputType="textMultiLine"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        app:layout_constraintTop_toBottomOf="@+id/areaTelefono" />
 
-    <Button
+    <ImageButton
         android:id="@+id/bAtras"
-        android:layout_width="91dp"
-        android:layout_height="51dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="24dp"
-        android:text="@string/bAtras"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:layout_width="56dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="28dp"
+        android:onClick="atrasClick"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/multiComentario"
+        app:srcCompat="@mipmap/volver" />
 
-    <Button
+    <ImageButton
         android:id="@+id/bGuardar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="24dp"
-        android:text="@string/bGuardar"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:layout_width="54dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="10dp"
+        android:onClick="guardarClick"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/multiComentario"
+        app:srcCompat="@mipmap/guardar" />
 </android.support.constraint.ConstraintLayout>

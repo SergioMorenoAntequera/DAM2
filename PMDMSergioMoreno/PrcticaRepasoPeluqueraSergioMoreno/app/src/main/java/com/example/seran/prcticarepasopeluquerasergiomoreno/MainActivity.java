@@ -13,8 +13,6 @@ public class MainActivity extends AppCompatActivity {
 
     private EditText campoUsuario, campoPass;
 
-
-
     SharedPreferences preferencias;
 
     @Override
