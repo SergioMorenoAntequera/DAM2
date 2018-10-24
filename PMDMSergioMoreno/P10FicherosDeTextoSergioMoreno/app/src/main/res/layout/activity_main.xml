@@ -7,39 +7,44 @@
     tools:context=".MainActivity">
 
     <EditText
-        android:id="@+id/etNombreFich"
+        android:id="@+id/etContenido"
         android:layout_width="357dp"
-        android:layout_height="321dp"
-        android:layout_marginTop="28dp"
+        android:layout_height="324dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="82dp"
+        android:layout_marginEnd="8dp"
         android:ems="10"
         android:gravity="top"
         android:inputType="textMultiLine"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.272"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText3" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/bGuardar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="444dp"
+        android:onClick="guardarClick"
         android:text="@string/sGuardar"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etNombreFich" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/bAbrir"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="444dp"
         android:layout_marginEnd="16dp"
+        android:onClick="leerClick"
         android:text="@string/sAbrir"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etNombreFich" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/etNombreFich"
         android:layout_width="310dp"
         android:layout_height="48dp"
         android:layout_marginTop="16dp"

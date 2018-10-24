@@ -26,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
         campoPass = (EditText) findViewById(R.id.ptPass);
     }
 
+
+    //Evento que comprueba si el usuario ya esta registrado
     public void registrarClick (View view){
         //Guarda en preferencces "Registros" el nombre y los datos asociados a ese nombre
         preferencias = getSharedPreferences("Registros", Context.MODE_PRIVATE);
@@ -66,10 +68,5 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "Contraseña equivocada", Toast.LENGTH_SHORT).show();
         }
 
-    }
-
-    public void limpiar(View view){
-        campoUsuario.setText("");
-        campoPass.setText("");
     }
 }
