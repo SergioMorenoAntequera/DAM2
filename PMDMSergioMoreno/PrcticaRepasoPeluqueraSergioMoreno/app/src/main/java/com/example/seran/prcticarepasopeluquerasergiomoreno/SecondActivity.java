@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
@@ -21,6 +22,7 @@ public class SecondActivity extends AppCompatActivity {
 
     //Componentes que hay en el Activity
     private TextView usuario, colorPelo, diaSemana;
+    private RadioGroup grupo;
     private RadioButton moreno, rubio, pelirrojo, castaño, calvo;
     private ListView listaSemana;
     private ArrayAdapter<String> adaptador;
@@ -38,7 +40,7 @@ public class SecondActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
         preferencias = getSharedPreferences("Registros", Context.MODE_PRIVATE);
-        SharedPreferences.Editor objEditor = preferencias.edit();
+        final SharedPreferences.Editor objEditor = preferencias.edit();
 
         //==============================================//
         //************Inicializamos las cosas***********//
@@ -47,6 +49,7 @@ public class SecondActivity extends AppCompatActivity {
         colorPelo = (TextView) findViewById(R.id.etColorPelo);
         diaSemana = (TextView) findViewById(R.id.etDiaSemana);
 
+        grupo = (RadioGroup) findViewById(R.id.rgGrupo);
         moreno = (RadioButton) findViewById(R.id.rbMoreno);
         rubio = (RadioButton) findViewById(R.id.rbRubio);
         pelirrojo = (RadioButton) findViewById(R.id.rbPelirrojo);
@@ -70,9 +73,10 @@ public class SecondActivity extends AppCompatActivity {
         usuario.setText("Usuario: " + datoRecibido);
 
         //Color de pelo de arriba
-        colorPelo.setText(preferencias.getString("pelo", ""));
+        grupo.check(preferencias.getInt("pelo"+datoRecibido, moreno.getId()));
 
         //Lista
+        diaSemana.setText(preferencias.getString("dia"+datoRecibido, "Dia de la semana"));
         adaptador = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1);
         listaSemana.setAdapter(adaptador);
         adaptador.addAll(dias);
@@ -82,9 +86,11 @@ public class SecondActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int p, long id) {
                 //programamos el evento click de los items de la lista
                 txtDiaSemana = listaSemana.getItemAtPosition(p).toString();
-                diaSemana.setText("Dia: " + listaSemana.getItemAtPosition(p).toString());
+                diaSemana.setText("Dia: " + txtDiaSemana);
+
             }
         });
+
 
         //Telefono
         telefono.setText(preferencias.getString("telefono" + datoRecibido, ""));
@@ -101,34 +107,11 @@ public class SecondActivity extends AppCompatActivity {
         preferencias = getSharedPreferences("Registros", Context.MODE_PRIVATE);
         SharedPreferences.Editor objEditor = preferencias.edit();
 
-        //******************COLOR DEL PELO********************
-        colorPelo = (TextView) findViewById(R.id.etColorPelo);
-        moreno = (RadioButton) findViewById(R.id.rbMoreno);
-        rubio = (RadioButton) findViewById(R.id.rbRubio);
-        pelirrojo = (RadioButton) findViewById(R.id.rbPelirrojo);
-        castaño = (RadioButton) findViewById(R.id.rbCastanio);
-        calvo = (RadioButton) findViewById(R.id.rbCalvo);
-        if(moreno.isSelected()){
-            objEditor.putString("pelo", "Moreno");
-            objEditor.commit();
-        }
-        if(rubio.isSelected()){
-            objEditor.putString("pelo", "Rubio");
-            objEditor.commit();
-        }
-        if(pelirrojo.isSelected()){
-            objEditor.putString("pelo", "Pelirrojo");
-            objEditor.commit();
-        }
-        if(castaño.isSelected()){
-            objEditor.putString("pelo", "Castaño");
-            objEditor.commit();
-        }
-        if(calvo.isSelected()){
-            objEditor.putString("pelo", "Calvo");
-            objEditor.commit();
-        }
+        //******************COLOR DEL PELO*******************
+        objEditor.putInt("pelo"+datoRecibido, grupo.getCheckedRadioButtonId());
 
+        //******************DIA SEMANA*************************
+        objEditor.putString("dia"+datoRecibido, "Dia: " + txtDiaSemana);
 
 
         //**********TELEFONO***************

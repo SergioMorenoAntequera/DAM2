@@ -5,8 +5,6 @@
  */
 package ejemplo05;
 
-import ejemplo04.*;
-import ejemplo03.*;
 import javax.swing.JFrame;
 
 /**
