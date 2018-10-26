@@ -15,7 +15,7 @@ import javax.swing.JFrame;
 public class Ventana extends JFrame {
     
     PanelCampo pc;
-    PanelInfo pf;
+    PanelInfo pi;
     
     
     public Ventana(){
@@ -25,9 +25,12 @@ public class Ventana extends JFrame {
     public void iniciarComponentes(){
         
         pc = new PanelCampo();
-        pf = new PanelInfo();
+        pi = new PanelInfo();
+        
         
         add(pc, BorderLayout.CENTER);
+        add(pi, BorderLayout.EAST);
+        
         pack();
     }
 }

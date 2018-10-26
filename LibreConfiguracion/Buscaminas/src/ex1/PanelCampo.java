@@ -34,8 +34,8 @@ public class PanelCampo extends JPanel{
         
         for(int i = 0; i<gl.getRows(); i++){
             for(int j = 0; j<gl.getColumns(); j++){
-                campo[i][j] = new JButton("-9");
-                campo[i][j].setPreferredSize(new Dimension(60, 60));
+                campo[i][j] = new JButton("9");
+                campo[i][j].setPreferredSize(new Dimension(45, 45));
                 this.add(campo[i][j]);
             }
         }

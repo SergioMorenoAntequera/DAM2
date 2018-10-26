@@ -5,6 +5,7 @@
  */
 package ex1;
 
+import java.awt.Dimension;
 import javax.swing.GroupLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -32,6 +33,7 @@ public class PanelInfo extends JPanel{
         iBandera = new JLabel(new ImageIcon("/src/source/flag.png"));
         iReloj = new JLabel(new ImageIcon("/src/source/stopwatch.png"));
         tfMinas = new JTextField();
+        tfMinas.setBounds(0, 0, 30, 100);
         tfTiempo = new JTextField();
         bStart = new JButton("START");
         bPause = new JButton("PAUSE");
@@ -53,6 +55,16 @@ public class PanelInfo extends JPanel{
                         .addComponent(bPause)
                         .addComponent(bExit)
                 )
+        );
+      
+        gl.setVerticalGroup(gl.createSequentialGroup()
+                .addComponent(iBandera)
+                .addComponent(iReloj)
+                .addComponent(tfMinas)
+                .addComponent(tfTiempo)
+                .addComponent(bStart)
+                .addComponent(bPause)
+                .addComponent(bExit)
         );
     }
 }
