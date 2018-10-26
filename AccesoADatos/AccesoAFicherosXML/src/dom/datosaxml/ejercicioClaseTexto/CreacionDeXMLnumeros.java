@@ -11,8 +11,8 @@ public class CreacionDeXMLnumeros {
 
     public static void main(String[] args) {
         //Ruta de salida y entrada
-        File ficheroIn = new File("C:/Users/seran/Desktop/e1.dat");
-        File ficheroOut = new File("C:/Users/seran/Desktop/e2.xml");
+        File ficheroIn = new File("C:/Users/windiurno/Desktop/e1.dat");
+        File ficheroOut = new File("C:/Users/windiurno/Desktop/e2.xml");
         //File ficheroIn = new File("C:\\Users\\windiurno\\Desktop/e1.dat");
         //File ficheroOut = new File("C:\\Users\\windiurno\\Desktop/e2.xml");
         
