@@ -2,8 +2,6 @@ package ej01;
 
 import java.awt.BorderLayout;
 import java.awt.Container;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 import javax.swing.*;
 
@@ -15,7 +13,7 @@ public class Ventana extends JFrame{
 	
 	private PanelTexto pt;
 	private PanelCheck pc;
-	private boolean negrita = false, cursiva = false;
+	public boolean negrita = false, cursiva = false;
 	
 	 public Ventana() {
 		 iniciarComponentes();
@@ -24,28 +22,30 @@ public class Ventana extends JFrame{
 	 public void iniciarComponentes() {
 		 Container lienzo = this.getContentPane();
 		
-		 pt = new PanelTexto(negrita, cursiva);
-		 pc = new PanelCheck(this, pt);
+		 pt = new PanelTexto();
+		 pc = new PanelCheck();
 		
-		
-		
-		
-		pc.cursiva.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e2) {
-				if (pc.cursiva.isSelected()) {
-					cursiva = true;
-				} else {
-					cursiva = false;
-				}
-				pt = new PanelTexto(negrita, cursiva);
-				lienzo.add(pt, BorderLayout.NORTH);
-			}
-		});
 		 
 		lienzo.add(pt, BorderLayout.NORTH);
 		lienzo.add(pc, BorderLayout.SOUTH);
-		 
-		pack();
+		
+		setSize(400, 125);
+		//pack();
 	 }
+
+	public PanelTexto getPt() {
+		return pt;
+	}
+	public void setPt(PanelTexto pt) {
+		this.pt = pt;
+	}
+	public PanelCheck getPc() {
+		return pc;
+	}
+	public void setPc(PanelCheck pc) {
+		this.pc = pc;
+	}
+	 
+	 
+	 
 }
