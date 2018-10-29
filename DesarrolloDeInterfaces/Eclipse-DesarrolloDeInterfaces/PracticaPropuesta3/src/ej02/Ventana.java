@@ -6,13 +6,10 @@ import java.awt.Container;
 import javax.swing.*;
 
 public class Ventana extends JFrame{
-
-	//El texto(Utiliza una JLabel)  excrito en el panel se pondra en negrita si pulsamos 
-	//la casilla de verificación “Negrita” y en cursiva si pulsamos en la casilla “cursiva”. 
 	private static final long serialVersionUID = 1L;
 	
+	private PanelRadio pr;
 	private PanelTexto pt;
-
 	public boolean negrita = false, cursiva = false;
 	
 	 public Ventana() {
@@ -22,14 +19,15 @@ public class Ventana extends JFrame{
 	 public void iniciarComponentes() {
 		 Container lienzo = this.getContentPane();
 		
+		 pr = new PanelRadio();
 		 pt = new PanelTexto();
-
-		
 		 
-		lienzo.add(pt, BorderLayout.CENTER);
+		 
+		 lienzo.add(pr, BorderLayout.NORTH);
+		 lienzo.add(pt, BorderLayout.CENTER);
 		
-		setSize(400, 400);
-		//pack();
+		 setSize(600, 200);
+		 //pack();
 	 }
 
 	public PanelTexto getPt() {
