@@ -1,22 +1,24 @@
 package com.example.seran.prcticarepasopeluquerasergiomoreno;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import org.w3c.dom.Text;
-
-import java.util.Collections;
+import java.io.File;
+import java.io.OutputStreamWriter;
 
 public class SecondActivity extends AppCompatActivity {
 
@@ -34,6 +36,8 @@ public class SecondActivity extends AppCompatActivity {
 
     SharedPreferences preferencias;
     String datoRecibido;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,7 +65,7 @@ public class SecondActivity extends AppCompatActivity {
 
         telefono = (TextView) findViewById(R.id.areaTelefono);
         observaciones = (TextView) findViewById(R.id.multiComentario);
-        btnAtras = (ImageButton) findViewById(R.id.bAtras);
+        btnAtras = (ImageButton) findViewById(R.id.bAtras2);
         btnGuardar = (ImageButton) findViewById(R.id.bGuardar);
 
 
@@ -73,6 +77,8 @@ public class SecondActivity extends AppCompatActivity {
         usuario.setText("Usuario: " + datoRecibido);
 
         //Color de pelo de arriba
+        Toast.makeText(this, "Dato " + datoRecibido, Toast.LENGTH_SHORT).show();
+
         grupo.check(preferencias.getInt("pelo"+datoRecibido, moreno.getId()));
 
         //Lista
@@ -127,5 +133,37 @@ public class SecondActivity extends AppCompatActivity {
         objEditor.commit();
 
         finish();
+    }
+
+    public void ficheroClick(View view){
+        Intent i2 = new Intent(this, ThirdActivity.class);
+        //Creamos una variable tipo String y se la pasamos
+        i2.putExtra("nombre", datoRecibido);
+        startActivity(i2);
+
+        try {
+            File tarjetaSD = Environment.getExternalStorageDirectory(); //Y por qué no un string? Tío yo que se, esto es asi
+            Toast.makeText(this, "Ruta valida: " + tarjetaSD.getPath(), Toast.LENGTH_SHORT).show();
+
+            File archivoUsuario = new File(tarjetaSD.getPath(), datoRecibido);
+
+            //Abrimos el archivo pero para ESCRIBIR
+            OutputStreamWriter archivo = new OutputStreamWriter(openFileOutput(datoRecibido, Activity.MODE_PRIVATE));
+
+            grupo.check(preferencias.getInt("pelo"+datoRecibido, moreno.getId()));
+
+            //Pasamos el texto de mi EditText al archivo
+            archivo.write("Usuario " + datoRecibido + "\n");
+            archivo.write("Color pelo: " + preferencias.getInt("pelo"+datoRecibido, moreno.getId()) + "\n");
+            archivo.write(preferencias.getString("dia"+datoRecibido, "Dia de la semana") + "\n");
+            archivo.write("Telefono:  " + preferencias.getString("telefono"+datoRecibido, "") + "\n");
+            archivo.write("Observaciones: " + (preferencias.getString("observaciones"+datoRecibido, "") + "\n"));
+
+            archivo.flush();
+            archivo.close();
+
+        } catch (Exception e){
+
+        }
     }
 }

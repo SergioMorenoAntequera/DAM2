@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
         //Creamos una variable tipo String y se la pasamos
         i.putExtra("nombre", etNombrem.getText().toString());
+
         startActivity(i);
     }
 }

@@ -39,11 +39,8 @@ public class MainActivity extends AppCompatActivity {
             objEditor.putString(datoUsuario, datoPass);
             objEditor.commit();
             Toast.makeText(this, "Registro guardado", Toast.LENGTH_SHORT).show();
-
         } else {
-
             Toast.makeText(this, "Usuario ocupado", Toast.LENGTH_SHORT).show();
-
         }
     }
 
@@ -54,8 +51,6 @@ public class MainActivity extends AppCompatActivity {
         String datoPass = campoPass.getText().toString();
 
         if(datoPass.equalsIgnoreCase(preferencias.getString(datoUsuario, datoPass))){
-
-            //Toast.makeText(this, "BINGO", Toast.LENGTH_SHORT).show();
 
             Intent i = new Intent(this, SecondActivity.class);
             //Creamos una variable tipo String y se la pasamos

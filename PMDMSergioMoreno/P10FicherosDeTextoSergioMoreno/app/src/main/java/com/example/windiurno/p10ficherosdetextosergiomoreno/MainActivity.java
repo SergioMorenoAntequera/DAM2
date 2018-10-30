@@ -20,10 +20,8 @@ import java.io.OutputStreamWriter;
 public class MainActivity extends AppCompatActivity {
 
     //Antes de empezar a programar hemos:
-        //Solicutar permisos de escritura manifest >> AndroidManifest >> <uses-permission>
-
+    //Solicutar permisos de escritura manifest >> AndroidManifest >> <uses-permission>
     EditText etNombreFichm, etContenidom;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,10 +40,8 @@ public class MainActivity extends AppCompatActivity {
         //Como lo vamos a guardar en la SD y puede que no tenga y la ruta no sea válida
         //Lo tenemos que meter en un try catch
         try {
-
             //Resuperamos la ruta de la tarjeta SD con la clase Enviroment
             //Para ello creamos un fichero auxiliar
-
             File tarjetaSD = Environment.getExternalStorageDirectory(); //Y por qué no un string? Tío yo que se, esto es asi
             Toast.makeText(this, "Ruta valida: " + tarjetaSD.getPath(), Toast.LENGTH_SHORT).show();
 
@@ -78,7 +74,6 @@ public class MainActivity extends AppCompatActivity {
         String nombre = etNombreFichm.getText().toString();
 
        try {
-
            File tarjetaSD = Environment.getExternalStorageDirectory(); //Y por qué no un string? Tío yo que se, esto es asi
            Toast.makeText(this, "Ruta: " + tarjetaSD.getPath(), Toast.LENGTH_LONG).show();
 
@@ -93,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
            //Creo una variable en la cual voy a almacenar cada linea
            String contenidoCompleto = "";
 
-           //Bucle lara recorrer el archivo leyendo cada linea
+            //Bucle lara recorrer el archivo leyendo cada linea
             while(linea != null) {
                 contenidoCompleto += linea + "\n";
                 linea = contenedor.readLine();
