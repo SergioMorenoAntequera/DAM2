@@ -6,6 +6,9 @@
 package ex1;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Container;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 
 /**
@@ -14,22 +17,40 @@ import javax.swing.JFrame;
  */
 public class Ventana extends JFrame {
     
-    PanelCampo pc;
-    PanelInfo pi;
-    
-    
+    public PanelCampo pc;
+    public PanelRight pr;
+    public JButton[][] campo;
+    public JButton bStart, bExit, bPause;
+
     public Ventana(){
         iniciarComponentes();
     }
     
     public void iniciarComponentes(){
+        Container lienzo = new Container();
+        lienzo.setLayout(new BorderLayout());
         
         pc = new PanelCampo();
-        pi = new PanelInfo();
+        pr = new PanelRight();
         
+        this.campo = pc.campo;
+        for (int f = 0; f < campo.length; f++) {
+            for (int c = 0; c < campo[f].length; c++) {
+                campo[f][c].addActionListener(new Control(this));
+            }
+        }
+
+        bStart = pr.getbStart();
+        bPause = pr.getbPause();
+        bExit = pr.getbExit();
+        bStart.addActionListener(new Control(this));
+        bPause.addActionListener(new Control(this));
+        bExit.addActionListener(new Control(this));
         
-        add(pc, BorderLayout.CENTER);
-        add(pi, BorderLayout.EAST);
+        lienzo.add(pc, BorderLayout.CENTER);
+        lienzo.add(pr, BorderLayout.EAST);
+        
+        this.add(lienzo);
         
         pack();
     }

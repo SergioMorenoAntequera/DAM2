@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<profesores>
+	<persona edad=35>
+		<nombre> Cesar F. Acebal </nombre>
+		<correo-e> acebal@uniovi.es </correo-e>
+		<url> www.cfacebal.com </url>
+	</persona>
+	<persona>
+		<nombre> Jose E. Labra Gavo </nombre>
+		<correo-e> labra@lsi.uniovi.es </correo-e>
+		<url> www.di.uniovi.es/~labra </url>
+	</persona edad=43>
+</profesores>

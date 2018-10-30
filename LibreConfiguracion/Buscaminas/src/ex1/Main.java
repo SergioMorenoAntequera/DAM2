@@ -16,6 +16,8 @@ public class Main {
         Ventana v = new Ventana();
         v.setTitle("BUSCAMINAS");
         v.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        v.setLocationRelativeTo(null);
+        v.setResizable(false);
         v.setVisible(true);
     }
 }

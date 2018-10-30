@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<videoclub>
+	<pelicula titulo="2001: una odisea del espacio" año="1968" duracion="143">
+		<guion> 
+			<guionista> Stanley Kubric </guionista>
+			<guionista> Arthur C. Clarke </guionista>
+		</guion>
+		<direccion> 
+			<director> Stanley  </director>
+		</direccion>
+		<sinopsis> "2001: Una Odisea en el Espacio" es una cuenta atras hacia el futuro
+		un mapa del destino humano, una conquista del infinito, un apasionante drama
+		sobre el hombre que lucha contra la maquina </sinopsis>
+	</pelicula>
+	<pelicula titulo="Alien resurreccion" año="1998" duracion="105">
+		<guion> Joss Whedon </guion>
+		<direccion> Jean-Pierre Jeunet </direccion>
+		<sinopsis> El clon de la teniente Ripley une fuerzas con mercenarios espaciales
+		para escapar de una nave infestada de extraterrestres. </sinopsis>
+	</pelicula>
+</videoclub>
