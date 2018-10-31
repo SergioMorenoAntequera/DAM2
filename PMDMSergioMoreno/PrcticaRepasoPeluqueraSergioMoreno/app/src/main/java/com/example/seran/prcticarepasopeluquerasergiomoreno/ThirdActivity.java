@@ -37,7 +37,7 @@ public class ThirdActivity extends AppCompatActivity {
         datoRecibido = getIntent().getStringExtra("nombre");
         try {
             File tarjetaSD = Environment.getExternalStorageDirectory(); //Y por qué no un string? Tío yo que se, esto es asi
-            Toast.makeText(this, "Ruta: " + tarjetaSD.getPath(), Toast.LENGTH_LONG).show();
+            //Toast.makeText(this, "Ruta: " + tarjetaSD.getPath(), Toast.LENGTH_LONG).show();
 
             InputStreamReader abrirArchivo = new InputStreamReader(openFileInput(datoRecibido));
 
@@ -62,10 +62,7 @@ public class ThirdActivity extends AppCompatActivity {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-
-        Toast.makeText(this, "Dato " + datoRecibido, Toast.LENGTH_SHORT).show();
-
+        //Toast.makeText(this, "Dato " + datoRecibido, Toast.LENGTH_SHORT).show();
     }
 
     public void atrasClick(View view){

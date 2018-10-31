@@ -30,6 +30,7 @@ public class SecondActivity extends AppCompatActivity {
     private ArrayAdapter<String> adaptador;
     private TextView telefono, observaciones;
     private ImageButton btnAtras, btnGuardar;
+    private String elegidoTxt;
 
     //Variables que tendrán el valor de las cosas
     private String txtColorPelo = "", txtDiaSemana = "", txtTelefono = "", txtObservaciones = "";
@@ -77,8 +78,6 @@ public class SecondActivity extends AppCompatActivity {
         usuario.setText("Usuario: " + datoRecibido);
 
         //Color de pelo de arriba
-        Toast.makeText(this, "Dato " + datoRecibido, Toast.LENGTH_SHORT).show();
-
         grupo.check(preferencias.getInt("pelo"+datoRecibido, moreno.getId()));
 
         //Lista
@@ -109,15 +108,20 @@ public class SecondActivity extends AppCompatActivity {
         finish();
     }
 
-    public void guardarClick(View view){
+    public void guardarClick(View view) {
         preferencias = getSharedPreferences("Registros", Context.MODE_PRIVATE);
         SharedPreferences.Editor objEditor = preferencias.edit();
 
         //******************COLOR DEL PELO*******************
-        objEditor.putInt("pelo"+datoRecibido, grupo.getCheckedRadioButtonId());
+        objEditor.putInt("pelo" + datoRecibido, grupo.getCheckedRadioButtonId());
+        RadioButton elegido = findViewById(grupo.getCheckedRadioButtonId());
+
+        String elegidoTxt = elegido.getText().toString();
+        objEditor.putString("peloTxt" + datoRecibido, elegidoTxt);
+
 
         //******************DIA SEMANA*************************
-        objEditor.putString("dia"+datoRecibido, "Dia: " + txtDiaSemana);
+        objEditor.putString("dia" + datoRecibido, "Dia: " + txtDiaSemana);
 
 
         //**********TELEFONO***************
@@ -132,7 +136,6 @@ public class SecondActivity extends AppCompatActivity {
         objEditor.putString("observaciones" + datoRecibido, txtObservaciones);
         objEditor.commit();
 
-        finish();
     }
 
     public void ficheroClick(View view){
@@ -143,7 +146,7 @@ public class SecondActivity extends AppCompatActivity {
 
         try {
             File tarjetaSD = Environment.getExternalStorageDirectory(); //Y por qué no un string? Tío yo que se, esto es asi
-            Toast.makeText(this, "Ruta valida: " + tarjetaSD.getPath(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,"Color pelo: " + elegidoTxt, Toast.LENGTH_SHORT).show();
 
             File archivoUsuario = new File(tarjetaSD.getPath(), datoRecibido);
 
@@ -154,7 +157,7 @@ public class SecondActivity extends AppCompatActivity {
 
             //Pasamos el texto de mi EditText al archivo
             archivo.write("Usuario " + datoRecibido + "\n");
-            archivo.write("Color pelo: " + preferencias.getInt("pelo"+datoRecibido, moreno.getId()) + "\n");
+            archivo.write("Color pelo: " + preferencias.getString("peloTxT"+datoRecibido, "") + "\n");
             archivo.write(preferencias.getString("dia"+datoRecibido, "Dia de la semana") + "\n");
             archivo.write("Telefono:  " + preferencias.getString("telefono"+datoRecibido, "") + "\n");
             archivo.write("Observaciones: " + (preferencias.getString("observaciones"+datoRecibido, "") + "\n"));
