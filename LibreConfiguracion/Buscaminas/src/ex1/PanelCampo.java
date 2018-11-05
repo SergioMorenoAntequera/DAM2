@@ -40,7 +40,7 @@ public class PanelCampo extends JPanel{
             for (int c = 0; c < gl.getColumns(); c++) {
                 valorCampo[f][c] = 0;
                 campo[f][c] = new JButton(valorCampo[f][c]+"");
-                campo[f][c].setPreferredSize(new Dimension(45, 45));
+                campo[f][c].setPreferredSize(new Dimension(60, 60));
                 campo[f][c].setBackground(Color.WHITE);
                 this.add(campo[f][c]);
                 //campo[f][c].addActionListener(new Control(this));
@@ -48,7 +48,7 @@ public class PanelCampo extends JPanel{
         }
         this.setBackground(Color.WHITE);
     }
-
+    
     public JButton[][] getCampo() {
         return campo;
     }

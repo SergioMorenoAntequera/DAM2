@@ -7,8 +7,6 @@ package ex1;
 
 import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.Rectangle;
-import static java.awt.SystemColor.control;
 import javax.swing.BorderFactory;
 import javax.swing.GroupLayout;
 import javax.swing.ImageIcon;
@@ -17,7 +15,6 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
-import javax.swing.border.Border;
 
 /**
  *

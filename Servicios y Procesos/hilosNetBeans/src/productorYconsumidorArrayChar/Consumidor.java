@@ -24,7 +24,7 @@ public class Consumidor extends Thread {
     @Override
     public void run(){
         while(true){
-            num = c.retirar();
+            //num = c.retirar();
             System.out.println(" - Retirando: " + num);
             dormir(2000);
         }

@@ -6,7 +6,6 @@
 package ex1;
 
 import java.awt.BorderLayout;
-import java.awt.Color;
 import java.awt.Container;
 import javax.swing.JButton;
 import javax.swing.JFrame;

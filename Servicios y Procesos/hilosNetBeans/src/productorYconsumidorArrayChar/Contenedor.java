@@ -18,7 +18,7 @@ public class Contenedor {
     
     public synchronized void poner(char[] chars){
         while(lleno){
-            esperar();
+            //esperar();
         }
         
         lleno = true;
@@ -30,7 +30,7 @@ public class Contenedor {
     }
     
     
-    public synchronized int retirar(){
+    /*public synchronized int retirar(){
         while(!lleno){
             esperar();
         }
@@ -54,7 +54,7 @@ public class Contenedor {
         } catch (InterruptedException ex) {
             
         }
-    }
+    }*/
     
     
 }
