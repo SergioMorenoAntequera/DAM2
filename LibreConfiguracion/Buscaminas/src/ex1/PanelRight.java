@@ -36,7 +36,7 @@ public class PanelRight extends JPanel{
         iBandera = new JLabel(new ImageIcon("src/source/flag.png"));
         iReloj = new JLabel(new ImageIcon("src/source/stopwatch.png"));
         tfMinas = new JTextField("00/10");
-        tfTiempo = new JTextField("00");
+        tfTiempo = new JTextField("00:00");
         bStart = new JButton("START");
         bPause = new JButton("PAUSE");
         bPause.setEnabled(false);

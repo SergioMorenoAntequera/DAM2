@@ -14,7 +14,7 @@ import javax.swing.JPanel;
  *
  * @author windiurno
  */
-public class PanelCampo extends JPanel{
+public class panelCampo extends JPanel{
     
     public GridLayout gl;
     public int nMinas, nFilas, nColumnas;
@@ -22,7 +22,7 @@ public class PanelCampo extends JPanel{
     public int[][] valorCampo;
     
     
-    public PanelCampo(){
+    public panelCampo(){
         iniciarComponentes();
     }
     
@@ -39,7 +39,8 @@ public class PanelCampo extends JPanel{
         for (int f = 0; f < gl.getRows(); f++) {
             for (int c = 0; c < gl.getColumns(); c++) {
                 valorCampo[f][c] = 0;
-                campo[f][c] = new JButton(valorCampo[f][c]+"");
+                //campo[f][c] = new JButton(valorCampo[f][c]+"");
+                campo[f][c] = new JButton();
                 campo[f][c].setPreferredSize(new Dimension(60, 60));
                 campo[f][c].setBackground(Color.WHITE);
                 this.add(campo[f][c]);

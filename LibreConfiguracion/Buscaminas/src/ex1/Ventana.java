@@ -16,10 +16,11 @@ import javax.swing.JFrame;
  */
 public class Ventana extends JFrame {
     
-    public PanelCampo pc;
+    public panelCampo pc;
     public PanelRight pr;
     public JButton[][] campo;
     public JButton bStart, bExit, bPause;
+    public Semaforo semaforo;
 
     public Ventana(){
         iniciarComponentes();
@@ -29,7 +30,7 @@ public class Ventana extends JFrame {
         Container lienzo = new Container();
         lienzo.setLayout(new BorderLayout());
         
-        pc = new PanelCampo();
+        pc = new panelCampo();
         pr = new PanelRight();
         
         this.campo = pc.campo;
