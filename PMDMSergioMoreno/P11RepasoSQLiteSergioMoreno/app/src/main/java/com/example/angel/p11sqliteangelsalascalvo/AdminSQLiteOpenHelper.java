@@ -3,7 +3,6 @@ package com.example.angel.p11sqliteangelsalascalvo;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.support.annotation.Nullable;
 
 public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
     //IMPORTANTE!!! ELIMINAR ANOTACIONES "@"
@@ -15,7 +14,6 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
     }
 
     //Metodos abstractos que deben ser implementados
-
     //Indicaciones de que se tiene que realizar al crear una base de datos a traves de esta clase
     @Override
     public void onCreate(SQLiteDatabase baseDatos) {
@@ -28,6 +26,7 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
         baseDatos.execSQL("create table articulos (" +
                 "codigo int primary key," +
                 "descripcion text, " +
+                "color text, " +
                 "precio real)");
     }
 

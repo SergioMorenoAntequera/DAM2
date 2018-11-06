@@ -1,6 +1,7 @@
 package com.example.angel.p11sqliteangelsalascalvo;
 
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -12,7 +13,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    private EditText etCodigom, etDescripcionm, etPreciom;
+    private EditText etCodigom, etDescripcionm, etPreciom, etColorm;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
         etCodigom = (EditText) findViewById(R.id.etCodigoProd);
         etDescripcionm = (EditText) findViewById(R.id.etDescripcionProd);
         etPreciom = (EditText) findViewById(R.id.etPrecioProd);
+        etColorm = (EditText) findViewById(R.id.etColorProd);
     }
 
     //No olvidar crear la clase .java para poder administrar y poder crear nuestra base de datos SQLite
@@ -35,9 +37,10 @@ public class MainActivity extends AppCompatActivity {
         String codigoValor = etCodigom.getText().toString();
         String descripcionValor = etDescripcionm.getText().toString();
         String precioValor = etPreciom.getText().toString();
+        String colorValor = etColorm.getText().toString();
 
         //Comprobamos que los campos de texto no se encuentren vacios
-        if (codigoValor.isEmpty()||descripcionValor.isEmpty()||precioValor.isEmpty()) {
+        if (codigoValor.isEmpty()||descripcionValor.isEmpty()||precioValor.isEmpty() || colorValor.isEmpty()) {
             //Cerramos la base de datos para no dejarla abierta
             BaseDeDatos.close();
             Toast.makeText(this, "Debe completar todos los datos del producto", Toast.LENGTH_SHORT).show();
@@ -48,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
             fila.put("codigo", codigoValor);
             fila.put("descripcion", descripcionValor);
             fila.put("precio", precioValor);
+            fila.put("color", colorValor);
             //Insertar fila en una tabla
             BaseDeDatos.insert("articulos", null, fila);
 
@@ -59,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
         etCodigom.setText("");
         etDescripcionm.setText("");
         etPreciom.setText("");
+        etColorm.setText("");
 
         //Indicar al usuario que se ha añadido el producto
         Toast.makeText(this, "Producto insertado!", Toast.LENGTH_SHORT).show();
@@ -75,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
         //Comprbar que no esté vacío el código del producto
         if(!codigo.isEmpty()){
             //Creamos la sentencia SQL para poder coger los datos juntando la misma con nuestros datos(codigo)
-            String consulta = "SELECT descripcion, precio FROM articulos WHERE codigo = " + codigo;
+            String consulta = "SELECT descripcion, precio, color FROM articulos WHERE codigo = " + codigo;
 
             //Cremaos el cursor para que me referencie los datos devueltos por la consultaSQL
             Cursor fila = BaseDeDatos.rawQuery(consulta, null);
@@ -88,8 +93,10 @@ public class MainActivity extends AppCompatActivity {
                 etDescripcionm.setText(fila.getString(0));
                 //0 aquí no es el codigo si no la descripción porque no estamos cogiendo la tabla si no la consulta
                 etPreciom.setText(fila.getString(1));
-                //Recordamos que la tabla era:  Codigo // Descripcion // Precio
-                //Pero nuestra consulta es :    Descripcion // Precio (Select descripcion, precio)
+                //Ahí arriba va 1 y ahora el 2 con el color
+                etColorm.setText(fila.getString(2));
+                //Recordamos que la tabla era:  Codigo // Descripcion // Precio // Color
+                //Pero nuestra consulta es :    Descripcion // Precio // Color (Select descripcion, precio, Color)
 
             } else {
                 //Esto significa que no hay ni 1 dato en la consulta(Que el codigo no existe)
@@ -116,13 +123,13 @@ public class MainActivity extends AppCompatActivity {
         String codigoValor = etCodigom.getText().toString();
         String descripcionValor = etDescripcionm.getText().toString();
         String precioValor = etPreciom.getText().toString();
+        String colorValor = etColorm.getText().toString();
 
         //Comprobamos que los campos de texto no se encuentren vacios
-        if (codigoValor.isEmpty() || descripcionValor.isEmpty() || precioValor.isEmpty()) {
+        if (codigoValor.isEmpty() || descripcionValor.isEmpty() || precioValor.isEmpty() || colorValor.isEmpty()) {
             //Cerramos la base de datos para no dejarla abierta
             BaseDeDatos.close();
             Toast.makeText(this, "Debe completar todos los datos del producto", Toast.LENGTH_SHORT).show();
-
         }else{
             //Si no estan vacios
             //Creamos la fila que vamos a añadir, la instanciamos y añadimos los valores a cada una de sus columnas
@@ -130,8 +137,9 @@ public class MainActivity extends AppCompatActivity {
             fila.put("codigo", codigoValor);
             fila.put("descripcion", descripcionValor);
             fila.put("precio", precioValor);
-            //Modificar una fila en la tabla(La descripcion o el precio)
-            //Parametros necesarios Tabla // La fila nueva // Parte Where de una consulta SQL // null
+            fila.put("color", colorValor);
+            //Modificar una fila en la tabla(La descripcion, el precio o el color)
+            //Parametros necesarios           Tabla // La fila nueva // Parte Where de una consulta SQL // null
             int nFilas = BaseDeDatos.update("articulos", fila, "codigo = " + codigoValor, null);
             //Esto nos devuelve el numero de filas modificadas por eso es bueno guardar esto en una variable(nFilas)
             if(nFilas > 0){
@@ -151,6 +159,7 @@ public class MainActivity extends AppCompatActivity {
         etCodigom.setText("");
         etDescripcionm.setText("");
         etPreciom.setText("");
+        etColorm.setText("");
     }
 
     //Eliminar un registro de la tabla
@@ -171,7 +180,7 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "Debe introducir el codigo del producto a borrar", Toast.LENGTH_SHORT).show();
         }else{
             //Modificar una fila en la tabla(La descripcion o el precio)
-            //Parametros necesarios                     Tabla             // La fila nueva            // null
+            //Parametros necesarios                     Tabla       // La condicion del codigo          // null
             int nFilas = BaseDeDatos.delete("articulos", "codigo = " + codigoValor, null);
             //Esto nos devuelve el numero de filas modificadas por eso es bueno guardar esto en una variable(nFilas)
             if(nFilas > 0){
@@ -180,6 +189,7 @@ public class MainActivity extends AppCompatActivity {
                 etCodigom.setText("");
                 etDescripcionm.setText("");
                 etPreciom.setText("");
+                etColorm.setText("");
                 Toast.makeText(this, "Articulo eliminado correctamente", Toast.LENGTH_LONG);
 
             } else Toast.makeText(this, "Articulo no encontrado, no modoficado", Toast.LENGTH_LONG);
@@ -188,11 +198,9 @@ public class MainActivity extends AppCompatActivity {
         BaseDeDatos.close();
     }
 
-    //Incluir el color en la tbla y en la base de datos
-    //Listar todos, abre un nuevo activity cin ybn control multiline y un boton de volver que muestre el resultado de la consulta
-
-    //Hacer aplicacion que se llame P11Repaso2 y vamos a hacer lo mismo pero con una base de datos que nos guste
-    //Esa tiene que tener 5 campos
-    //un boton par buscar por otro campo que no sea el codigo y devolver los resultado en el segundo activity
-
+    public void visualizarClick(View view){
+        Intent i = new Intent(this, SecondActivity.class);
+        //Creamos una variable tipo String y se la pasamos
+        startActivity(i);
+    }
 }

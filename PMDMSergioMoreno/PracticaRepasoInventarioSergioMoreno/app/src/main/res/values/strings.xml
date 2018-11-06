@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">PracticaRepasoComidasSergioMoreno</string>
+    <string name="sID">ID de la comida</string>
+    <string name="sNombre">Nombre de la comida(Principal)</string>
+    <string name="sPrecio">Precio de la comida</string>
+    <string name="sTipo">Tipo de comida</string>
+    <string name="sOrigen">Origen de la comida</string>
+
+    <string name="sRegistrar">Registrar</string>
+    <string name="sBuscar">Buscar</string>
+    <string name="sModificar">Modificar</string>
+    <string name="sEliminar">Eliminar</string>
+    <string name="sVisualizar">Visualizar</string>
+
+    <!-- Activity 2 -->
+    <string name="sAtras">Atras</string>
+
+</resources>
