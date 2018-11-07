@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">P14reporductorAudioSergioMoreno</string>
+    <string name="sSoundPool">Audio Sound Pool</string>
+    <string name="sMediaPlayer">Audio Media Player</string>
+
+</resources>
