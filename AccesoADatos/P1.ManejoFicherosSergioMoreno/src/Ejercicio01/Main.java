@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package Ejercicio01;
-import crearFichero.Departamento;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -33,12 +32,12 @@ public class Main {
             Object aux = ois.readObject();
 
             // Mientras haya objetos
-            while (aux != null) {
+            /*while (aux != null) {
                 if (aux instanceof Departamento) {
                     System.out.println(aux);  // Se escribe en pantalla el objeto
                 }
                 aux = ois.readObject();
-            }
+            }*/
             ois.close();
             
             File file = new File("Departamentos.xml");

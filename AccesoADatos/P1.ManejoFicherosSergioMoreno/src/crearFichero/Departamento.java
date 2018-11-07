@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package crearFichero;
-
 import java.io.Serializable;
 
 /**
