@@ -25,12 +25,12 @@ public class Consultas {
             result = sentencia.executeQuery(consultaDepartamentos);
 
             while(result.next()){
-                System.out.printf("%2d  %-15s  %s\n", result.getInt(1),
+                System.out.printf("%2d  %-15s  %s\n", result.getInt(1), 
                         result.getString("dNombre"), result.getString(3));
             }
             
         } catch (Exception ex) {
-            System.err.println(ex);
+            System.err.println(ex.toString());
         } finally {
             if(result != null){
                 try {
