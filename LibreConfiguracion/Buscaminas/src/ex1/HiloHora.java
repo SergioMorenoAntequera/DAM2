@@ -55,9 +55,11 @@ public class HiloHora extends Thread{
             Logger.getLogger(HiloHora.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    
     public void setSeguir(boolean seguir) {
         this.seguir = seguir;
     }
-    
-    
+    public boolean getSeguir() {
+        return seguir;
+    }
 }

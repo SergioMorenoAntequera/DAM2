@@ -42,8 +42,9 @@ public class panelCampo extends JPanel{
                 //campo[f][c] = new JButton(valorCampo[f][c]+"");
                 campo[f][c] = new JButton();
                 campo[f][c].setPreferredSize(new Dimension(60, 60));
-                campo[f][c].setBackground(Color.WHITE);
+                //campo[f][c].setBackground(Color.BLACK);
                 this.add(campo[f][c]);
+                campo[f][c].setEnabled(false);
                 //campo[f][c].addActionListener(new Control(this));
             }
         }
