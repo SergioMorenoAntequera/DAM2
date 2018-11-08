@@ -13,16 +13,16 @@ import java.io.Serializable;
 
 public class Departamento implements Serializable {
     
-    private int id;
+    private String id;
     private String tipo;
     private String nombre;
     private String domicilio;
     private String ciudad;
-    private int cp;
+    private String cp;
     private String provincia;
     private String pais;
 
-    public Departamento(int id, String tipo, String nombre, String domicilio, String ciudad, int cp, String provincia, String pais) {
+    public Departamento(String id, String tipo, String nombre, String domicilio, String ciudad, String cp, String provincia, String pais) {
         this.id = id;
         this.tipo = tipo;
         this.nombre = nombre;
@@ -34,10 +34,10 @@ public class Departamento implements Serializable {
     }
     
     //Getters y setters
-    public int getId() {
+    public String getId() {
         return id;
     }
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
     public String getTipo() {
@@ -64,10 +64,10 @@ public class Departamento implements Serializable {
     public void setCiudad(String ciudad) {
         this.ciudad = ciudad;
     }
-    public int getCp() {
+    public String getCp() {
         return cp;
     }
-    public void setCp(int cp) {
+    public void setCp(String cp) {
         this.cp = cp;
     }
     public String getProvincia() {
@@ -82,7 +82,4 @@ public class Departamento implements Serializable {
     public void setPais(String pais) {
         this.pais = pais;
     }
-    
-    
-    
 }

@@ -1,1 +1,33 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><Departamentos><Departamento><ID>1</ID><Tipo>Clientes</Tipo><Nombre>Atencion al cliente</Nombre><Domicilio>C/ Lopan</Domicilio><Ciudad>Almeria</Ciudad><CP>04007</CP><Provincia>Almeria</Provincia><Pais>Espania</Pais></Departamento><Departamento><ID>2</ID><Tipo>Clientes</Tipo><Nombre>Servicio al cliente</Nombre><Domicilio>C/ Madrid</Domicilio><Ciudad>Madrid</Ciudad><CP>03221</CP><Provincia>Madrid</Provincia><Pais>Espania</Pais></Departamento><Departamento><ID>3</ID><Tipo>Ventas</Tipo><Nombre>Venta al publico</Nombre><Domicilio>C/ Murdia</Domicilio><Ciudad>Berlin</Ciudad><CP>04044</CP><Provincia>Berlin</Provincia><Pais>Alemania</Pais></Departamento></Departamentos>
+<?xml version="1.0" encoding="UTF-8"?>
+<Departamentos>
+<departamento>
+  <id>1</id>
+  <tipo>Clientes</tipo>
+  <nombre>Atencion al cliente</nombre>
+  <domicilio>C/ Lopan</domicilio>
+  <ciudad>Almeria</ciudad>
+  <cp>04007</cp>
+  <provincia>Almeria</provincia>
+  <pais>Espania</pais>
+</departamento>
+<departamento>
+  <id>2</id>
+  <tipo>Clientes</tipo>
+  <nombre>Servicio al cliente</nombre>
+  <domicilio>C/ Madrid</domicilio>
+  <ciudad>Madrid</ciudad>
+  <cp>03221</cp>
+  <provincia>Madrid</provincia>
+  <pais>Espania</pais>
+</departamento>
+<departamento>
+  <id>3</id>
+  <tipo>Ventas</tipo>
+  <nombre>Venta al publico</nombre>
+  <domicilio>C/ Murdia</domicilio>
+  <ciudad>Berlin</ciudad>
+  <cp>04044</cp>
+  <provincia>Berlin</provincia>
+  <pais>Alemania</pais>
+</departamento>
+</Departamentos>

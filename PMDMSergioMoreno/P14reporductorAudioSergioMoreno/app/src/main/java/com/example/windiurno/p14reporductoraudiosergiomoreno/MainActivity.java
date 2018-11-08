@@ -1,6 +1,7 @@
 package com.example.windiurno.p14reporductoraudiosergiomoreno;
 
 import android.media.AudioManager;
+import android.media.MediaPlayer;
 import android.media.SoundPool;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -34,5 +35,12 @@ public class MainActivity extends AppCompatActivity {
 
     public void SoundPoolClick(View v){
         sp.play(sonidoReproduccion, 1, 1, 1, 1, 0);
+    }
+
+    public void AudioMediaPlayerClick(View v){
+        //Crear un objeto MediaPlayer(contexto, sonido de R.raw, t)
+        //evento Start para empezar el sonido
+        MediaPlayer mp = MediaPlayer.create(this, R.raw.sonidolargo);
+        mp.start();
     }
 }

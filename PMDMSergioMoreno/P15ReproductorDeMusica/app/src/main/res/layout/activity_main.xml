@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/ivPortada"
+        android:layout_width="wrap_content"
+        android:layout_height="380dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/portada1" />
+
+    <ImageButton
+        android:id="@+id/ibPlay"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="48dp"
+        android:background="@drawable/reproducir"
+        android:onClick="PlayPauseClick"
+        app:layout_constraintEnd_toStartOf="@+id/ibParar"
+        app:layout_constraintStart_toEndOf="@+id/ibRepetir"
+        app:layout_constraintTop_toBottomOf="@+id/ivPortada" />
+
+    <ImageButton
+        android:id="@+id/ibAnterior"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/anterior"
+        android:onClick="anteriorClick"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivPortada" />
+
+    <ImageButton
+        android:id="@+id/ibSiguiente"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/siguiente"
+        android:onClick="siguienteClick"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivPortada" />
+
+    <ImageButton
+        android:id="@+id/ibParar"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/detener"
+        android:onClick="stopClick"
+        app:layout_constraintEnd_toStartOf="@+id/ibSiguiente"
+        app:layout_constraintTop_toBottomOf="@+id/ivPortada" />
+
+    <ImageButton
+        android:id="@+id/ibRepetir"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/no_repetir"
+        app:layout_constraintStart_toEndOf="@+id/ibAnterior"
+        app:layout_constraintTop_toBottomOf="@+id/ivPortada" />
+</android.support.constraint.ConstraintLayout>
