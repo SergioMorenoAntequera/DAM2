@@ -13,14 +13,16 @@ import javax.swing.JFrame;
  */
 public class Main {
     public static void main(String[] args){
-        Juego j = new Juego();
         
-        Ventana v = new Ventana("PONG", j);
-        v.setSize(new Dimension(300, 400));
+        Ventana v = new Ventana("PONG", new Dimension(300, 400));
         v.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         v.setLocationRelativeTo(null);
+        v.setResizable(false);
         
         new Thread(v).start();
+        //La linea de arriba y las de abajo son lo mismo
+        //Thread hilo = new Thread(mv);
+        //hilo.start();
         
         v.setVisible(true);
     }

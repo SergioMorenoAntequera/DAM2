@@ -23,6 +23,7 @@
         android:layout_height="50dp"
         android:layout_marginStart="4dp"
         android:layout_marginTop="152dp"
+        android:onClick="AudioMediaPlayerClick"
         android:text="@string/sMediaPlayer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
