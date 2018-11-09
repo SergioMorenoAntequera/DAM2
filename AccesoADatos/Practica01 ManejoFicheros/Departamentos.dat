@@ -1,24 +1,27 @@
-1
-Clientes
-Atencion al cliente
-C/ Lopan
-Almeria
-04007
-Almeria
-Espania
-2
-Clientes
-Servicio al cliente
-C/ Madrid
-Madrid
-03221
-Madrid
-Espania
-3
-Ventas
-Venta al publico
-C/ Murdia
-Berlin
-04044
-Berlin
-Alemania
+ID: 1
+Tipo: Clientes
+Nombre: Atencion al cliente
+Domicilio: C/ Lopan
+Ciudad: Almeria
+cp: 04007
+Provincia: Almeria
+Pais: Espania
+
+ID: 2
+Tipo: Clientes
+Nombre: Servicio al cliente
+Domicilio: C/ Madrid
+Ciudad: Madrid
+cp: 03221
+Provincia: Madrid
+Pais: Espania
+
+ID: 3
+Tipo: Ventas
+Nombre: Venta al publico
+Domicilio: C/ Murdia
+Ciudad: Berlin
+cp: 04044
+Provincia: Berlin
+Pais: Alemania
+
