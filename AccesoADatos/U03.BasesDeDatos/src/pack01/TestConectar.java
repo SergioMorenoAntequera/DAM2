@@ -16,7 +16,7 @@ public class TestConectar {
             //Seleccionar la base de datos
             
             //********UN MODO**********(Me funciona)
-            String connectionUrl = "jdbc:mysql://localhost/empresa?" + "user=root&password=admin&useSSL=false";
+            String connectionUrl = "jdbc:mysql://localhost/empresaz?" + "user=root&password=admin&useSSL=false";
             Connection con = DriverManager.getConnection(connectionUrl);
             
             //********OTRO MODO*******(No me funciona)
