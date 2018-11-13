@@ -11,5 +11,6 @@
     <property name="hibernate.query.factory_class">org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory</property>
     <mapping resource="empresaz/entity/Departamentos.hbm.xml"/>
     <mapping resource="empresaz/entity/Empleados.hbm.xml"/>
+    <mapping resource="empresaz/entity/Tabla01.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>

@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 13-nov-2018 8:40:41 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="empresaz.entity.Tabla01" table="tabla01" catalog="empresaz" optimistic-lock="version">
+        <composite-id name="id" class="empresaz.entity.Tabla01Id">
+            <key-property name="columna1" type="int">
+                <column name="Columna1" />
+            </key-property>
+            <key-property name="columna2" type="int">
+                <column name="Columna2" />
+            </key-property>
+        </composite-id>
+        <property name="columna3" type="java.lang.Integer">
+            <column name="Columna3" />
+        </property>
+        <property name="columna4" type="java.lang.Integer">
+            <column name="Columna4" />
+        </property>
+        <property name="columna5" type="java.lang.Integer">
+            <column name="Columna5" />
+        </property>
+    </class>
+</hibernate-mapping>
