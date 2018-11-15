@@ -69,6 +69,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="36dp"
         android:background="@drawable/no_repetir"
+        android:onClick="repetirClick"
         app:layout_constraintStart_toEndOf="@+id/ibAnterior"
         app:layout_constraintTop_toBottomOf="@+id/ivPortada" />
 </android.support.constraint.ConstraintLayout>

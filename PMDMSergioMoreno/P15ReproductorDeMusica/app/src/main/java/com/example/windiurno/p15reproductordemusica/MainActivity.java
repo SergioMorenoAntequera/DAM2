@@ -94,9 +94,16 @@ public class MainActivity extends AppCompatActivity {
 
     public void repetirClick(View v){
         if(repetir == 1){ //No repetir
+            Toast.makeText(this, "Repetir: OFF", Toast.LENGTH_LONG).show();
+            ibRepetirm.setBackgroundResource(R.drawable.no_repetir);
+            vectorMp[posicion].setLooping(false);
+            repetir = 2;
 
         } else {
-
+            Toast.makeText(this, "Repetir: ON", Toast.LENGTH_LONG).show();
+            ibRepetirm.setBackgroundResource(R.drawable.repetir);
+            vectorMp[posicion].setLooping(true);
+            repetir = 1;
         }
     }
 
