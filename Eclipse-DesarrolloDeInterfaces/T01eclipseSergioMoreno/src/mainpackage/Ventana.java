@@ -41,6 +41,7 @@ public class Ventana extends JFrame {
 			arcSalir = new JMenuItem("Salir");
 		mReservas = new JMenu("Reservar");
 			resAlta = new JMenuItem("Alta Reservas");
+			resAlta.addActionListener(e -> generarVentanaModal());
 			resBaja = new JMenuItem("Baja Reservas");
 		mAyuda = new JMenu("Ayuda");
 			ayuAcerca = new JMenuItem("Acerca de...");
@@ -87,6 +88,7 @@ public class Ventana extends JFrame {
 		panel.setLayout(new FlowLayout());
 		bReservar = new JButton("REALIZAR RESERVA");
 		bReservar.setFont(new Font("Calibri", Font.BOLD , 40));
+		bReservar.addActionListener(e -> generarVentanaModal());
 		panel.add(bReservar);
 		this.add(panel);
 		
@@ -103,5 +105,10 @@ public class Ventana extends JFrame {
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		Image icon = new ImageIcon("logoHotel.png").getImage();
 		this.setIconImage(icon);
+	}
+	
+	public void generarVentanaModal() {
+		VentanaModal vm = new VentanaModal();
+		vm.setVisible(true);
 	}
 }
