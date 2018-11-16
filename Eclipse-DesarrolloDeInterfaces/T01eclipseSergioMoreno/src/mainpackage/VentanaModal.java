@@ -1,4 +1,5 @@
 package mainpackage;
+import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.Image;
@@ -10,7 +11,7 @@ import javax.swing.JFrame;
 public class VentanaModal extends JFrame{
 	
 	private static final long serialVersionUID = 1L;
-	Panel01 panel01 = new Panel01(this);
+	Panel01 panel01 = new Panel01();
 	Panel02 Panel02 = new Panel02(this);
 	
 	
@@ -30,10 +31,9 @@ public class VentanaModal extends JFrame{
 
 	public void iniciarComponentes() {
 		Container lienzo = getContentPane();
-		lienzo.setLayout(new BoxLayout(lienzo, BoxLayout.Y_AXIS));
+		lienzo.setLayout(new BorderLayout(10, 10));
 		
-		lienzo.add(panel01);
-		lienzo.add(Panel02);
-		
+		lienzo.add(panel01, BorderLayout.NORTH);
+		lienzo.add(Panel02, BorderLayout.WEST);
 	}
 }
