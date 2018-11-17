@@ -49,7 +49,8 @@ public class Servidor1 {
                     }
                 }
                 System.out.println("Datos que llegan: " + datosTxt);
-                byte[] respuestaBytes = datosTxt.getBytes();
+                System.out.println("Respuesta: " + respuesta);
+                byte[] respuestaBytes = respuesta.getBytes();
                 //Como este lo vamos a mandar hay que meterle la ip y el puerto al que va
                 //Que en este caso son de los que vienen
                 DatagramPacket enviado = new DatagramPacket(respuestaBytes, respuestaBytes.length, recibido.getAddress(), recibido.getPort());

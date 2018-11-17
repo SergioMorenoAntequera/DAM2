@@ -13,11 +13,11 @@ public class Semaforo {
     
     private boolean pausado;
     
-    public Semaforo(boolean b){
-        pausado=b;
+    public Semaforo(){
+        pausado = false;
     }
 
-    public boolean isPausado() {
+    public boolean getPausado() {
         return pausado;
     }
 

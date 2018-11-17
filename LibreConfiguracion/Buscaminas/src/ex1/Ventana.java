@@ -37,6 +37,7 @@ public class Ventana extends JFrame {
         for (int f = 0; f < campo.length; f++) {
             for (int c = 0; c < campo[f].length; c++) {
                 campo[f][c].addActionListener(new Control(this));
+                campo[f][c].addMouseListener(new Control(this));
             }
         }
 

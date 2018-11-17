@@ -15,16 +15,19 @@ import javax.swing.JTextField;
 public class HiloHora extends Thread{
 
     JTextField panel;
-    boolean seguir = true;
+    Semaforo semaforo;
+    int min, seg;
     
-    public HiloHora(JTextField panel){
+    public HiloHora(JTextField panel, Semaforo semaforo){
         this.panel = panel;
+        this.semaforo = semaforo;
+        min = 0; 
+        seg = 0;
     }
     
     @Override
     public void run() {
-        int min = 0, seg = 0;
-        while(seguir){
+        while(!semaforo.getPausado()) {
             this.panel.setText(contruirHora(min, seg));
             //System.out.println(contruirHora(min, seg));
             esperarSeg();
@@ -34,7 +37,6 @@ public class HiloHora extends Thread{
                 min++;
             }
         }
-        
     }
     
     public static String contruirHora(int min, int seg){
@@ -46,8 +48,7 @@ public class HiloHora extends Thread{
         if(min<10 && seg<10)
             result = "0" + min + ":" + "0" + seg;
         return result;
-    }
-    
+    } 
     public static void esperarSeg(){
         try {
             Thread.sleep(1000);
@@ -55,11 +56,5 @@ public class HiloHora extends Thread{
             Logger.getLogger(HiloHora.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
-    public void setSeguir(boolean seguir) {
-        this.seguir = seguir;
-    }
-    public boolean getSeguir() {
-        return seguir;
-    }
+
 }

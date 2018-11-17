@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package ex1;
+
 import java.awt.Color;
 import java.awt.event.*;
 import javax.swing.Icon;
@@ -16,24 +17,26 @@ import javax.swing.JOptionPane;
  * @author windiurno
  */
 public class Control implements ActionListener, MouseListener {
-    
+
     Ventana v;
     int[][] valorCampo;
     JButton[][] botonesCampo;
     Semaforo semaforo;
     HiloHora hilo;
     JButton casillaPulsada;
-   
-    public Control(Ventana v){
+    int banderasRestantes = 10;
+
+    public Control(Ventana v) {
         this.v = v;
         iniciarComponentes();
     }
-    
-    private void iniciarComponentes(){
+
+    private void iniciarComponentes() {
         valorCampo = v.pc.valorCampo;
         botonesCampo = v.pc.campo;
+        semaforo = new Semaforo();
         
-        hilo = new HiloHora(v.pr.tfTiempo);
+        hilo = new HiloHora(v.pr.tfTiempo, semaforo);
     }
 
     //==============//
@@ -46,17 +49,17 @@ public class Control implements ActionListener, MouseListener {
             ponerAvisos();
             hilo.start();
             //v.pr.bStart.setEnabled(false);
-            
+
             //Activamos casillas
             for (int f = 0; f < botonesCampo.length; f++) {
-            for (int c = 0; c < botonesCampo[f].length; c++) {
-                botonesCampo[f][c].setEnabled(true);
+                for (int c = 0; c < botonesCampo[f].length; c++) {
+                    botonesCampo[f][c].setEnabled(true);
+                }
             }
         }
-        }
         if (e.getSource() == v.bPause) {
-            hilo.setSeguir(false);
             v.pr.bPause.setEnabled(false);
+            semaforo.setPausado(true);
         }
         if (e.getSource() == v.bExit) {
             System.exit(0);
@@ -72,35 +75,38 @@ public class Control implements ActionListener, MouseListener {
                     //********PERDER********//
                     //======================//
                     if (valorCampo[f][c] == 9) {
-                        //Y en el resto  de bombas te pone bombas
-                        for (int i = 0; i < botonesCampo.length; i++) 
-                            for (int j = 0; j < botonesCampo[i].length; j++) 
-                               if (valorCampo[i][j] == 9){
-                                   botonesCampo[i][j].setIcon(new ImageIcon("src/source/bomb.png"));
-                                   botonesCampo[i][j].setEnabled(false);
-                               }      
+                        //Y en el resto  de bombas te pone las marcas
+                        for (int i = 0; i < botonesCampo.length; i++) {
+                            for (int j = 0; j < botonesCampo[i].length; j++) {
+                                if (valorCampo[i][j] == 9) {
+                                    botonesCampo[i][j].setIcon(new ImageIcon("src/source/bomb.png"));
+                                    botonesCampo[i][j].setEnabled(false);
+                                }
+                            }
+                        }
                         //Si tocas una mina te pone una explosion en el sitio donde tocaste
                         botonesCampo[f][c].setIcon(new ImageIcon("src/source/explosion.png"));
                         botonesCampo[f][c].setBackground(Color.red);
                         JOptionPane.showMessageDialog(null, "FUCKING DEAD", "Looser", JOptionPane.WARNING_MESSAGE);
                         //Falta:
-                            //Hacer que se termine la partida
-                            //Parar el reloj
+                        //Hacer que se termine la partida
+                        //Parar el reloj
                     }
                     //*********NEUTRAL*******//
                     //=======================//
-                    if(valorCampo[f][c] > 0 && valorCampo[f][c] < 9){
-                        botonesCampo[f][c].setText(valorCampo[f][c]+"");
+                    if (valorCampo[f][c] > 0 && valorCampo[f][c] < 9) {
+                        botonesCampo[f][c].setText(valorCampo[f][c] + "");
                         botonesCampo[f][c].setEnabled(false);
                     }
                     //*********NADA**********//
                     //=======================//
-                    if(valorCampo[f][c] == 0){
-                        botonesCampo[f][c].setText(valorCampo[f][c]+"");
+                    if (valorCampo[f][c] == 0) {
+                        botonesCampo[f][c].setEnabled(false);
+                        mirarAlrededor(f, c);
                     }
-                    
-                    System.out.println("Casilla f:" + f + "  c:" + c);
-                    System.out.println("Valor: " + valorCampo[f][c]);
+
+                    /*System.out.println("Casilla f:" + f + "  c:" + c);
+                     System.out.println("Valor: " + valorCampo[f][c]);*/
                 }
             }
         }
@@ -170,36 +176,79 @@ public class Control implements ActionListener, MouseListener {
         }
     }
 
+    private void mirarAlrededor(int f, int c) {
+        for (int i = -1; i < 2; i++) {
+            for (int j = -1; j < 2; j++) {
+                if ((f + i) <= valorCampo.length - 1 && (f + i) >= 0) {
+                    if ((c + j) <= valorCampo[f].length - 1 && (c + j) >= 0) {
+                        //Alredores: f =(f + i) / c = (c + j)
+                        int fAux = (f + i);
+                        int cAux = (c + j);
+
+                        if (valorCampo[fAux][cAux] < 9 && valorCampo[fAux][cAux] > 0) {
+                            botonesCampo[fAux][cAux].setEnabled(false);
+                            botonesCampo[fAux][cAux].setText(valorCampo[fAux][cAux] + "");
+                        }
+                        if (valorCampo[fAux][cAux] == 0) {
+                            botonesCampo[fAux][cAux].setEnabled(false);
+                            //mirarAlrededor(fAux, cAux);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     //=============//
     //MouseListener//
     //=============//
     @Override
-    public void mouseClicked(MouseEvent e) { //Elegir mina
-        for (int i = 0; i < valorCampo.length; i++) {
-            for (int j = 0; j < valorCampo[i].length; j++) {
-                
-                
+    public void mouseClicked(MouseEvent e) {
+        casillaPulsada = (JButton) e.getSource();
+        Icon iconoBandera = new ImageIcon("src/source/flag.png");
+
+        for (int f = 0; f < valorCampo.length; f++) {
+            for (int c = 0; c < valorCampo[f].length; c++) {
+                if (casillaPulsada == botonesCampo[f][c] && e.getButton() == MouseEvent.BUTTON3) {
+                    //conseguimos la casilla
+                    if(banderasRestantes > 0) {
+                        if (botonesCampo[f][c].getIcon() == null) {
+                            botonesCampo[f][c].setIcon(new ImageIcon("src/source/flag.png"));
+                            banderasRestantes--;
+                        } else {
+                            botonesCampo[f][c].setIcon(null);
+                            banderasRestantes++;
+                        }
+                    } else {
+                        for (int f1 = 0; f1 < valorCampo.length; f1++) {
+                            for (int c1 = 0; c1 < valorCampo[f].length; c1++) {
+                                
+                            }
+                        }
+                    }
+
+                }
             }
         }
     }
 
     @Override
     public void mousePressed(MouseEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
     }
 
     @Override
     public void mouseReleased(MouseEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
     }
 
     @Override
     public void mouseEntered(MouseEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
     }
 
     @Override
     public void mouseExited(MouseEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
     }
 }
