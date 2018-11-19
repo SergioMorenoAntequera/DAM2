@@ -21,10 +21,8 @@ public class Control implements ActionListener, MouseListener {
     Ventana v;
     int[][] valorCampo;
     JButton[][] botonesCampo;
-    Semaforo semaforo;
-    HiloHora hilo;
     JButton casillaPulsada;
-    int banderasRestantes = 10;
+    int banderasColocadas = 0;
 
     public Control(Ventana v) {
         this.v = v;
@@ -34,9 +32,6 @@ public class Control implements ActionListener, MouseListener {
     private void iniciarComponentes() {
         valorCampo = v.pc.valorCampo;
         botonesCampo = v.pc.campo;
-        semaforo = new Semaforo();
-        
-        hilo = new HiloHora(v.pr.tfTiempo, semaforo);
     }
 
     //==============//
@@ -44,10 +39,18 @@ public class Control implements ActionListener, MouseListener {
     //==============//
     @Override
     public void actionPerformed(ActionEvent e) {
+            
         if (e.getSource() == v.bStart) {
+            for (int f = 0; f < botonesCampo.length; f++) {
+                for (int c = 0; c < botonesCampo[f].length; c++) {
+                    botonesCampo[f][c].setText("");
+                    botonesCampo[f][c].setIcon(null);
+                    botonesCampo[f][c].setBackground(new JButton().getBackground());
+                    valorCampo[f][c] = 0;
+                }
+            }
             ponerMinas();
             ponerAvisos();
-            hilo.start();
             //v.pr.bStart.setEnabled(false);
 
             //Activamos casillas
@@ -59,11 +62,11 @@ public class Control implements ActionListener, MouseListener {
         }
         if (e.getSource() == v.bPause) {
             v.pr.bPause.setEnabled(false);
-            semaforo.setPausado(true);
         }
         if (e.getSource() == v.bExit) {
             System.exit(0);
         }
+        
         //Aquí obtenemos la casilla que pulsamos comparándolas todas con el e.getsource
         casillaPulsada = (JButton) e.getSource();
         for (int f = 0; f < botonesCampo.length; f++) {
@@ -84,10 +87,11 @@ public class Control implements ActionListener, MouseListener {
                                 }
                             }
                         }
+                        
                         //Si tocas una mina te pone una explosion en el sitio donde tocaste
                         botonesCampo[f][c].setIcon(new ImageIcon("src/source/explosion.png"));
                         botonesCampo[f][c].setBackground(Color.red);
-                        JOptionPane.showMessageDialog(null, "FUCKING DEAD", "Looser", JOptionPane.WARNING_MESSAGE);
+                        JOptionPane.showMessageDialog(null, "Has perdido!", "FIN DEL JUEGO", JOptionPane.WARNING_MESSAGE);
                         //Falta:
                         //Hacer que se termine la partida
                         //Parar el reloj
@@ -204,29 +208,31 @@ public class Control implements ActionListener, MouseListener {
     //=============//
     @Override
     public void mouseClicked(MouseEvent e) {
+        //Poner banceritas
         casillaPulsada = (JButton) e.getSource();
         Icon iconoBandera = new ImageIcon("src/source/flag.png");
+        Icon iconoBandera2 = new ImageIcon("src/source/q2.png");
 
         for (int f = 0; f < valorCampo.length; f++) {
             for (int c = 0; c < valorCampo[f].length; c++) {
-                if (casillaPulsada == botonesCampo[f][c] && e.getButton() == MouseEvent.BUTTON3) {
+                if (casillaPulsada == botonesCampo[f][c] && e.getButton() == MouseEvent.BUTTON3 && botonesCampo[f][c].isEnabled()) {
+                    System.out.println(banderasColocadas);
                     //conseguimos la casilla
-                    if(banderasRestantes > 0) {
+                    //Si nos quedan banderas
+                    if (banderasColocadas < 10) {
+                        //Si no hay nada(null) ponemos la bandera normal
                         if (botonesCampo[f][c].getIcon() == null) {
-                            botonesCampo[f][c].setIcon(new ImageIcon("src/source/flag.png"));
-                            banderasRestantes--;
+                            botonesCampo[f][c].setIcon(iconoBandera);
+                            banderasColocadas++;
                         } else {
-                            botonesCampo[f][c].setIcon(null);
-                            banderasRestantes++;
-                        }
-                    } else {
-                        for (int f1 = 0; f1 < valorCampo.length; f1++) {
-                            for (int c1 = 0; c1 < valorCampo[f].length; c1++) {
-                                
+                            //Si hay la normal lo quitamos
+                            if (botonesCampo[f][c].getIcon() == iconoBandera) {
+                                botonesCampo[f][c].setIcon(null);
+                                banderasColocadas--;
                             }
                         }
+                        v.pr.tfMinas.setText(banderasColocadas+"/10");
                     }
-
                 }
             }
         }
@@ -236,17 +242,14 @@ public class Control implements ActionListener, MouseListener {
     public void mousePressed(MouseEvent e) {
 
     }
-
     @Override
     public void mouseReleased(MouseEvent e) {
 
     }
-
     @Override
     public void mouseEntered(MouseEvent e) {
 
     }
-
     @Override
     public void mouseExited(MouseEvent e) {
 

@@ -21,6 +21,7 @@ public class Ventana extends JFrame {
     public JButton[][] campo;
     public JButton bStart, bExit, bPause;
     public Semaforo semaforo;
+    public HiloHora hilo;
 
     public Ventana(){
         iniciarComponentes();
@@ -47,6 +48,8 @@ public class Ventana extends JFrame {
         bStart.addActionListener(new Control(this));
         bPause.addActionListener(new Control(this));
         bExit.addActionListener(new Control(this));
+        
+        
         
         lienzo.add(pc, BorderLayout.CENTER);
         lienzo.add(pr, BorderLayout.EAST);

@@ -12,7 +12,7 @@ import javax.swing.JTextField;
  *
  * @author windiurno
  */
-public class HiloHora extends Thread{
+public class HiloHora extends Thread {
 
     JTextField panel;
     Semaforo semaforo;
@@ -27,18 +27,20 @@ public class HiloHora extends Thread{
     
     @Override
     public void run() {
-        while(!semaforo.getPausado()) {
-            this.panel.setText(contruirHora(min, seg));
-            //System.out.println(contruirHora(min, seg));
-            esperarSeg();
-            seg++;
-            if(seg>60){
-                seg-=60;
-                min++;
+        while (true) {
+            while (semaforo.getPausado()) {
+                this.panel.setText(contruirHora(min, seg));
+                //System.out.println(contruirHora(min, seg));
+                esperarSeg();
+                seg++;
+                if (seg > 60) {
+                    seg -= 60;
+                    min++;
+                }
             }
         }
     }
-    
+
     public static String contruirHora(int min, int seg){
         String result = "";
         if(min < 10)
