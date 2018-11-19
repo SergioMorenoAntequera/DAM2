@@ -183,19 +183,18 @@ public class Control implements ActionListener, MouseListener {
     private void mirarAlrededor(int f, int c) {
         for (int i = -1; i < 2; i++) {
             for (int j = -1; j < 2; j++) {
-                if ((f + i) <= valorCampo.length - 1 && (f + i) >= 0) {
-                    if ((c + j) <= valorCampo[f].length - 1 && (c + j) >= 0) {
+                int fAux = (f + i);
+                int cAux = (c + j);
+                if (fAux <= valorCampo.length - 1 && fAux >= 0) {
+                    if (cAux <= valorCampo[fAux].length - 1 && cAux >= 0) {
                         //Alredores: f =(f + i) / c = (c + j)
-                        int fAux = (f + i);
-                        int cAux = (c + j);
-
                         if (valorCampo[fAux][cAux] < 9 && valorCampo[fAux][cAux] > 0) {
                             botonesCampo[fAux][cAux].setEnabled(false);
                             botonesCampo[fAux][cAux].setText(valorCampo[fAux][cAux] + "");
                         }
                         if (valorCampo[fAux][cAux] == 0) {
                             botonesCampo[fAux][cAux].setEnabled(false);
-                            //mirarAlrededor(fAux, cAux);
+                            mirarAlrededor(fAux, cAux);
                         }
                     }
                 }

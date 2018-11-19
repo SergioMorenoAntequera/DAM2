@@ -9,11 +9,10 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 
 public class VentanaModal extends JFrame{
-	
 	private static final long serialVersionUID = 1L;
 	Panel01 panel01 = new Panel01();
 	Panel02 Panel02 = new Panel02(this);
-	
+	Panel03 panel03 = new Panel03(this);
 	
 	public VentanaModal() {
 		iniciarVentana();
@@ -22,6 +21,7 @@ public class VentanaModal extends JFrame{
 	
 	public void iniciarVentana() {
 		this.setAlwaysOnTop(true);
+		this.setExtendedState(6);
 		Toolkit tk = Toolkit.getDefaultToolkit();
 		this.setSize(new Dimension(tk.getScreenSize().width, tk.getScreenSize().height));
 		this.setTitle("Alta reserva");
@@ -35,5 +35,6 @@ public class VentanaModal extends JFrame{
 		
 		lienzo.add(panel01, BorderLayout.NORTH);
 		lienzo.add(Panel02, BorderLayout.WEST);
+		lienzo.add(panel03, BorderLayout.CENTER);
 	}
 }
