@@ -194,7 +194,7 @@ public class Control implements ActionListener, MouseListener {
                         }
                         if (valorCampo[fAux][cAux] == 0) {
                             botonesCampo[fAux][cAux].setEnabled(false);
-                            mirarAlrededor(fAux, cAux);
+                            //mirarAlrededor(fAux, cAux);
                         }
                     }
                 }
