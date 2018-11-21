@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">P17MultilanguajeSergioMoreno</string>
+
+    <string name="setUsuario">Username</string>
+    <string name="setContrasena">Password</string>
+    <string name="sbLogin">Log in</string>
+    <string name="setDerechos">All rights reserved</string>
+
+
+</resources>

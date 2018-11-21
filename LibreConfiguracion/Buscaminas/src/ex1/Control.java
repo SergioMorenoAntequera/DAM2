@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package ex1;
-
 import java.awt.Color;
 import java.awt.event.*;
 import javax.swing.Icon;
@@ -22,7 +21,7 @@ public class Control implements ActionListener, MouseListener {
     int[][] valorCampo;
     JButton[][] botonesCampo;
     JButton casillaPulsada;
-    int banderasColocadas = 0;
+    static int banderasColocadas = 0;
 
     public Control(Ventana v) {
         this.v = v;
@@ -183,6 +182,7 @@ public class Control implements ActionListener, MouseListener {
     private void mirarAlrededor(int f, int c) {
         for (int i = -1; i < 2; i++) {
             for (int j = -1; j < 2; j++) {
+                if(f==i && c == j) break;
                 int fAux = (f + i);
                 int cAux = (c + j);
                 if (fAux <= valorCampo.length - 1 && fAux >= 0) {
@@ -192,9 +192,9 @@ public class Control implements ActionListener, MouseListener {
                             botonesCampo[fAux][cAux].setEnabled(false);
                             botonesCampo[fAux][cAux].setText(valorCampo[fAux][cAux] + "");
                         }
-                        if (valorCampo[fAux][cAux] == 0) {
+                        if (valorCampo[fAux][cAux] == 0 && botonesCampo[fAux][cAux].isEnabled()) {
                             botonesCampo[fAux][cAux].setEnabled(false);
-                            //mirarAlrededor(fAux, cAux);
+                            mirarAlrededor(fAux, cAux);
                         }
                     }
                 }
@@ -215,7 +215,6 @@ public class Control implements ActionListener, MouseListener {
         for (int f = 0; f < valorCampo.length; f++) {
             for (int c = 0; c < valorCampo[f].length; c++) {
                 if (casillaPulsada == botonesCampo[f][c] && e.getButton() == MouseEvent.BUTTON3 && botonesCampo[f][c].isEnabled()) {
-                    System.out.println(banderasColocadas);
                     //conseguimos la casilla
                     //Si nos quedan banderas
                     if (banderasColocadas < 10) {
@@ -224,13 +223,22 @@ public class Control implements ActionListener, MouseListener {
                             botonesCampo[f][c].setIcon(iconoBandera);
                             banderasColocadas++;
                         } else {
+                            System.out.println("Bandera2");
                             //Si hay la normal lo quitamos
                             if (botonesCampo[f][c].getIcon() == iconoBandera) {
-                                botonesCampo[f][c].setIcon(null);
+                                
+                                botonesCampo[f][c].setIcon(iconoBandera2);
                                 banderasColocadas--;
+                            } else {
+                                
+                                if(botonesCampo[f][c].getIcon() == iconoBandera2){
+                                    botonesCampo[f][c].setIcon(null);
+                                }
                             }
                         }
                         v.pr.tfMinas.setText(banderasColocadas+"/10");
+                    } else {
+                        
                     }
                 }
             }

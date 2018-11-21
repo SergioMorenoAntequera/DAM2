@@ -19,10 +19,18 @@ public class Ventana03 extends JFrame implements Runnable{
     
     Dimension dim;
     Juego03 j;
+    static boolean terminado;
+    long tiempoJuego;
+    int vInicio;
+    int tiempo;
     
     public Ventana03(String titulo, Dimension dim){
         super(titulo);
         this.dim = dim;
+        
+        vInicio = 12;
+        tiempoJuego = System.currentTimeMillis();
+        
         iniciarComponentes();
     }
     
@@ -36,14 +44,19 @@ public class Ventana03 extends JFrame implements Runnable{
 
     @Override
     public void run() {
-        while (true) {
+        int velocidadActual = vInicio;
+        while (!terminado) {
+            if(tiempo == 5 && velocidadActual > 1){
+                velocidadActual -=1;
+                tiempoJuego = System.currentTimeMillis();
+            }
             j.mover();
             j.repaint();
             try {
-                Thread.sleep(5);
-            } catch (InterruptedException ex) {
-                Logger.getLogger(Ventana03.class.getName()).log(Level.SEVERE, null, ex);
-            }
+                Thread.sleep(velocidadActual);
+                
+            } catch (InterruptedException ex) {}
+            tiempo = (int)((System.currentTimeMillis()-tiempoJuego)/1000);
         }
     }
 }

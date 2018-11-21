@@ -6,6 +6,7 @@
 package juego03;
 import java.awt.Color;
 import java.awt.Graphics2D;
+import java.awt.Rectangle;
 import java.awt.RenderingHints;
 import java.awt.event.KeyEvent;
 
@@ -16,7 +17,7 @@ import java.awt.event.KeyEvent;
 public class Raqueta03 {
     
     Juego03 j;
-    int x = 30, xd = 0;
+    int x = 120, xd = 0;
     
     public Raqueta03(Juego03 j){
         this.j = j;
@@ -52,9 +53,12 @@ public class Raqueta03 {
             xd = 1;
         }
     }
-    
     public void soltarTecla(KeyEvent ke){
         xd = 0;
+    }
+    //------------
+    public Rectangle devolverRaqueta(){
+        return new Rectangle(x, 300, 60, 20);
     }
     
 }

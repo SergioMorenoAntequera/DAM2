@@ -7,7 +7,9 @@ package juego03;
 import juego02.*;
 import java.awt.Color;
 import java.awt.Graphics2D;
+import java.awt.Rectangle;
 import java.awt.RenderingHints;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -32,15 +34,28 @@ public class Bola03 {
     }
     
     public void moverBola(){
-        x += dx;
-        y += dy;
-        if(x > (Juego03.dim.width-tamBola) || x < 0){
+        
+        if(x+dx > (game.getWidth()-tamBola) || x < 0)
             dx *= -1;
-        }
-        //No es 350 (y-tamaño bola) porque también hay que contar la barra de arriba de la ventana
-        if(y > (Juego03.dim.height-tamBola-20) || y < 0){
+        if(y+dy > (game.getHeight()-tamBola) || y < 0)
+            dy *= -1;
+        if(y==game.getHeight()-tamBola)
+            gameOver();
+        
+        if(game.miRaqueta.devolverRaqueta().intersects(game.miBola.devolverPelota())){
             dy *= -1;
         }
+        
+        x += dx;
+        y += dy;
     }
     
+    public void gameOver(){
+        Ventana03.terminado=true;
+        JOptionPane.showMessageDialog(game, "Game Over!!!");
+    }
+    
+    public Rectangle devolverPelota(){
+        return new Rectangle(x, y, tamBola, tamBola);
+    }
 }

@@ -41,6 +41,11 @@ public class Ventana extends javax.swing.JFrame {
 
         bReservar.setText("Hacer Reserva");
         bReservar.setActionCommand("bHacerReserva");
+        bReservar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bReservarActionPerformed(evt);
+            }
+        });
 
         mArchivo.setText("Archivo");
 
@@ -98,6 +103,10 @@ public class Ventana extends javax.swing.JFrame {
     private void miSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miSalirActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_miSalirActionPerformed
+
+    private void bReservarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bReservarActionPerformed
+        //vDialogo vD = new vDialogo();
+    }//GEN-LAST:event_bReservarActionPerformed
 
     /**
      * @param args the command line arguments

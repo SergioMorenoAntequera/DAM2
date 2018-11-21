@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">P17MultilenguajeSergioMoreno</string>
+
+    <string name="setUsuario">Usuario</string>
+    <string name="setContrasena">Contraseña</string>
+    <string name="sbLogin">Iniciar Sesion</string>
+    <string name="setDerechos">Todos los derechos reservados</string>
+
+</resources>
