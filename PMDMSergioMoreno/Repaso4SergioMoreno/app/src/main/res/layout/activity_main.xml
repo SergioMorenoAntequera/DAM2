@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".MainActivity">
+
+    <ScrollView
+        android:id="@+id/cvListaCanciones"
+        android:layout_width="363dp"
+        android:layout_height="329dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <ImageButton
+                android:id="@+id/ibCancion1"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:onClick="ElegirCancion"
+                app:srcCompat="@drawable/portada1" />
+
+            <ImageButton
+                android:id="@+id/ibCancion2"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:onClick="ElegirCancion"
+                app:srcCompat="@drawable/portada2" />
+
+            <ImageButton
+                android:id="@+id/ibCancion3"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:onClick="ElegirCancion"
+                app:srcCompat="@drawable/portada1" />
+
+            <ImageButton
+                android:id="@+id/ibCancion4"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:onClick="ElegirCancion"
+                app:srcCompat="@drawable/portada2" />
+
+            <ImageButton
+                android:id="@+id/ibGrabacion"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:onClick="ElegirCancion"
+                app:srcCompat="@drawable/portada3" />
+        </LinearLayout>
+    </ScrollView>
+
+    <ImageButton
+        android:id="@+id/ibPlay"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="25dp"
+        android:background="@drawable/reproducir"
+        android:onClick="PlayPauseClick"
+        app:layout_constraintEnd_toStartOf="@+id/ibParar"
+        app:layout_constraintStart_toEndOf="@+id/ibRepetir"
+        app:layout_constraintTop_toBottomOf="@+id/cvListaCanciones" />
+
+    <ImageButton
+        android:id="@+id/ibAnterior"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/anterior"
+        android:onClick="anteriorClick"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cvListaCanciones" />
+
+    <ImageButton
+        android:id="@+id/ibSiguiente"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/siguiente"
+        android:onClick="siguienteClick"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cvListaCanciones" />
+
+    <ImageButton
+        android:id="@+id/ibParar"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="28dp"
+        android:background="@drawable/detener"
+        android:onClick="stopClick"
+        app:layout_constraintEnd_toStartOf="@+id/ibSiguiente"
+        app:layout_constraintTop_toBottomOf="@+id/cvListaCanciones" />
+
+    <ImageButton
+        android:id="@+id/ibRepetir"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/no_repetir"
+        android:onClick="repetirClick"
+        app:layout_constraintStart_toEndOf="@+id/ibAnterior"
+        app:layout_constraintTop_toBottomOf="@+id/cvListaCanciones" />
+
+    <ImageButton
+        android:id="@+id/ibGrabar"
+        android:layout_width="48dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="167dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="167dp"
+        android:background="@drawable/stop_rec"
+        android:onClick="grabarClick"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ibPlay" />
+</android.support.constraint.ConstraintLayout>
