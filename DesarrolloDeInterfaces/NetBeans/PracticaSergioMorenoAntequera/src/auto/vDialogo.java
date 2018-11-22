@@ -47,9 +47,7 @@ public class vDialogo extends javax.swing.JDialog {
         etNDias = new javax.swing.JLabel();
         tfNDias = new javax.swing.JTextField();
         etTipoHabitacion = new javax.swing.JLabel();
-        tfTipoHabitacion = new javax.swing.JTextField();
         etNHabitaciones = new javax.swing.JLabel();
-        tfNHabitaciones = new javax.swing.JTextField();
         etNinios = new javax.swing.JLabel();
         cbNinios = new javax.swing.JCheckBox();
         jPanel1 = new javax.swing.JPanel();
@@ -57,12 +55,20 @@ public class vDialogo extends javax.swing.JDialog {
         cbEdad = new javax.swing.JComboBox();
         tfEdad = new javax.swing.JTextField();
         etImg = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox();
+        SpinnerNumberModel model1 = new SpinnerNumberModel(1, 0, 50, 1);
+        jSpinner1 = new javax.swing.JSpinner(model1);
         panel04 = new javax.swing.JTabbedPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(144, 219, 222));
         setPreferredSize(new java.awt.Dimension(572, 800));
         setSize(getMaximumSize());
+        addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentHidden(java.awt.event.ComponentEvent evt) {
+                formComponentHidden(evt);
+            }
+        });
 
         panel01.setBackground(new java.awt.Color(30, 123, 126));
 
@@ -145,7 +151,7 @@ public class vDialogo extends javax.swing.JDialog {
                 .addComponent(etTelefono)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(tfTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(49, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         panel03.setBackground(new java.awt.Color(30, 123, 126));
@@ -194,6 +200,8 @@ public class vDialogo extends javax.swing.JDialog {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Simple", "Double", "Suite" }));
+
         javax.swing.GroupLayout panel03Layout = new javax.swing.GroupLayout(panel03);
         panel03.setLayout(panel03Layout);
         panel03Layout.setHorizontalGroup(
@@ -202,37 +210,37 @@ public class vDialogo extends javax.swing.JDialog {
                 .addContainerGap()
                 .addGroup(panel03Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panel03Layout.createSequentialGroup()
-                        .addComponent(etFechaEntrada)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(tfFechaEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(panel03Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(panel03Layout.createSequentialGroup()
-                            .addComponent(etFechaSalida)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(tfFechaSalida, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panel03Layout.createSequentialGroup()
-                            .addGroup(panel03Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(etTipoHabitacion)
-                                .addComponent(etNHabitaciones)
-                                .addComponent(etNDias))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addGroup(panel03Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(tfNDias)
-                                .addComponent(tfTipoHabitacion)
+                        .addGroup(panel03Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(panel03Layout.createSequentialGroup()
+                                .addComponent(etFechaEntrada)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(tfFechaEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(panel03Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addGroup(panel03Layout.createSequentialGroup()
-                                    .addComponent(tfNHabitaciones, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(0, 0, Short.MAX_VALUE))))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panel03Layout.createSequentialGroup()
-                            .addGroup(panel03Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(etNinios)
-                                .addGroup(panel03Layout.createSequentialGroup()
-                                    .addGap(14, 14, 14)
-                                    .addComponent(cbNinios)))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(etImg, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE)
-                .addContainerGap())
+                                    .addComponent(etFechaSalida)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(tfFechaSalida, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panel03Layout.createSequentialGroup()
+                                    .addGroup(panel03Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(etNinios)
+                                        .addGroup(panel03Layout.createSequentialGroup()
+                                            .addGap(14, 14, 14)
+                                            .addComponent(cbNinios)))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(etImg, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE)
+                        .addContainerGap())
+                    .addGroup(panel03Layout.createSequentialGroup()
+                        .addGroup(panel03Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(etTipoHabitacion)
+                            .addComponent(etNHabitaciones)
+                            .addComponent(etNDias))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(panel03Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(tfNDias, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
         );
         panel03Layout.setVerticalGroup(
             panel03Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -257,11 +265,11 @@ public class vDialogo extends javax.swing.JDialog {
                 .addGap(18, 18, 18)
                 .addGroup(panel03Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(etTipoHabitacion)
-                    .addComponent(tfTipoHabitacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(panel03Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(etNHabitaciones)
-                    .addComponent(tfNHabitaciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(panel03Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panel03Layout.createSequentialGroup()
@@ -289,7 +297,7 @@ public class vDialogo extends javax.swing.JDialog {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(68, 68, 68)
                         .addComponent(panel01, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -312,6 +320,11 @@ public class vDialogo extends javax.swing.JDialog {
     private void tfNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfNombreActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tfNombreActionPerformed
+
+    private void formComponentHidden(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_formComponentHidden
+        // TODO add your handling code here:
+       
+    }//GEN-LAST:event_formComponentHidden
 
     /**
      * @param args the command line arguments
@@ -350,6 +363,8 @@ public class vDialogo extends javax.swing.JDialog {
                         System.exit(0);
                     }
                 });
+                
+                
                 dialog.setVisible(true);
             }
         });
@@ -371,7 +386,9 @@ public class vDialogo extends javax.swing.JDialog {
     private javax.swing.JLabel etTelefono;
     private javax.swing.JLabel etTipoHabitacion;
     private javax.swing.JLabel etTitulo;
+    private javax.swing.JComboBox jComboBox1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JSpinner jSpinner1;
     private javax.swing.JPanel panel01;
     private javax.swing.JPanel panel02;
     private javax.swing.JPanel panel03;
@@ -382,9 +399,7 @@ public class vDialogo extends javax.swing.JDialog {
     private javax.swing.JTextField tfFechaEntrada;
     private javax.swing.JTextField tfFechaSalida;
     private javax.swing.JTextField tfNDias;
-    private javax.swing.JTextField tfNHabitaciones;
     private javax.swing.JTextField tfNombre;
     private javax.swing.JTextField tfTelefono;
-    private javax.swing.JTextField tfTipoHabitacion;
     // End of variables declaration//GEN-END:variables
 }

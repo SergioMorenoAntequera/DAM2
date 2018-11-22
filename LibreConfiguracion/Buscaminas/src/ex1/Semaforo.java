@@ -11,16 +11,16 @@ package ex1;
  */
 public class Semaforo {
     
-    private boolean pausado;
+    private boolean activo;
     
-    public Semaforo(boolean pausado){
-        this.pausado = pausado;
+    public Semaforo(boolean activo){
+        this.activo = activo;
     }
-    public boolean getPausado() {
-        return pausado;
+    public boolean getActivo() {
+        return activo;
     }
-    public void setPausado(boolean pausado) {
-        this.pausado = pausado;
+    public void setActivo(boolean activo) {
+        this.activo = activo;
     }
     
 }

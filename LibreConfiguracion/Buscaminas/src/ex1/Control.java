@@ -35,6 +35,7 @@ public class Control implements ActionListener, MouseListener {
         botonesCampo = v.pc.campo;
     }
 
+    
     //==============//
     //ActionListener//
     //==============//
@@ -49,6 +50,7 @@ public class Control implements ActionListener, MouseListener {
                     botonesCampo[f][c].setBackground(new JButton().getBackground());
                     valorCampo[f][c] = 0;
                     banderasColocadas = 0;
+                    minasDescubiertas = 0;
                     v.pr.tfMinas.setText("0/10");
                 }
             }
@@ -57,15 +59,10 @@ public class Control implements ActionListener, MouseListener {
             if (!v.hilo.isAlive()) {
                 v.hilo.start();
            } else{
-                if (v.semaforo.getPausado()) {
-                    v.semaforo.setPausado(false);
+                if (v.semaforo.getActivo()) {
+                    v.semaforo.setActivo(false);
                 }
             }
-                
-            
-
-            //v.pr.bStart.setEnabled(false);
-
             //Activamos casillas
             for (int f = 0; f < botonesCampo.length; f++) {
                 for (int c = 0; c < botonesCampo[f].length; c++) {
@@ -76,13 +73,18 @@ public class Control implements ActionListener, MouseListener {
         if (e.getSource() == v.bPause) {
             if(!v.hilo.isAlive()){
                 v.hilo.start();
-                
             }else {
-                v.semaforo.setPausado(false);
-                v.pr.bPause.setText("SEGUIR");
-                
+                if(v.semaforo.getActivo()){
+                    
+                    v.semaforo.setActivo(false);
+                    v.pr.bPause.setText("SEGUIR");
+                    
+                } else {
+                    v.semaforo.setActivo(true);
+                    v.pr.bPause.setText("PAUSAR");
+                }
+                          
             }
-            //v.pr.bPause.setEnabled(false);
         }
         if (e.getSource() == v.bExit) {
             System.exit(0);
@@ -121,8 +123,7 @@ public class Control implements ActionListener, MouseListener {
         }
     }
 
-   
-
+    
     //===============//
     //Metodos creados//
     //===============//
@@ -239,45 +240,38 @@ public class Control implements ActionListener, MouseListener {
         //Poner banceritas
         casillaPulsada = (JButton) e.getSource();
         Icon iconoBandera = new ImageIcon("src/source/flag.png");
-        Icon iconoBandera2 = new ImageIcon("src/source/q2.png");
-        
+
         for (int f = 0; f < valorCampo.length; f++) {
             for (int c = 0; c < valorCampo[f].length; c++) {
                 if (casillaPulsada == botonesCampo[f][c] && e.getButton() == MouseEvent.BUTTON3 && botonesCampo[f][c].isEnabled()) {
                     //conseguimos la casilla
+                    
                     //Si nos quedan banderas
                     if (banderasColocadas < 10) {
                         //Si no hay nada(null) ponemos la bandera normal
                         if (botonesCampo[f][c].getIcon() == null) {
                             botonesCampo[f][c].setIcon(iconoBandera);
-                            if(valorCampo[f][c] == 9){
+                            if (valorCampo[f][c] == 9) {
                                 minasDescubiertas++;
-                                System.out.println("A " + minasDescubiertas);
                             }
                             banderasColocadas++;
                         } else {
-                            //Si hay la normal lo quitamos
+                            //Si hay una bandera de icono la quitamos
                             if (botonesCampo[f][c].getIcon() == iconoBandera) {
-                                
-                                botonesCampo[f][c].setIcon(iconoBandera2);
+                                botonesCampo[f][c].setIcon(null);
                                 banderasColocadas--;
-                            } else {
-                                
-                                if(botonesCampo[f][c].getIcon() == iconoBandera2){
-                                    botonesCampo[f][c].setIcon(null);
-                                }
                             }
                         }
-                        v.pr.tfMinas.setText(banderasColocadas+"/10");
-                        
-                    } else {
+                        v.pr.tfMinas.setText(banderasColocadas + "/10");
+                    }
+                    if (banderasColocadas == 10) {
 
-                        if(minasDescubiertas == v.pc.nMinas){
+                        if (minasDescubiertas == v.pc.nMinas) {
                             System.out.println("GANADOR" + minasDescubiertas);
                         } else {
                             System.out.println("Perdedor " + minasDescubiertas);
                         }
-                        
+
                     }
                 }
             }

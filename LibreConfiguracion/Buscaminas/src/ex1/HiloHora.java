@@ -28,7 +28,7 @@ public class HiloHora extends Thread {
     @Override
     public void run() {
         while (true) {
-            while (semaforo.getPausado()) {
+            while (semaforo.getActivo()) {
                 this.panel.setText(contruirHora(min, seg));
                 //System.out.println(contruirHora(min, seg));
                 esperarSeg();
