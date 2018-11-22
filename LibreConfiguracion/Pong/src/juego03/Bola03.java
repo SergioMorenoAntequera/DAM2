@@ -35,11 +35,16 @@ public class Bola03 {
     
     public void moverBola(){
         
-        if(x+dx > (game.getWidth()-tamBola) || x < 0)
+        if(x+dx > (game.getWidth()-tamBola) || x < 0){
             dx *= -1;
-        if(y+dy > (game.getHeight()-tamBola) || y < 0)
+            Sonidos.SOUNDPELOTA.play();
+        }
+        if(y+dy > (game.getHeight()-tamBola) || y < 0){
             dy *= -1;
+            Sonidos.SOUNDPELOTA.play();
+    }
         if(y==game.getHeight()-tamBola)
+            Sonidos.SOUNDGAMEOVER.play();
             gameOver();
         
         if(game.miRaqueta.devolverRaqueta().intersects(game.miBola.devolverPelota())){

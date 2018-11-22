@@ -5,6 +5,7 @@
  */
 package ex1;
 import java.awt.Color;
+import java.awt.HeadlessException;
 import java.awt.event.*;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -22,7 +23,8 @@ public class Control implements ActionListener, MouseListener {
     JButton[][] botonesCampo;
     JButton casillaPulsada;
     static int banderasColocadas = 0;
-
+    static int minasDescubiertas = 0;
+    
     public Control(Ventana v) {
         this.v = v;
         iniciarComponentes();
@@ -46,10 +48,22 @@ public class Control implements ActionListener, MouseListener {
                     botonesCampo[f][c].setIcon(null);
                     botonesCampo[f][c].setBackground(new JButton().getBackground());
                     valorCampo[f][c] = 0;
+                    banderasColocadas = 0;
+                    v.pr.tfMinas.setText("0/10");
                 }
             }
             ponerMinas();
             ponerAvisos();
+            if (!v.hilo.isAlive()) {
+                v.hilo.start();
+           } else{
+                if (v.semaforo.getPausado()) {
+                    v.semaforo.setPausado(false);
+                }
+            }
+                
+            
+
             //v.pr.bStart.setEnabled(false);
 
             //Activamos casillas
@@ -60,7 +74,15 @@ public class Control implements ActionListener, MouseListener {
             }
         }
         if (e.getSource() == v.bPause) {
-            v.pr.bPause.setEnabled(false);
+            if(!v.hilo.isAlive()){
+                v.hilo.start();
+                
+            }else {
+                v.semaforo.setPausado(false);
+                v.pr.bPause.setText("SEGUIR");
+                
+            }
+            //v.pr.bPause.setEnabled(false);
         }
         if (e.getSource() == v.bExit) {
             System.exit(0);
@@ -77,23 +99,7 @@ public class Control implements ActionListener, MouseListener {
                     //********PERDER********//
                     //======================//
                     if (valorCampo[f][c] == 9) {
-                        //Y en el resto  de bombas te pone las marcas
-                        for (int i = 0; i < botonesCampo.length; i++) {
-                            for (int j = 0; j < botonesCampo[i].length; j++) {
-                                if (valorCampo[i][j] == 9) {
-                                    botonesCampo[i][j].setIcon(new ImageIcon("src/source/bomb.png"));
-                                    botonesCampo[i][j].setEnabled(false);
-                                }
-                            }
-                        }
-                        
-                        //Si tocas una mina te pone una explosion en el sitio donde tocaste
-                        botonesCampo[f][c].setIcon(new ImageIcon("src/source/explosion.png"));
-                        botonesCampo[f][c].setBackground(Color.red);
-                        JOptionPane.showMessageDialog(null, "Has perdido!", "FIN DEL JUEGO", JOptionPane.WARNING_MESSAGE);
-                        //Falta:
-                        //Hacer que se termine la partida
-                        //Parar el reloj
+                        perder(f, c);
                     }
                     //*********NEUTRAL*******//
                     //=======================//
@@ -114,6 +120,8 @@ public class Control implements ActionListener, MouseListener {
             }
         }
     }
+
+   
 
     //===============//
     //Metodos creados//
@@ -143,6 +151,7 @@ public class Control implements ActionListener, MouseListener {
                 if (valorCampo[filaRandom][columRandom] == 0) {
                     valido = true;
                     valorCampo[filaRandom][columRandom] = 9;
+                    botonesCampo[filaRandom][columRandom].setText("B");
                     //botonesCampo[filaRandom][columRandom].setText(valorCampo[filaRandom][columRandom] + "");
                 }
             }
@@ -201,6 +210,26 @@ public class Control implements ActionListener, MouseListener {
             }
         }
     }
+    
+     private void perder(int f, int c) throws HeadlessException {
+        //Y en el resto  de bombas te pone las marcas
+        for (int i = 0; i < botonesCampo.length; i++) {
+            for (int j = 0; j < botonesCampo[i].length; j++) {
+                if (valorCampo[i][j] == 9) {
+                    botonesCampo[i][j].setIcon(new ImageIcon("src/source/bomb.png"));
+                    botonesCampo[i][j].setEnabled(false);
+                }
+            }
+        }
+        
+        //Si tocas una mina te pone una explosion en el sitio donde tocaste
+        botonesCampo[f][c].setIcon(new ImageIcon("src/source/explosion.png"));
+        botonesCampo[f][c].setBackground(Color.red);
+        JOptionPane.showMessageDialog(null, "Has perdido!", "FIN DEL JUEGO", JOptionPane.WARNING_MESSAGE);
+        //Falta:
+        //Hacer que se termine la partida
+        //Parar el reloj
+    }
 
     //=============//
     //MouseListener//
@@ -211,7 +240,7 @@ public class Control implements ActionListener, MouseListener {
         casillaPulsada = (JButton) e.getSource();
         Icon iconoBandera = new ImageIcon("src/source/flag.png");
         Icon iconoBandera2 = new ImageIcon("src/source/q2.png");
-
+        
         for (int f = 0; f < valorCampo.length; f++) {
             for (int c = 0; c < valorCampo[f].length; c++) {
                 if (casillaPulsada == botonesCampo[f][c] && e.getButton() == MouseEvent.BUTTON3 && botonesCampo[f][c].isEnabled()) {
@@ -221,9 +250,12 @@ public class Control implements ActionListener, MouseListener {
                         //Si no hay nada(null) ponemos la bandera normal
                         if (botonesCampo[f][c].getIcon() == null) {
                             botonesCampo[f][c].setIcon(iconoBandera);
+                            if(valorCampo[f][c] == 9){
+                                minasDescubiertas++;
+                                System.out.println("A " + minasDescubiertas);
+                            }
                             banderasColocadas++;
                         } else {
-                            System.out.println("Bandera2");
                             //Si hay la normal lo quitamos
                             if (botonesCampo[f][c].getIcon() == iconoBandera) {
                                 
@@ -237,14 +269,20 @@ public class Control implements ActionListener, MouseListener {
                             }
                         }
                         v.pr.tfMinas.setText(banderasColocadas+"/10");
+                        
                     } else {
+
+                        if(minasDescubiertas == v.pc.nMinas){
+                            System.out.println("GANADOR" + minasDescubiertas);
+                        } else {
+                            System.out.println("Perdedor " + minasDescubiertas);
+                        }
                         
                     }
                 }
             }
         }
     }
-
     @Override
     public void mousePressed(MouseEvent e) {
 

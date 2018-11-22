@@ -14,7 +14,7 @@ public class Semaforo {
     private boolean pausado;
     
     public Semaforo(boolean pausado){
-        pausado = pausado;
+        this.pausado = pausado;
     }
     public boolean getPausado() {
         return pausado;

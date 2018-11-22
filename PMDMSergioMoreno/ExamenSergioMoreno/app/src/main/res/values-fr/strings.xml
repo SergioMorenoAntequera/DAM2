@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ExamenSergioMoreno</string>
+
+    <string name="setUsuario">Utilisateur</string>
+    <string name="setContra">Mot de passe</string>
+    <string name="sbEntrar">Commencer la session</string>
+
+    <string name="setUsuarioo">Nom dutilisateur</string>
+    <string name="bAtras">Derrière</string>
+</resources>

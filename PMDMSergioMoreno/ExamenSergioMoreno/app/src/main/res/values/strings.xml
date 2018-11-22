@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">ExamenSergioMoreno</string>
+
+    <string name="setUsuario">Usuario</string>
+    <string name="setContra">Contraseña</string>
+    <string name="sbEntrar">Iniciar Sesion</string>
+
+    <string name="setUsuarioo">Nombre Usuario</string>
+    <string name="bAtras">Atras</string>
+
+</resources>

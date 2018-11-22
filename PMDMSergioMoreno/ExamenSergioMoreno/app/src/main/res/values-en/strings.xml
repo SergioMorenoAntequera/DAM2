@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ExamSergioMoreno</string>
+
+    <string name="setUsuario">User Name</string>
+    <string name="setContra">PassWord</string>
+    <string name="sbEntrar">Log in</string>
+
+    <string name="setUsuarioo">UserName</string>
+    <string name="bAtras">Return</string>
+</resources>

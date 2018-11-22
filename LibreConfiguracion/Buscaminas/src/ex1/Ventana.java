@@ -49,7 +49,8 @@ public class Ventana extends JFrame {
         bPause.addActionListener(new Control(this));
         bExit.addActionListener(new Control(this));
         
-        
+        semaforo = new Semaforo(true);
+        hilo = new HiloHora(pr.getTfTiempo(), semaforo);
         
         lienzo.add(pc, BorderLayout.CENTER);
         lienzo.add(pr, BorderLayout.EAST);
