@@ -12,17 +12,19 @@ import javax.swing.JOptionPane;
  *
  * @author seran
  */
-public class VDialogo extends javax.swing.JDialog {
+public class Vdialogo extends javax.swing.JDialog {
 
     /**
      * Creates new form vDialogo
      */
-    public VDialogo(java.awt.Frame parent, boolean modal) {
+    public Vdialogo(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        this.setLocationRelativeTo(null);
+        this.setTitle("CUESTIONARIO DE RESERVA");
     }
 
-    VDialogo() {
+    Vdialogo() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -69,10 +71,10 @@ public class VDialogo extends javax.swing.JDialog {
         panel04 = new javax.swing.JTabbedPane();
         pPersonales = new javax.swing.JPanel();
         ta01 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        area1 = new javax.swing.JTextArea();
         pHabitacion = new javax.swing.JPanel();
-        ta2 = new javax.swing.JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
+        ta02 = new javax.swing.JScrollPane();
+        area2 = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -169,7 +171,7 @@ public class VDialogo extends javax.swing.JDialog {
                 .addComponent(etTelefono)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(tfTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(92, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         etFechaEntrada.setText("Fecha Entrada:");
@@ -177,6 +179,8 @@ public class VDialogo extends javax.swing.JDialog {
         etFechaSalida.setText("Fecha Salida:");
 
         etNDias.setText("Numero dias:");
+
+        tfNDias.setText("1");
 
         etTipoHabitacion.setText("Tipo Habitación:");
 
@@ -253,6 +257,11 @@ public class VDialogo extends javax.swing.JDialog {
         });
 
         bImprimir.setText("Imprimir");
+        bImprimir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bImprimirActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel03Layout = new javax.swing.GroupLayout(jPanel03);
         jPanel03.setLayout(jPanel03Layout);
@@ -340,17 +349,17 @@ public class VDialogo extends javax.swing.JDialog {
                         .addComponent(cbNinios))
                     .addComponent(pNinios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel03Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(bAceptar)
-                    .addComponent(bCancelar))
+                .addGroup(jPanel03Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(bCancelar)
+                    .addComponent(bAceptar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(bImprimir)
                 .addGap(7, 7, 7))
         );
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        ta01.setViewportView(jTextArea1);
+        area1.setColumns(20);
+        area1.setRows(5);
+        ta01.setViewportView(area1);
 
         javax.swing.GroupLayout pPersonalesLayout = new javax.swing.GroupLayout(pPersonales);
         pPersonales.setLayout(pPersonalesLayout);
@@ -364,15 +373,15 @@ public class VDialogo extends javax.swing.JDialog {
         pPersonalesLayout.setVerticalGroup(
             pPersonalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pPersonalesLayout.createSequentialGroup()
-                .addComponent(ta01, javax.swing.GroupLayout.DEFAULT_SIZE, 309, Short.MAX_VALUE)
+                .addComponent(ta01, javax.swing.GroupLayout.DEFAULT_SIZE, 333, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
         panel04.addTab("tab1", pPersonales);
 
-        jTextArea2.setColumns(20);
-        jTextArea2.setRows(5);
-        ta2.setViewportView(jTextArea2);
+        area2.setColumns(20);
+        area2.setRows(5);
+        ta02.setViewportView(area2);
 
         javax.swing.GroupLayout pHabitacionLayout = new javax.swing.GroupLayout(pHabitacion);
         pHabitacion.setLayout(pHabitacionLayout);
@@ -380,13 +389,13 @@ public class VDialogo extends javax.swing.JDialog {
             pHabitacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pHabitacionLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(ta2, javax.swing.GroupLayout.DEFAULT_SIZE, 96, Short.MAX_VALUE)
+                .addComponent(ta02, javax.swing.GroupLayout.DEFAULT_SIZE, 96, Short.MAX_VALUE)
                 .addContainerGap())
         );
         pHabitacionLayout.setVerticalGroup(
             pHabitacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pHabitacionLayout.createSequentialGroup()
-                .addComponent(ta2, javax.swing.GroupLayout.DEFAULT_SIZE, 309, Short.MAX_VALUE)
+                .addComponent(ta02, javax.swing.GroupLayout.DEFAULT_SIZE, 333, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -413,17 +422,17 @@ public class VDialogo extends javax.swing.JDialog {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(100, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(panel02, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(panel04, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel03, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(93, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel03, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(panel04, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(panel02, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
                     .addComponent(panel01, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(398, Short.MAX_VALUE)))
+                    .addContainerGap(386, Short.MAX_VALUE)))
         );
 
         pack();
@@ -433,8 +442,6 @@ public class VDialogo extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_tfNombreActionPerformed
 
-    
-    
     private void tfTelefonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfTelefonoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tfTelefonoActionPerformed
@@ -498,6 +505,34 @@ public class VDialogo extends javax.swing.JDialog {
         JOptionPane.showMessageDialog(this, "Todo guardado correctamente");
     }//GEN-LAST:event_bAceptarActionPerformed
 
+    private void bImprimirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bImprimirActionPerformed
+        String cadena1, cadena2;
+		cadena1 = "Nombre: " + tfNombre.getText() +
+				"\nApellido: " + tfApellidos.getText() +
+				"\nDirección: " + tfDireccion.getText() +
+				"\nTeléfono: " + tfTelefono.getText();
+		area1.setText(cadena1);
+		
+		String aux = "";
+		if (cbTipoHab.getSelectedIndex() == 0) {
+			aux = "Simple";
+		}
+		if (cbTipoHab.getSelectedIndex() == 1) {
+			aux = "Doble";
+		}
+		if (cbTipoHab.getSelectedIndex() == 2) {
+			aux = "Suit";
+		}
+		
+		
+		cadena2 = "Fecha entrada: " + sEntrada.getValue().toString() + 
+				"\nFecha salida: " + sSalida.getValue().toString() + 
+				"\nNumero dias: " + tfNDias.getText() + 
+				"\nOpcion tipo habitacion: " + aux + 
+				"\nNumero habitaciones: " + sNHabitaciones.getValue().toString();
+		area2.setText(cadena2);
+    }//GEN-LAST:event_bImprimirActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -515,22 +550,23 @@ public class VDialogo extends javax.swing.JDialog {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(VDialogo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Vdialogo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(VDialogo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Vdialogo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(VDialogo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Vdialogo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(VDialogo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Vdialogo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>
-       
+        //</editor-fold>
+        //</editor-fold>
         
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                VDialogo dialog = new VDialogo(new javax.swing.JFrame(), true);
+                Vdialogo dialog = new Vdialogo(new javax.swing.JFrame(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {
@@ -544,6 +580,8 @@ public class VDialogo extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextArea area1;
+    private javax.swing.JTextArea area2;
     private javax.swing.JButton bAceptar;
     private javax.swing.JButton bCancelar;
     private javax.swing.JButton bImprimir;
@@ -562,8 +600,6 @@ public class VDialogo extends javax.swing.JDialog {
     private javax.swing.JLabel etTipoHabitacion;
     private javax.swing.JLabel etTitulo;
     private javax.swing.JPanel jPanel03;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextArea jTextArea2;
     private javax.swing.JPanel pHabitacion;
     private javax.swing.JPanel pNinios;
     private javax.swing.JPanel pPersonales;
@@ -575,7 +611,7 @@ public class VDialogo extends javax.swing.JDialog {
     private javax.swing.JSpinner sNHabitaciones;
     private javax.swing.JSpinner sSalida;
     private javax.swing.JScrollPane ta01;
-    private javax.swing.JScrollPane ta2;
+    private javax.swing.JScrollPane ta02;
     private javax.swing.JTextField tfApellidos;
     private javax.swing.JTextField tfDireccion;
     private javax.swing.JTextField tfEdad;
