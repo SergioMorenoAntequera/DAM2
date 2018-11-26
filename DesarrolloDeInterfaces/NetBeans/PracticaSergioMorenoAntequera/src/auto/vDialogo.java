@@ -47,6 +47,7 @@ public class vDialogo extends javax.swing.JDialog {
         etNDias = new javax.swing.JLabel();
         tfNDias = new javax.swing.JTextField();
         etTipoHabitacion = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox();
         etNHabitaciones = new javax.swing.JLabel();
         etNinios = new javax.swing.JLabel();
         cbNinios = new javax.swing.JCheckBox();
@@ -55,7 +56,6 @@ public class vDialogo extends javax.swing.JDialog {
         cbEdad = new javax.swing.JComboBox();
         tfEdad = new javax.swing.JTextField();
         etImg = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox();
         SpinnerNumberModel model1 = new SpinnerNumberModel(1, 0, 50, 1);
         jSpinner1 = new javax.swing.JSpinner(model1);
         panel04 = new javax.swing.JTabbedPane();
@@ -151,7 +151,7 @@ public class vDialogo extends javax.swing.JDialog {
                 .addComponent(etTelefono)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(tfTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(370, Short.MAX_VALUE))
         );
 
         panel03.setBackground(new java.awt.Color(30, 123, 126));
@@ -163,6 +163,8 @@ public class vDialogo extends javax.swing.JDialog {
         etNDias.setText("Numero dias:");
 
         etTipoHabitacion.setText("Tipo Habitación:");
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Simple", "Double", "Suite" }));
 
         etNHabitaciones.setText("Nº Habitaciones:");
 
@@ -197,10 +199,8 @@ public class vDialogo extends javax.swing.JDialog {
                     .addComponent(cbEdad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(tfEdad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
-
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Simple", "Double", "Suite" }));
 
         javax.swing.GroupLayout panel03Layout = new javax.swing.GroupLayout(panel03);
         panel03.setLayout(panel03Layout);
@@ -297,7 +297,7 @@ public class vDialogo extends javax.swing.JDialog {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(68, 68, 68)
                         .addComponent(panel01, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(38, Short.MAX_VALUE))
+                .addContainerGap(84, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -306,9 +306,11 @@ public class vDialogo extends javax.swing.JDialog {
                 .addComponent(panel01, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(panel03, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(panel04)
-                    .addComponent(panel02, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(panel02, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(panel03, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 

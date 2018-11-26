@@ -11,7 +11,7 @@ package ex1;
  */
 public class Semaforo {
     
-    private boolean activo;
+    private static boolean activo;
     
     public Semaforo(boolean activo){
         this.activo = activo;

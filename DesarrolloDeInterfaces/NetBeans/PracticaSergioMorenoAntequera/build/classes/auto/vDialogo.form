@@ -55,7 +55,7 @@
                       <Component id="panel01" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="38" max="32767" attributes="0"/>
+              <EmptySpace pref="84" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -66,9 +66,12 @@
               <Component id="panel01" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="panel03" max="32767" attributes="0"/>
                   <Component id="panel04" alignment="0" max="32767" attributes="0"/>
                   <Component id="panel02" alignment="0" max="32767" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="panel03" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -171,7 +174,7 @@
                   <Component id="etTelefono" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="tfTelefono" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="370" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -348,6 +351,17 @@
             <Property name="text" type="java.lang.String" value="Tipo Habitaci&#xf3;n:"/>
           </Properties>
         </Component>
+        <Component class="javax.swing.JComboBox" name="jComboBox1">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="3">
+                <StringItem index="0" value="Simple"/>
+                <StringItem index="1" value="Double"/>
+                <StringItem index="2" value="Suite"/>
+              </StringArray>
+            </Property>
+          </Properties>
+        </Component>
         <Component class="javax.swing.JLabel" name="etNHabitaciones">
           <Properties>
             <Property name="text" type="java.lang.String" value="N&#xba; Habitaciones:"/>
@@ -392,7 +406,7 @@
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="tfEdad" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace pref="15" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -431,17 +445,6 @@
           </SubComponents>
         </Container>
         <Component class="javax.swing.JLabel" name="etImg">
-        </Component>
-        <Component class="javax.swing.JComboBox" name="jComboBox1">
-          <Properties>
-            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="3">
-                <StringItem index="0" value="Simple"/>
-                <StringItem index="1" value="Double"/>
-                <StringItem index="2" value="Suite"/>
-              </StringArray>
-            </Property>
-          </Properties>
         </Component>
         <Component class="javax.swing.JSpinner" name="jSpinner1">
           <AuxValues>
