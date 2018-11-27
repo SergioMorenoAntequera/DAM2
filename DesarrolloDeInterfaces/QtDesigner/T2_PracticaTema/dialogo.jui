@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0" language="jambi">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>601</width>
+    <height>563</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>20</y>
+     <width>110</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;Datos Cliente&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_DNI">
+   <property name="geometry">
+    <rect>
+     <x>70</x>
+     <y>50</y>
+     <width>25</width>
+     <height>13</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>&amp;DNI</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_Nombre">
+   <property name="geometry">
+    <rect>
+     <x>250</x>
+     <y>50</y>
+     <width>44</width>
+     <height>13</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>&amp;Nombre</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_direccion">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>80</y>
+     <width>50</width>
+     <height>13</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>&amp;Direccion</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_Provincia">
+   <property name="geometry">
+    <rect>
+     <x>280</x>
+     <y>110</y>
+     <width>50</width>
+     <height>13</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>&amp;Provincia</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_Localidad">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>110</y>
+     <width>51</width>
+     <height>13</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>&amp;Localidad</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_Direccion">
+   <property name="geometry">
+    <rect>
+     <x>110</x>
+     <y>80</y>
+     <width>371</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_DNI">
+   <property name="geometry">
+    <rect>
+     <x>110</x>
+     <y>50</y>
+     <width>131</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_Nombre">
+   <property name="geometry">
+    <rect>
+     <x>300</x>
+     <y>50</y>
+     <width>181</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_Localidad">
+   <property name="geometry">
+    <rect>
+     <x>140</x>
+     <y>110</y>
+     <width>131</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_Provincia">
+   <property name="geometry">
+    <rect>
+     <x>342</x>
+     <y>110</y>
+     <width>141</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>160</y>
+     <width>118</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;Datos Reserva&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>120</x>
+     <y>200</y>
+     <width>66</width>
+     <height>13</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Fecha llegada</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>420</x>
+     <y>200</y>
+     <width>60</width>
+     <height>13</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Fecha Salida</string>
+   </property>
+  </widget>
+  <widget class="QCalendarWidget" name="calendar_Llegada">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>220</y>
+     <width>281</width>
+     <height>141</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QCalendarWidget" name="calendar_Salida">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>220</y>
+     <width>281</width>
+     <height>141</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_5">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>380</y>
+     <width>115</width>
+     <height>13</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Número de habitaciones</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_6">
+   <property name="geometry">
+    <rect>
+     <x>250</x>
+     <y>380</y>
+     <width>96</width>
+     <height>13</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Tipo de habitaciones</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="checkBox_fumador">
+   <property name="geometry">
+    <rect>
+     <x>510</x>
+     <y>380</y>
+     <width>65</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Fumador</string>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="spinBox_NHabitaciones">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>380</y>
+     <width>42</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimum">
+    <number>1</number>
+   </property>
+   <property name="maximum">
+    <number>15</number>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="comboBox_tipoHabitacion">
+   <property name="geometry">
+    <rect>
+     <x>360</x>
+     <y>380</y>
+     <width>131</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="editable">
+    <bool>true</bool>
+   </property>
+   <property name="currentIndex">
+    <number>0</number>
+   </property>
+   <item>
+    <property name="text">
+     <string>Simple</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Doble</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Suite</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QGroupBox" name="groupBox_Regimen">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>410</y>
+     <width>158</width>
+     <height>97</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Regimen</string>
+   </property>
+   <widget class="QRadioButton" name="radioButton_Alojamiento">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>20</y>
+      <width>138</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Alojamineto y desayuno</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="radioButton_completa">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>60</y>
+      <width>106</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Pensión completa</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="radioButton_Media">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>40</y>
+      <width>91</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Media Pension</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QLabel" name="label_fumadores">
+   <property name="geometry">
+    <rect>
+     <x>370</x>
+     <y>420</y>
+     <width>143</width>
+     <height>48</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:11pt; font-weight:600;&quot;&gt;Solo se fuma en las&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:11pt; font-weight:600;&quot;&gt; area de fumadores&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_Enviar">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>530</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Enviar</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_Aceptar">
+   <property name="geometry">
+    <rect>
+     <x>410</x>
+     <y>530</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Aceptar</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_Cancelar">
+   <property name="geometry">
+    <rect>
+     <x>490</x>
+     <y>530</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Cancelar</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
