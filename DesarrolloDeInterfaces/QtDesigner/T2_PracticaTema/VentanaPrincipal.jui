@@ -47,7 +47,7 @@
     <property name="geometry">
      <rect>
       <x>410</x>
-      <y>230</y>
+      <y>240</y>
       <width>75</width>
       <height>23</height>
      </rect>
@@ -70,5 +70,22 @@
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>pushButton_salir</sender>
+   <signal>clicked&lt;java.lang.Boolean&gt;</signal>
+   <receiver>MainWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>443</x>
+     <y>277</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>436</x>
+     <y>344</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

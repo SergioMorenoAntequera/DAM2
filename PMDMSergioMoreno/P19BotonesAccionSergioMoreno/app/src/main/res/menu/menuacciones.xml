@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/miCompartir"
+        android:icon="@drawable/compartir"
+        android:title="Compartir"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/miBuscar"
+        android:icon="@drawable/buscar"
+        android:title="Buscar"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/miSalir"
+        android:title="Salir" />
+</menu>

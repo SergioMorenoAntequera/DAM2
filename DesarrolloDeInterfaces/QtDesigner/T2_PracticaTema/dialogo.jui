@@ -394,6 +394,24 @@
    </property>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>lineEdit_DNI</tabstop>
+  <tabstop>lineEdit_Nombre</tabstop>
+  <tabstop>lineEdit_Direccion</tabstop>
+  <tabstop>lineEdit_Localidad</tabstop>
+  <tabstop>lineEdit_Provincia</tabstop>
+  <tabstop>calendar_Llegada</tabstop>
+  <tabstop>calendar_Salida</tabstop>
+  <tabstop>spinBox_NHabitaciones</tabstop>
+  <tabstop>comboBox_tipoHabitacion</tabstop>
+  <tabstop>checkBox_fumador</tabstop>
+  <tabstop>radioButton_Alojamiento</tabstop>
+  <tabstop>radioButton_Media</tabstop>
+  <tabstop>radioButton_completa</tabstop>
+  <tabstop>pushButton_Enviar</tabstop>
+  <tabstop>pushButton_Aceptar</tabstop>
+  <tabstop>pushButton_Cancelar</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

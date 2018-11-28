@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "Ruta valida: " + tarjetaSD.getPath(), Toast.LENGTH_SHORT).show();
 
             //Cremaos un fichero con el nombre que el usuario ha elegido
-            File archivoUsuario = new File(tarjetaSD.getPath(), nombre);
+            //File archivoUsuario = new File(tarjetaSD.getPath(), nombre);
 
             //Abrimos el archivo pero para ESCRIBIR
             OutputStreamWriter miArchivo = new OutputStreamWriter(openFileOutput(nombre, Activity.MODE_PRIVATE));
