@@ -13,33 +13,29 @@ import java.util.Scanner;
  * @author windiurno
  */
 public class HiloHablar extends Thread{
-    ArrayList<PrintWriter> salida;
+    ArrayList<PrintWriter> salidas;
     Scanner teclado = null;
     
-    public HiloHablar(ArrayList<PrintWriter> pw){
-        this.salida = pw;
+    public HiloHablar(ArrayList<PrintWriter> pw) {
+        this.salidas = pw;
         teclado = new Scanner(System.in);
     }
-    
+
     @Override
-    public void run(){
+    public void run() {
         String cad = "";
-        while(true){
-            cad=teclado.nextLine();
-            if(cad.equalsIgnoreCase("exit")){
-                
+        while (true) {
+            cad = teclado.nextLine();
+            if (cad.equalsIgnoreCase("exit")) {
+                System.exit(0);
+            }
+            if (salidas.size() == 0) {
+                System.out.println("No hay ningún cliente");
             } else {
-                for(PrintWriter out : salida){
-                    out.println(cad);
+                for (PrintWriter out : salidas) {
+                    out.println("[Servidor]> " + cad);
                 }
             }
         }
-        /*while(cad != null){
-            cad = teclado.nextLine();
-            teclado.nextLine();
-            for(PrintWriter out: salida){
-                out.println("[Servidor]>" + cad);
-            }
-        }*/
     }
 }

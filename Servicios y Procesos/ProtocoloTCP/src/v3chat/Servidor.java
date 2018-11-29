@@ -19,10 +19,7 @@ public class Servidor {
         
         final int PORT = 15000;
         int nCli = 1;
-        BufferedReader br = null;
-        PrintWriter pw = null;
         ArrayList<PrintWriter> salidas =  new ArrayList<PrintWriter>();
-        
         
         try(
                 ServerSocket server = new ServerSocket(PORT)
@@ -36,9 +33,7 @@ public class Servidor {
                 HiloServidor hServer = new HiloServidor(server.accept(), nCli, salidas);
                 System.out.println("Ha entradoo el cliente num " + nCli++);
                 hServer.start();
-            }
-            
-            
+            }       
         } catch (Exception e) {
              
         }

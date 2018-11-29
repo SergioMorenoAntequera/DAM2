@@ -56,6 +56,7 @@ public class Dialogo implements com.trolltech.qt.QUiForm<QDialog>
 
     public Dialogo() { super(); }
 
+    @Override
     public void setupUi(QDialog Dialog)
     {
         Dialog.setObjectName("Dialog");

@@ -8,7 +8,7 @@
     tools:context=".MainActivity">
 
     <ImageView
-        android:id="@+id/ivImagen"
+        android:id="@+id/ivVisor"
         android:layout_width="337dp"
         android:layout_height="337dp"
         android:layout_marginStart="8dp"
@@ -26,7 +26,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:background="@drawable/camara"
+        android:onClick="HacerFotoClick"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ivImagen" />
+        app:layout_constraintTop_toBottomOf="@+id/ivVisor" />
 </android.support.constraint.ConstraintLayout>

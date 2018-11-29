@@ -15,7 +15,7 @@ public class HiloServidor implements Runnable {
     private Socket concli;
     private int num;
     ArrayList<PrintWriter> salidas;
-    PrintWriter OUT;
+    PrintWriter out;
     
     public HiloServidor(Socket con, int num, ArrayList<PrintWriter> ls){
         concli=con;
@@ -25,33 +25,31 @@ public class HiloServidor implements Runnable {
 
     @Override
     public void run() {
-        String cad="";
-        String cliente="[Cliente_"+num+"]>";
-		while(true){
-			try(
-                 BufferedReader in=new BufferedReader(new InputStreamReader(concli.getInputStream()));
-                 PrintWriter out = new PrintWriter(concli.getOutputStream(), true) 
-				)
-            {
-				OUT=out;	
-                //Lanzamos el hilo hablar para que el servidor hable conlos clientes
-                salidas.add(OUT);
+        String cad = "";
+        String cliente = "[Cliente_" + num + "]>";
+        while (true) {
+            try (
+                    BufferedReader in = new BufferedReader(new InputStreamReader(concli.getInputStream()));
+                    PrintWriter out = new PrintWriter(concli.getOutputStream(), true)) {
+               
+                //Lanzamos el hilo hablar para que el servidor hable con los clientes
+                salidas.add(out);
                 //Esto es para que al servidor le lleguen los mensajes de los clientes
-                while(cad!=null || !cad.equalsIgnoreCase("exit")){
-                    cad=in.readLine().trim();
-                    if(cad.equalsIgnoreCase("exit")){
-						salidas.remove(OUT);
-						System.out.println("Cliente: "+num+ " desconectado");
+                while (cad != null || !cad.equalsIgnoreCase("exit")) {
+                    cad = in.readLine().trim();
+                    if (cad.equalsIgnoreCase("exit")) {
+                        salidas.remove(out);
+                        System.out.println("Cliente: " + num + " desconectado");
                         break;
                     }
-                    System.out.println(cliente+""+cad);
+                    System.out.println(cliente + "" + cad);
                 }
                 break;
-            }catch(Exception ex){
-						 salidas.remove(OUT);
-                         System.out.println("Error en HiloServidor: "+ ex.getMessage());
-            }        
-     }  
-   }
+            } catch (Exception ex) {
+                salidas.remove(out);
+                System.out.println("Error en HiloServidor: " + ex.getMessage());
+            }
+        }
+    }
    //----------------------------------------------------------------------------  
 }

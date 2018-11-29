@@ -28,12 +28,13 @@ public class MainActivity extends AppCompatActivity {
         //PARA APIS MENOOS QUE 21(menor que android 5.0)
         //Vamos a tener que hacer un objeto soundPool para poder reproducir un sonido de ese tipo
         //parametros // Másximo de reproducciones seguidas, Tipo de stream de audio, calidad de reprodución
-        sp = new SoundPool(1, AudioManager.STREAM_MUSIC, 1);
+
         sonidoReproduccion = sp.load(this, R.raw.sonidocorto,  1);
         //Con ese metodo conseguimos un ID que después nos hará falta
     }
 
     public void SoundPoolClick(View v){
+        sp = new SoundPool(1, AudioManager.STREAM_MUSIC, 1);
         sp.play(sonidoReproduccion, 1, 1, 1, 1, 0);
     }
 

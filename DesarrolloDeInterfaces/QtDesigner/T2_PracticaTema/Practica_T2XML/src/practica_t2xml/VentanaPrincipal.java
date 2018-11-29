@@ -20,6 +20,16 @@ public class VentanaPrincipal implements com.trolltech.qt.QUiForm<QMainWindow>
 
     public VentanaPrincipal() { super(); }
 
+    public void dialogo(){
+        Dialogo alta = new Dialogo();
+        QDialog dialogoo = new QDialog();
+        alta.setupUi(dialogoo);
+        dialogoo.show();
+    }
+    
+    
+    
+    @Override
     public void setupUi(QMainWindow MainWindow)
     {
         MainWindow.setObjectName("MainWindow");
@@ -29,7 +39,7 @@ public class VentanaPrincipal implements com.trolltech.qt.QUiForm<QMainWindow>
         label = new QLabel(centralwidget);
         label.setObjectName("label");
         label.setGeometry(new QRect(110, 100, 225, 225));
-        label.setPixmap(new QPixmap(("recursos/logoHotel.png")));
+        label.setPixmap(new QPixmap(("src/recursos/logoHotel.png")));
         pushButton_reservas = new QPushButton(centralwidget);
         pushButton_reservas.setObjectName("pushButton_reservas");
         pushButton_reservas.setGeometry(new QRect(410, 180, 75, 23));
