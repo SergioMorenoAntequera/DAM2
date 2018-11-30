@@ -27,7 +27,7 @@ public class TestConectar {
             //Connection con = DriverManager.getConnection(url, user, password);
             
             System.out.println("Conexión realizada correctamente");
-            
+                 
         }catch(SQLException e){
             System.out.println("SQL Exception: " + e.toString());
         } catch(ClassNotFoundException cE){
