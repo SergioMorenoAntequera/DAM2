@@ -2,6 +2,8 @@ package pack01;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
@@ -17,6 +19,8 @@ public class CrearDepartamentos {
     //private static final String password = "admin";
     
     static private Statement sentencia;
+    static private PreparedStatement sentenciaParametros;
+    
     
     private static final String crearDepartamentos
             = ("CREATE TABLE departamentos("
@@ -67,10 +71,26 @@ public class CrearDepartamentos {
             Connection con = DriverManager.getConnection(connectionUrl);
             
             sentencia = con.createStatement();
-            sentencia.execute(crearDepartamentosApuntes);
+            /*sentencia.execute(crearDepartamentosApuntes);
             //Tabla creada
             sentencia.execute(insertarDepartamentosApuntes);
-            //Rellenar tabla
+            //Rellenar tabla*/
+            
+            String consulta = "SELECT * FROM departamentos WHERE dept_no = ? ";
+            sentenciaParametros = con.prepareStatement(consulta);
+            sentenciaParametros.setInt(1, 10);
+            ResultSet fila = sentenciaParametros.executeQuery();
+            
+            /*String consulta = "UPDATE * FROM empleados";
+            ResultSet fila = sentencia.executeQuery(consulta);
+            
+            while(fila.next()){
+                System.out.println("Numero departamento: " + fila.getInt(1));
+                System.out.println("Nombre: " + fila.getString(2));
+                System.out.println("Localidad: " + fila.getString(3));
+                System.out.println("\n *Siguiente fila* \n");
+            }*/
+            
             
             System.out.println("Conexión realizada correctamente");
             
