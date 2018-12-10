@@ -28,5 +28,6 @@ public class Control implements ActionListener{
             v.btnStart.setEnabled(true);
             
         }
+        
     }
 }
