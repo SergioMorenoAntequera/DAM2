@@ -4,11 +4,8 @@
  * and open the template in the editor.
  */
 package juego03;
-import juego02.*;
 import java.awt.Container;
 import java.awt.Dimension;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JFrame;
 
 /**
@@ -18,7 +15,7 @@ import javax.swing.JFrame;
 public class Ventana03 extends JFrame implements Runnable{
     
     Dimension dim;
-    Juego03 j;
+    Juego03 game;
     static boolean terminado;
     long tiempoJuego;
     int vInicio;
@@ -37,8 +34,8 @@ public class Ventana03 extends JFrame implements Runnable{
     public void iniciarComponentes(){
         Container lienzo = this.getContentPane();
         this.setSize(dim);
-        j = new Juego03(this.dim);
-        lienzo.add(j);
+        game = new Juego03(this.dim);
+        lienzo.add(game);
         //run();
     }
 
@@ -50,13 +47,13 @@ public class Ventana03 extends JFrame implements Runnable{
                 velocidadActual -=1;
                 tiempoJuego = System.currentTimeMillis();
             }
-            j.mover();
-            j.repaint();
+            game.mover();
+            game.repaint();
             try {
                 Thread.sleep(velocidadActual);
                 
             } catch (InterruptedException ex) {}
             tiempo = (int)((System.currentTimeMillis()-tiempoJuego)/1000);
         }
-    }
+    }   
 }

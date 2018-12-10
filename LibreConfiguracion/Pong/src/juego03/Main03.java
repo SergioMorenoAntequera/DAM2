@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package juego03;
-import juego02.*;
 import java.awt.Dimension;
 import javax.swing.JFrame;
 

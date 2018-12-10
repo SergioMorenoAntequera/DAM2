@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package juego03;
-import juego02.*;
 import java.awt.Graphics;
 import java.awt.Canvas;
 import java.awt.Dimension;
@@ -23,26 +22,29 @@ public class Juego03 extends Canvas {
     private Image imaux;
     private Graphics gaux;
     Bola03 miBola;
-    Raqueta03 miRaqueta;
+    Raqueta03 miRaqueta, miRaqueta2;
     
     public Juego03(Dimension d){
         miBola = new Bola03(this);
-        miRaqueta = new Raqueta03(this);
+        miRaqueta = new Raqueta03(this, 300);
+        miRaqueta2 =  new Raqueta03(this, 30);
+        
         this.dim = d;
         this.addKeyListener(new KeyListener() {
             @Override
-            public void keyTyped(KeyEvent e) {
-                //Este no lo queremos par nada
-            }
+            public void keyTyped(KeyEvent e) {}
 
             @Override
             public void keyPressed(KeyEvent e) {
                 miRaqueta.teclaPulsada(e);
+                miRaqueta2.teclaPulsada2(e);
+                
             }
 
             @Override
             public void keyReleased(KeyEvent e) {
                 miRaqueta.soltarTecla(e);
+                miRaqueta2.soltarTecla2(e);
             }
         });
     }
@@ -64,6 +66,7 @@ public class Juego03 extends Canvas {
         Graphics2D g2d = (Graphics2D) gaux;
         miBola.pintarBola(g2d);
         miRaqueta.pintarRaqueta(g2d);
+        miRaqueta2.pintarRaqueta(g2d);
         
         g.drawImage(imaux, 0, 0, this);
     }
@@ -71,6 +74,7 @@ public class Juego03 extends Canvas {
     public void mover(){
         miBola.moverBola();
         miRaqueta.moverRaqueta();
+        miRaqueta2.moverRaqueta();
     }
 
     //Getter y setter

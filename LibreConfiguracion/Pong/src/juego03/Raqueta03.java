@@ -16,49 +16,65 @@ import java.awt.event.KeyEvent;
  */
 public class Raqueta03 {
     
-    Juego03 j;
-    int x = 120, xd = 0;
-    
-    public Raqueta03(Juego03 j){
-        this.j = j;
+    Juego03 game;
+    int x = 130, xd= 0, y;
+     
+    public Raqueta03(Juego03 game, int y){
+        this.game = game;
+        this.y = y;
     }
     
     public void pintarRaqueta(Graphics2D g2d){
         //Esto suaviza los border de los componentes dibujados con g2
         g2d.setColor(Color.GREEN);
         g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON); 
-        g2d.fillRect(x, 300, 60, 20);
+        g2d.fillRect(x, y, 60, 20);
     }
     
     public void moverRaqueta(){
-        if(x >= 0 && x <= Juego03.dim.width-60){
+        if(x >= 0 && x <= game.dim.width-60){
             x += xd;
         } else {
             if(x == -1){
                 x++;
             }
-            if(x == Juego03.dim.width-59){
+            if (x == game.dim.width - 59) {
                 x--;
             }
-            
         }
-        
     }
-    
-    public void teclaPulsada(KeyEvent e){
-        if(e.getKeyCode() == KeyEvent.VK_LEFT){
+
+    //KeyListener de la barra de abajo
+    public void teclaPulsada(KeyEvent e) {
+        if (e.getKeyCode() == KeyEvent.VK_LEFT) {
             xd = -1;
         }
-        if(e.getKeyCode() == KeyEvent.VK_RIGHT){
+        if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
             xd = 1;
         }
     }
-    public void soltarTecla(KeyEvent ke){
+    //KeyListener de la barra de arriba
+    public void teclaPulsada2(KeyEvent e) {
+        if (e.getKeyCode() == KeyEvent.VK_A) {
+            xd = -1;
+        }
+        if (e.getKeyCode() == KeyEvent.VK_D) {
+            xd = 1;
+        }
+    }
+    
+    //Lo misma idea que arriba pero ahora pa que no se paren entre ellas
+    public void soltarTecla(KeyEvent e){
         xd = 0;
     }
+    public void soltarTecla2(KeyEvent e){
+        xd = 0;
+    }
+    
     //------------
-    public Rectangle devolverRaqueta(){
-        return new Rectangle(x, 300, 60, 20);
+    
+    public Rectangle getRaqueta(){
+        return new Rectangle(x, y, 60, 20);
     }
     
 }
