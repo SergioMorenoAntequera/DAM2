@@ -6,8 +6,12 @@ package ui;
  **
  ** WARNING! All changes made in this file will be lost when recompiling ui file!
  ********************************************************************************/
+import static com.trolltech.qt.QVariant.Date;
 import com.trolltech.qt.core.*;
 import com.trolltech.qt.gui.*;
+import java.awt.Component;
+import java.util.Date;
+import javax.swing.JOptionPane;
 
 public class Dialog implements com.trolltech.qt.QUiForm<QDialog>
 {
@@ -99,6 +103,9 @@ public class Dialog implements com.trolltech.qt.QUiForm<QDialog>
         font3.setBold(true);
         font3.setWeight(75);
         bAceptar.setFont(font3);
+        bAceptar.clicked.connect(this, "comprobar()");
+        
+        
         bCancelar = new QPushButton(Dialog);
         bCancelar.setObjectName("bCancelar");
         bCancelar.setGeometry(new QRect(90, 400, 75, 23));
@@ -159,7 +166,7 @@ public class Dialog implements com.trolltech.qt.QUiForm<QDialog>
         tfTelefono = new QLineEdit(widget_3);
         tfTelefono.setObjectName("tfTelefono");
         tfTelefono.setGeometry(new QRect(10, 210, 113, 20));
-        tfTelefono.setStyleSheet("background-color: rgb(255, 255, 255);");
+        tfTelefono.setStyleSheet("background-color: rgb(255, 255, 255);");        
         tfApellidos = new QLineEdit(widget_3);
         tfApellidos.setObjectName("tfApellidos");
         tfApellidos.setGeometry(new QRect(10, 90, 113, 20));
@@ -207,6 +214,7 @@ public class Dialog implements com.trolltech.qt.QUiForm<QDialog>
         cbNinios = new QCheckBox(widget_4);
         cbNinios.setObjectName("cbNinios");
         cbNinios.setGeometry(new QRect(190, 160, 31, 17));
+        cbNinios.stateChanged.connect(this, "mostrarPanel()");
         QFont font12 = new QFont();
         font12.setFamily("Calibri");
         font12.setPointSize(11);
@@ -217,6 +225,7 @@ public class Dialog implements com.trolltech.qt.QUiForm<QDialog>
         deSalida.setObjectName("deSalida");
         deSalida.setGeometry(new QRect(190, 40, 110, 22));
         deSalida.setStyleSheet("background-color: rgb(255, 255, 255);");
+        deSalida.setDate(QDate.currentDate());
         label_11 = new QLabel(widget_4);
         label_11.setObjectName("label_11");
         label_11.setGeometry(new QRect(190, 80, 98, 18));
@@ -260,11 +269,13 @@ public class Dialog implements com.trolltech.qt.QUiForm<QDialog>
         sbEdad.setGeometry(new QRect(80, 20, 51, 22));
         sbEdad.setStyleSheet("background-color: rgb(255, 255, 255);");
         sbEdad.setMinimum(1);
-        sbEdad.setMaximum(5);
+        sbEdad.setMaximum(14);
+        sbEdad.valueChanged.connect(this, "ponerCama()");
         tfEdad = new QLineEdit(widget_2);
         tfEdad.setObjectName("tfEdad");
         tfEdad.setGeometry(new QRect(30, 50, 113, 20));
         tfEdad.setStyleSheet("background-color: rgb(255, 255, 255);");
+        tfEdad.setText("Cuna");
         label_10 = new QLabel(widget_4);
         label_10.setObjectName("label_10");
         label_10.setGeometry(new QRect(20, 80, 84, 18));
@@ -298,6 +309,7 @@ public class Dialog implements com.trolltech.qt.QUiForm<QDialog>
         deLlegada.setEnabled(true);
         deLlegada.setGeometry(new QRect(20, 40, 110, 22));
         deLlegada.setStyleSheet("background-color: rgb(255, 255, 255);");
+        deLlegada.setDate(QDate.currentDate());
         label_13 = new QLabel(widget_4);
         label_13.setObjectName("label_13");
         label_13.setGeometry(new QRect(190, 140, 51, 18));
@@ -310,7 +322,7 @@ public class Dialog implements com.trolltech.qt.QUiForm<QDialog>
         label_17 = new QLabel(widget_4);
         label_17.setObjectName("label_17");
         label_17.setGeometry(new QRect(10, 190, 101, 101));
-        label_17.setPixmap(new QPixmap(("../../../qtjambi-4.8.6/bin/recursos/logoHotel.png")));
+        label_17.setPixmap(new QPixmap(("src/source/logoHotel.png")));
         label_17.setScaledContents(true);
         bAtras = new QPushButton(Dialog);
         bAtras.setObjectName("bAtras");
@@ -388,5 +400,55 @@ public class Dialog implements com.trolltech.qt.QUiForm<QDialog>
         bAtras.setText(com.trolltech.qt.core.QCoreApplication.translate("Dialog", "Atr\u00e1s", null));
     } // retranslateUi
 
+    void mostrarPanel(){
+        if(cbNinios.isChecked()){
+          widget_2.setEnabled(true);
+        } else {
+            widget_2.setEnabled(false);
+        }
+    }
+    
+    void ponerCama(){
+        if(sbEdad.value()<5){
+            tfEdad.setText("Cuna");
+        } else {
+            if(sbEdad.value()<11){
+                tfEdad.setText("Cama pequeña");
+            } else {
+                if(sbEdad.value()<15){
+                    tfEdad.setText("Cama normal");
+                }
+            }
+        }
+             
+    }
+    
+    void comprobar(){
+        boolean valido = true;
+        if(tfNombre.text().equalsIgnoreCase("")){
+            JOptionPane.showMessageDialog(null, "Introduce el nombre");
+            valido = false;
+        }
+        if(tfApellidos.text().equalsIgnoreCase("")){
+            JOptionPane.showMessageDialog(null, "Introduce el apellido");
+            valido = false;
+        }
+        if(tfDireccion.text().equalsIgnoreCase("")){
+            JOptionPane.showMessageDialog(null, "Introduce el direccion");
+            valido = false;
+        }
+        if(tfTelefono.text().equalsIgnoreCase("")){
+            JOptionPane.showMessageDialog(null, "Introduce el telefono");
+            valido = false;
+        }
+        if(valido){
+            JOptionPane.showMessageDialog(null, "Datos recogidos correctamente");
+            tfNombre.clear();
+            tfApellidos.clear();
+            tfDireccion.clear();
+            tfTelefono.clear();
+        }
+    }
+    
 }
 
