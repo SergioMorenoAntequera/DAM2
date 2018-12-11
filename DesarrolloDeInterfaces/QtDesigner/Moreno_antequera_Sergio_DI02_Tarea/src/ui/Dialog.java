@@ -1,3 +1,4 @@
+package ui;
 /********************************************************************************
  ** Form generated from reading ui file 'VentanaModal.jui'
  **
