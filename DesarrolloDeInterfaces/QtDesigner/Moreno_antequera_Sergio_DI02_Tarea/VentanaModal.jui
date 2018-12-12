@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>511</width>
-    <height>433</height>
+    <width>516</width>
+    <height>439</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -31,15 +31,15 @@
     </font>
    </property>
    <property name="text">
-    <string>Información Personal</string>
+    <string>Datos del vehículo</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
-     <x>260</x>
+     <x>290</x>
      <y>90</y>
-     <width>128</width>
+     <width>81</width>
      <height>18</height>
     </rect>
    </property>
@@ -52,7 +52,7 @@
     </font>
    </property>
    <property name="text">
-    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Información Reserva&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Datos de alta&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
   <widget class="QWidget" name="widget" native="true">
@@ -70,9 +70,9 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>140</x>
-      <y>20</y>
-      <width>229</width>
+      <x>70</x>
+      <y>10</y>
+      <width>349</width>
       <height>36</height>
      </rect>
     </property>
@@ -94,7 +94,7 @@
      <string notr="true">color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
-     <string>Hotel Antequera</string>
+     <string>Concesionario Antequera</string>
     </property>
    </widget>
   </widget>
@@ -158,7 +158,7 @@
    <property name="styleSheet">
     <string notr="true">background-color: rgb(185, 255, 238);</string>
    </property>
-   <widget class="QLineEdit" name="tfNombre">
+   <widget class="QLineEdit" name="tfcodigo">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -168,7 +168,7 @@
      </rect>
     </property>
     <property name="toolTip">
-     <string>Introduzca su nombre</string>
+     <string>Introduce el código</string>
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgb(255, 255, 255);</string>
@@ -177,49 +177,12 @@
      <string/>
     </property>
    </widget>
-   <widget class="QLineEdit" name="tfDireccion">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>150</y>
-      <width>113</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="toolTip">
-     <string>Introduzca su dirección</string>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);</string>
-    </property>
-   </widget>
    <widget class="QLabel" name="label_6">
     <property name="geometry">
      <rect>
       <x>10</x>
       <y>130</y>
-      <width>59</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Calibri</family>
-      <pointsize>11</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="text">
-     <string>Dirección</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_5">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>70</y>
-      <width>60</width>
+      <width>105</width>
       <height>18</height>
      </rect>
     </property>
@@ -232,7 +195,28 @@
      </font>
     </property>
     <property name="text">
-     <string>Apellidos</string>
+     <string>Tipo de Vehículo</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>60</y>
+      <width>90</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Calibri</family>
+      <pointsize>11</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Tipo de Motor</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_4">
@@ -253,16 +237,128 @@
      </font>
     </property>
     <property name="text">
-     <string>Nombre</string>
+     <string>Codigo</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_7">
+   <widget class="QRadioButton" name="rbGasolina">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>80</y>
+      <width>63</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Gasolina</string>
+    </property>
+    <property name="checked">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="rbDiesel">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>80</y>
+      <width>51</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Diesel</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="rbHibrido">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>100</y>
+      <width>56</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Hibrido</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="rbElectrico">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>100</y>
+      <width>63</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Electrico</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="cbTVeh">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>150</y>
+      <width>91</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
+    </property>
+    <item>
+     <property name="text">
+      <string>Turismo</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Monovolumen</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>SUV</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Todoterreno</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QCheckBox" name="cbCambioManual">
     <property name="geometry">
      <rect>
       <x>10</x>
       <y>190</y>
-      <width>55</width>
-      <height>18</height>
+      <width>136</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Calibri</family>
+      <pointsize>11</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>El coche tendrá cambios manuales?</string>
+    </property>
+    <property name="text">
+     <string>¿Cambio Manual?</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="etIncremento">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>210</y>
+      <width>130</width>
+      <height>36</height>
      </rect>
     </property>
     <property name="font">
@@ -274,51 +370,9 @@
      </font>
     </property>
     <property name="text">
-     <string>Teléfono</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Incrementa el precio&lt;br/&gt;en 500,00€&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="tfTelefono">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>210</y>
-      <width>113</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="toolTip">
-     <string>Introduzca su teléfono</string>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="tfApellidos">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>90</y>
-      <width>113</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="toolTip">
-     <string>Introduzca sus apellidos</string>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);</string>
-    </property>
-   </widget>
-   <zorder>tfNombre</zorder>
-   <zorder>label_4</zorder>
-   <zorder>tfNombre</zorder>
-   <zorder>tfDireccion</zorder>
-   <zorder>label_6</zorder>
-   <zorder>label_5</zorder>
-   <zorder>label_4</zorder>
-   <zorder>label_7</zorder>
-   <zorder>tfTelefono</zorder>
-   <zorder>tfApellidos</zorder>
   </widget>
   <widget class="QLineEdit" name="lineEdit_6">
    <property name="geometry">
@@ -404,64 +458,6 @@
    <property name="styleSheet">
     <string notr="true">background-color: rgb(185, 255, 238);</string>
    </property>
-   <widget class="QLabel" name="label_12">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>140</y>
-      <width>134</width>
-      <height>18</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Calibri</family>
-      <pointsize>11</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="text">
-     <string>Número habitaciones</string>
-    </property>
-   </widget>
-   <widget class="QCheckBox" name="cbNinios">
-    <property name="geometry">
-     <rect>
-      <x>190</x>
-      <y>160</y>
-      <width>31</width>
-      <height>17</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Calibri</family>
-      <pointsize>11</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="toolTip">
-     <string>Indica si se va a asistir con niños</string>
-    </property>
-    <property name="text">
-     <string>Sí</string>
-    </property>
-   </widget>
-   <widget class="QDateEdit" name="deSalida">
-    <property name="geometry">
-     <rect>
-      <x>190</x>
-      <y>40</y>
-      <width>110</width>
-      <height>22</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);</string>
-    </property>
-   </widget>
    <widget class="QLabel" name="label_11">
     <property name="geometry">
      <rect>
@@ -480,7 +476,7 @@
      </font>
     </property>
     <property name="text">
-     <string>Tipo Habitación</string>
+     <string>Ubicación</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_8">
@@ -488,7 +484,7 @@
      <rect>
       <x>20</x>
       <y>20</y>
-      <width>84</width>
+      <width>81</width>
       <height>18</height>
      </rect>
     </property>
@@ -501,119 +497,10 @@
      </font>
     </property>
     <property name="text">
-     <string>Fecha llegada</string>
+     <string>Fecha de alta</string>
     </property>
    </widget>
-   <widget class="QSpinBox" name="sbNDias">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>100</y>
-      <width>51</width>
-      <height>22</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);</string>
-    </property>
-    <property name="minimum">
-     <number>1</number>
-    </property>
-    <property name="maximum">
-     <number>14</number>
-    </property>
-   </widget>
-   <widget class="QWidget" name="widget_2" native="true">
-    <property name="enabled">
-     <bool>false</bool>
-    </property>
-    <property name="geometry">
-     <rect>
-      <x>120</x>
-      <y>190</y>
-      <width>191</width>
-      <height>101</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(93, 234, 255);</string>
-    </property>
-    <widget class="QLabel" name="label_14">
-     <property name="geometry">
-      <rect>
-       <x>40</x>
-       <y>20</y>
-       <width>34</width>
-       <height>18</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Calibri</family>
-       <pointsize>11</pointsize>
-       <weight>75</weight>
-       <bold>true</bold>
-      </font>
-     </property>
-     <property name="text">
-      <string>Edad:</string>
-     </property>
-    </widget>
-    <widget class="QSpinBox" name="sbEdad">
-     <property name="geometry">
-      <rect>
-       <x>80</x>
-       <y>20</y>
-       <width>51</width>
-       <height>22</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: rgb(255, 255, 255);</string>
-     </property>
-     <property name="minimum">
-      <number>1</number>
-     </property>
-     <property name="maximum">
-      <number>5</number>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="tfEdad">
-     <property name="geometry">
-      <rect>
-       <x>30</x>
-       <y>50</y>
-       <width>113</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: rgb(255, 255, 255);</string>
-     </property>
-    </widget>
-   </widget>
-   <widget class="QLabel" name="label_10">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>80</y>
-      <width>84</width>
-      <height>18</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Calibri</family>
-      <pointsize>11</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="text">
-     <string>Número días</string>
-    </property>
-   </widget>
-   <widget class="QComboBox" name="cbTHab">
+   <widget class="QComboBox" name="cbUbi">
     <property name="geometry">
      <rect>
       <x>190</x>
@@ -627,17 +514,17 @@
     </property>
     <item>
      <property name="text">
-      <string>Simple</string>
+      <string>Almacen</string>
      </property>
     </item>
     <item>
      <property name="text">
-      <string>Doble</string>
+      <string>Tienda</string>
      </property>
     </item>
     <item>
      <property name="text">
-      <string>Suite</string>
+      <string>Taller</string>
      </property>
     </item>
    </widget>
@@ -659,29 +546,10 @@
      </font>
     </property>
     <property name="text">
-     <string>Fecha Salida</string>
+     <string>Precio</string>
     </property>
    </widget>
-   <widget class="QSpinBox" name="sbNHab">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>160</y>
-      <width>51</width>
-      <height>22</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);</string>
-    </property>
-    <property name="minimum">
-     <number>1</number>
-    </property>
-    <property name="maximum">
-     <number>5</number>
-    </property>
-   </widget>
-   <widget class="QDateEdit" name="deLlegada">
+   <widget class="QDateEdit" name="deAlta">
     <property name="enabled">
      <bool>true</bool>
     </property>
@@ -695,27 +563,6 @@
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgb(255, 255, 255);</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_13">
-    <property name="geometry">
-     <rect>
-      <x>190</x>
-      <y>140</y>
-      <width>51</width>
-      <height>18</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Calibri</family>
-      <pointsize>11</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="text">
-     <string>¿Niños?</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_17">
@@ -737,46 +584,87 @@
      <bool>true</bool>
     </property>
    </widget>
-   <zorder>label_12</zorder>
-   <zorder>cbNinios</zorder>
-   <zorder>deSalida</zorder>
-   <zorder>label_11</zorder>
-   <zorder>label_8</zorder>
-   <zorder>sbNDias</zorder>
-   <zorder>widget_2</zorder>
-   <zorder>label_10</zorder>
-   <zorder>cbTHab</zorder>
-   <zorder>label_9</zorder>
-   <zorder>sbNHab</zorder>
-   <zorder>deLlegada</zorder>
-   <zorder>label_13</zorder>
-   <zorder>cbNinios</zorder>
-   <zorder>label_12</zorder>
-   <zorder>deSalida</zorder>
-   <zorder>label_11</zorder>
-   <zorder>widget_2</zorder>
-   <zorder>sbNDias</zorder>
-   <zorder>label_8</zorder>
-   <zorder>cbTHab</zorder>
-   <zorder>label_10</zorder>
-   <zorder>label_9</zorder>
-   <zorder>sbNHab</zorder>
-   <zorder>label_13</zorder>
-   <zorder>deLlegada</zorder>
-   <zorder>label_12</zorder>
-   <zorder>cbNinios</zorder>
-   <zorder>deSalida</zorder>
-   <zorder>label_11</zorder>
-   <zorder>label_8</zorder>
-   <zorder>sbNDias</zorder>
-   <zorder>widget_2</zorder>
-   <zorder>label_10</zorder>
-   <zorder>cbTHab</zorder>
-   <zorder>label_9</zorder>
-   <zorder>sbNHab</zorder>
-   <zorder>deLlegada</zorder>
-   <zorder>label_13</zorder>
-   <zorder>label_17</zorder>
+   <widget class="QSpinBox" name="sbPrecio">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>40</y>
+      <width>91</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="minimum">
+     <number>9000</number>
+    </property>
+    <property name="maximum">
+     <number>50000</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_7">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>160</y>
+      <width>131</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>Representación gráfica del coche</string>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>../../../../../Users/windiurno/Desktop/Moreno_Antequera_Sergio_DI02_Examen/resources/coche.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="taAnotaciones">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>110</y>
+      <width>131</width>
+      <height>181</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Este area existe para dejar un mensaje que quiere que se lea por el vendedor&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_10">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>90</y>
+      <width>78</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Calibri</family>
+      <pointsize>11</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Anotaciones</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QPushButton" name="bAtras">
    <property name="geometry">
@@ -804,18 +692,9 @@
   </widget>
  </widget>
  <tabstops>
-  <tabstop>tfNombre</tabstop>
-  <tabstop>tfApellidos</tabstop>
-  <tabstop>tfDireccion</tabstop>
-  <tabstop>tfTelefono</tabstop>
-  <tabstop>deLlegada</tabstop>
-  <tabstop>deSalida</tabstop>
-  <tabstop>sbNDias</tabstop>
-  <tabstop>cbTHab</tabstop>
-  <tabstop>sbNHab</tabstop>
-  <tabstop>cbNinios</tabstop>
-  <tabstop>sbEdad</tabstop>
-  <tabstop>tfEdad</tabstop>
+  <tabstop>tfcodigo</tabstop>
+  <tabstop>deAlta</tabstop>
+  <tabstop>cbUbi</tabstop>
   <tabstop>bAceptar</tabstop>
   <tabstop>bCancelar</tabstop>
   <tabstop>bAtras</tabstop>
@@ -838,86 +717,6 @@
     <hint type="destinationlabel">
      <x>48</x>
      <y>397</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>bCancelar</sender>
-   <signal>clicked&lt;java.lang.Boolean&gt;</signal>
-   <receiver>tfNombre</receiver>
-   <slot>clear()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>127</x>
-     <y>406</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>35</x>
-     <y>150</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>bCancelar</sender>
-   <signal>clicked&lt;java.lang.Boolean&gt;</signal>
-   <receiver>tfApellidos</receiver>
-   <slot>clear()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>90</x>
-     <y>400</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>40</x>
-     <y>210</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>bCancelar</sender>
-   <signal>clicked&lt;java.lang.Boolean&gt;</signal>
-   <receiver>tfDireccion</receiver>
-   <slot>clear()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>103</x>
-     <y>417</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>47</x>
-     <y>267</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>bCancelar</sender>
-   <signal>clicked&lt;java.lang.Boolean&gt;</signal>
-   <receiver>tfTelefono</receiver>
-   <slot>clear()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>100</x>
-     <y>422</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>53</x>
-     <y>331</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>bCancelar</sender>
-   <signal>clicked&lt;java.lang.Boolean&gt;</signal>
-   <receiver>cbNinios</receiver>
-   <slot>setChecked(boolean)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>119</x>
-     <y>412</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>380</x>
-     <y>280</y>
     </hint>
    </hints>
   </connection>
