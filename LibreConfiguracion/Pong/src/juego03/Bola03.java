@@ -22,8 +22,8 @@ public class Bola03 {
     
     public Bola03(Juego03 game){
         this.game = game;
-        this.x = 100;
-        this.y = 100;
+        this.x = 150;
+        this.y = 200;
     }
     
     public void pintarBola(Graphics2D g) {
@@ -43,10 +43,10 @@ public class Bola03 {
             dy *= -1;
         }
         if(y==game.getHeight()-tamBola){
-            gameOver();
+            //gameOver();
         }
         if(y==0){
-            gameOver2();
+            //gameOver2();
         }
         
         if(game.miRaqueta.getRaqueta().intersects(game.miBola.getPelota()) || game.miRaqueta2.getRaqueta().intersects(game.miBola.getPelota())){

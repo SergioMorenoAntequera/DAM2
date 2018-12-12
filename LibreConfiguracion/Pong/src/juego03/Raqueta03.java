@@ -32,13 +32,13 @@ public class Raqueta03 {
     }
     
     public void moverRaqueta(){
-        if(x >= 0 && x <= game.dim.width-60){
+        if(x >= 0 && x <= game.getWidth()-60){
             x += xd;
         } else {
             if(x == -1){
                 x++;
             }
-            if (x == game.dim.width - 59) {
+            if (x == game.getWidth() - 59) {
                 x--;
             }
         }

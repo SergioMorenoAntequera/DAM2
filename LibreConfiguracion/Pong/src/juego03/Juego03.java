@@ -72,7 +72,7 @@ public class Juego03 extends Canvas {
     }
     
     public void mover(){
-        miBola.moverBola();
+        //miBola.moverBola();
         miRaqueta.moverRaqueta();
         miRaqueta2.moverRaqueta();
     }

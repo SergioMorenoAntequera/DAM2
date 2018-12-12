@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package juego03;
+import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.Dimension;
 import javax.swing.JFrame;
@@ -14,6 +15,7 @@ import javax.swing.JFrame;
  */
 public class Ventana03 extends JFrame implements Runnable{
     
+    BorderLayout bl;
     Dimension dim;
     Juego03 game;
     static boolean terminado;
@@ -33,9 +35,13 @@ public class Ventana03 extends JFrame implements Runnable{
     
     public void iniciarComponentes(){
         Container lienzo = this.getContentPane();
-        this.setSize(dim);
+        bl = new BorderLayout(5, 5);
+        this.setMinimumSize(dim);
+        lienzo.setLayout(bl);
+        
         game = new Juego03(this.dim);
-        lienzo.add(game);
+        lienzo.add(game, BorderLayout.CENTER);
+        lienzo.add(new PanelDerecha(), BorderLayout.EAST);
         //run();
     }
 
