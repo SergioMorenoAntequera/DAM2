@@ -6,6 +6,7 @@
 package hibernatenew;
 
 import empresaz.entity.Departamentos;
+import empresaz.entity.Empleados;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -31,9 +32,13 @@ public class Ejemplos {
             //comienza la transacción
             //código de persistencia (/get/load/delete/save/update)
             Departamentos dep = new Departamentos();
+            Empleados emp = new Empleados();
+            
             dep = (Departamentos) session.load(Departamentos.class, (byte)10);
             System.out.println("Nombre Dep: " + dep.getDnombre());
             System.out.println("Localidad: " + dep.getLoc());
+            
+            //System.out.println("Empleados: " + emp.getSalario());
             
             tx.commit();
         } catch (HibernateException e) {

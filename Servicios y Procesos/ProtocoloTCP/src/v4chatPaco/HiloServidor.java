@@ -15,7 +15,9 @@ public class HiloServidor implements Runnable {
     private Socket concli;
     private int num;
     ArrayList<PrintWriter> salidas;
-    PrintWriter OUT;
+    BufferedReader entrada;
+    PrintWriter salida;
+    
 
     public HiloServidor(Socket con, int num, ArrayList<PrintWriter> ls) {
         concli = con;
@@ -29,17 +31,18 @@ public class HiloServidor implements Runnable {
         String cliente = "[Cliente_" + num + "]>";
         while (true) {
             try (
-                    BufferedReader in = new BufferedReader(new InputStreamReader(concli.getInputStream()));
-                    PrintWriter out = new PrintWriter(concli.getOutputStream(), true)
+                    BufferedReader br = new BufferedReader(new InputStreamReader(concli.getInputStream()));
+                    PrintWriter pw = new PrintWriter(concli.getOutputStream(), true)
             ) {
-                OUT = out;
+                entrada = br;
+                salida = pw;
                 //Lanzamos el hilo hablar para que el servidor hable con los clientes
-                salidas.add(OUT);
+                salidas.add(salida);
                 //Esto es para que al servidor le lleguen los mensajes de los clientes
                 while (cad != null || !cad.equalsIgnoreCase("exit")) {
-                    cad = in.readLine().trim();
+                    cad = entrada.readLine().trim();
                     if (cad.equalsIgnoreCase("exit")) {
-                        salidas.remove(OUT);
+                        salidas.remove(salida);
                         System.out.println("Cliente: " + num + " desconectado");
                         break;
                     }
@@ -47,7 +50,7 @@ public class HiloServidor implements Runnable {
                 }
                 break;
             } catch (Exception ex) {
-                salidas.remove(OUT);
+                salidas.remove(salida);
                 System.out.println("Error en HiloServidor: " + ex.getMessage());
             }
         }
