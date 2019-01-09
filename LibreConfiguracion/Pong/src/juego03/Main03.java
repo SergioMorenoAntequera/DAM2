@@ -14,7 +14,8 @@ import javax.swing.JFrame;
 public class Main03 {
     public static void main(String[] args){
         
-        Ventana03 v = new Ventana03("Rebotes", new Dimension(300, 400));
+        //
+        Ventana03 v = new Ventana03("Rebotes", new Dimension(400, 500));
         v.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         v.setLocationRelativeTo(null);
         v.setResizable(false);

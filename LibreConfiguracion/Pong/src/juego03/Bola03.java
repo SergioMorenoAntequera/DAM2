@@ -16,18 +16,24 @@ import javax.swing.JOptionPane;
  */
 public class Bola03 {
     
+    //Variables
     Juego03 game;
     static int dx = 1, dy = 1, x, y;
-    static int tamBola = 20;
+    static int tamBola = 15;
+    
+    //--------------------------------------------------------------------------
     
     public Bola03(Juego03 game){
         this.game = game;
         this.x = 150;
-        this.y = 200;
+        this.y = 210;
     }
     
+    //--------------------------------------------------------------------------
+    
+    //Pintar y repintar la bola (rebotes, perder...)
     public void pintarBola(Graphics2D g) {
-        g.setColor(Color.RED);
+        g.setColor(Color.WHITE);
         
         //Esto suaviza los border de los componentes dibujados con g2
         g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
@@ -48,7 +54,6 @@ public class Bola03 {
         if(y==0){
             //gameOver2();
         }
-        
         if(game.miRaqueta.getRaqueta().intersects(game.miBola.getPelota()) || game.miRaqueta2.getRaqueta().intersects(game.miBola.getPelota())){
             dy *= -1;
         }
@@ -57,6 +62,9 @@ public class Bola03 {
         y += dy;
     }
     
+    //--------------------------------------------------------------------------
+    
+    //Metodos que saltan al acabar el juego
     public void gameOver(){
         Ventana03.terminado=true;
         JOptionPane.showMessageDialog(game, "Gana el jugador superior", "¡Game Over!", JOptionPane.PLAIN_MESSAGE);
@@ -66,6 +74,10 @@ public class Bola03 {
         JOptionPane.showMessageDialog(game, "Gana el jugador inferior", "¡Game Over!", JOptionPane.PLAIN_MESSAGE);
     }
     
+    //--------------------------------------------------------------------------
+
+    //Getter de la pelota (Que es el  dibujo de un rectangulo en una posición x 
+    //con el tamaño determinado)
     public Rectangle getPelota(){
         return new Rectangle(x, y, tamBola, tamBola);
     }

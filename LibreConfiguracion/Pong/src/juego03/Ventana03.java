@@ -7,6 +7,10 @@ package juego03;
 import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.Dimension;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
 
 /**
@@ -18,10 +22,14 @@ public class Ventana03 extends JFrame implements Runnable{
     BorderLayout bl;
     Dimension dim;
     Juego03 game;
+    PanelDerecha pd;
+    
     static boolean terminado;
     long tiempoJuego;
     int vInicio;
     int tiempo;
+    
+    //--------------------------------------------------------------------------
     
     public Ventana03(String titulo, Dimension dim){
         super(titulo);
@@ -33,6 +41,8 @@ public class Ventana03 extends JFrame implements Runnable{
         iniciarComponentes();
     }
     
+    //--------------------------------------------------------------------------
+    
     public void iniciarComponentes(){
         Container lienzo = this.getContentPane();
         bl = new BorderLayout(5, 5);
@@ -40,26 +50,61 @@ public class Ventana03 extends JFrame implements Runnable{
         lienzo.setLayout(bl);
         
         game = new Juego03(this.dim);
+        pd = new PanelDerecha();
+        pd.getbStart().addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                
+                if(game.semaforo.isEnMarcha()){
+                    pd.getbStart().setText("START");
+                    game.semaforo.setEnMarcha(false); 
+                } else {
+                    pd.getbStart().setText("STOP");
+                    game.semaforo.setEnMarcha(true);
+                }
+                
+                
+            }
+        });
+        
         lienzo.add(game, BorderLayout.CENTER);
-        lienzo.add(new PanelDerecha(), BorderLayout.EAST);
-        //run();
+        lienzo.add(pd, BorderLayout.EAST);
+        
     }
 
+    //--------------------------------------------------------------------------
+    
+    //Como la propia ventana es el hilo del juego lo iniciamos
     @Override
     public void run() {
         int velocidadActual = vInicio;
         while (!terminado) {
-            if(tiempo == 5 && velocidadActual > 1){
-                velocidadActual -=1;
-                tiempoJuego = System.currentTimeMillis();
-            }
-            game.mover();
-            game.repaint();
+            
+            //Sleep que meto aquií para que funcione el parar
             try {
-                Thread.sleep(velocidadActual);
-                
-            } catch (InterruptedException ex) {}
-            tiempo = (int)((System.currentTimeMillis()-tiempoJuego)/1000);
+                Thread.sleep(1);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(Ventana03.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
+            //------------------------------------------------------------------
+            
+            if (game.semaforo.isEnMarcha()) {
+                if (tiempo == 5 && velocidadActual > 1) {
+                    velocidadActual -= 1;
+                    tiempoJuego = System.currentTimeMillis();
+                }
+                game.mover();
+                game.repaint();
+                try {
+                    Thread.sleep(velocidadActual);
+
+                } catch (InterruptedException ex) {
+                }
+                tiempo = (int) ((System.currentTimeMillis() - tiempoJuego) / 1000);
+            }
         }
-    }   
+    }
+    
 }

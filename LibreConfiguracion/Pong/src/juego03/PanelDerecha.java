@@ -25,12 +25,24 @@ public class PanelDerecha extends JPanel {
     void iniciarComponentes(){
         this.setLayout(null);
         
+        //----------------------------------------------------------------------
+        
+        //Cosas de la ventana y tal
         this.setBackground(Color.BLACK);
         this.setPreferredSize(new Dimension(100, 0));
         
+        //----------------------------------------------------------------------
+        
+        //Configuración del botón
         this.bStart = new JButton("START");
-        bStart.setBounds(5, 330, 90, 30);
+        bStart.setBounds(5, 430, 90, 30);
+        bStart.setBackground(Color.WHITE);
         this.add(bStart);
         
+        
+    }
+
+    public JButton getbStart() {
+        return bStart;
     }
 }

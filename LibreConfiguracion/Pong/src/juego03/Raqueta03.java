@@ -16,17 +16,23 @@ import java.awt.event.KeyEvent;
  */
 public class Raqueta03 {
     
+    //Variables
     Juego03 game;
     int x = 130, xd= 0, y;
      
+    //--------------------------------------------------------------------------
+    
     public Raqueta03(Juego03 game, int y){
         this.game = game;
         this.y = y;
     }
     
+    //--------------------------------------------------------------------------
+    
+    //Pintar la raqueta(El movimineto y tal)
     public void pintarRaqueta(Graphics2D g2d){
         //Esto suaviza los border de los componentes dibujados con g2
-        g2d.setColor(Color.GREEN);
+        g2d.setColor(Color.WHITE);
         g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON); 
         g2d.fillRect(x, y, 60, 20);
     }
@@ -44,6 +50,9 @@ public class Raqueta03 {
         }
     }
 
+    //--------------------------------------------------------------------------
+    
+    //Poner el movimiento en las barras asignandolas a una tecla y que se paren
     //KeyListener de la barra de abajo
     public void teclaPulsada(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_LEFT) {
@@ -71,8 +80,9 @@ public class Raqueta03 {
         xd = 0;
     }
     
-    //------------
+    //--------------------------------------------------------------------------
     
+    //Getter de la barra
     public Rectangle getRaqueta(){
         return new Rectangle(x, y, 60, 20);
     }
