@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">P25AcelerometroSergioMoreno</string>
+    <string name="bnEmpezar">Jugar</string>
+
 </resources>
