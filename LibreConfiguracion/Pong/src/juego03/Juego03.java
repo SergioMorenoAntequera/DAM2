@@ -103,7 +103,7 @@ public class Juego03 extends Canvas {
     
     //--------------------------------------------------------------------------
     
-    //Metodo para pintar el fondo
+    //Metodo para pintar las lineas que hay en medio
     public void pintarFondo(Graphics2D g2d){
         g2d.setColor(Color.WHITE);
         

@@ -17,12 +17,12 @@ import javax.swing.JFrame;
  *
  * @author windiurno
  */
-public class Ventana03 extends JFrame implements Runnable{
+public class Ventana03 extends JFrame implements Runnable {
     
     BorderLayout bl;
     Dimension dim;
     Juego03 game;
-    PanelDerecha pd;
+    public static PanelDerecha pd;
     
     static boolean terminado;
     long tiempoJuego;
@@ -52,19 +52,23 @@ public class Ventana03 extends JFrame implements Runnable{
         game = new Juego03(this.dim);
         pd = new PanelDerecha();
         pd.getbStart().addActionListener(new ActionListener() {
-
             @Override
             public void actionPerformed(ActionEvent e) {
-                
                 if(game.semaforo.isEnMarcha()){
                     pd.getbStart().setText("START");
-                    game.semaforo.setEnMarcha(false); 
+                    game.semaforo.setEnMarcha(false);
+                    game.requestFocus();
                 } else {
                     pd.getbStart().setText("STOP");
                     game.semaforo.setEnMarcha(true);
                 }
-                
-                
+            }
+        });
+        
+        pd.getbReset().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //Falta este codigo (el boton de reiniciar)
             }
         });
         
@@ -81,7 +85,7 @@ public class Ventana03 extends JFrame implements Runnable{
         int velocidadActual = vInicio;
         while (!terminado) {
             
-            //Sleep que meto aquií para que funcione el parar
+            //Sleep que meto aquí para que funcione el parar
             try {
                 Thread.sleep(1);
             } catch (InterruptedException ex) {
@@ -100,8 +104,7 @@ public class Ventana03 extends JFrame implements Runnable{
                 try {
                     Thread.sleep(velocidadActual);
 
-                } catch (InterruptedException ex) {
-                }
+                } catch (InterruptedException ex) {}
                 tiempo = (int) ((System.currentTimeMillis() - tiempoJuego) / 1000);
             }
         }

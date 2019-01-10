@@ -49,10 +49,11 @@ public class Bola03 {
             dy *= -1;
         }
         if(y==game.getHeight()-tamBola){
-            //gameOver();
+            marcarPunto1();
+            
         }
         if(y==0){
-            //gameOver2();
+            marcarPunto2();
         }
         if(game.miRaqueta.getRaqueta().intersects(game.miBola.getPelota()) || game.miRaqueta2.getRaqueta().intersects(game.miBola.getPelota())){
             dy *= -1;
@@ -64,14 +65,21 @@ public class Bola03 {
     
     //--------------------------------------------------------------------------
     
-    //Metodos que saltan al acabar el juego
-    public void gameOver(){
-        Ventana03.terminado=true;
-        JOptionPane.showMessageDialog(game, "Gana el jugador superior", "¡Game Over!", JOptionPane.PLAIN_MESSAGE);
+    //Metodos que saltan al un jugador marcar
+    public void marcarPunto1(){
+        PanelDerecha.tfPuntos1.setText(PanelDerecha.puntos1+++"");
+        if(PanelDerecha.puntos1 == 6){
+            Ventana03.terminado = true;
+            JOptionPane.showMessageDialog(game, "Gana el jugador superior", "¡Game Over!", JOptionPane.PLAIN_MESSAGE);
+        }
+        
     }
-    public void gameOver2(){
-        Ventana03.terminado=true;
-        JOptionPane.showMessageDialog(game, "Gana el jugador inferior", "¡Game Over!", JOptionPane.PLAIN_MESSAGE);
+    public void marcarPunto2(){
+        PanelDerecha.tfPuntos2.setText(PanelDerecha.puntos2+++"");
+        if(PanelDerecha.puntos2 == 6){
+            Ventana03.terminado = true;
+            JOptionPane.showMessageDialog(game, "Gana el jugador inferior", "¡Game Over!", JOptionPane.PLAIN_MESSAGE);
+        }
     }
     
     //--------------------------------------------------------------------------
