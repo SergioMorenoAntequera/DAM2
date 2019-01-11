@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package v5chatPaco;
-
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.util.ArrayList;

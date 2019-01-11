@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 11-ene-2019 12:11:12 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="entity.Matricula" table="matricula" catalog="ies" optimistic-lock="version">
+        <composite-id name="id" class="entity.MatriculaId">
+            <key-property name="dni" type="int">
+                <column name="dni" />
+            </key-property>
+            <key-property name="modd" type="int">
+                <column name="modd" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="alumno" class="entity.Alumno" update="false" insert="false" fetch="select">
+            <column name="dni" not-null="true" />
+        </many-to-one>
+        <many-to-one name="modulo" class="entity.Modulo" update="false" insert="false" fetch="select">
+            <column name="modd" not-null="true" />
+        </many-to-one>
+        <property name="fechaM" type="date">
+            <column name="fechaM" length="10" />
+        </property>
+        <property name="convocatoria" type="java.lang.Byte">
+            <column name="convocatoria" />
+        </property>
+        <property name="notaF" type="java.lang.Byte">
+            <column name="notaF" />
+        </property>
+    </class>
+</hibernate-mapping>

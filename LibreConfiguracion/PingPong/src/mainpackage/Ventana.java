@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package juego03;
+package mainpackage;
 import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.Dimension;
@@ -17,11 +17,11 @@ import javax.swing.JFrame;
  *
  * @author windiurno
  */
-public class Ventana03 extends JFrame implements Runnable {
+public class Ventana extends JFrame implements Runnable {
     
     BorderLayout bl;
     Dimension dim;
-    Juego03 game;
+    Juego game;
     public PanelDerecha pd;
     
     static boolean terminado;
@@ -32,7 +32,7 @@ public class Ventana03 extends JFrame implements Runnable {
     
     //--------------------------------------------------------------------------
     
-    public Ventana03(String titulo, Dimension dim){
+    public Ventana(String titulo, Dimension dim){
         super(titulo);
         this.dim = dim;
         
@@ -50,7 +50,7 @@ public class Ventana03 extends JFrame implements Runnable {
         this.setMinimumSize(dim);
         lienzo.setLayout(bl);
         
-        game = new Juego03(this.dim);
+        game = new Juego(this.dim);
         pd = new PanelDerecha();
         
         //Acciones de los botones del panel de la derecha
@@ -71,13 +71,13 @@ public class Ventana03 extends JFrame implements Runnable {
         pd.getbReset().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Juego03.reset();
+                Juego.reset();
                 //Ponemos esto aquií para que le de tiempo a terminar el ciclo 
                 //del paint y de este modo no le suba la velocidad y se pare
                 try {
                     Thread.sleep(10);
                 } catch (InterruptedException ex) {
-                    Logger.getLogger(Ventana03.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Ventana.class.getName()).log(Level.SEVERE, null, ex);
                 }
                 game.semaforo.setEnMarcha(false);
 
@@ -109,7 +109,7 @@ public class Ventana03 extends JFrame implements Runnable {
             try {
                 Thread.sleep(1);
             } catch (InterruptedException ex) {
-                Logger.getLogger(Ventana03.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Ventana.class.getName()).log(Level.SEVERE, null, ex);
             }
             
             while (!terminado) {
@@ -119,7 +119,7 @@ public class Ventana03 extends JFrame implements Runnable {
             try {
                 Thread.sleep(1);
             } catch (InterruptedException ex) {
-                Logger.getLogger(Ventana03.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Ventana.class.getName()).log(Level.SEVERE, null, ex);
             }
                 
             //------------------------------------------------------------------

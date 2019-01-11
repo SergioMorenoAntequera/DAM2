@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package juego03;
+package mainpackage;
 import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
@@ -14,16 +14,16 @@ import javax.swing.JOptionPane;
  *
  * @author windiurno
  */
-public class Bola03 {
+public class Bola {
     
     //Variables
-    Juego03 game;
+    Juego game;
     public static int dx = 1, dy = 1, x, y;
     static int tamBola = 15;
     
     //--------------------------------------------------------------------------
     
-    public Bola03(Juego03 game){
+    public Bola(Juego game){
         this.game = game;
         this.x = 150;
         this.y = 210;
@@ -79,21 +79,21 @@ public class Bola03 {
     public void marcarPunto1(){
         PanelDerecha.tfPuntos1.setText(++PanelDerecha.puntos1+"");
         if(PanelDerecha.puntos1 == 5){
-            Ventana03.terminado = true;
+            Ventana.terminado = true;
             JOptionPane.showMessageDialog(game, "Gana el jugador superior", "¡Game Over!", JOptionPane.PLAIN_MESSAGE);
         }
-        Juego03.reset();
+        Juego.reset();
         
     }
     public void marcarPunto2(){
         PanelDerecha.tfPuntos2.setText(++PanelDerecha.puntos2+"");
         if(PanelDerecha.puntos2 == 5){
-            Ventana03.terminado = true;
+            Ventana.terminado = true;
             JOptionPane.showMessageDialog(game, "Gana el jugador inferior", "¡Game Over!", JOptionPane.PLAIN_MESSAGE);
         }
         this.x = 150;
         this.y = 210;
-        Juego03.reset();
+        Juego.reset();
     }
     
     //--------------------------------------------------------------------------

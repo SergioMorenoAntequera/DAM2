@@ -4,8 +4,6 @@
  * and open the template in the editor.
  */
 package v5chatPaco;
-
-import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Scanner;
 

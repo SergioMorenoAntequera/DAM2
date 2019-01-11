@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package juego03;
+package mainpackage;
 import java.awt.Graphics;
 import java.awt.Canvas;
 import java.awt.Color;
@@ -17,23 +17,23 @@ import java.awt.event.KeyListener;
  *
  * @author windiurno
  */
-public class Juego03 extends Canvas {
+public class Juego extends Canvas {
     
     //Variables
     public static Dimension dim, dimaux;
     private Image imaux;
     private Graphics gaux;
-    Bola03 miBola;
-    Raqueta03 miRaqueta, miRaqueta2;
+    Bola miBola;
+    Raqueta miRaqueta, miRaqueta2;
     Semaforo semaforo;
     
     //--------------------------------------------------------------------------
     
     //Constructores
-    public Juego03(Dimension d){
-        miBola = new Bola03(this);
-        miRaqueta = new Raqueta03(this, 400);
-        miRaqueta2 =  new Raqueta03(this, 30);
+    public Juego(Dimension d){
+        miBola = new Bola(this);
+        miRaqueta = new Raqueta(this, 400);
+        miRaqueta2 =  new Raqueta(this, 30);
         this.semaforo = new Semaforo();
         
         this.setBackground(Color.BLACK);
@@ -94,10 +94,10 @@ public class Juego03 extends Canvas {
     //--------------------------------------------------------------------------
     
     //Getter y setter
-    public Bola03 getMiBola() {
+    public Bola getMiBola() {
         return miBola;
     }
-    public void setMiBola(Bola03 miBola) {
+    public void setMiBola(Bola miBola) {
         this.miBola = miBola;
     }
     
@@ -118,8 +118,8 @@ public class Juego03 extends Canvas {
     
     //Metodo para reiniciar la posición de la bola y para bajarle la velocidad
     public static void reset(){
-        Bola03.x = 150;
-        Bola03.y = 210;
-        Ventana03.vActual = 12;
+        Bola.x = 150;
+        Bola.y = 210;
+        Ventana.vActual = 12;
     }
 }

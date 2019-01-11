@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package v5chatPaco;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -37,8 +36,7 @@ public class HiloServidor implements Runnable{
         try(
                 BufferedReader br = new BufferedReader(new InputStreamReader(con.getInputStream()));
                 PrintWriter pw= new PrintWriter(con.getOutputStream(), true)
-                   )
-        {
+        ) {
             entrada=br;
             salida=pw;
             iniciaCliente();
@@ -56,6 +54,7 @@ public class HiloServidor implements Runnable{
             System.out.println("Error en HiloServidor: " +ex.getMessage());
         }
     }
+    
     //--------------------------------------------------------------------------
     
     public void iniciaCliente(){
@@ -65,6 +64,7 @@ public class HiloServidor implements Runnable{
         miCliente.getSalida().println("Bienvenido al Chat cliente \""+miCliente.getNomCli()+"\"");
         verAyuda();
     }
+    
     //--------------------------------------------------------------------------
     
     public void mandarMensaje(String cad){
@@ -88,6 +88,7 @@ public class HiloServidor implements Runnable{
             }
         }
     }
+    
     //--------------------------------------------------------------------------
     
     public void evaluaOrden(String orden){
@@ -113,6 +114,7 @@ public class HiloServidor implements Runnable{
                 miCliente.getSalida().println("Orden erronea o comando NO implementado!!!");
         }
     }
+    
     //--------------------------------------------------------------------------
     
     public void listarUsuarios(){
@@ -125,6 +127,7 @@ public class HiloServidor implements Runnable{
             }
         }
     }
+    
     //--------------------------------------------------------------------------
     
     public void verAyuda(){
@@ -136,6 +139,7 @@ public class HiloServidor implements Runnable{
         miCliente.getSalida().println("5.- /b Bloquear usuario.");
         
     }
+    
     //--------------------------------------------------------------------------
     
     public void iniciarPrivado(){
@@ -170,6 +174,7 @@ public class HiloServidor implements Runnable{
         }while(!cad.equalsIgnoreCase("exit"));
         
     }
+    
     //--------------------------------------------------------------------------
     
     public void bloquearUsuario(){
@@ -210,16 +215,19 @@ public class HiloServidor implements Runnable{
         }while(!cad.equalsIgnoreCase("exit"));
         
     }
+
+    //--------------------------------------------------------------------------
     
-    public int evalua(int o){
-       int valor=-1;
-       for(Clientes c: losClientes){
-            if(o==c.getIdCli()){
-                valor=c.getIdCli();
+    public int evalua(int i) {
+        int valor = -1;
+        for (Clientes c : losClientes) {
+            if (i == c.getIdCli()) {
+                valor = c.getIdCli();
                 return valor;
             }
         }
         return valor;
     }
+
     //--------------------------------------------------------------------------
 }

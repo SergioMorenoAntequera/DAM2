@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 11-ene-2019 12:11:12 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="entity.Modulo" table="modulo" catalog="ies" optimistic-lock="version">
+        <id name="modd" type="int">
+            <column name="modd" />
+            <generator class="assigned" />
+        </id>
+        <property name="horas" type="java.lang.Integer">
+            <column name="horas" />
+        </property>
+        <property name="descripcion" type="string">
+            <column name="descripcion" length="120" />
+        </property>
+        <property name="curso" type="string">
+            <column name="curso" length="30" />
+        </property>
+        <property name="nombre" type="string">
+            <column name="nombre" length="30" />
+        </property>
+        <set name="matriculas" table="matricula" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="modd" not-null="true" />
+            </key>
+            <one-to-many class="entity.Matricula" />
+        </set>
+    </class>
+</hibernate-mapping>
