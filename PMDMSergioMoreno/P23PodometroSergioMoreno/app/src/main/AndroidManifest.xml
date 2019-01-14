@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.windiurno.p21podometrosergiomoreno">
+    package="com.example.windiurno.p23podometrosergiomoreno">
 
     <application
         android:allowBackup="true"

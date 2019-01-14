@@ -6,27 +6,122 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <TextView
+        android:id="@+id/tvTitulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/tvTitulo"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/etPasosADar"
+        android:layout_width="223dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="80dp"
+        android:ems="10"
+        android:hint="@string/etPasosADar"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitulo" />
+
     <Button
         android:id="@+id/bEmpezar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="148dp"
-        android:layout_marginTop="211dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="32dp"
+        android:onClick="empezar"
         android:text="@string/bEmpezar"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvPasos" />
+        app:layout_constraintTop_toBottomOf="@+id/etPasosADar" />
+
+    <Button
+        android:id="@+id/bRendirse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="60dp"
+        android:enabled="false"
+        android:onClick="rendirse"
+        android:text="@string/bRendirse"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etPasosADar" />
+
+    <TextView
+        android:id="@+id/tvTxtPasos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/tvTxtPasos"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bEmpezar" />
+
+    <TextView
+        android:id="@+id/tvTxtObjetivo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="72dp"
+        android:text="@string/tvTxtObjetivo"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bRendirse" />
+
+    <TextView
+        android:id="@+id/tvObjeivo"
+        android:layout_width="96dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="60dp"
+        android:gravity="center"
+        android:text="@string/tvPasos"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTxtObjetivo" />
 
     <TextView
         android:id="@+id/tvPasos"
-        android:layout_width="156dp"
-        android:layout_height="70dp"
-        android:layout_marginStart="163dp"
-        android:layout_marginTop="131dp"
-        android:layout_marginEnd="163dp"
-        android:text="@string/tvPases"
+        android:layout_width="96dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="@string/tvPasos"
         android:textAlignment="center"
-        android:textSize="30sp"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTxtPasos" />
+
+    <ImageView
+        android:id="@+id/ivPersona"
+        android:layout_width="39dp"
+        android:layout_height="61dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginEnd="304dp"
+        app:layout_constraintBottom_toTopOf="@+id/tvCamino"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/persona" />
+
+    <TextView
+        android:id="@+id/tvCamino"
+        android:layout_width="300dp"
+        android:layout_height="27dp"
+        android:layout_marginTop="296dp"
+        android:text="............................................................."
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/etPasosADar" />
 </android.support.constraint.ConstraintLayout>

@@ -1,4 +1,4 @@
-package com.example.windiurno.p21podometrosergiomoreno;
+package com.example.windiurno.p23podometrosergiomoreno;
 
 import org.junit.Test;
 
