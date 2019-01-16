@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">JuegoV1</string>
+    <string name="lbfilas">Numero Filas: </string>
+
+    <string name="lbcol">Numero Columnas: </string>
+
+    <string name="lbElem">Numero Elementos: </string>
+
+    <string name="btnJugar">Jugar</string>
+
+    <string name="ckSonido">Sonar</string>
+
+    <string name="ckVibrar">Vibrar</string>
+
+    <string name="rbColor">Colores</string>
+
+    <string name="rbNumero">Numeros</string>
+
+    <string name="menu_ayuda">Ayuda</string>
+
+    <string name="menu_about">Acerca de</string>
+
+    <string name="tiempo_final">Tiempo: </string>
+
+    <string name="jugadas_totales">Número de jugadas: </string>
+
+    <string name="game_over">Finalizó el juego con um total de : %d Pulsaciones</string>
+
+    <string name="tvTiempo">Tiempo</string>
+
+    <string name="Instrucciones">Las instrucciones son las siguientes:\n1.- Juega.\n2.- Piensa.\n3.- Diviertete.\n </string>
+
+    <string name="about">Juego Flip version 1.0\nDessarollado como Ejemplo para HLC 2º DAW\nIES Al-Andalús curso 2018/19\nAgradecimientos a:\nDesarrollo de Aplicaciones para Android Anaya Multimedia </string>
+</resources>
