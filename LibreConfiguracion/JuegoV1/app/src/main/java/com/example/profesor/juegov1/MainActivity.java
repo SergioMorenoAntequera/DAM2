@@ -10,6 +10,7 @@ import android.widget.CheckBox;
 import android.widget.RadioButton;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     public final static String FILAS="nFilas";
@@ -128,9 +129,12 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onActivityResult(int reqCode, int resCode, Intent datos){
         if(reqCode==REQUEST_CODE && resCode==RESULT_OK){
-
+            int totalClicks = datos.getIntExtra(TOTAL_CLIKS, 0);
+            Toast.makeText(this, "Finalizaste el juego con un total de: " + totalClicks + "pulsaciones",
+                    Toast.LENGTH_SHORT).show();
         }
         if(reqCode==REQUEST_CODE &resCode==RESULT_CANCELED){
+            Toast.makeText(this, "El juego ha sido cancelado", Toast.LENGTH_SHORT).show();
 
         }
         super.onActivityResult(reqCode, resCode, datos);
