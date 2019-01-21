@@ -24,22 +24,39 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
-              <EmptySpace min="-2" pref="79" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace pref="77" max="32767" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="beanEjercicio041" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLabel1" min="-2" pref="145" max="-2" attributes="0"/>
-                  <Component id="beanEjercicio45" min="-2" max="-2" attributes="0"/>
-                  <Component id="beanEjercicio44" min="-2" max="-2" attributes="0"/>
-                  <Component id="beanEjercicio43" min="-2" max="-2" attributes="0"/>
-                  <Component id="beanEjercicio42" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="48" max="32767" attributes="0"/>
+              <Component id="bCambiar" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Component id="jLabel2" alignment="1" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jLabel1" min="-2" pref="145" max="-2" attributes="0"/>
+                          <Component id="b5" min="-2" max="-2" attributes="0"/>
+                          <Component id="b4" min="-2" max="-2" attributes="0"/>
+                          <Component id="b3" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="b2" min="-2" max="-2" attributes="0"/>
+                                  <Component id="b1" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
+                  </Group>
+                  <Component id="jScrollPane1" max="32767" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
           </Group>
@@ -50,32 +67,43 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
               <Component id="jLabel1" min="-2" pref="33" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="beanEjercicio041" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="b1" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="beanEjercicio42" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="b2" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="beanEjercicio43" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="b3" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="beanEjercicio44" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="b4" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="beanEjercicio45" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="b5" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="125" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace pref="24" max="32767" attributes="0"/>
+                      <Component id="bCambiar" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="89" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jScrollPane1" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
           </Group>
       </Group>
     </DimensionLayout>
@@ -111,29 +139,54 @@
         <Property name="text" type="java.lang.String" value="Nombre"/>
       </Properties>
     </Component>
-    <Component class="bean.BeanEjercicio04" name="beanEjercicio041">
+    <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+      <AuxValues>
+        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+      </AuxValues>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+      <SubComponents>
+        <Component class="javax.swing.JTextArea" name="taArea">
+          <Properties>
+            <Property name="columns" type="int" value="20"/>
+            <Property name="rows" type="int" value="5"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Component class="javax.swing.JButton" name="bCambiar">
       <Properties>
-        <Property name="text" type="java.lang.String" value="beanEjercicio041"/>
+        <Property name="text" type="java.lang.String" value="Cambiar"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bCambiarActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="bean.BeanEjercicio04" name="b1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="beanEjercicio042"/>
       </Properties>
     </Component>
-    <Component class="bean.BeanEjercicio04" name="beanEjercicio42">
+    <Component class="bean.BeanEjercicio04" name="b2">
       <Properties>
-        <Property name="text" type="java.lang.String" value="beanEjercicio041"/>
+        <Property name="text" type="java.lang.String" value="beanEjercicio042"/>
+        <Property name="tipo" type="java.lang.String" value="Entero"/>
       </Properties>
     </Component>
-    <Component class="bean.BeanEjercicio04" name="beanEjercicio43">
+    <Component class="bean.BeanEjercicio04" name="b3">
       <Properties>
-        <Property name="text" type="java.lang.String" value="beanEjercicio041"/>
+        <Property name="text" type="java.lang.String" value="beanEjercicio042"/>
+        <Property name="tipo" type="java.lang.String" value="Real"/>
       </Properties>
     </Component>
-    <Component class="bean.BeanEjercicio04" name="beanEjercicio44">
+    <Component class="bean.BeanEjercicio04" name="b4">
       <Properties>
-        <Property name="text" type="java.lang.String" value="beanEjercicio041"/>
+        <Property name="text" type="java.lang.String" value="beanEjercicio042"/>
       </Properties>
     </Component>
-    <Component class="bean.BeanEjercicio04" name="beanEjercicio45">
+    <Component class="bean.BeanEjercicio04" name="b5">
       <Properties>
-        <Property name="text" type="java.lang.String" value="beanEjercicio041"/>
+        <Property name="text" type="java.lang.String" value="beanEjercicio042"/>
       </Properties>
     </Component>
   </SubComponents>

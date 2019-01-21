@@ -27,7 +27,10 @@ public class BeanEjercicio04 extends JTextField implements Serializable {
     public BeanEjercicio04() {
         super();
         
-        gstionarTipo();
+        setColor(Color.BLACK);
+        setFuente(new Font("Calibri", Font.BOLD, 15));
+        this.tipo = "Texto";
+        gestionarTipo();
     }
     
     //--------------------------------------------------------------------------
@@ -50,19 +53,23 @@ public class BeanEjercicio04 extends JTextField implements Serializable {
         this.setFont(this.fuente);
     }
 
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
     //--------------------------------------------------------------------------
     
-    private void gstionarTipo() {
+    private void gestionarTipo() {
         //Texto, entero, Real
         listener = new KeyListener() {
-
             @Override
             public void keyTyped(KeyEvent e) {
                 if(tipo == "Texto"){
-                    String caracteres = "qwertyuiopasdfghjklñzxcvbnmQWERTYUIOPASDFGHJKLÑZXCVBNM";
-                    //if(caracteres.contains(e.getKeyChar())){
-                        
-                    //}
+                    
                 }
                 if(tipo == "Entero"){
                     
@@ -71,7 +78,6 @@ public class BeanEjercicio04 extends JTextField implements Serializable {
                     
                 }
             }
-
             @Override
             public void keyPressed(KeyEvent e) {}
 
