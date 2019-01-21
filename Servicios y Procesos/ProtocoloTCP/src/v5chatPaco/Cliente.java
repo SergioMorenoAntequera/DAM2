@@ -10,49 +10,54 @@ import java.util.ArrayList;
 
 /**
  *
- * @author paco
+ * @author windiurno
  */
-public class Clientes {
+public class Cliente {
+    
     private int idCli;
     private String nomCli;
     private BufferedReader entrada;
     private PrintWriter salida;
-    private ArrayList<Clientes> baneados;
+    private ArrayList<Cliente> baneados;
+    private boolean baneado;
     
-    public Clientes(int id, BufferedReader br, PrintWriter pw){
+    //--------------------------------------------------------------------------
+    
+    public Cliente(int id, BufferedReader br, PrintWriter pw){
         idCli=id;
         entrada=br;
         salida=pw;
-        baneados = new ArrayList<Clientes>();
+        baneados = new ArrayList<Cliente>();
         ponNombre();
     }
+    
+    //--------------------------------------------------------------------------
+    
     public void ponNombre(){
-            nomCli="Cliente_"+idCli;
+        nomCli="Cliente_"+idCli;
     }
-
     public int getIdCli() {
         return idCli;
     }
-
     public String getNomCli() {
         return nomCli;
     }
-
     public BufferedReader getEntrada() {
         return entrada;
     }
-
     public PrintWriter getSalida() {
         return salida;
     }
-
-    public ArrayList<Clientes> getBaneados() {
+    public ArrayList<Cliente> getBaneados() {
         return baneados;
     }
-
-    public void setBaneados(ArrayList<Clientes> baneados) {
+    public void setBaneados(ArrayList<Cliente> baneados) {
         this.baneados = baneados;
     }
-    
-    
+    public boolean isBaneado() {
+        return baneado;
+    }
+    public void setBaneado(boolean baneado) {
+        this.baneado = baneado;
+    }
 }

@@ -1,10 +1,12 @@
 package com.example.windiurno.p23podometrosergiomoreno;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+import android.media.AudioAttributes;
 import android.media.AudioManager;
 import android.media.SoundPool;
 import android.support.v7.app.AppCompatActivity;
@@ -31,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
     int pasosActuales, objetivo;
 
     SoundPool sp;
-    int sonidoReproduccion;
+    int sonidoRendirse, sonidoGanar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +52,8 @@ public class MainActivity extends AppCompatActivity {
         tvPasos = (TextView) findViewById(R.id.tvPasos);
         tvObjetivo = (TextView) findViewById(R.id.tvObjeivo);
         ivPersona = (ImageView) findViewById(R.id.ivPersona);
+
+
 
         //------------------------------------------------------------------------------------------
 
@@ -89,6 +93,7 @@ public class MainActivity extends AppCompatActivity {
         tvPasos.setText(0+"");
         bEmpezar.setEnabled(false);
         bRendirse.setEnabled(true);
+        tvObjetivo.setTextColor(Color.BLACK);
 
         //Controlamos la excepcon de que si no hay nada no lo pone
         if(etPasosADar.getText().toString().length() != 0){
@@ -100,6 +105,7 @@ public class MainActivity extends AppCompatActivity {
             //Activamos el sensor y limitamos los pasos al objetivo
             //Lo segundo se hace dentro del EventListener
             sensorManager.registerListener(andar, sensor, SensorManager.SENSOR_DELAY_GAME);
+
         } else {
             Toast.makeText(this, "Introduce un objetivo arriba", Toast.LENGTH_LONG).show();
             bEmpezar.setEnabled(true);
@@ -115,11 +121,10 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(this, "¿Ya te has cansado?", Toast.LENGTH_LONG).show();
         bRendirse.setEnabled(false);
         bEmpezar.setEnabled(true);
+        tvObjetivo.setTextColor(Color.RED);
 
         //Sonidos
-        sonidoReproduccion = sp.load(this, R.raw.grito,  1);
-        sp = new SoundPool(1, AudioManager.STREAM_MUSIC, 1);
-        sp.play(sonidoReproduccion, 1, 1, 1, 1, 0);
+
     }
 
     //----------------------------------------------------------------------------------------------
@@ -128,9 +133,7 @@ public class MainActivity extends AppCompatActivity {
         sensorManager.unregisterListener(andar);
         Toast.makeText(this, "FELICICADES POR LA CAMINATA", Toast.LENGTH_LONG).show();
 
-        sonidoReproduccion = sp.load(this, R.raw.matasuegras,  1);
-        sp = new SoundPool(1, AudioManager.STREAM_MUSIC, 1);
-        sp.play(sonidoReproduccion, 1, 1, 1, 1, 0);
+
 
         bEmpezar.setEnabled(true);
         bRendirse.setEnabled(false);

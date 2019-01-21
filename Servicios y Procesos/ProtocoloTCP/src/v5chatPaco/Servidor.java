@@ -10,37 +10,47 @@ import java.util.ArrayList;
 
 /**
  *
- * @author paco
+ * @author windiurno
  */
 public class Servidor {
-    static boolean salir=false;
-    public static void main(String[] args){
-        int puerto=15000;
-        int id=1;
-        ArrayList<Clientes> misClientes= new ArrayList<>();
-        try {
-            ServerSocket conexiones= new ServerSocket(puerto);
+
+    static boolean terminado = false;
+
+    public static void main(String[] args) {
+        
+        int puerto = 15000;
+        int idCliente = 1;
+        ArrayList<Cliente> clientes = new ArrayList<>();
+        
+        try (ServerSocket conexiones = new ServerSocket(puerto))
+        {
+            //Mensaje que se muestra al iniciar el servidor---------------------
             banner();
-            HablarServidor habSer= new HablarServidor(misClientes, salir); 
-            (new Thread(habSer)).start();
-            while(!salir){
-                HiloServidor hiloServ=new HiloServidor(conexiones.accept(), misClientes, id++);
+            
+            //Hilo para que el servidor pueda mandar mensajes-------------------
+            HablarServidor hablarServ = new HablarServidor(clientes, terminado);
+            (new Thread(hablarServ)).start();
+            
+            //El proposito poincipal del servidor es recoger clientes, eso es aquí.
+            while (!terminado) {
+                HiloServidor hiloServ = new HiloServidor(conexiones.accept(), clientes, idCliente++);
                 (new Thread(hiloServ)).start();
             }
-            
+
         } catch (IOException ex) {
-            System.err.println("Error al Iniciar el Chat, mensaje: "+ex.getMessage());
+            System.err.println("Error al Iniciar el servidor: " + ex.getMessage());
         }
     }
+
     //--------------------------------------------------------------------------
-    public static void banner(){
+
+    public static void banner() {
         System.out.println("+--------------------------------------+");
         System.out.println("|                                      |");
         System.out.println("|    **** Chat V 1.0 Iniciado ****     |");
         System.out.println("|    ****    Puerto 15000     ****     |");
         System.out.println("|                                      |");
         System.out.println("+--------------------------------------+\n");
-        
     }
-    
+
 }
