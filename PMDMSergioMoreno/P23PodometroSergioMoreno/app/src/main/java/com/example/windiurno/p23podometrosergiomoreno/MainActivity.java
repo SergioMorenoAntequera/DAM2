@@ -32,9 +32,6 @@ public class MainActivity extends AppCompatActivity {
 
     int pasosActuales, objetivo;
 
-    SoundPool sp;
-    int sonidoRendirse, sonidoGanar;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,7 +64,6 @@ public class MainActivity extends AppCompatActivity {
 
         //Listener del podometro
         andar = new SensorEventListener() {
-
             @Override
             public void onSensorChanged(SensorEvent event) {
                 //Sie hemos llegao nos termina y si no suma y sigue
@@ -78,7 +74,6 @@ public class MainActivity extends AppCompatActivity {
                     tvPasos.setText(pasosActuales+"");
                 }
             }
-
             @Override
             public void onAccuracyChanged(Sensor sensor, int accuracy) {}
         };
@@ -88,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
     //----------------------------------------------------------------------------------------------
 
     public void empezar(View v){
-        //Reiniciamos las cosas
+        //Reiniciamos los datos
         pasosActuales = 0;
         tvPasos.setText(0+"");
         bEmpezar.setEnabled(false);
@@ -105,7 +100,6 @@ public class MainActivity extends AppCompatActivity {
             //Activamos el sensor y limitamos los pasos al objetivo
             //Lo segundo se hace dentro del EventListener
             sensorManager.registerListener(andar, sensor, SensorManager.SENSOR_DELAY_GAME);
-
         } else {
             Toast.makeText(this, "Introduce un objetivo arriba", Toast.LENGTH_LONG).show();
             bEmpezar.setEnabled(true);
@@ -122,9 +116,6 @@ public class MainActivity extends AppCompatActivity {
         bRendirse.setEnabled(false);
         bEmpezar.setEnabled(true);
         tvObjetivo.setTextColor(Color.RED);
-
-        //Sonidos
-
     }
 
     //----------------------------------------------------------------------------------------------
@@ -133,19 +124,17 @@ public class MainActivity extends AppCompatActivity {
         sensorManager.unregisterListener(andar);
         Toast.makeText(this, "FELICICADES POR LA CAMINATA", Toast.LENGTH_LONG).show();
 
-
-
         bEmpezar.setEnabled(true);
         bRendirse.setEnabled(false);
     }
 
     //----------------------------------------------------------------------------------------------
 
-    public void moverPersona(){
+    /*public void moverPersona(){
 
         int porcentajeRecorrido = ((pasosActuales * 100) / objetivo);
         //Hay que conseguir los parametros del XML para cambiar la posicion
-    }
+    }*/
 
 
 }
