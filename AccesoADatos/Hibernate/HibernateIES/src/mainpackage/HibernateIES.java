@@ -4,8 +4,7 @@
  * and open the template in the editor.
  */
 package mainpackage;
-import com.sun.xml.internal.ws.api.server.Module;
-import entity.Alumno;
+
 import entity.Modulo;
 import java.util.Iterator;
 import java.util.Scanner;
