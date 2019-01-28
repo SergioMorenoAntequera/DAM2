@@ -6,6 +6,15 @@
 package ej01ConseguirCheckSum;
 
 import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.security.DigestInputStream;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 
@@ -105,14 +114,13 @@ public class Dialogo extends javax.swing.JDialog {
                         .addGap(156, 156, 156)
                         .addComponent(bCalcular))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(79, 79, 79)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(30, 30, 30)
-                                .addComponent(rbSHA256)
-                                .addGap(18, 18, 18)
-                                .addComponent(rbMD5))
-                            .addComponent(tfChecksum, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(109, 109, 109)
+                        .addComponent(rbSHA256)
+                        .addGap(18, 18, 18)
+                        .addComponent(rbMD5))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(28, 28, 28)
+                        .addComponent(tfChecksum, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(12, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -155,14 +163,22 @@ public class Dialogo extends javax.swing.JDialog {
     }//GEN-LAST:event_bAtrasActionPerformed
 
     private void bCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCalcularActionPerformed
-        String tipoCifrado;
-        if(rbSHA256.isSelected()){
-            tipoCifrado = "SHA-256";
-        } else {
-            tipoCifrado = "MD5";
+        String tipoCifrado = "";
+        MessageDigest md = null;
+        try {
+            if (rbSHA256.isSelected()) {
+                tipoCifrado = "SHA-256";
+            } else {
+                tipoCifrado = "MD5"; 
+            }
+            md = MessageDigest.getInstance(tipoCifrado);
+            String mensaje = new String(md.digest());
+            tfChecksum.setText(mensaje);
+            
+        } catch (NoSuchAlgorithmException ex) {
+            System.err.println("Error: " + ex.getMessage());
         }
-        
-        
+
     }//GEN-LAST:event_bCalcularActionPerformed
 
     /**
