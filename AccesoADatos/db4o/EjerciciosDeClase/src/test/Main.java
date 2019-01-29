@@ -19,7 +19,7 @@ public class Main {
         ObjectContainer db = null;
        
         try {
-
+                //Nombre de los ponentes que tienen cache + de 200 y dan la charla 1
             db = Db4oEmbedded.openFile("congreso.db4o");
 
             /*
