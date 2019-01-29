@@ -4,18 +4,13 @@
  * and open the template in the editor.
  */
 package u04_usabilidad01;
-
 import java.awt.Image;
-import static java.awt.PageAttributes.MediaType.A;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import java.util.regex.Pattern;
-import static javafx.scene.input.KeyCode.Z;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import sun.invoke.empty.Empty;
 
 /**
  *
@@ -30,8 +25,14 @@ public class CompraProductos extends javax.swing.JDialog {
     public CompraProductos(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         
-        
         initComponents();
+        this.setLocationRelativeTo(null);
+        
+        //Listeners de los JTextFields.
+        txtCodigo.addKeyListener(soloDigitos);
+        txtNumero.addKeyListener(soloDigitos);
+        txtCP.addKeyListener(soloDigitos);
+        
         ImageIcon imagen=new ImageIcon("img/EJ01_02.jpg");
         Icon icono = new ImageIcon(imagen.getImage().getScaledInstance(lblImagen.getWidth(), lblImagen.getHeight(), Image.SCALE_DEFAULT));
         lblImagen.setIcon(icono);
@@ -111,7 +112,7 @@ public class CompraProductos extends javax.swing.JDialog {
 
         spnCantidad.setModel(new javax.swing.SpinnerNumberModel(Integer.valueOf(1), Integer.valueOf(1), null, Integer.valueOf(1)));
 
-        jLabel2.setText("Cliente#:");
+        jLabel2.setText("DNI:");
 
         jLabel3.setText("Nombre:");
 
@@ -378,7 +379,8 @@ public class CompraProductos extends javax.swing.JDialog {
         String cp=txtCP.getText().toUpperCase();
         String localidad=txtLocalidad.getText().toUpperCase();
         
-        if (!codigo.matches("[\\d*]*[A-Z]") || codigo.isEmpty()) errores+="\n-Error en DNI";
+        //if (!codigo.matches("[\\d*]*[A-Z]") || codigo.isEmpty()) errores+="\n-Error en DNI";
+        //if (!codigo.matches("[\\d*]") || codigo.isEmpty()) errores+="\n-Error en DNI";
         if (!nombre.matches("[A-Z]*[\\s[A-Z]*]*") || nombre.isEmpty()) errores+="\n-Error en nombre";
         if (!apellido1.matches("[A-Z]*[\\s[A-Z]*]*") || apellido1.isEmpty()) errores+="\n-Error en apellido1";
         if (!apellido2.matches("[A-Z]*[\\s[A-Z]*]*") || apellido2.isEmpty()) errores+="\n-Error en apellido2";
@@ -387,6 +389,7 @@ public class CompraProductos extends javax.swing.JDialog {
         if (!localidad.matches("[A-Z]*[\\s[A-Z]*]*") || localidad.isEmpty()) errores+="\n-Error en localidad";
         
         if(errores.isEmpty()){
+            JOptionPane.showMessageDialog(null, "¡Compra guardada con exito!");
             System.exit(0);
         }
         else{
@@ -455,7 +458,7 @@ public class CompraProductos extends javax.swing.JDialog {
     private KeyListener soloDigitos = new KeyListener() {
         @Override
         public void keyTyped(KeyEvent e) {
-            if(Character.isDigit(e.getKeyChar())){
+            if(!Character.isDigit(e.getKeyChar())){
                e.consume();
             } 
         }
