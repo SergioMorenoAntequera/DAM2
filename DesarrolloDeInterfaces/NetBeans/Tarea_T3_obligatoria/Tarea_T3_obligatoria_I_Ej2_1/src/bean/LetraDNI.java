@@ -5,10 +5,8 @@
  */
 package bean;
 
-import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import java.beans.*;
 import java.io.Serializable;
 import javax.swing.JTextField;
 
@@ -62,10 +60,6 @@ public class LetraDNI extends JTextField implements Serializable {
         this.setText(this.texto);
     }
     
-    //--------------------------------------------------------------------------
-    
-    
-
     //--------------------------------------------------------------------------
     
     char calculaLetra(int dni) {
