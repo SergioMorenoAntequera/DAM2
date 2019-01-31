@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "760023103112",
+    "firebase_url": "https://proyectosergio-al-andalus.firebaseio.com",
+    "project_id": "proyectosergio-al-andalus",
+    "storage_bucket": "proyectosergio-al-andalus.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:760023103112:android:e0c0b9b52fb0ecb4",
+        "android_client_info": {
+          "package_name": "com.example.p32firebasepruebasergiomoreno"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "760023103112-dhuikfr1sqick9147q4cc67q1vov0vkf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.p32firebasepruebasergiomoreno",
+            "certificate_hash": "8ce25e5562e6e8d5e5ca6ec1813fa47c705f8226"
+          }
+        },
+        {
+          "client_id": "760023103112-fmod275393nm95p903eojcp2eane52st.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCOweHGXIIs0i3shIzlvK7iyImq9hZh31s"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "760023103112-fmod275393nm95p903eojcp2eane52st.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

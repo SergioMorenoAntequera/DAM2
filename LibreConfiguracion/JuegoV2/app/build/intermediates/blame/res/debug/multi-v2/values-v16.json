@@ -4,7 +4,7 @@
             "outputFile": "C:\\Repositorios2\\DAM2\\LibreConfiguracion\\JuegoV2\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v16\\values-v16.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\windiurno\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\5431502d3433f57913a0094a2767e6e6\\res\\values-v16\\values-v16.xml",
+                    "source": "C:\\Users\\windiurno\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\645eb61ea421dc7118924ec5e32dfa0c\\res\\values-v16\\values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\windiurno\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\3e6e31391d642280462339b0c37377e0\\res\\values-v16\\values-v16.xml",
+                    "source": "C:\\Users\\windiurno\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\d8e43cbbbefe363215bf042b16f0784d\\res\\values-v16\\values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
