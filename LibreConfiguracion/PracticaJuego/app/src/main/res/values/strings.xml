@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">PracticaJuegoSergioMoreno</string>
+    <string name="tvDanio">Daño: </string>
+    <string name="tvDinero">Dinero:</string>
+    <string name="bMejorar">Mejorar</string>
+    <string name="bDesfiar">¡¡DESAFIAR!!</string>
+    <string name="tvRecod">Record: </string>
+</resources>

@@ -1,0 +1,21 @@
+<resources>
+    <!-- Activity uno -->
+    <string name="app_name">PracticaJuego2</string>
+    <string name="tvDanio">Danio:</string>
+    <string name="tvDinero">Dinero:</string>
+    <string name="tvMejorar">Mejorar Arma</string>
+    <string name="tvLuchar">Luchar</string>
+
+    <!-- Cuadro de dialogo -->
+    <string name="dialog_titulo">Elegir dificultad</string>
+    <string name="dialog_aceptar">Luchar</string>
+    <string name="dialog_rechazar">Retirarse</string>
+    <string name="dialog_rbArbol">Arbol</string>
+    <string name="dialog_rbDiablo">Diablo</string>
+    <string name="dialog_rbZombie">Zombie</string>
+
+    <!-- Activity dos -->
+    <string name="tvTitulo">¡ACABA CON TU ENEMIGO!</string>
+
+
+</resources>

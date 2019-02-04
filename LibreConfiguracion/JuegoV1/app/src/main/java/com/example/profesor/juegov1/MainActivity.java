@@ -64,7 +64,6 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
         sbColumnas.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
@@ -106,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
         filas=sbFilas.getProgress()+3;
         columnas=sbColumnas.getProgress()+3;
         elementos=sbElementos.getProgress()+2;
-        sonar=ckSonar.isChecked() ? 1 :0;
+        sonar=ckSonar.isChecked() ? 1 : 0;
         vibrar=ckVibrar.isChecked() ? 1 : 0;
         numeros=rbNumeros.isChecked() ? 1 : 0;
         /*
