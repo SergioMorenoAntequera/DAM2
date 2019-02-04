@@ -22,6 +22,7 @@ public class MainActivity extends BaseActivity {
     int dinero = 30;
     int dineroMejora = 5;
     int danio = 3;
+    private int numeroClicks;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,18 +33,40 @@ public class MainActivity extends BaseActivity {
         tvDinero = findViewById(R.id.tvDinero);
         bMejorar = findViewById(R.id.bMejorar);
         bLuchar = findViewById(R.id.bLuchar);
+    }
 
-        //------------------------------------------------------------------------------------------
+    //----------------------------------------------------------------------------------------------
+
+    public void recogerDatoJuego(){
+        Bundle datos = getIntent().getExtras();
+
+        danio = datos.getInt(MainActivity.DANIO);
+        dinero = datos.getInt(MainActivity.DINERO);
+        numeroClicks = datos.getInt(MainActivity.NUMCLIKS);
+    }
+
+    //----------------------------------------------------------------------------------------------
+
+    @Override
+    public void onStart() {
+        super.onStart();
 
         //Pantalla completa y rellenar los distintos campos
         setModoInmersivo();
+
+        //Colocamos los valores recogidos en la parte de arriba
         colocarValores();
-
-
-
-
-
     }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent datos){
+        super.onActivityResult(requestCode, resultCode, datos);
+        // check if the request code is same as what is passed  here it is 2
+            dinero = datos.getExtras().getInt(MainActivity.DINERO);
+            colocarValores();
+    }
+
+    //----------------------------------------------------------------------------------------------
 
     public void jugar(View v){
         Intent i=new Intent(this, JuegoActivity.class);
@@ -70,14 +93,16 @@ public class MainActivity extends BaseActivity {
 
             colocarValores();
 
-            Toast.makeText(this, "Tu fuerza ha aumentado "+ danioAumentado +" puntos!", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Tu fuerza ha aumentado "+ danioAumentado +" puntos!", Toast.LENGTH_SHORT).show();
         } else {
-            Toast.makeText(this, "Necesitas " + dineroMejora + " para mejorar tu arma", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Necesitas " + dineroMejora + " para mejorar tu arma", Toast.LENGTH_SHORT).show();
         }
     }
 
     public void colocarValores(){
+
         tvDanio.setText(danio+"");
         tvDinero.setText(dinero + " / " + dineroMejora);
+
     }
 }

@@ -16,6 +16,8 @@
 
     <!-- Activity dos -->
     <string name="tvTitulo">¡ACABA CON TU ENEMIGO!</string>
+    <string name="bVida">Vida</string>
+
 
 
 </resources>

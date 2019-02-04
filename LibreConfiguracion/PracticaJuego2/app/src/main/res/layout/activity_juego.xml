@@ -5,14 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".JuegoActivity"
-    android:background="@drawable/fondoActivity2">
+    android:background="@drawable/fondoactivity2">
 
     <TextView
         android:id="@+id/tvTitulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="175dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="4dp"
         android:layout_marginEnd="177dp"
         android:text="@string/tvTitulo"
         android:textAlignment="center"
@@ -29,10 +29,23 @@
         android:layout_width="309dp"
         android:layout_height="398dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="184dp"
         android:layout_marginEnd="8dp"
+        android:onClick="atacar"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.7"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvTitulo"
         app:srcCompat="@drawable/enemigo" />
+
+    <Button
+        android:id="@+id/bCorazon"
+        android:layout_width="78dp"
+        android:layout_height="71dp"
+        android:layout_marginTop="91dp"
+        android:background="@drawable/corazon"
+        android:text="@string/bVida"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitulo" />
 </android.support.constraint.ConstraintLayout>
