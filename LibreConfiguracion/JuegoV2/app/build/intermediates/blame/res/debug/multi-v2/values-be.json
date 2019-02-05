@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Repositorios2\\DAM2\\LibreConfiguracion\\JuegoV2\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-be\\values-be.xml",
+            "outputFile": "D:\\DAM2\\LibreConfiguracion\\JuegoV2\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-be\\values-be.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\windiurno\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\d8e43cbbbefe363215bf042b16f0784d\\res\\values-be\\values-be.xml",
+                    "source": "C:\\Users\\seran\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\f21f6e116fb559b764f7acd426d7f9d0\\res\\values-be\\values-be.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\windiurno\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\645eb61ea421dc7118924ec5e32dfa0c\\res\\values-be\\values-be.xml",
+                    "source": "C:\\Users\\seran\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\41ec93a7e811e44b4d02a8249d9337c0\\res\\values-be\\values-be.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

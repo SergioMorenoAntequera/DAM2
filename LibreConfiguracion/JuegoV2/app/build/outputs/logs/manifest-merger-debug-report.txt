@@ -1,122 +1,122 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Repositorios2\DAM2\LibreConfiguracion\JuegoV2\app\src\main\AndroidManifest.xml:2:1-22:12
-INJECTED from C:\Repositorios2\DAM2\LibreConfiguracion\JuegoV2\app\src\main\AndroidManifest.xml:2:1-22:12
-INJECTED from C:\Repositorios2\DAM2\LibreConfiguracion\JuegoV2\app\src\main\AndroidManifest.xml:2:1-22:12
-INJECTED from C:\Repositorios2\DAM2\LibreConfiguracion\JuegoV2\app\src\main\AndroidManifest.xml:2:1-22:12
-MERGED from [com.android.support:design:27.1.1] C:\Users\windiurno\.gradle\caches\transforms-1\files-1.1\design-27.1.1.aar\1e31c73d6ffef6366ae32e5b61b5ee1c\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\windiurno\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\d8e43cbbbefe363215bf042b16f0784d\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\windiurno\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\78887a3af5c7e40cc7097469ea071d9b\AndroidManifest.xml:2:1-11:12
-MERGED from [com.android.support:support-v4:27.1.1] C:\Users\windiurno\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\e0ab2c742c80380322afb41da226b25f\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\windiurno\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\034f67690ee3434474233d4b88b9d8ca\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\windiurno\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\051e3df2b0b24b2316080120642c4c72\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:recyclerview-v7:27.1.1] C:\Users\windiurno\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-27.1.1.aar\9a9493d505d812024998226c13c47ca2\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\windiurno\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\3aa5a1f59e69dd6e0f14e6d46fa4ce7e\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\windiurno\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\03fd470c46de0dae3f5b3ff9552bfa12\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\windiurno\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\e7337d2e3368c0890414ba328eb347b6\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:transition:27.1.1] C:\Users\windiurno\.gradle\caches\transforms-1\files-1.1\transition-27.1.1.aar\3e251f13f6e923e326d4fe658cf4af73\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\windiurno\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\2b1ee25400f78a1872dc7700dde57597\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-compat:27.1.1] C:\Users\windiurno\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\645eb61ea421dc7118924ec5e32dfa0c\AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\windiurno\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\77502f0c478f014b22b9cd13359a6570\AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\windiurno\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\d9dd95d1fd38fad363bd762f8ae3063f\AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\windiurno\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\0781349d23cdbf874f252ce6f714e7ff\AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.core:runtime:1.1.0] C:\Users\windiurno\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\76e97bc0fd66911bd5a847f4c9faa40e\AndroidManifest.xml:17:1-22:12
-INJECTED from C:\Repositorios2\DAM2\LibreConfiguracion\JuegoV2\app\src\main\AndroidManifest.xml:2:1-22:12
-INJECTED from C:\Repositorios2\DAM2\LibreConfiguracion\JuegoV2\app\src\main\AndroidManifest.xml:2:1-22:12
-INJECTED from C:\Repositorios2\DAM2\LibreConfiguracion\JuegoV2\app\src\main\AndroidManifest.xml:2:1-22:12
+ADDED from D:\DAM2\LibreConfiguracion\JuegoV2\app\src\main\AndroidManifest.xml:2:1-22:12
+INJECTED from D:\DAM2\LibreConfiguracion\JuegoV2\app\src\main\AndroidManifest.xml:2:1-22:12
+INJECTED from D:\DAM2\LibreConfiguracion\JuegoV2\app\src\main\AndroidManifest.xml:2:1-22:12
+INJECTED from D:\DAM2\LibreConfiguracion\JuegoV2\app\src\main\AndroidManifest.xml:2:1-22:12
+MERGED from [com.android.support:design:27.1.1] C:\Users\seran\.gradle\caches\transforms-1\files-1.1\design-27.1.1.aar\b389b0bcffcd2f68bb1596728636997e\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\seran\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\f21f6e116fb559b764f7acd426d7f9d0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\seran\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\f572708d28209df30ee991bba801beaf\AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:support-v4:27.1.1] C:\Users\seran\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\291099f341fa06795b73fbafc2834290\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\seran\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\81fe7dd1a8657ed01781ae8c4cb8ec05\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\seran\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\069e5f1b91a3e42920c764341e5da2f2\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:recyclerview-v7:27.1.1] C:\Users\seran\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-27.1.1.aar\24f48d9a86ca00e2644e1d3b5d59a15a\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\seran\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\85acd5c5c4277214493877f6805b6b85\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\seran\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\b24ba6c2729f4877a1b099d338faf288\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\seran\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\e0975d0bfa433746bcfc84a395959d0d\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:transition:27.1.1] C:\Users\seran\.gradle\caches\transforms-1\files-1.1\transition-27.1.1.aar\76d10538f816c069ee94213cab094e81\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\seran\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\edaa54b364e5ccfa3d669251db013f87\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\seran\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\41ec93a7e811e44b4d02a8249d9337c0\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\seran\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\ad0755e41bda573f38c30fbb63170a0f\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\seran\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\7b17b34f328a06cc0b662b7d39f12059\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\seran\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\3e44741cc9b072a5bbb1521f1a02c854\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\seran\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\11aa1f05e433683d18ec00cb87df5240\AndroidManifest.xml:17:1-22:12
+INJECTED from D:\DAM2\LibreConfiguracion\JuegoV2\app\src\main\AndroidManifest.xml:2:1-22:12
+INJECTED from D:\DAM2\LibreConfiguracion\JuegoV2\app\src\main\AndroidManifest.xml:2:1-22:12
+INJECTED from D:\DAM2\LibreConfiguracion\JuegoV2\app\src\main\AndroidManifest.xml:2:1-22:12
 	package
-		ADDED from C:\Repositorios2\DAM2\LibreConfiguracion\JuegoV2\app\src\main\AndroidManifest.xml:3:5-36
-		INJECTED from C:\Repositorios2\DAM2\LibreConfiguracion\JuegoV2\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Repositorios2\DAM2\LibreConfiguracion\JuegoV2\app\src\main\AndroidManifest.xml
+		ADDED from D:\DAM2\LibreConfiguracion\JuegoV2\app\src\main\AndroidManifest.xml:3:5-36
+		INJECTED from D:\DAM2\LibreConfiguracion\JuegoV2\app\src\main\AndroidManifest.xml
+		INJECTED from D:\DAM2\LibreConfiguracion\JuegoV2\app\src\main\AndroidManifest.xml
 	android:versionName
-		INJECTED from C:\Repositorios2\DAM2\LibreConfiguracion\JuegoV2\app\src\main\AndroidManifest.xml
-		ADDED from C:\Repositorios2\DAM2\LibreConfiguracion\JuegoV2\app\src\main\AndroidManifest.xml:2:1-22:12
-		INJECTED from C:\Repositorios2\DAM2\LibreConfiguracion\JuegoV2\app\src\main\AndroidManifest.xml
+		INJECTED from D:\DAM2\LibreConfiguracion\JuegoV2\app\src\main\AndroidManifest.xml
+		ADDED from D:\DAM2\LibreConfiguracion\JuegoV2\app\src\main\AndroidManifest.xml:2:1-22:12
+		INJECTED from D:\DAM2\LibreConfiguracion\JuegoV2\app\src\main\AndroidManifest.xml
 	android:versionCode
-		INJECTED from C:\Repositorios2\DAM2\LibreConfiguracion\JuegoV2\app\src\main\AndroidManifest.xml
-		ADDED from C:\Repositorios2\DAM2\LibreConfiguracion\JuegoV2\app\src\main\AndroidManifest.xml:2:1-22:12
-		INJECTED from C:\Repositorios2\DAM2\LibreConfiguracion\JuegoV2\app\src\main\AndroidManifest.xml
+		INJECTED from D:\DAM2\LibreConfiguracion\JuegoV2\app\src\main\AndroidManifest.xml
+		ADDED from D:\DAM2\LibreConfiguracion\JuegoV2\app\src\main\AndroidManifest.xml:2:1-22:12
+		INJECTED from D:\DAM2\LibreConfiguracion\JuegoV2\app\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from C:\Repositorios2\DAM2\LibreConfiguracion\JuegoV2\app\src\main\AndroidManifest.xml:2:11-69
+		ADDED from D:\DAM2\LibreConfiguracion\JuegoV2\app\src\main\AndroidManifest.xml:2:11-69
 application
-ADDED from C:\Repositorios2\DAM2\LibreConfiguracion\JuegoV2\app\src\main\AndroidManifest.xml:5:5-20:19
-MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\windiurno\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\78887a3af5c7e40cc7097469ea071d9b\AndroidManifest.xml:9:5-20
-MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\windiurno\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\78887a3af5c7e40cc7097469ea071d9b\AndroidManifest.xml:9:5-20
+ADDED from D:\DAM2\LibreConfiguracion\JuegoV2\app\src\main\AndroidManifest.xml:5:5-20:19
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\seran\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\f572708d28209df30ee991bba801beaf\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\seran\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\f572708d28209df30ee991bba801beaf\AndroidManifest.xml:9:5-20
 	android:supportsRtl
-		ADDED from C:\Repositorios2\DAM2\LibreConfiguracion\JuegoV2\app\src\main\AndroidManifest.xml:10:9-35
+		ADDED from D:\DAM2\LibreConfiguracion\JuegoV2\app\src\main\AndroidManifest.xml:10:9-35
 	android:label
-		ADDED from C:\Repositorios2\DAM2\LibreConfiguracion\JuegoV2\app\src\main\AndroidManifest.xml:8:9-41
+		ADDED from D:\DAM2\LibreConfiguracion\JuegoV2\app\src\main\AndroidManifest.xml:8:9-41
 	android:roundIcon
-		ADDED from C:\Repositorios2\DAM2\LibreConfiguracion\JuegoV2\app\src\main\AndroidManifest.xml:9:9-54
+		ADDED from D:\DAM2\LibreConfiguracion\JuegoV2\app\src\main\AndroidManifest.xml:9:9-54
 	android:icon
-		ADDED from C:\Repositorios2\DAM2\LibreConfiguracion\JuegoV2\app\src\main\AndroidManifest.xml:7:9-43
+		ADDED from D:\DAM2\LibreConfiguracion\JuegoV2\app\src\main\AndroidManifest.xml:7:9-43
 	android:allowBackup
-		ADDED from C:\Repositorios2\DAM2\LibreConfiguracion\JuegoV2\app\src\main\AndroidManifest.xml:6:9-35
+		ADDED from D:\DAM2\LibreConfiguracion\JuegoV2\app\src\main\AndroidManifest.xml:6:9-35
 	android:theme
-		ADDED from C:\Repositorios2\DAM2\LibreConfiguracion\JuegoV2\app\src\main\AndroidManifest.xml:11:9-40
+		ADDED from D:\DAM2\LibreConfiguracion\JuegoV2\app\src\main\AndroidManifest.xml:11:9-40
 activity#com.example.practica2.JuegoActivity
-ADDED from C:\Repositorios2\DAM2\LibreConfiguracion\JuegoV2\app\src\main\AndroidManifest.xml:12:9-60
+ADDED from D:\DAM2\LibreConfiguracion\JuegoV2\app\src\main\AndroidManifest.xml:12:9-60
 	android:name
-		ADDED from C:\Repositorios2\DAM2\LibreConfiguracion\JuegoV2\app\src\main\AndroidManifest.xml:12:19-48
+		ADDED from D:\DAM2\LibreConfiguracion\JuegoV2\app\src\main\AndroidManifest.xml:12:19-48
 activity#com.example.practica2.MainActivity
-ADDED from C:\Repositorios2\DAM2\LibreConfiguracion\JuegoV2\app\src\main\AndroidManifest.xml:13:9-19:20
+ADDED from D:\DAM2\LibreConfiguracion\JuegoV2\app\src\main\AndroidManifest.xml:13:9-19:20
 	android:name
-		ADDED from C:\Repositorios2\DAM2\LibreConfiguracion\JuegoV2\app\src\main\AndroidManifest.xml:13:19-47
+		ADDED from D:\DAM2\LibreConfiguracion\JuegoV2\app\src\main\AndroidManifest.xml:13:19-47
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Repositorios2\DAM2\LibreConfiguracion\JuegoV2\app\src\main\AndroidManifest.xml:14:13-18:29
+ADDED from D:\DAM2\LibreConfiguracion\JuegoV2\app\src\main\AndroidManifest.xml:14:13-18:29
 action#android.intent.action.MAIN
-ADDED from C:\Repositorios2\DAM2\LibreConfiguracion\JuegoV2\app\src\main\AndroidManifest.xml:15:17-69
+ADDED from D:\DAM2\LibreConfiguracion\JuegoV2\app\src\main\AndroidManifest.xml:15:17-69
 	android:name
-		ADDED from C:\Repositorios2\DAM2\LibreConfiguracion\JuegoV2\app\src\main\AndroidManifest.xml:15:25-66
+		ADDED from D:\DAM2\LibreConfiguracion\JuegoV2\app\src\main\AndroidManifest.xml:15:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Repositorios2\DAM2\LibreConfiguracion\JuegoV2\app\src\main\AndroidManifest.xml:17:17-77
+ADDED from D:\DAM2\LibreConfiguracion\JuegoV2\app\src\main\AndroidManifest.xml:17:17-77
 	android:name
-		ADDED from C:\Repositorios2\DAM2\LibreConfiguracion\JuegoV2\app\src\main\AndroidManifest.xml:17:27-74
+		ADDED from D:\DAM2\LibreConfiguracion\JuegoV2\app\src\main\AndroidManifest.xml:17:27-74
 uses-sdk
-INJECTED from C:\Repositorios2\DAM2\LibreConfiguracion\JuegoV2\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from C:\Repositorios2\DAM2\LibreConfiguracion\JuegoV2\app\src\main\AndroidManifest.xml
-INJECTED from C:\Repositorios2\DAM2\LibreConfiguracion\JuegoV2\app\src\main\AndroidManifest.xml
-MERGED from [com.android.support:design:27.1.1] C:\Users\windiurno\.gradle\caches\transforms-1\files-1.1\design-27.1.1.aar\1e31c73d6ffef6366ae32e5b61b5ee1c\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:design:27.1.1] C:\Users\windiurno\.gradle\caches\transforms-1\files-1.1\design-27.1.1.aar\1e31c73d6ffef6366ae32e5b61b5ee1c\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\windiurno\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\d8e43cbbbefe363215bf042b16f0784d\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\windiurno\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\d8e43cbbbefe363215bf042b16f0784d\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\windiurno\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\78887a3af5c7e40cc7097469ea071d9b\AndroidManifest.xml:5:5-7:41
-MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\windiurno\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\78887a3af5c7e40cc7097469ea071d9b\AndroidManifest.xml:5:5-7:41
-MERGED from [com.android.support:support-v4:27.1.1] C:\Users\windiurno\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\e0ab2c742c80380322afb41da226b25f\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-v4:27.1.1] C:\Users\windiurno\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\e0ab2c742c80380322afb41da226b25f\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\windiurno\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\034f67690ee3434474233d4b88b9d8ca\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\windiurno\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\034f67690ee3434474233d4b88b9d8ca\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\windiurno\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\051e3df2b0b24b2316080120642c4c72\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\windiurno\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\051e3df2b0b24b2316080120642c4c72\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:recyclerview-v7:27.1.1] C:\Users\windiurno\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-27.1.1.aar\9a9493d505d812024998226c13c47ca2\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:recyclerview-v7:27.1.1] C:\Users\windiurno\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-27.1.1.aar\9a9493d505d812024998226c13c47ca2\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\windiurno\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\3aa5a1f59e69dd6e0f14e6d46fa4ce7e\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\windiurno\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\3aa5a1f59e69dd6e0f14e6d46fa4ce7e\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\windiurno\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\03fd470c46de0dae3f5b3ff9552bfa12\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\windiurno\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\03fd470c46de0dae3f5b3ff9552bfa12\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\windiurno\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\e7337d2e3368c0890414ba328eb347b6\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\windiurno\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\e7337d2e3368c0890414ba328eb347b6\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:transition:27.1.1] C:\Users\windiurno\.gradle\caches\transforms-1\files-1.1\transition-27.1.1.aar\3e251f13f6e923e326d4fe658cf4af73\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:transition:27.1.1] C:\Users\windiurno\.gradle\caches\transforms-1\files-1.1\transition-27.1.1.aar\3e251f13f6e923e326d4fe658cf4af73\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\windiurno\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\2b1ee25400f78a1872dc7700dde57597\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\windiurno\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\2b1ee25400f78a1872dc7700dde57597\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-compat:27.1.1] C:\Users\windiurno\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\645eb61ea421dc7118924ec5e32dfa0c\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-compat:27.1.1] C:\Users\windiurno\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\645eb61ea421dc7118924ec5e32dfa0c\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\windiurno\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\77502f0c478f014b22b9cd13359a6570\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\windiurno\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\77502f0c478f014b22b9cd13359a6570\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\windiurno\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\d9dd95d1fd38fad363bd762f8ae3063f\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\windiurno\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\d9dd95d1fd38fad363bd762f8ae3063f\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\windiurno\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\0781349d23cdbf874f252ce6f714e7ff\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\windiurno\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\0781349d23cdbf874f252ce6f714e7ff\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.core:runtime:1.1.0] C:\Users\windiurno\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\76e97bc0fd66911bd5a847f4c9faa40e\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.core:runtime:1.1.0] C:\Users\windiurno\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\76e97bc0fd66911bd5a847f4c9faa40e\AndroidManifest.xml:20:5-44
-INJECTED from C:\Repositorios2\DAM2\LibreConfiguracion\JuegoV2\app\src\main\AndroidManifest.xml
-INJECTED from C:\Repositorios2\DAM2\LibreConfiguracion\JuegoV2\app\src\main\AndroidManifest.xml
+INJECTED from D:\DAM2\LibreConfiguracion\JuegoV2\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from D:\DAM2\LibreConfiguracion\JuegoV2\app\src\main\AndroidManifest.xml
+INJECTED from D:\DAM2\LibreConfiguracion\JuegoV2\app\src\main\AndroidManifest.xml
+MERGED from [com.android.support:design:27.1.1] C:\Users\seran\.gradle\caches\transforms-1\files-1.1\design-27.1.1.aar\b389b0bcffcd2f68bb1596728636997e\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design:27.1.1] C:\Users\seran\.gradle\caches\transforms-1\files-1.1\design-27.1.1.aar\b389b0bcffcd2f68bb1596728636997e\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\seran\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\f21f6e116fb559b764f7acd426d7f9d0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\seran\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\f21f6e116fb559b764f7acd426d7f9d0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\seran\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\f572708d28209df30ee991bba801beaf\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\seran\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\f572708d28209df30ee991bba801beaf\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:support-v4:27.1.1] C:\Users\seran\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\291099f341fa06795b73fbafc2834290\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:27.1.1] C:\Users\seran\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\291099f341fa06795b73fbafc2834290\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\seran\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\81fe7dd1a8657ed01781ae8c4cb8ec05\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\seran\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\81fe7dd1a8657ed01781ae8c4cb8ec05\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\seran\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\069e5f1b91a3e42920c764341e5da2f2\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\seran\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\069e5f1b91a3e42920c764341e5da2f2\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:27.1.1] C:\Users\seran\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-27.1.1.aar\24f48d9a86ca00e2644e1d3b5d59a15a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:27.1.1] C:\Users\seran\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-27.1.1.aar\24f48d9a86ca00e2644e1d3b5d59a15a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\seran\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\85acd5c5c4277214493877f6805b6b85\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\seran\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\85acd5c5c4277214493877f6805b6b85\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\seran\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\b24ba6c2729f4877a1b099d338faf288\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\seran\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\b24ba6c2729f4877a1b099d338faf288\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\seran\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\e0975d0bfa433746bcfc84a395959d0d\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\seran\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\e0975d0bfa433746bcfc84a395959d0d\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:27.1.1] C:\Users\seran\.gradle\caches\transforms-1\files-1.1\transition-27.1.1.aar\76d10538f816c069ee94213cab094e81\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:27.1.1] C:\Users\seran\.gradle\caches\transforms-1\files-1.1\transition-27.1.1.aar\76d10538f816c069ee94213cab094e81\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\seran\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\edaa54b364e5ccfa3d669251db013f87\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\seran\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\edaa54b364e5ccfa3d669251db013f87\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\seran\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\41ec93a7e811e44b4d02a8249d9337c0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\seran\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\41ec93a7e811e44b4d02a8249d9337c0\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\seran\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\ad0755e41bda573f38c30fbb63170a0f\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\seran\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\ad0755e41bda573f38c30fbb63170a0f\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\seran\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\7b17b34f328a06cc0b662b7d39f12059\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\seran\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\7b17b34f328a06cc0b662b7d39f12059\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\seran\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\3e44741cc9b072a5bbb1521f1a02c854\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\seran\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\3e44741cc9b072a5bbb1521f1a02c854\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\seran\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\11aa1f05e433683d18ec00cb87df5240\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\seran\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\11aa1f05e433683d18ec00cb87df5240\AndroidManifest.xml:20:5-44
+INJECTED from D:\DAM2\LibreConfiguracion\JuegoV2\app\src\main\AndroidManifest.xml
+INJECTED from D:\DAM2\LibreConfiguracion\JuegoV2\app\src\main\AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from C:\Repositorios2\DAM2\LibreConfiguracion\JuegoV2\app\src\main\AndroidManifest.xml
-		ADDED from C:\Repositorios2\DAM2\LibreConfiguracion\JuegoV2\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Repositorios2\DAM2\LibreConfiguracion\JuegoV2\app\src\main\AndroidManifest.xml
+		INJECTED from D:\DAM2\LibreConfiguracion\JuegoV2\app\src\main\AndroidManifest.xml
+		ADDED from D:\DAM2\LibreConfiguracion\JuegoV2\app\src\main\AndroidManifest.xml
+		INJECTED from D:\DAM2\LibreConfiguracion\JuegoV2\app\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from C:\Repositorios2\DAM2\LibreConfiguracion\JuegoV2\app\src\main\AndroidManifest.xml
-		ADDED from C:\Repositorios2\DAM2\LibreConfiguracion\JuegoV2\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Repositorios2\DAM2\LibreConfiguracion\JuegoV2\app\src\main\AndroidManifest.xml
+		INJECTED from D:\DAM2\LibreConfiguracion\JuegoV2\app\src\main\AndroidManifest.xml
+		ADDED from D:\DAM2\LibreConfiguracion\JuegoV2\app\src\main\AndroidManifest.xml
+		INJECTED from D:\DAM2\LibreConfiguracion\JuegoV2\app\src\main\AndroidManifest.xml

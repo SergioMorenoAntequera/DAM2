@@ -101,7 +101,6 @@ public class JuegoActivity extends AppCompatActivity {
         esnumero = datos.getInt(MainActivity.NUMEROS);
         vibrar = datos.getInt(MainActivity.VIBRAR);
         sonar = datos.getInt(MainActivity.SONAR);
-
     }
 
     //----------------------------------------------------------------------------------------------

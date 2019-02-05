@@ -59,7 +59,6 @@ public class DialogoNombreNivel extends DialogFragment implements DialogInterfac
                 .setNegativeButton(R.string.volver,this)
                 .setCancelable(false);
         return builder.create();
-
     }
 
 
