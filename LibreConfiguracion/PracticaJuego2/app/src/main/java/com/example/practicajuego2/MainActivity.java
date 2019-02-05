@@ -17,12 +17,12 @@ public class MainActivity extends BaseActivity {
     public final static String DINERO="nDinero";
     public final static String NUMCLIKS="nClicks";
 
-    public final static int REQUEST_CODE=-1;
+    public final static int REQUEST_CODE = 1;
 
+    int danio = 3;
     int dinero = 30;
     int dineroMejora = 5;
-    int danio = 3;
-    private int numeroClicks;
+    private int numeroClicks = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,57 +33,64 @@ public class MainActivity extends BaseActivity {
         tvDinero = findViewById(R.id.tvDinero);
         bMejorar = findViewById(R.id.bMejorar);
         bLuchar = findViewById(R.id.bLuchar);
-    }
 
-    //----------------------------------------------------------------------------------------------
-
-    public void recogerDatoJuego(){
-        Bundle datos = getIntent().getExtras();
-
-        danio = datos.getInt(MainActivity.DANIO);
-        dinero = datos.getInt(MainActivity.DINERO);
-        numeroClicks = datos.getInt(MainActivity.NUMCLIKS);
+        setModoInmersivo();
     }
 
     //----------------------------------------------------------------------------------------------
 
     @Override
-    public void onStart() {
-        super.onStart();
+    protected void onResume() {
+        super.onResume();
 
-        //Pantalla completa y rellenar los distintos campos
         setModoInmersivo();
-
-        //Colocamos los valores recogidos en la parte de arriba
+        //Para que cada vez que vuelva al primer activity se actualicen los valores
         colocarValores();
     }
 
+    //----------------------------------------------------------------------------------------------
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent datos){
-        super.onActivityResult(requestCode, resultCode, datos);
-        // check if the request code is same as what is passed  here it is 2
-            dinero = datos.getExtras().getInt(MainActivity.DINERO);
-            colocarValores();
+        if(requestCode == REQUEST_CODE) {
+            //Comprobar el tipo de resultado (resultCode)
+            if(resultCode == RESULT_OK) {
+
+                //Recogemos los datos---------------------------------------------------------------
+                //int totalClicks = datos.getIntExtra(NUMCLIKS, 0);
+                Bundle bundle = datos.getExtras();
+
+                danio  = bundle.getInt(MainActivity.DANIO);
+                //Este dinero ya tiene sumado la victoria del anterior activity
+                dinero  = bundle.getInt(MainActivity.DINERO);
+                numeroClicks  = bundle.getInt(MainActivity.NUMCLIKS);
+
+                Toast.makeText(this, "Enemigo derrotado en " + numeroClicks + " ataques", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(this, "Los que se rinden no se merecen nada!", Toast.LENGTH_SHORT).show();
+                dinero = 0;
+            }
+        }
     }
 
     //----------------------------------------------------------------------------------------------
 
+    //Metodos variados
+    //Iniciar el Activity 2 y pasarle los datos-----------------------------------------------------
     public void jugar(View v){
-        Intent i=new Intent(this, JuegoActivity.class);
-        Bundle datos=new Bundle();
+        Intent i = new Intent(this, JuegoActivity.class);
+        Bundle datos = new Bundle();
 
-        int danio, dinero;
-        danio=this.danio;
-        dinero=this.dinero;
-
-        datos.putInt(DANIO, danio);
-        datos.putInt(DINERO, dinero);
+        datos.putInt(DANIO, this.danio);
+        datos.putInt(DINERO, this.dinero);
+        datos.putInt(NUMCLIKS, this.numeroClicks);
 
         i.putExtras(datos);
 
         startActivityForResult(i, REQUEST_CODE);
     }
 
+    //Cambia dinero por daño------------------------------------------------------------------------
     public void mejorarArma(View v){
         if(dinero >= dineroMejora){
             dinero -= dineroMejora;
@@ -99,10 +106,9 @@ public class MainActivity extends BaseActivity {
         }
     }
 
+    //Coloca danio y dinero-------------------------------------------------------------------------
     public void colocarValores(){
-
         tvDanio.setText(danio+"");
         tvDinero.setText(dinero + " / " + dineroMejora);
-
     }
 }
