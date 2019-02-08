@@ -1,0 +1,9 @@
+#
+# Generated with Matisse Schema Definition Language 9.1.11
+# Generation date: Fri Feb 08 13:00:32 2019
+#
+# Mapping of Java classes and indexes to the corresponding database schema objects
+#
+Profesor = Profesor
+Tesis = Tesis
+Departamento = Departamento
