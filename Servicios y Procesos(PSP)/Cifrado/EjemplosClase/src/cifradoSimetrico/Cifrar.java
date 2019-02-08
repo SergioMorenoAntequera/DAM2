@@ -4,9 +4,7 @@
  * and open the template in the editor.
  */
 package cifradoSimetrico;
-
 import static cifradoSimetrico.Simetrico2.codBase64;
-import static cifradoSimetrico.Simetrico2.decodBase64;
 import java.io.UnsupportedEncodingException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;

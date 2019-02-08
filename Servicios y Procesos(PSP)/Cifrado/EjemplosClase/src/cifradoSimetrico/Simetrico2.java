@@ -59,6 +59,7 @@ public class Simetrico2 {
             cifrar.init(Cipher.ENCRYPT_MODE, claveSimetrica);
             //Ciframos y guardamos array de byts normal en arrayy de bytes cifrados    
             frasecifrada = cifrar.doFinal(fraseBytes);
+            System.out.println("Frase cifrada antes de ponerlo en base64: " + new String(frasecifrada));
             // Ya estaria cifrado codificamos a base64 el array de bits para poder verlo como string
             //mostramos el array de bytes codificado en DESede (3des)
             System.out.println("Frase Original: " + frase);
