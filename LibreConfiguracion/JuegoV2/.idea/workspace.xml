@@ -6,19 +6,22 @@
     </shared>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3ef53599-94a3-4fbe-b894-6b6c3ee65818" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../JuegoV1/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../JuegoV12/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../PracticaJuego2/app/src/main/java/com/example/practicajuego2/Dialogo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../PracticaJuego2/app/src/main/java/com/example/practicajuego2/JuegoActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../PracticaJuego2/app/src/main/res/drawable-v24/fondo3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../PracticaJuego2/app/src/main/res/layout/activity_juego.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../PracticaJuego2/app/src/main/res/layout/dialogo.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../JuegoV1/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../JuegoV1/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../JuegoV1/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../JuegoV1/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../JuegoV1/app/src/main/java/com/example/profesor/juegov1/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../JuegoV1/app/src/main/java/com/example/profesor/juegov1/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../JuegoV12/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../JuegoV12/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../JuegoV12/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../JuegoV12/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="22f9b4ad-a19e-478b-9a03-1089ec81115d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../PracticaAsynTasks/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PracticaAsynTasks/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PracticaAsynTasks/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PracticaAsynTasks/app/src/main/java/com/example/practicaasyntasks/BaseActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PracticaAsynTasks/app/src/main/java/com/example/practicaasyntasks/D_iniciar.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PracticaAsynTasks/app/src/main/java/com/example/practicaasyntasks/JuegoActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PracticaAsynTasks/app/src/main/res/drawable-v24/avanzar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PracticaAsynTasks/app/src/main/res/drawable-v24/cartel.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PracticaAsynTasks/app/src/main/res/drawable-v24/fondov1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PracticaAsynTasks/app/src/main/res/drawable-v24/iniciar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PracticaAsynTasks/app/src/main/res/drawable-v24/instrucionesv3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PracticaAsynTasks/app/src/main/res/drawable-v24/titulo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PracticaAsynTasks/app/src/main/res/layout/activity_juego.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PracticaAsynTasks/app/src/main/res/layout/d_iniciar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PracticaAsynTasks/app/src/main/res/layout/d_instrucciones.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
@@ -615,88 +618,23 @@
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/res/symbol-table-with-package/debug/package-aware-r.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/res/symbol-table-with-package/debug/package-aware-r.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/symbols/debug/R.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/symbols/debug/R.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/outputs/logs/manifest-merger-debug-report.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/outputs/logs/manifest-merger-debug-report.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/practica2/DialogoNombreNivel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/practica2/DialogoNombreNivel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P31SensorHuellaDactilar/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P31SensorHuellaDactilar/.idea/codeStyles/Project.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P31SensorHuellaDactilar/.idea/gradle.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P31SensorHuellaDactilar/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P31SensorHuellaDactilar/.idea/runConfigurations.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P31SensorHuellaDactilar/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P31SensorHuellaDactilar/app/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P31SensorHuellaDactilar/app/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P31SensorHuellaDactilar/app/proguard-rules.pro" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P31SensorHuellaDactilar/app/src/androidTest/java/com/example/p31sensorhuelladactilar/ExampleInstrumentedTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P31SensorHuellaDactilar/app/src/main/AndroidManifest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P31SensorHuellaDactilar/app/src/main/java/com/example/p31sensorhuelladactilar/FingerprintHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P31SensorHuellaDactilar/app/src/main/java/com/example/p31sensorhuelladactilar/MainActivity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P31SensorHuellaDactilar/app/src/main/res/drawable-v24/fingerprint.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P31SensorHuellaDactilar/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P31SensorHuellaDactilar/app/src/main/res/drawable-v24/ok.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P31SensorHuellaDactilar/app/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P31SensorHuellaDactilar/app/src/main/res/layout/activity_main.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P31SensorHuellaDactilar/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P31SensorHuellaDactilar/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P31SensorHuellaDactilar/app/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P31SensorHuellaDactilar/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P31SensorHuellaDactilar/app/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P31SensorHuellaDactilar/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P31SensorHuellaDactilar/app/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P31SensorHuellaDactilar/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P31SensorHuellaDactilar/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P31SensorHuellaDactilar/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P31SensorHuellaDactilar/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P31SensorHuellaDactilar/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P31SensorHuellaDactilar/app/src/main/res/values/colors.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P31SensorHuellaDactilar/app/src/main/res/values/strings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P31SensorHuellaDactilar/app/src/main/res/values/styles.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P31SensorHuellaDactilar/app/src/test/java/com/example/p31sensorhuelladactilar/ExampleUnitTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P31SensorHuellaDactilar/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P31SensorHuellaDactilar/gradle.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P31SensorHuellaDactilar/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P31SensorHuellaDactilar/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P31SensorHuellaDactilar/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P31SensorHuellaDactilar/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P31SensorHuellaDactilar/settings.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P32FirebasePruebaSergioMoreno/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P32FirebasePruebaSergioMoreno/.idea/codeStyles/Project.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P32FirebasePruebaSergioMoreno/.idea/gradle.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P32FirebasePruebaSergioMoreno/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P32FirebasePruebaSergioMoreno/.idea/runConfigurations.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P32FirebasePruebaSergioMoreno/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P32FirebasePruebaSergioMoreno/app/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P32FirebasePruebaSergioMoreno/app/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P32FirebasePruebaSergioMoreno/app/google-services.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P32FirebasePruebaSergioMoreno/app/proguard-rules.pro" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P32FirebasePruebaSergioMoreno/app/src/androidTest/java/com/example/p32firebasepruebasergiomoreno/ExampleInstrumentedTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P32FirebasePruebaSergioMoreno/app/src/main/AndroidManifest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P32FirebasePruebaSergioMoreno/app/src/main/java/com/example/p32firebasepruebasergiomoreno/MainActivity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P32FirebasePruebaSergioMoreno/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P32FirebasePruebaSergioMoreno/app/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P32FirebasePruebaSergioMoreno/app/src/main/res/layout/activity_main.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P32FirebasePruebaSergioMoreno/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P32FirebasePruebaSergioMoreno/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P32FirebasePruebaSergioMoreno/app/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P32FirebasePruebaSergioMoreno/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P32FirebasePruebaSergioMoreno/app/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P32FirebasePruebaSergioMoreno/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P32FirebasePruebaSergioMoreno/app/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P32FirebasePruebaSergioMoreno/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P32FirebasePruebaSergioMoreno/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P32FirebasePruebaSergioMoreno/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P32FirebasePruebaSergioMoreno/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P32FirebasePruebaSergioMoreno/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P32FirebasePruebaSergioMoreno/app/src/main/res/values/colors.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P32FirebasePruebaSergioMoreno/app/src/main/res/values/strings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P32FirebasePruebaSergioMoreno/app/src/main/res/values/styles.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P32FirebasePruebaSergioMoreno/app/src/test/java/com/example/p32firebasepruebasergiomoreno/ExampleUnitTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P32FirebasePruebaSergioMoreno/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P32FirebasePruebaSergioMoreno/gradle.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P32FirebasePruebaSergioMoreno/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P32FirebasePruebaSergioMoreno/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P32FirebasePruebaSergioMoreno/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P32FirebasePruebaSergioMoreno/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P32FirebasePruebaSergioMoreno/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PracticaJuego2/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../PracticaJuego2/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PracticaJuego2/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../PracticaJuego2/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PracticaSyncTask/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../PracticaSyncTask/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PracticaSyncTask/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../PracticaSyncTask/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PracticaSyncTask/.idea/runConfigurations.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../PracticaSyncTask/.idea/runConfigurations.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PracticaSyncTask/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PracticaSyncTask/app/src/main/java/com/example/practicasynctask/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../PracticaSyncTask/app/src/main/java/com/example/practicasynctask/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Servicios y Procesos(PSP)/Cifrado/Cifrado_Descifrado_Simetrico/build/classes/controlador/Controlador.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Servicios y Procesos(PSP)/Cifrado/Cifrado_Descifrado_Simetrico/build/classes/controlador/Controlador.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Servicios y Procesos(PSP)/Cifrado/Cifrado_Descifrado_Simetrico/build/classes/vista/Vista.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Servicios y Procesos(PSP)/Cifrado/Cifrado_Descifrado_Simetrico/build/classes/vista/Vista.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Servicios y Procesos(PSP)/Cifrado/Cifrado_Descifrado_Simetrico/build/classes/vista/Vista.form" beforeDir="false" afterPath="$PROJECT_DIR$/../../Servicios y Procesos(PSP)/Cifrado/Cifrado_Descifrado_Simetrico/build/classes/vista/Vista.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Servicios y Procesos(PSP)/Cifrado/Cifrado_Descifrado_Simetrico/nbproject/private/private.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Servicios y Procesos(PSP)/Cifrado/Cifrado_Descifrado_Simetrico/nbproject/private/private.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Servicios y Procesos(PSP)/Cifrado/Cifrado_Descifrado_Simetrico/src/controlador/Controlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Servicios y Procesos(PSP)/Cifrado/Cifrado_Descifrado_Simetrico/src/controlador/Controlador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Servicios y Procesos(PSP)/Cifrado/Cifrado_Descifrado_Simetrico/src/vista/Vista.form" beforeDir="false" afterPath="$PROJECT_DIR$/../../Servicios y Procesos(PSP)/Cifrado/Cifrado_Descifrado_Simetrico/src/vista/Vista.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Servicios y Procesos(PSP)/Cifrado/Cifrado_Descifrado_Simetrico/src/vista/Vista.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Servicios y Procesos(PSP)/Cifrado/Cifrado_Descifrado_Simetrico/src/vista/Vista.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Servicios y Procesos(PSP)/Cifrado/EjemplosClase/nbproject/private/private.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Servicios y Procesos(PSP)/Cifrado/EjemplosClase/nbproject/private/private.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Servicios y Procesos(PSP)/Cifrado/EjemplosClase/src/cifradoSimetrico/Simetrico2.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Servicios y Procesos(PSP)/Cifrado/EjemplosClase/src/cifradoSimetrico/Simetrico2.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -712,78 +650,87 @@
     </system>
   </component>
   <component name="FUSProjectUsageTrigger">
-    <session id="367078360">
+    <session id="1267004664">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
           <entry key="project.closed" value="1" />
-          <entry key="project.open.time.1" value="1" />
-          <entry key="project.open.time.24" value="1" />
-          <entry key="project.opened" value="2" />
+          <entry key="project.open.time.0" value="1" />
+          <entry key="project.opened" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="5" />
-          <entry key="xml" value="1" />
+          <entry key="class" value="1" />
+          <entry key="java" value="6" />
+          <entry key="xml" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="5" />
-          <entry key="XML" value="1" />
+          <entry key="CLASS" value="1" />
+          <entry key="JAVA" value="6" />
+          <entry key="XML" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="1" />
+          <entry key="java" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="1" />
+          <entry key="JAVA" value="9" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/practica2/BaseActivity.java">
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/practica2/JuegoActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="12" column="45" selection-start-line="12" selection-start-column="45" selection-end-line="12" selection-end-column="45" />
+            <state relative-caret-position="238">
+              <caret line="60" column="5" lean-forward="true" selection-start-line="56" selection-start-column="3" selection-end-line="60" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/practica2/MainActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="714">
+              <caret line="51" column="53" lean-forward="true" selection-start-line="51" selection-start-column="53" selection-end-line="51" selection-end-column="53" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/practica2/DialogoNombreNivel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="487">
+              <caret line="65" lean-forward="true" selection-start-line="65" selection-end-line="65" />
+              <folding>
+                <element signature="e#882#883#0" expanded="true" />
+                <element signature="e#929#930#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/dialogo_nombre_nivel.xml">
-          <provider editor-type-id="text-editor" />
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="41" lean-forward="true" selection-start-line="8" selection-start-column="41" selection-end-line="8" selection-end-column="41" />
+            </state>
+          </provider>
           <provider selected="true" editor-type-id="android-designer2" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/practica2/MainActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="51" column="12" selection-start-line="51" selection-start-column="12" selection-end-line="52" selection-end-column="29" />
-              <folding>
-                <element signature="e#1184#1203#0" expanded="true" />
-                <element signature="e#1237#1257#0" expanded="true" />
-                <element signature="e#1320#1570#0" expanded="true" />
-                <element signature="e#1569#1570#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/practica2/JuegoActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
-              <caret line="49" column="34" selection-start-line="49" selection-start-column="34" selection-end-line="49" selection-end-column="34" />
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_juego.xml">
+          <provider editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="android-designer2" />
         </entry>
       </file>
     </leaf>
@@ -794,25 +741,25 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/practica2/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/practica2/DialogoNombreNivel.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="676" />
-    <option name="width" value="697" />
-    <option name="height" value="735" />
+    <option name="x" value="35" />
+    <option name="y" value="-20" />
+    <option name="width" value="1665" />
+    <option name="height" value="895" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="ProjectPane" />
       <pane id="AndroidView">
         <subPane>
           <expand>
@@ -846,14 +793,13 @@
           <select />
         </subPane>
       </pane>
-      <pane id="ProjectPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="android.project.structure.last.selected" value="app" />
+    <property name="android.project.structure.proportion" value="0.15" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
-    <property name="device.picker.selection" value="Pixel_2_API_24" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../JuegoV1" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../PracticaAsynTasks" />
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
   </component>
   <component name="RunDashboard">
@@ -875,7 +821,7 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
+    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App">
       <module name="app" />
       <option name="DEPLOY" value="true" />
       <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
@@ -928,95 +874,145 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
+      <module name="JuegoV2" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType" factoryName="Kotlin script">
+      <module name="JuegoV2" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="3ef53599-94a3-4fbe-b894-6b6c3ee65818" name="Default Changelist" comment="" />
-      <created>1549205117660</created>
+      <changelist id="22f9b4ad-a19e-478b-9a03-1089ec81115d" name="Default Changelist" comment="" />
+      <created>1549838401011</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1549205117660</updated>
+      <updated>1549838401011</updated>
     </task>
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
+      <window_info active="true" content_ui="combo" id="Project" visible="true" weight="0.19932885" />
+      <window_info id="Structure" side_tool="true" />
+      <window_info id="Build Variants" side_tool="true" />
+      <window_info id="Image Layers" />
+      <window_info id="Designer" />
+      <window_info id="Capture Tool" />
+      <window_info id="Favorites" side_tool="true" />
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.20499243" />
-      <window_info id="Structure" order="2" side_tool="true" />
-      <window_info id="Favorites" order="3" side_tool="true" />
-      <window_info id="Build Variants" order="4" side_tool="true" />
-      <window_info id="Image Layers" order="5" />
-      <window_info id="Designer" order="6" />
-      <window_info id="Capture Tool" order="7" />
-      <window_info anchor="bottom" id="Run" order="0" />
-      <window_info anchor="bottom" id="Logcat" order="1" />
-      <window_info anchor="bottom" id="TODO" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" />
-      <window_info anchor="bottom" id="Terminal" order="4" />
-      <window_info anchor="bottom" id="Event Log" order="5" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="6" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Build" order="7" weight="0.3295082" />
-      <window_info anchor="bottom" id="Android Profiler" order="8" show_stripe_button="false" />
-      <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" />
-      <window_info anchor="right" id="Capture Analysis" order="1" />
-      <window_info anchor="right" id="Gradle" order="2" />
-      <window_info anchor="right" id="Theme Preview" order="3" />
-      <window_info anchor="right" id="Preview" order="4" weight="0.32980332" />
-      <window_info anchor="right" id="Palette&#9;" order="5" />
+      <window_info anchor="bottom" id="Logcat" />
+      <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
+      <window_info anchor="bottom" id="TODO" />
+      <window_info anchor="bottom" id="Android Profiler" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Build" weight="0.32907802" />
+      <window_info anchor="right" id="Device File Explorer" side_tool="true" />
+      <window_info anchor="right" id="Capture Analysis" />
+      <window_info anchor="right" id="Gradle" />
+      <window_info anchor="right" id="Theme Preview" />
+      <window_info anchor="right" id="Palette&#9;" />
+      <window_info anchor="right" id="Preview" weight="0.3295302" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/practica2/BaseActivity.java">
+    <entry file="jar://$USER_HOME$/AppData/Local/Android/Sdk/platforms/android-27/android.jar!/java/lang/CharSequence.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="12" column="45" selection-start-line="12" selection-start-column="45" selection-end-line="12" selection-end-column="45" />
+        <state relative-caret-position="204">
+          <caret line="13" column="21" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/dialogo_nombre_nivel.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/practica2/BaseActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="21" column="34" lean-forward="true" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_juego.xml">
       <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/dialogo_nombre_nivel.xml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="41" lean-forward="true" selection-start-line="8" selection-start-column="41" selection-end-line="8" selection-end-column="41" />
+        </state>
+      </provider>
       <provider selected="true" editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/practica2/DialogoNombreNivel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="77" column="26" selection-start-line="77" selection-start-column="26" selection-end-line="77" selection-end-column="26" />
+        <state relative-caret-position="487">
+          <caret line="65" lean-forward="true" selection-start-line="65" selection-end-line="65" />
           <folding>
             <element signature="e#882#883#0" expanded="true" />
             <element signature="e#929#930#0" expanded="true" />
-            <element signature="e#2076#2098#0" expanded="true" />
-            <element signature="e#2135#2149#0" expanded="true" />
-            <element signature="e#2191#2206#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/practica2/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="51" column="12" selection-start-line="51" selection-start-column="12" selection-end-line="52" selection-end-column="29" />
-          <folding>
-            <element signature="e#1184#1203#0" expanded="true" />
-            <element signature="e#1237#1257#0" expanded="true" />
-            <element signature="e#1320#1570#0" expanded="true" />
-            <element signature="e#1569#1570#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="714">
+          <caret line="51" column="53" lean-forward="true" selection-start-line="51" selection-start-column="53" selection-end-line="51" selection-end-column="53" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/practica2/JuegoActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="49" column="34" selection-start-line="49" selection-start-column="34" selection-end-line="49" selection-end-column="34" />
+        <state relative-caret-position="238">
+          <caret line="60" column="5" lean-forward="true" selection-start-line="56" selection-start-column="3" selection-end-line="60" selection-end-column="5" />
         </state>
       </provider>
     </entry>

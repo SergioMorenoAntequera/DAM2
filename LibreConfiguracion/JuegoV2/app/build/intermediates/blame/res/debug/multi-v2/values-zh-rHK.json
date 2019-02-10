@@ -1,20 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\DAM2\\LibreConfiguracion\\JuegoV2\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-zh-rHK\\values-zh-rHK.xml",
+            "outputFile": "F:\\Repositorios\\DAM2\\LibreConfiguracion\\JuegoV2\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-zh-rHK\\values-zh-rHK.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\seran\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\f21f6e116fb559b764f7acd426d7f9d0\\res\\values-zh-rHK\\values-zh-rHK.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,200,293,393,475,572,680,756,832,910,1006,1102,1197,1294,1389,1487,1638,1732",
-                        "endColumns": "94,92,99,81,96,107,75,75,77,95,95,94,96,94,97,150,93,77",
-                        "endOffsets": "195,288,388,470,567,675,751,827,905,1001,1097,1192,1289,1384,1482,1633,1727,1805"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\seran\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\41ec93a7e811e44b4d02a8249d9337c0\\res\\values-zh-rHK\\values-zh-rHK.xml",
+                    "source": "C:\\Users\\seran\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\6d3138506026956bb239ed889bb3ded1\\res\\values-zh-rHK\\values-zh-rHK.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -28,6 +18,16 @@
                         "startOffsets": "1810",
                         "endColumns": "101",
                         "endOffsets": "1907"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\seran\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\1753af83030c0d92b1dd6882a65c0917\\res\\values-zh-rHK\\values-zh-rHK.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,200,293,393,475,572,680,756,832,910,1006,1102,1197,1294,1389,1487,1638,1732",
+                        "endColumns": "94,92,99,81,96,107,75,75,77,95,95,94,96,94,97,150,93,77",
+                        "endOffsets": "195,288,388,470,567,675,751,827,905,1001,1097,1192,1289,1384,1482,1633,1727,1805"
                     }
                 }
             ]

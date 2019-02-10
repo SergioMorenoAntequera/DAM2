@@ -33,7 +33,7 @@ public class Vista extends javax.swing.JDialog {
         jLabel2 = new javax.swing.JLabel();
         rbAES128 = new javax.swing.JRadioButton();
         rbAES256 = new javax.swing.JRadioButton();
-        tresdes = new javax.swing.JRadioButton();
+        rbTresdes = new javax.swing.JRadioButton();
         jLabel3 = new javax.swing.JLabel();
         tfClave = new javax.swing.JTextField();
         bAbrirArchivo = new javax.swing.JButton();
@@ -60,9 +60,9 @@ public class Vista extends javax.swing.JDialog {
         rbAES256.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         rbAES256.setText("AES 256 Bits(32)");
 
-        bg1.add(tresdes);
-        tresdes.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        tresdes.setText("3DES");
+        bg1.add(rbTresdes);
+        rbTresdes.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        rbTresdes.setText("3DES");
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel3.setText("Clave de cifrado");
@@ -92,7 +92,7 @@ public class Vista extends javax.swing.JDialog {
                 .addGap(26, 26, 26)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(tresdes)
+                        .addComponent(rbTresdes)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(bAbrirArchivo, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(95, 95, 95))
@@ -141,7 +141,7 @@ public class Vista extends javax.swing.JDialog {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(tresdes)
+                        .addComponent(rbTresdes)
                         .addGap(22, 22, 22))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(bAbrirArchivo, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -181,8 +181,8 @@ public class Vista extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel4;
     public javax.swing.JRadioButton rbAES128;
     public javax.swing.JRadioButton rbAES256;
+    public javax.swing.JRadioButton rbTresdes;
     public javax.swing.JTextField tfClave;
     public javax.swing.JTextField tfRuta;
-    public javax.swing.JRadioButton tresdes;
     // End of variables declaration//GEN-END:variables
 }

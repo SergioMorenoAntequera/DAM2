@@ -51,7 +51,6 @@ public class Simetrico2 {
             passbytebuena = copyOf(passbyteprov, 24); //DESede espera una clave de 24
             //Esto es siempre igual    (Arraya de bits para pasar, metodo de enciptar)
             claveSimetrica = new SecretKeySpec(passbytebuena, "DESede");
-            //esto para poner el cipher en modo DESede
             cifrar = Cipher.getInstance("DESede");
             //pasamos la frase a cifrar a array de bits 
             fraseBytes = frase.getBytes("UTF8");

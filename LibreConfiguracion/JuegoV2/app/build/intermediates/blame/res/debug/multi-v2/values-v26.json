@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\DAM2\\LibreConfiguracion\\JuegoV2\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v26\\values-v26.xml",
+            "outputFile": "F:\\Repositorios\\DAM2\\LibreConfiguracion\\JuegoV2\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v26\\values-v26.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\seran\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\f21f6e116fb559b764f7acd426d7f9d0\\res\\values-v26\\values-v26.xml",
+                    "source": "C:\\Users\\seran\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\1753af83030c0d92b1dd6882a65c0917\\res\\values-v26\\values-v26.xml",
                     "from": {
                         "startLines": "2,3,4,8,12,16",
                         "startColumns": "4,4,4,4,4,4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\seran\\.gradle\\caches\\transforms-1\\files-1.1\\design-27.1.1.aar\\b389b0bcffcd2f68bb1596728636997e\\res\\values-v26\\values-v26.xml",
+                    "source": "C:\\Users\\seran\\.gradle\\caches\\transforms-1\\files-1.1\\design-27.1.1.aar\\e0c7da7b98342a2a13a8ef803708c8df\\res\\values-v26\\values-v26.xml",
                     "from": {
                         "startLines": "2,6",
                         "startColumns": "4,4",

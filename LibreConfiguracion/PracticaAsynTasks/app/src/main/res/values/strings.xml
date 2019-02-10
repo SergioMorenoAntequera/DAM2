@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">PracticaAsynTasks</string>
+
+    <!-- Dialogo de instrucciones -->
+    <string name="intruciones">En este juego tu misión será la de
+    conseguir que tu barra de progreso se llene antes que el resto. Dándole
+    a este boton</string>
+    <string name="intruciones2">¡ BUENA SUERTE !</string>
+
+    <!-- Dialogo de iniciar -->
+    <string name="introduccion">Escribe tu nombre para continuar</string>
+    <string name="nueva_partida">Nueva partida!</string>
+    <string name="empezar">Empezar</string>
+    <string name="retroceder">Retroceder</string>
+</resources>
