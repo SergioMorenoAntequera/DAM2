@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -81,32 +82,38 @@ public class JuegoActivity extends BaseActivity implements D_iniciar.OnD_iniciar
     public void onDIniciar(String nombre) {
         tvNombre.setText("Carrera de: " + nombre);
         controlTask = new ControlTask();
+        controlTask.execute(progreso1, progreso2, progreso3, progreso4, progreso5);
     }
 
     //----------------------------------------------------------------------------------------------
     ///////// Clase interna /////////////////////////////////////////////////////////////////////////
 
-    public class ControlTask extends AsyncTask<Integer,Integer,Integer> {
+    public class ControlTask extends AsyncTask<Integer ,Integer, Integer> {
 
         // Parametros progreso Resultasdo
         @Override
         protected Integer doInBackground(Integer... integers) {// entran paran salen resultado
 
-            while (progreso1 <= 100 && progreso2 <= 100 && progreso3 <= 100 && progreso4 <= 100 && progreso5 <= 100) {
-                SystemClock.sleep(integers[0]);
+            SystemClock.sleep(2000);
 
-                for(int i = 0; i< progresos.length; i++){
-                    progresos[i] += (int)(Math.random()*10+1);
+            while (integers[0] <= 100 && integers[1] <= 100 && integers[2] <= 100 && integers[3] <= 100 && integers[4] <= 100) {
+
+                for(int i = 0; i < integers.length; i++){
+                    integers[i] += (int)(Math.random()*10+1);
                 }
 
                 //Esto nos pasa al siguiente
-                controlTask.publishProgress(progreso1, progreso2, progreso3, progreso4, progreso5);
+                controlTask.publishProgress(integers[0], integers[1], integers[2], integers[3], integers[4]);
+                SystemClock.sleep(2000);
 
-                if (isCancelled())
+                if (this.isCancelled())
                     break;
             }
-            return 0;
+
+            return 1;
         }
+
+        //------------------------------------------------------------------------------------------
 
         @Override
         protected void onProgressUpdate(Integer... values) {// progreso
@@ -116,34 +123,37 @@ public class JuegoActivity extends BaseActivity implements D_iniciar.OnD_iniciar
             for(int i = 0; i < pbs.size(); i++){
                 pbs.get(i).setProgress(values[i]);
             }
-
-            //tvProgreso.setText(values[0]+"/"+proBar.getMax());
         }
 
-        /*@Override
+        //------------------------------------------------------------------------------------------
+
+        @Override
         protected void onPostExecute(Integer integer) {// resultado
             super.onPostExecute(integer);
 
             // hemos terminado la barra somos unos lentorros
             //partidaAcabada = true;
             new AlertDialog.Builder(JuegoActivity.this)
-                    .setTitle(R.string.fin)
-                    .setMessage(R.string.perder)
-                    .setPositiveButton(R.string.continuar, new DialogInterface.OnClickListener() {
+                    .setTitle("Final de la partida")
+                    .setMessage("Has perdido")
+                    .setPositiveButton("Continuar", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
-                            tvNombre.setText(R.string.random_buttons);
+                            Toast.makeText(JuegoActivity.this, "Boton acept pulsado", Toast.LENGTH_SHORT).show();
+                            /*tvNombre.setText("Test");
                             mostrarDialogo();
-                            numerarBotones(desordenarBotones());
+                            numerarBotones(desordenarBotones());*/
                         }
                     })
-                    .setNegativeButton(R.string.inicio, new DialogInterface.OnClickListener() {
+                    .setNegativeButton("Volver", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
                             finish();
                         }
                     });
-        }*/
+        }
+
+        //------------------------------------------------------------------------------------------
 
         /*@Override
         protected void onCancelled() {

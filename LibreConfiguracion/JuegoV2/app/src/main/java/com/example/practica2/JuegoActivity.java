@@ -19,8 +19,8 @@ public class JuegoActivity extends BaseActivity implements DialogoNombreNivel.On
     private static final String KEY_VELOCIDAD = "velocidad"; // calves bundle
     private static final String KEY_PROGRESO = "progreso";
 
-    private int velocidad, progreso, numFase,contador, botones;
-    protected TextView tvNombre, tvProgreso,tvFrase;
+    private int velocidad, progreso, numFase, contador, botones;
+    protected TextView tvNombre, tvProgreso, tvFrase;
     protected Button boton1, boton2, boton3, boton4;
     protected ProgressBar proBar;
     private boolean partidaAcabada;// partida acabada o no
@@ -45,8 +45,9 @@ public class JuegoActivity extends BaseActivity implements DialogoNombreNivel.On
 
 
     }
+
     // ... /////////////////////////////////////////////////////
-    public void ponerlistene(){
+    public void ponerlistene() {
         boton1.setOnClickListener(this);
         boton2.setOnClickListener(this);
         boton3.setOnClickListener(this);
@@ -55,15 +56,15 @@ public class JuegoActivity extends BaseActivity implements DialogoNombreNivel.On
 
     //----------------------------------------------------------------------------------------------
 
-    public void mostrarDialogo(){
+    public void mostrarDialogo() {
         DialogoNombreNivel miDialogoNombreNivel = DialogoNombreNivel.newInstance();
         miDialogoNombreNivel.setCancelable(false);
-        miDialogoNombreNivel.show(getFragmentManager(),"DialogoNombreNivel");
+        miDialogoNombreNivel.show(getFragmentManager(), "DialogoNombreNivel");
     }
 
     //----------------------------------------------------------------------------------------------
 
-    public void setView(){
+    public void setView() {
         tvNombre = (TextView) findViewById(R.id.tvNombre);
         tvFrase = (TextView) findViewById(R.id.tvFase);
         tvProgreso = (TextView) findViewById(R.id.tvProgreso);
@@ -89,21 +90,23 @@ public class JuegoActivity extends BaseActivity implements DialogoNombreNivel.On
     }
 
     // asdkofjaosg
-    public void numerarBotones(ArrayList<Integer> arra1y){
-        for(int i = 0; i < arra1y.size(); i++){
+    public void numerarBotones(ArrayList<Integer> arra1y) {
+        for (int i = 0; i < arra1y.size(); i++) {
             buttons.get(i).setEnabled(true);
-            buttons.get(i).setText(""+arra1y.get(i));
+            buttons.get(i).setText("" + arra1y.get(i));
         }
     }
-    public static ArrayList<Integer> desordenarBotones(){
+
+    public static ArrayList<Integer> desordenarBotones() {
         ArrayList<Integer> array = new ArrayList<>();
-        for(int i = 1; i < 5 ; i++){
+        for (int i = 1; i < 5; i++) {
             array.add(i);
         }
         Collections.shuffle(array);
         return array;
 
     }
+
     @Override
     public void onAceptarDialogo(String nombre, int velocidad) {
         // estado inicial del juego
@@ -115,14 +118,14 @@ public class JuegoActivity extends BaseActivity implements DialogoNombreNivel.On
         // modo inmersivo
         setModoInmersivo();
         // si hemos mandado un nombre lo ponemos
-        if(!nombre.trim().isEmpty()){
+        if (!nombre.trim().isEmpty()) {
             tvNombre.setText(nombre);
         }
         // indicamos la fase
         tvFrase.setText(getString(R.string.fase, String.valueOf(numFase)));
         // inclinamos no se que
         controlTask = new ControlTask();
-        controlTask.execute(this.velocidad,progreso);
+        controlTask.execute(this.velocidad, progreso);
     }
 
 
@@ -131,23 +134,25 @@ public class JuegoActivity extends BaseActivity implements DialogoNombreNivel.On
         Button botonPulsado = (Button) view;
 
         int valorBotton = Integer.valueOf(botonPulsado.getText().toString());
-        if(valorBotton == contador){
+        if (valorBotton == contador) {
             botonPulsado.setEnabled(false);
             contador++;
-            if(contador==5)controlTask.cancel(true);
+            if (contador == 5) controlTask.cancel(true);
         }
-    // cosas a partir de aqui/////////////////////////////////////////////////////////////////////
 
-}
-    public class ControlTask extends AsyncTask<Integer,Integer,Integer>{
+        // cosas a partir de aqui/////////////////////////////////////////////////////////////////////
+
+    }
+
+    public class ControlTask extends AsyncTask<Integer, Integer, Integer> {
         // parametros progreso Resultasdo
         @Override
         protected Integer doInBackground(Integer... integers) {// entran paran salen resultado
-            while(progreso <= 100){
+            while (progreso <= 100) {
                 SystemClock.sleep(integers[0]);
                 controlTask.publishProgress(progreso);
                 progreso++;
-                if(isCancelled())break;
+                if (isCancelled()) break;
             }
             return progreso;
 
@@ -157,7 +162,7 @@ public class JuegoActivity extends BaseActivity implements DialogoNombreNivel.On
         protected void onProgressUpdate(Integer... values) {// progreso
             super.onProgressUpdate(values);
             proBar.setProgress(values[0]);
-            tvProgreso.setText(values[0]+"/"+proBar.getMax());
+            tvProgreso.setText(values[0] + "/" + proBar.getMax());
         }
 
         @Override
@@ -187,16 +192,16 @@ public class JuegoActivity extends BaseActivity implements DialogoNombreNivel.On
         @Override
         protected void onCancelled() {
             super.onCancelled();
-            if(contador==5){
-                controlTask=new ControlTask();
+            if (contador == 5) {
+                controlTask = new ControlTask();
                 numerarBotones(desordenarBotones());
-                tvFrase.setText(getString(R.string.fase,String.valueOf(++numFase)));
+                tvFrase.setText(getString(R.string.fase, String.valueOf(++numFase)));
                 contador = 1;
                 progreso = 0;
                 proBar.setProgress(0);
                 // aumentar la velocidad
-                velocidad = velocidad-5 <= 0?1:velocidad-5;
-                controlTask.execute(velocidad,progreso);
+                velocidad = velocidad - 5 <= 0 ? 1 : velocidad - 5;
+                controlTask.execute(velocidad, progreso);
             }
         }
     }
@@ -204,10 +209,10 @@ public class JuegoActivity extends BaseActivity implements DialogoNombreNivel.On
     @Override
     protected void onPause() {
         super.onPause();
-        if(controlTask != null){
+        if (controlTask != null) {
             controlTask.cancel(true);
             estado = new Bundle();
-            estado.putInt(KEY_VELOCIDAD,velocidad);
+            estado.putInt(KEY_VELOCIDAD, velocidad);
             estado.putInt(KEY_PROGRESO, progreso);
         }
     }
@@ -215,9 +220,9 @@ public class JuegoActivity extends BaseActivity implements DialogoNombreNivel.On
     @Override
     protected void onResume() {
         super.onResume();
-        if(estado != null && !partidaAcabada){
+        if (estado != null && !partidaAcabada) {
             controlTask = new ControlTask();
-            controlTask.execute(estado.getInt(KEY_VELOCIDAD,estado.getInt(KEY_PROGRESO)));
+            controlTask.execute(estado.getInt(KEY_VELOCIDAD, estado.getInt(KEY_PROGRESO)));
         }
     }
 }
