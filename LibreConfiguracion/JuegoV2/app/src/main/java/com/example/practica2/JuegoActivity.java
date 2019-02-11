@@ -45,20 +45,23 @@ public class JuegoActivity extends BaseActivity implements DialogoNombreNivel.On
 
 
     }
-    // jaja /////////////////////////////////////////////////////
+    // ... /////////////////////////////////////////////////////
     public void ponerlistene(){
         boton1.setOnClickListener(this);
         boton2.setOnClickListener(this);
         boton3.setOnClickListener(this);
         boton4.setOnClickListener(this);
-
-
     }
+
+    //----------------------------------------------------------------------------------------------
+
     public void mostrarDialogo(){
         DialogoNombreNivel miDialogoNombreNivel = DialogoNombreNivel.newInstance();
         miDialogoNombreNivel.setCancelable(false);
         miDialogoNombreNivel.show(getFragmentManager(),"DialogoNombreNivel");
     }
+
+    //----------------------------------------------------------------------------------------------
 
     public void setView(){
         tvNombre = (TextView) findViewById(R.id.tvNombre);
@@ -196,7 +199,7 @@ public class JuegoActivity extends BaseActivity implements DialogoNombreNivel.On
                 controlTask.execute(velocidad,progreso);
             }
         }
-        }
+    }
 
     @Override
     protected void onPause() {

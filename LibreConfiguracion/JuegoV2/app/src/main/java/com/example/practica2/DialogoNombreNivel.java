@@ -14,6 +14,7 @@ import android.widget.EditText;
 import android.widget.RadioGroup;
 
 public class DialogoNombreNivel extends DialogFragment implements DialogInterface.OnClickListener {
+
     protected EditText etNombre;
     protected RadioGroup radioG;
     protected String nombre;

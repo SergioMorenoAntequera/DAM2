@@ -26,6 +26,12 @@ public class MainActivity extends BaseActivity {
         bIniciar = findViewById(R.id.bIniciar);
         etNombre = findViewById(R.id.etNombre);
 
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
         setModoInmersivo();
     }
 

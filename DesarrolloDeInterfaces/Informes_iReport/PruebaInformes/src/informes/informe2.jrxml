@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="088ef595-7e41-41cc-a123-728408ab0d90">
+	<property name="ireport.zoom" value="1.4641000000000013"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     automoviles.`Placa` AS automoviles_Placa,
+     automoviles.`Modelo` AS automoviles_Modelo,
+     automoviles.`Color` AS automoviles_Color,
+     automoviles.`Estado` AS automoviles_Estado
+FROM
+     `automoviles` automoviles]]>
+	</queryString>
+	<field name="automoviles_Placa" class="java.lang.Integer"/>
+	<field name="automoviles_Modelo" class="java.lang.Integer"/>
+	<field name="automoviles_Color" class="java.lang.String"/>
+	<field name="automoviles_Estado" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="96" y="30" width="359" height="28" uuid="37c351d1-b091-4c53-8d57-0be34d1ba1c4"/>
+				<textElement textAlignment="Center">
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LISTADO DE AUTOMÓVILES]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="455" y="0" width="100" height="20" uuid="0f18d22c-5ebd-4c10-b308-4ddf685512e1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="31" y="22" width="100" height="20" uuid="e6265c7f-0740-4bcb-a008-13bfbb30abe1"/>
+				<text><![CDATA[automoviles_Placa]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="293" y="22" width="100" height="20" uuid="dadae4ea-a4d8-4ad9-b90a-73f4ccb88ff4"/>
+				<text><![CDATA[automoviles_Modelo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="164" y="22" width="100" height="20" uuid="f81bb523-013b-4764-b7a5-4c449a4e6f1e"/>
+				<text><![CDATA[automoviles_Color]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="426" y="22" width="100" height="20" uuid="1501e728-be04-4272-b7ca-1445b99f9049"/>
+				<text><![CDATA[automoviles_Estado]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="29" splitType="Stretch">
+			<textField>
+				<reportElement x="31" y="0" width="100" height="20" uuid="c1273888-2bc4-4e7f-94e1-d398ed32a312"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{automoviles_Placa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="293" y="0" width="100" height="20" uuid="e53fee75-50ed-401f-9c61-fe02d5bcbf80"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{automoviles_Modelo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="164" y="0" width="100" height="20" uuid="37eb2da4-09ee-4a5e-8eb8-751ee8da126b"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{automoviles_Color}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="426" y="0" width="100" height="20" uuid="8c36d07d-7245-4dde-8ac5-2a97c1cd59b8"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{automoviles_Estado}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField>
+				<reportElement x="213" y="34" width="80" height="20" uuid="0f7d9dd4-dec5-4f84-8450-84dea9c17dc8"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="293" y="34" width="40" height="20" uuid="a9ee4f21-338e-43a1-a45f-fbe0e6ed1897"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

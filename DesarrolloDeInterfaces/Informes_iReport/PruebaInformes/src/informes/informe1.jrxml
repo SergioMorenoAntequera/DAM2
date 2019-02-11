@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="informe1" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a6492d87-bbf6-4cfa-bdc2-e6e15dba1135">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     clientes.`idCliente` AS clientes_idCliente,
+     clientes.`Nombre` AS clientes_Nombre,
+     clientes.`Cedula` AS clientes_Cedula,
+     clientes.`Numero_Tarjeta` AS clientes_Numero_Tarjeta
+FROM
+     `clientes` clientes]]>
+	</queryString>
+	<field name="clientes_idCliente" class="java.lang.Integer"/>
+	<field name="clientes_Nombre" class="java.lang.String"/>
+	<field name="clientes_Cedula" class="java.lang.String"/>
+	<field name="clientes_Numero_Tarjeta" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="63" splitType="Stretch">
+			<staticText>
+				<reportElement x="150" y="17" width="258" height="31" uuid="b9f0109c-1464-449c-92a4-ea8cac9c4335"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="22" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LISTADO DE CLIENTES]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="32" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Transparent" x="21" y="6" width="100" height="20" uuid="1cb53ceb-fac9-420a-b02b-b8dd39e0468e"/>
+				<text><![CDATA[CODIGO CLIENTE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="150" y="6" width="100" height="20" uuid="d44ee059-2122-4987-a37d-6ec30f4e4688"/>
+				<text><![CDATA[NOMBRE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="287" y="6" width="100" height="20" uuid="0f8d93b2-8a45-43fc-a13c-4568c185dcad"/>
+				<text><![CDATA[NUMERO TARJETA]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="38" splitType="Stretch">
+			<textField>
+				<reportElement x="21" y="10" width="100" height="20" uuid="493f9a39-9595-4c2c-8223-00cec7908ece"/>
+				<textFieldExpression><![CDATA[$F{clientes_idCliente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="150" y="10" width="100" height="20" uuid="20eeb089-b4b3-4592-a828-ca46a9a5950c"/>
+				<textFieldExpression><![CDATA[$F{clientes_Nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="287" y="10" width="100" height="20" uuid="76162d08-88d7-4437-ab66-a8ab9fd2e9e1"/>
+				<textFieldExpression><![CDATA[$F{clientes_Numero_Tarjeta}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="0" y="0" width="100" height="20" uuid="5d4ab98e-d14d-446d-915c-47eaa7400fef"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="455" y="0" width="100" height="20" uuid="c3d07678-84ad-4f19-85f6-15022c512cda"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

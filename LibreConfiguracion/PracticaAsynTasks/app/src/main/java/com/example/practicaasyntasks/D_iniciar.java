@@ -13,7 +13,7 @@ public class D_iniciar extends DialogFragment implements DialogInterface.OnClick
 
     protected EditText etNombre;
     protected String nombre;
-    OnDialogNombreNivel miListener;
+    OnD_iniciar miListener;
 
     public static D_iniciar newInstance(){
         return new D_iniciar();
@@ -31,7 +31,7 @@ public class D_iniciar extends DialogFragment implements DialogInterface.OnClick
         // Verify that the host activity implements the callback interface
         try {
             // Instantiate the NoticeDialogListener so we can send events to the host
-            miListener = (OnDialogNombreNivel) activity;
+            miListener = (OnD_iniciar) activity;
         } catch (ClassCastException e) {
             // The activity doesn't implement the interface, throw exception
             throw new ClassCastException(activity.toString() + " must implement NoticeDialogListener");
@@ -60,8 +60,8 @@ public class D_iniciar extends DialogFragment implements DialogInterface.OnClick
     // interfaz ////////////////////////////////////////////////////////////////
 
     // interfaz para pasar los parametros a la activity
-    public interface OnDialogNombreNivel {
-        public void onAceptarDialogo(String nombre);
+    public interface OnD_iniciar {
+        public void onDIniciar(String nombre);
     }
 
 
@@ -74,7 +74,7 @@ public class D_iniciar extends DialogFragment implements DialogInterface.OnClick
 
         switch(i){
             case DialogInterface.BUTTON_POSITIVE:
-                miListener.onAceptarDialogo(nombre);
+                miListener.onDIniciar(nombre);
                 break;
             case DialogInterface.BUTTON_NEGATIVE:
                 getActivity().finish();
