@@ -6,11 +6,13 @@
 package controlador;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.InputStream;
+import java.io.IOException;
+import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
@@ -19,12 +21,12 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.crypto.Cipher;
 import javax.crypto.CipherInputStream;
+import javax.crypto.CipherOutputStream;
 import javax.crypto.NoSuchPaddingException;
 import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
-import jdk.internal.org.xml.sax.InputSource;
 import vista.Vista;
 
 /**
@@ -37,6 +39,7 @@ public class Controlador implements ActionListener {
     
     JFileChooser fileChooser;
     File fichero = null;
+    File ficheroCifrado;
     
     //Clave
     String clave;
@@ -44,11 +47,14 @@ public class Controlador implements ActionListener {
     Cipher cifrar;
     int longitudCifrado;
     String tipoCifrado;
+    String tipoAlgoritmo;
     SecretKey claveSimetrica;
     
     //Fichero
     FileInputStream entrada;
     FileOutputStream salida;
+    byte[] trozo = new byte[256];
+    int leido = 0;
     
     CipherInputStream entradaCipher;
     
@@ -64,6 +70,7 @@ public class Controlador implements ActionListener {
         v.bDescifrar.addActionListener(this);
         v.bSalir.addActionListener(this);
         
+        JOptionPane.showMessageDialog(null, "Preguntarle a paco el porque me corta el contenido");
         
     }
     
@@ -89,40 +96,105 @@ public class Controlador implements ActionListener {
         }
         
         //Ciframmos el archivo recogido arriba---------------------------------
-        if(e.getSource() == v.bCifrar && v.tfClave.getText().length() > 0){
-            //La clave y el Cipher la conseguimos aquí
-            try {
-                clave = v.tfClave.getText();
-                claveByte = clave.getBytes("UTF8");
-                claveByte = copyOf(claveByte, longitudCifrado);
-                
-                //Usamos la clave que tenemos arriba para crear nuestra secret Key
-                claveSimetrica = new SecretKeySpec(claveByte, tipoCifrado);
-                
-                cifrar = Cipher.getInstance(tipoCifrado);
-                cifrar.init(Cipher.ENCRYPT_MODE, claveSimetrica);
-                //Ahora tenemos el Cipher completado
-                
-                entrada = new FileInputStream(fichero);
-                salida = new FileOutputStream(fichero.getPath()+"cifrado");
-                
-                entradaCipher = new CipherInputStream(entrada, cifrar);
-                
-                
-                
-                
-            } catch (UnsupportedEncodingException ex) {
-                System.err.println("ERROR: " + ex.toString());
-            } catch (FileNotFoundException ex) {
-                System.err.println("ERROR: " + ex.toString());
-            } catch (NoSuchAlgorithmException ex) {
-                System.err.println("ERROR: " + ex.toString());
-            } catch (NoSuchPaddingException ex) {
-                System.err.println("ERROR: " + ex.toString());
-            } catch (InvalidKeyException ex) {
-                System.err.println("ERROR: " + ex.toString());
-            } catch (NullPointerException ex) {
-                JOptionPane.showMessageDialog(null, "No has selecionado ningun archivo");
+        if (e.getSource() == v.bCifrar) {
+            if (v.tfClave.getText().length() == 0) {
+                JOptionPane.showMessageDialog(null, "Introduzca una clave");
+            } else {
+                //La clave y el Cipher la conseguimos aquí
+                try {
+                    clave = v.tfClave.getText();
+                    claveByte = clave.getBytes("UTF8");
+                    claveByte = copyOf(claveByte, longitudCifrado);
+
+                    //Usamos la clave que tenemos arriba para crear nuestra secret Key
+                    claveSimetrica = new SecretKeySpec(claveByte, tipoCifrado);
+
+                    cifrar = Cipher.getInstance(tipoAlgoritmo);
+                    cifrar.init(Cipher.ENCRYPT_MODE, claveSimetrica);
+                    //Ahora tenemos el Cipher completado
+
+                    BufferedInputStream inBuffer = new BufferedInputStream(new FileInputStream(fichero));
+                    ficheroCifrado = new File(fichero.getPath() + "_CIFRADO_.txt");
+                    ficheroCifrado.createNewFile();
+
+                    CipherOutputStream flujoCifrado = new CipherOutputStream(new FileOutputStream(ficheroCifrado), cifrar);
+
+                    int leido = 0;
+                    while ((leido = inBuffer.read(trozo)) > 0) {
+                        flujoCifrado.write(trozo, 0, leido);
+                        flujoCifrado.flush();
+                        System.out.println("Cifrando archivo...");
+                    }
+                    
+                    JOptionPane.showMessageDialog(null, "Archivo cifrado con exito");
+
+                } catch (UnsupportedEncodingException ex) {
+                    System.err.println("ERROR: " + ex.toString());
+                } catch (FileNotFoundException ex) {
+                    System.err.println("ERROR: " + ex.toString());
+                } catch (NoSuchAlgorithmException ex) {
+                    System.err.println("ERROR: " + ex.toString());
+                } catch (NoSuchPaddingException ex) {
+                    System.err.println("ERROR: " + ex.toString());
+                } catch (InvalidKeyException ex) {
+                    System.err.println("ERROR: " + ex.toString());
+                } catch (NullPointerException ex) {
+                    JOptionPane.showMessageDialog(null, "No has selecionado ningun archivo");
+                } catch (IOException ex) {
+                    Logger.getLogger(Controlador.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        }
+
+        //Boton descifrar-------------------------------------------------------
+        if (e.getSource() == v.bDescifrar) {
+            if (v.tfClave.getText().length() == 0) {
+                JOptionPane.showMessageDialog(null, "Introduzca una clave");
+            } else {
+                //La clave y el Cipher la conseguimos aquí
+                try {
+                    clave = v.tfClave.getText();
+                    claveByte = clave.getBytes("UTF8");
+                    claveByte = copyOf(claveByte, longitudCifrado);
+
+                    //Usamos la clave que tenemos arriba para crear nuestra secret Key
+                    claveSimetrica = new SecretKeySpec(claveByte, tipoCifrado);
+
+                    cifrar = Cipher.getInstance(tipoAlgoritmo);
+                    cifrar.init(Cipher.DECRYPT_MODE, claveSimetrica);
+                    //Ahora tenemos el Cipher completado
+                    
+                    BufferedInputStream inBuffer = new BufferedInputStream(new FileInputStream(fichero));
+                    
+                    File ficheroDesCifrado = new File(fichero.getPath() + "_DESCIFRADO_.txt");
+                    ficheroDesCifrado.createNewFile();
+
+                    CipherOutputStream flujoCifrado = new CipherOutputStream(new FileOutputStream(ficheroDesCifrado), cifrar);
+
+                    
+                    while ((leido = inBuffer.read(trozo)) > 0) {
+                        flujoCifrado.write(trozo, 0, leido);
+                        flujoCifrado.flush();
+                        System.out.println("Descifrando archivo...");
+                    }
+
+                    JOptionPane.showMessageDialog(null, "Archivo descifrado con exito");
+
+                } catch (UnsupportedEncodingException ex) {
+                    System.err.println("ERROR: " + ex.toString());
+                } catch (FileNotFoundException ex) {
+                    System.err.println("ERROR: " + ex.toString());
+                } catch (NoSuchAlgorithmException ex) {
+                    System.err.println("ERROR: " + ex.toString());
+                } catch (NoSuchPaddingException ex) {
+                    System.err.println("ERROR: " + ex.toString());
+                } catch (InvalidKeyException ex) {
+                    System.err.println("ERROR: " + ex.toString());
+                } catch (NullPointerException ex) {
+                    JOptionPane.showMessageDialog(null, "No has selecionado ningun archivo");
+                } catch (IOException ex) {
+                    Logger.getLogger(Controlador.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         }
         
@@ -130,7 +202,6 @@ public class Controlador implements ActionListener {
         if(e.getSource() == v.bSalir){
             System.exit(-1);
         }
-        
     }
     
     //--------------------------------------------------------------------------
@@ -140,10 +211,16 @@ public class Controlador implements ActionListener {
         if (v1.rbAES128.isSelected()) {
             longitudCifrado = 16;
             tipoCifrado = "AES";
+            tipoAlgoritmo = "AES/ECB/PKCS5padding";
         } else {
             if (v1.rbAES256.isSelected()) {
                 longitudCifrado = 24;
+                tipoCifrado = "AES";
+                tipoAlgoritmo = "AES/ECB/PKCS5padding";
+            } else {
+                longitudCifrado = 24;
                 tipoCifrado = "DESede";
+                tipoAlgoritmo = "DESede";
             }
         }
     }

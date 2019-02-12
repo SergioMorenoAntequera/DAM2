@@ -7,6 +7,7 @@ import android.os.SystemClock;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
@@ -47,7 +48,7 @@ public class JuegoActivity extends BaseActivity implements D_iniciar.OnD_iniciar
         for(int i = 0; i < pbs.size(); i++){
             pbs.get(i).setScaleX(6f);
             pbs.get(i).setScaleY(6f);
-
+            pbs.get(i).setMax(100);
             pbs.get(i).incrementProgressBy(2);
         }
         progresos = new int[5];
@@ -83,33 +84,42 @@ public class JuegoActivity extends BaseActivity implements D_iniciar.OnD_iniciar
         tvNombre.setText("Carrera de: " + nombre);
         controlTask = new ControlTask();
         controlTask.execute(progreso1, progreso2, progreso3, progreso4, progreso5);
-    }
+    } //Preguntale a Paco
 
     //----------------------------------------------------------------------------------------------
     ///////// Clase interna /////////////////////////////////////////////////////////////////////////
 
-    public class ControlTask extends AsyncTask<Integer ,Integer, Integer> {
+    public class ControlTask extends AsyncTask<Integer, Integer, Integer> {
 
         // Parametros progreso Resultasdo
         @Override
         protected Integer doInBackground(Integer... integers) {// entran paran salen resultado
-
-            SystemClock.sleep(2000);
-
-            while (integers[0] <= 100 && integers[1] <= 100 && integers[2] <= 100 && integers[3] <= 100 && integers[4] <= 100) {
+            //SystemClock.sleep(2000);
+            boolean control = true;
+            while (control && integers[0] <= 100 && integers[1] <= 100 && integers[2] <= 100 && integers[3] <= 100 && integers[4] <= 100) {
 
                 for(int i = 0; i < integers.length; i++){
-                    integers[i] += (int)(Math.random()*10+1);
+                    //integers[i] += (int)(Math.random()*10+1);
+                    integers[i] += 1;
+                    //tvNombre.setText(integers[i]+"");
+                    Log.d("BARRA--------> ["+i+"]=", ""+integers[i]);
+                    if(integers[i]>=100) {
+                        control=false;
+                        break;
+                    }
+
                 }
 
                 //Esto nos pasa al siguiente
                 controlTask.publishProgress(integers[0], integers[1], integers[2], integers[3], integers[4]);
-                SystemClock.sleep(2000);
+                if(!control)
+                    break;
+
+                SystemClock.sleep(500);
 
                 if (this.isCancelled())
                     break;
             }
-
             return 1;
         }
 
@@ -121,6 +131,8 @@ public class JuegoActivity extends BaseActivity implements D_iniciar.OnD_iniciar
 
             //Ponemos los valores dentro de las barras
             for(int i = 0; i < pbs.size(); i++){
+                tvNombre.setText(values[i]+"");
+                //Aparecen en elñ 39
                 pbs.get(i).setProgress(values[i]);
             }
         }
@@ -131,8 +143,6 @@ public class JuegoActivity extends BaseActivity implements D_iniciar.OnD_iniciar
         protected void onPostExecute(Integer integer) {// resultado
             super.onPostExecute(integer);
 
-            // hemos terminado la barra somos unos lentorros
-            //partidaAcabada = true;
             new AlertDialog.Builder(JuegoActivity.this)
                     .setTitle("Final de la partida")
                     .setMessage("Has perdido")

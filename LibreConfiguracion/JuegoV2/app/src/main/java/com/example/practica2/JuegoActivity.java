@@ -161,6 +161,7 @@ public class JuegoActivity extends BaseActivity implements DialogoNombreNivel.On
         @Override
         protected void onProgressUpdate(Integer... values) {// progreso
             super.onProgressUpdate(values);
+
             proBar.setProgress(values[0]);
             tvProgreso.setText(values[0] + "/" + proBar.getMax());
         }
@@ -168,6 +169,7 @@ public class JuegoActivity extends BaseActivity implements DialogoNombreNivel.On
         @Override
         protected void onPostExecute(Integer integer) {// resultado
             super.onPostExecute(integer);
+
             // hemos terminado la barra somos unos lentorros
             partidaAcabada = true;
             new AlertDialog.Builder(JuegoActivity.this)
