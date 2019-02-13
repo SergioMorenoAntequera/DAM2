@@ -18,12 +18,13 @@ import java.util.ArrayList;
 
 public class JuegoActivity extends BaseActivity implements D_iniciar.OnD_iniciar {
 
-    TextView tvNombre;
+    TextView tvNombre, tvPuntosJugador;
     ArrayList<ProgressBar> pbs;
     int[] progresos;
     ProgressBar pb1, pb2, pb3, pb4, pb5, pbJugador;
-    int progreso1 = 0, progreso2 = 0, progreso3 = 0, progreso4 = 0, progreso5 = 0;
+    int progreso1 = 0, progreso2 = 0, progreso3 = 0, progreso4 = 0, progreso5 = 0, progresoJugador = 0;
     Button avanzar;
+    int terminado = 0; //-1 ha ganado la maquina // 0 no ha ganado nadie // 1 ha ganado el usuario
 
     private ControlTask controlTask;
 
@@ -33,6 +34,7 @@ public class JuegoActivity extends BaseActivity implements D_iniciar.OnD_iniciar
         setContentView(R.layout.activity_juego);
 
         tvNombre = findViewById(R.id.tvNombre);
+
         pb1 = findViewById(R.id.pb1);
         pb2 = findViewById(R.id.pb2);
         pb3 = findViewById(R.id.pb3);
@@ -45,12 +47,7 @@ public class JuegoActivity extends BaseActivity implements D_iniciar.OnD_iniciar
         pbs.add(pb3);
         pbs.add(pb4);
         pbs.add(pb5);
-        for(int i = 0; i < pbs.size(); i++){
-            pbs.get(i).setScaleX(6f);
-            pbs.get(i).setScaleY(6f);
-            pbs.get(i).setMax(100);
-            pbs.get(i).incrementProgressBy(2);
-        }
+
         progresos = new int[5];
         progresos[0] = progreso1;
         progresos[1] = progreso2;
@@ -59,13 +56,12 @@ public class JuegoActivity extends BaseActivity implements D_iniciar.OnD_iniciar
         progresos[4] = progreso5;
 
         pbJugador = findViewById(R.id.pbJugador);
+        tvPuntosJugador = findViewById(R.id.tvPuntosJugador);
         avanzar = findViewById(R.id.bAvanzar);
+
         setModoInmersivo();
         mostrarDialogo();
     }
-
-
-
 
     //----------------------------------------------------------------------------------------------
 
@@ -84,7 +80,23 @@ public class JuegoActivity extends BaseActivity implements D_iniciar.OnD_iniciar
         tvNombre.setText("Carrera de: " + nombre);
         controlTask = new ControlTask();
         controlTask.execute(progreso1, progreso2, progreso3, progreso4, progreso5);
-    } //Preguntale a Paco
+    }
+
+    //----------------------------------------------------------------------------------------------
+
+    //Rellenamos nuestra propia barra
+    public void avanzarClick(View v){
+        if(terminado == 0){
+            progresoJugador +=2;
+            tvPuntosJugador.setText(progresoJugador+"%");
+            pbJugador.setProgress(progresoJugador);
+
+            if(progresoJugador >= 100){
+                terminado = 1;
+            }
+        }
+        comprobarGanador();
+    }
 
     //----------------------------------------------------------------------------------------------
     ///////// Clase interna /////////////////////////////////////////////////////////////////////////
@@ -94,33 +106,30 @@ public class JuegoActivity extends BaseActivity implements D_iniciar.OnD_iniciar
         // Parametros progreso Resultasdo
         @Override
         protected Integer doInBackground(Integer... integers) {// entran paran salen resultado
-            //SystemClock.sleep(2000);
-            boolean control = true;
-            while (control && integers[0] <= 100 && integers[1] <= 100 && integers[2] <= 100 && integers[3] <= 100 && integers[4] <= 100) {
 
-                for(int i = 0; i < integers.length; i++){
-                    //integers[i] += (int)(Math.random()*10+1);
-                    integers[i] += 1;
-                    //tvNombre.setText(integers[i]+"");
-                    Log.d("BARRA--------> ["+i+"]=", ""+integers[i]);
-                    if(integers[i]>=100) {
-                        control=false;
+            while (terminado != 1 && integers[0] <= 100 && integers[1] <= 100 && integers[2] <= 100 && integers[3] <= 100 && integers[4] <= 100) {
+
+                for (int i = 0; i < integers.length; i++) {
+
+                    //Vamos rellenando las 5 barras cada una con numeros aleatorios
+                    integers[i] += (int) (Math.random() * 3 + 1);
+                    if (integers[i] >= 100) {
+                        terminado = -1;
                         break;
                     }
-
                 }
 
                 //Esto nos pasa al siguiente
                 controlTask.publishProgress(integers[0], integers[1], integers[2], integers[3], integers[4]);
-                if(!control)
-                    break;
 
-                SystemClock.sleep(500);
+                SystemClock.sleep(250);
 
                 if (this.isCancelled())
                     break;
+
+
             }
-            return 1;
+            return 0;
         }
 
         //------------------------------------------------------------------------------------------
@@ -131,10 +140,10 @@ public class JuegoActivity extends BaseActivity implements D_iniciar.OnD_iniciar
 
             //Ponemos los valores dentro de las barras
             for(int i = 0; i < pbs.size(); i++){
-                tvNombre.setText(values[i]+"");
-                //Aparecen en elñ 39
+                //Aparecen en el  39 y la barra se termina al 59
                 pbs.get(i).setProgress(values[i]);
             }
+
         }
 
         //------------------------------------------------------------------------------------------
@@ -143,43 +152,36 @@ public class JuegoActivity extends BaseActivity implements D_iniciar.OnD_iniciar
         protected void onPostExecute(Integer integer) {// resultado
             super.onPostExecute(integer);
 
-            new AlertDialog.Builder(JuegoActivity.this)
-                    .setTitle("Final de la partida")
-                    .setMessage("Has perdido")
-                    .setPositiveButton("Continuar", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {
-                            Toast.makeText(JuegoActivity.this, "Boton acept pulsado", Toast.LENGTH_SHORT).show();
-                            /*tvNombre.setText("Test");
-                            mostrarDialogo();
-                            numerarBotones(desordenarBotones());*/
-                        }
-                    })
-                    .setNegativeButton("Volver", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {
-                            finish();
-                        }
-                    });
+            comprobarGanador();
         }
 
         //------------------------------------------------------------------------------------------
+    }
 
-        /*@Override
-        protected void onCancelled() {
-            super.onCancelled();
-            if(contador==5){
-                controlTask=new ControlTask();
-                numerarBotones(desordenarBotones());
-                tvFrase.setText(getString(R.string.fase,String.valueOf(++numFase)));
-                contador = 1;
-                progreso = 0;
-                proBar.setProgress(0);
-                // aumentar la velocidad
-                velocidad = velocidad-5 <= 0?1:velocidad-5;
-                controlTask.execute(velocidad,progreso);
+    public void comprobarGanador(){
+        if (terminado == 1) {
+            new AlertDialog.Builder(this)
+                    .setTitle("¡Victoria!")
+                    .setMessage("Felicidades, has ganado al 100%!")
+                    .setPositiveButton("Continuar", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            finish();
+                        }
+                    }).show();
+        } else {
+            if ((terminado == -1)) {
+                new AlertDialog.Builder(this)
+                        .setTitle("¡Derrota!")
+                        .setMessage("Lo sentimos, has perdido al " + progresoJugador + "%!")
+                        .setPositiveButton("Volverlo a intentar", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                finish();
+                            }
+                        }).show();
             }
-        }*/
+        }
     }
 
 }
