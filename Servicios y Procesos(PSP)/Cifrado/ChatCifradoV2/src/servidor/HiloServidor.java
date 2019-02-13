@@ -5,6 +5,7 @@
  */
 package servidor;
 
+import cifrado.*;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
@@ -24,6 +25,7 @@ public class HiloServidor implements Runnable {
     BufferedReader IN;
     PrintWriter OUT;
     Socket conexion;
+    DesCifrar descifrar;
 
     public HiloServidor(Socket s, ArrayList<Cliente> cli, int id) {
         conexion = s;
@@ -35,22 +37,32 @@ public class HiloServidor implements Runnable {
     public void run() {
         try (
                 BufferedReader in = new BufferedReader(new InputStreamReader(conexion.getInputStream()));
-                PrintWriter out = new PrintWriter(conexion.getOutputStream(), true);) {
+                PrintWriter out = new PrintWriter(conexion.getOutputStream(), true);
+        ) {
             IN = in;
             OUT = out;
+            
             generaCliente();
+            
             mostrarBanner();
+            
+            System.out.println(miCli.getNombre() + " se ha conectado");
 
-            String cad = "";
+            String mensajeARecibirCifrado = " ";
             //Con esto el servidor recibe lo de todos los clientes
-            while (cad != null && !cad.trim().equalsIgnoreCase("quit") && !cad.trim().equalsIgnoreCase("exit")) {
+            while (mensajeARecibirCifrado != null && !mensajeARecibirCifrado.trim().equalsIgnoreCase("quit") && !mensajeARecibirCifrado.trim().equalsIgnoreCase("exit")) {
                 
-                cad = IN.readLine();
+                mensajeARecibirCifrado = IN.readLine();
+                //System.out.println(mensajeARecibirCifrado+"");
+            
+                descifrar = new DesCifrar(mensajeARecibirCifrado);
+                String mensajeARecibirDescifrado = descifrar.getFrase();
+                System.out.println("[" + miCli.getNombre() + "]>" + mensajeARecibirCifrado+"");
+                System.out.println("[" + miCli.getNombre() + "]>" + mensajeARecibirDescifrado);
 
-                System.out.println("[" + miCli.getNombre() + "]>" + cad);
-                publicarMensaje(cad);
-
+                publicarMensaje(mensajeARecibirCifrado, mensajeARecibirDescifrado);
             }
+            
             System.out.println("\t\tDesconectando a cliente: " + miCli.getNombre());
             losClientes.remove(miCli);
             
@@ -66,13 +78,11 @@ public class HiloServidor implements Runnable {
     public void generaCliente() {
         miCli = new Cliente(id_cli, IN, OUT);
         losClientes.add(miCli);
-
     }
 
     //--------------------------------------------------------------------------------------------------------------------------------------------
 
     public void mostrarBanner() {
-        //OUT.orintln("COD_108"+miCli.getNombre());
         OUT.println("+------------------------------------------+");
         OUT.println("|---   << CLIENTE " + id_cli + " >>    ---|");
         OUT.println("+------------------------------------------+");
@@ -80,10 +90,11 @@ public class HiloServidor implements Runnable {
 
     //----------------------------------------------------------------------------------------------------------------------------------------------------
 
-    public void publicarMensaje(String texto) {
+    public void publicarMensaje(String textoCifrado, String textoDescifrado) {
         for (Cliente c : losClientes) {
             if (c != miCli) {
-                c.getFlujoSalida().println("[" + miCli.getNombre() + "]>" + texto);
+                c.getFlujoSalida().println("[" + miCli.getNombre() + "]>" + textoCifrado);
+                c.getFlujoSalida().println("[" + miCli.getNombre() + "]>" + textoDescifrado);
             }
         }
     }

@@ -21,6 +21,7 @@ public class Servidor1 {
             ) 
         {
             System.out.println("Se ha conectado una maquina remota, IP=" + conex.getInetAddress());
+            
             //Mandando Mensaje de bienvenida al cliente
             OUT.println("Conectado con el Servidor: " + conex.getInetAddress() + ":" + conex.getPort());
             while (true) {

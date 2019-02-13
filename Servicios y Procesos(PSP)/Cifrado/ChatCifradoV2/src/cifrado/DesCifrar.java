@@ -43,11 +43,11 @@ public class DesCifrar {
         fraseByteCifrada = decodBase64(frase);
         getClaveSimetrica();
         getCifrar();
-        getFraseByte(frase);
-        frase = new String(fraseByte);
+        getFraseByte();
+        this.frase = new String(fraseByte);
     }
 
-    private void getFraseByte(String frase1) {
+    private void getFraseByte() {
         try {
             fraseByte = cifrar.doFinal(fraseByteCifrada);
         } catch (IllegalBlockSizeException ex) {

@@ -70,8 +70,6 @@ public class Controlador implements ActionListener {
         v.bDescifrar.addActionListener(this);
         v.bSalir.addActionListener(this);
         
-        JOptionPane.showMessageDialog(null, "Preguntarle a paco el porque me corta el contenido");
-        
     }
     
     //--------------------------------------------------------------------------
@@ -123,9 +121,9 @@ public class Controlador implements ActionListener {
                     while ((leido = inBuffer.read(trozo)) > 0) {
                         flujoCifrado.write(trozo, 0, leido);
                         flujoCifrado.flush();
-                        System.out.println("Cifrando archivo...");
+                        System.out.println("Cifrando archivo escribiendo: "+leido+" bytes");
                     }
-                    
+                    flujoCifrado.close();
                     JOptionPane.showMessageDialog(null, "Archivo cifrado con exito");
 
                 } catch (UnsupportedEncodingException ex) {
@@ -171,9 +169,9 @@ public class Controlador implements ActionListener {
 
                     CipherOutputStream flujoCifrado = new CipherOutputStream(new FileOutputStream(ficheroDesCifrado), cifrar);
 
-                    
-                    while ((leido = inBuffer.read(trozo)) > 0) {
-                        flujoCifrado.write(trozo, 0, leido);
+                    byte[] trozo1 = new byte[256];
+                    while ((leido = inBuffer.read(trozo1)) > 0) {
+                        flujoCifrado.write(trozo1, 0, leido);
                         flujoCifrado.flush();
                         System.out.println("Descifrando archivo...");
                     }

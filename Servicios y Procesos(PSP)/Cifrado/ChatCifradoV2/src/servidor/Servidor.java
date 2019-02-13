@@ -16,7 +16,7 @@ public class Servidor {
     public static void main(String[] args) {
         
         int PTO = 15000;
-        int idCliente = 0;
+        int idCliente = 1;
         ArrayList<Cliente> misClientes = new ArrayList<Cliente>();
         EscribirServidor hServidorMandarMensajes;
         

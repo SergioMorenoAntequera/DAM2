@@ -30,7 +30,7 @@ public class EscribirServidor extends Thread {
             //Leer texto y enviar
             mensajeAEnviar = teclado.nextLine();
             for(Cliente c : misClientes){
-                c.getFlujoSalida().println(mensajeAEnviar);
+                c.getFlujoSalida().println("[Servidor]> " + mensajeAEnviar);
             }
             
             //Si el servidor manda el mensaje de cierre, la ejecucion finaliza

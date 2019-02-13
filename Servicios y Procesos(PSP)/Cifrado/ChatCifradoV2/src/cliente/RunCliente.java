@@ -5,11 +5,15 @@
  */
 package cliente;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.ObjectInputStream;
+import java.io.PrintWriter;
 import java.net.InetAddress;
 import java.net.Socket;
 import java.net.UnknownHostException;
+import java.util.Scanner;
 
 /**
  *
@@ -18,20 +22,25 @@ import java.net.UnknownHostException;
 public class RunCliente {
    
     public static void main(String[] args) {
+        
+        
         InetAddress direccionIP = null;
         int puerto = 0;
-
-        if (args.length != 2) {
-            System.err.println("Error se esperaba Dirección Ip y Puerto: ");
-            System.out.println("USO \"java Cliente dirIP Puerto\"");
-            System.exit(-1);
-        }
+        
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Introduce la dirección IP a la que conectarte(puede ser localhost)");
+        String ipCad = sc.next();
+        System.out.println("Introduce el puerto(15000 por lo general)");
+        String puertoCad = sc.next();
+        
+        BufferedReader flujoEntrada = null;
+        PrintWriter flujoSalida = null;
 
         //Convertimos la dirección a formato InetAdress y el puerto a int
-        String cad = args[0];
         try {
-            direccionIP = InetAddress.getByName(cad);
-            puerto = Integer.parseInt(args[1]);
+            
+            direccionIP = InetAddress.getByName(ipCad);
+            puerto = Integer.parseInt(puertoCad);
 
         } catch (UnknownHostException ex) {
             System.err.println("Formato de Dirreción IP Errorneo o Desconocido");
@@ -42,13 +51,26 @@ public class RunCliente {
         }
     
         //----------------------------------------------------------------------
+        
         try (
                 Socket con = new Socket(direccionIP, puerto);
+                BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
+                PrintWriter out = new PrintWriter(con.getOutputStream(), true);
         ) {
-
+            flujoEntrada = in;
+            flujoSalida = out;
+            
+            EscribirCliente hElClienteEscribe = new EscribirCliente(flujoSalida);
+            hElClienteEscribe.start();
+            
+            //La siguiente parte pone al cliente en escucha de lo que diga el server
+            while(true){
+                String mensajeRecibido = flujoEntrada.readLine();
+                System.out.println(mensajeRecibido);
+            }
             
         } catch (IOException ex) {
-            System.err.println("Error al recibir el fichero!!!!!");
+            System.err.println("Error");
             System.err.println("Mensaje: " + ex.getMessage());
             System.exit(-1);
         }
