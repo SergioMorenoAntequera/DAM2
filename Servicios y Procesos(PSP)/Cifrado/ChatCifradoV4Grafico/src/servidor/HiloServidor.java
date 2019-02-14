@@ -47,14 +47,16 @@ public class HiloServidor implements Runnable {
             
             mostrarBanner(OUT);
             
-            System.out.println(miCli.getNombre() + " se ha conectado");
+            //System.out.println(miCli.getNombre() + " se ha conectado");
 
             String mensajeARecibirCifrado = "";
             //Con esto el servidor recibe lo de todos los clientes
             while (mensajeARecibirCifrado != null && !mensajeARecibirCifrado.trim().equalsIgnoreCase("quit") && !mensajeARecibirCifrado.trim().equalsIgnoreCase("exit")) {
                 
                 //Recogemos y desciframos la cadena tal y como nos llega de los clientes
+                System.out.println(IN.readLine());
                 mensajeARecibirCifrado = IN.readLine();
+                
                 descifrar = new DesCifrar(mensajeARecibirCifrado);
                 String mensajeARecibirDescifrado = descifrar.getFrase();
                 

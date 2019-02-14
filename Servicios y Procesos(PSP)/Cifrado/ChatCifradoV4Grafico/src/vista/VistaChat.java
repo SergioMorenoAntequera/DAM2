@@ -1,24 +1,20 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package vista;
-
 import java.awt.Color;
+import java.net.Socket;
 
-/**
- *
- * @author windiurno
- */
 public class VistaChat extends javax.swing.JFrame {
 
+    static Socket conexion;
+    
     /**
      * Creates new form ChatCliente
      */
-    public VistaChat() {
+    public VistaChat(Socket conexion) {
         initComponents();
         this.getContentPane().setBackground(new Color(63, 150, 172));
+        this.setLocationRelativeTo(null);
+        
+        this.conexion = conexion;
     }
 
     /**
@@ -116,7 +112,7 @@ public class VistaChat extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new VistaChat().setVisible(true);
+                new VistaChat(conexion).setVisible(true);
             }
         });
     }

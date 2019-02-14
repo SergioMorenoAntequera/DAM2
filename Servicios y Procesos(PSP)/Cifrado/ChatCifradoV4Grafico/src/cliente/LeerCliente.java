@@ -30,6 +30,7 @@ public class LeerCliente extends Thread {
         
         while(true){
             try {
+                //El error salta en la siguiente linea
                 mensajeLlegadoCifrado = flujoEntrada.readLine();
                 
                 descifrar = new DesCifrar(mensajeLlegadoCifrado);
@@ -38,7 +39,8 @@ public class LeerCliente extends Thread {
                 System.out.println(descifrar.getFrase());
                 
             } catch (IOException ex) {
-                System.out.println("Error: " + ex.toString());
+                System.err.println("Error en Leer Cliente: " + ex.getMessage());
+                break;
             }
         }
         

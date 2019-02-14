@@ -4,24 +4,64 @@
  * and open the template in the editor.
  */
 package vista;
-
 import java.awt.Color;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.net.InetAddress;
+import java.net.Socket;
+import java.net.UnknownHostException;
+import static vista.VistaChat.conexion;
 
 /**
  *
  * @author windiurno
  */
 public class VistaConectar extends javax.swing.JFrame {
-
-    /**
-     * Creates new form vistaConectar
-     */
+    
+    InetAddress direccionIP;
+    int puerto;
+    
     public VistaConectar() {
         initComponents();
         this.setLocationRelativeTo(null);
         this.getContentPane().setBackground(new Color(63, 150, 172));
     }
 
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(VistaChat.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(VistaChat.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(VistaChat.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(VistaChat.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new VistaConectar().setVisible(true);
+            }
+        });
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -113,6 +153,40 @@ public class VistaConectar extends javax.swing.JFrame {
 
     private void bConectarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bConectarActionPerformed
         
+        String ipCad = tfDireccionIP.getText();
+        String puertoCad = tfPuerto.getText();
+
+        //--------------------------------------------------------------
+        //Convertimos los datos
+        try {
+            direccionIP = InetAddress.getByName(ipCad);
+            puerto = Integer.parseInt(puertoCad);
+
+        } catch (UnknownHostException ex) {
+            System.err.println("Formato de Dirreción IP Errorneo o Desconocido");
+            System.exit(-1);
+        } catch (NumberFormatException ex) {
+            System.err.println("Formato Puerto Erroneo!!!!");
+            System.exit(-1);
+        }
+
+        //--------------------------------------------------------------
+        //Establecemos la conexion
+        try (
+                Socket con = new Socket(direccionIP, puerto);
+                BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
+                PrintWriter out = new PrintWriter(con.getOutputStream(), true);
+        ) {
+            
+            VistaChat vChat = new VistaChat(con);
+            vChat.setVisible(true);
+            this.setVisible(false);
+
+        } catch (IOException ex) {
+            System.err.println("Error en Run Cliente: " + ex.getMessage());
+            System.exit(-1);
+        }
+        
     }//GEN-LAST:event_bConectarActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -122,4 +196,12 @@ public class VistaConectar extends javax.swing.JFrame {
     public javax.swing.JTextField tfDireccionIP;
     public javax.swing.JTextField tfPuerto;
     // End of variables declaration//GEN-END:variables
+
+    public String getIP(){
+        return tfDireccionIP.getText();
+    }
+    public String getPuerto(){
+        return tfPuerto.getText();
+    }
+    
 }
