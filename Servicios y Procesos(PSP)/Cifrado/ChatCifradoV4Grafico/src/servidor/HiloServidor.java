@@ -110,9 +110,5 @@ public class HiloServidor implements Runnable {
         Cifrar cifrar = new Cifrar(banner);
         
         salida.println(cifrar.getFraseCifrada());
-        
-        /*salida.println("+-----------------------------+");
-        salida.println("|---   << CLIENTE " + id_cli + " >>    ---|");
-        salida.println("+-----------------------------+");*/
     }
 }
