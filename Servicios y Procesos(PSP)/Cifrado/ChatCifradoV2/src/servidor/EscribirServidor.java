@@ -1,6 +1,7 @@
 package servidor;
 
 
+import cifrado.Cifrar;
 import cliente.Cliente;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -13,6 +14,7 @@ public class EscribirServidor extends Thread {
 
     Scanner teclado;
     String mensajeAEnviar;
+    Cifrar cifrar;
     ArrayList<Cliente> misClientes;
 
     //--------------------------------------------------------------------------
@@ -29,7 +31,12 @@ public class EscribirServidor extends Thread {
         do {
             //Leer texto y enviar
             mensajeAEnviar = teclado.nextLine();
+            
+            cifrar = new Cifrar(mensajeAEnviar);
+            String mensajeAEnviarCifrado = cifrar.getFraseCifrada();
+            
             for(Cliente c : misClientes){
+                c.getFlujoSalida().println("[Servidor]> " + mensajeAEnviarCifrado);
                 c.getFlujoSalida().println("[Servidor]> " + mensajeAEnviar);
             }
             
