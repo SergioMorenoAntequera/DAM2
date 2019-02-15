@@ -1,10 +1,26 @@
 package vista;
+import cifrado.Cifrar;
+import cliente.LeerCliente;
 import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.KeyEvent;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
 import java.net.Socket;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class VistaChat extends javax.swing.JFrame {
 
     static Socket conexion;
+    static Cifrar cifrar;
+    static String mensajeAEnviar;
+    static PrintWriter flujoSalida;
+    static BufferedReader flujoEntrada;
+    
+    ActionEvent evt2;
     
     /**
      * Creates new form ChatCliente
@@ -15,6 +31,16 @@ public class VistaChat extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         
         this.conexion = conexion;
+        
+        try {
+            flujoEntrada = new BufferedReader(new InputStreamReader(conexion.getInputStream()));
+            
+            LeerCliente hLeerCliente = new LeerCliente(flujoEntrada, taChat);
+            hLeerCliente.start();
+            
+        } catch (IOException ex) {
+            Logger.getLogger(VistaChat.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -31,95 +57,83 @@ public class VistaChat extends javax.swing.JFrame {
         taChat = new javax.swing.JTextArea();
         tfMsgAEnviar = new javax.swing.JTextField();
         bEnviar = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Chat");
+        setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Berlin Sans FB", 1, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setForeground(new java.awt.Color(0, 204, 51));
         jLabel1.setText("*** Chat TCP Multicliente ***");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, 251, -1));
 
+        taChat.setBackground(new java.awt.Color(0, 0, 0));
         taChat.setColumns(20);
         taChat.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
+        taChat.setForeground(new java.awt.Color(0, 255, 51));
+        taChat.setLineWrap(true);
         taChat.setRows(5);
-        taChat.setEnabled(false);
+        taChat.setEditable(false);
+        taChat.setSelectedTextColor(new java.awt.Color(0, 0, 0));
         jScrollPane1.setViewportView(taChat);
 
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(38, 69, 347, 244));
+
+        tfMsgAEnviar.setBackground(new java.awt.Color(0, 0, 0));
         tfMsgAEnviar.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
+        tfMsgAEnviar.setForeground(new java.awt.Color(0, 255, 0));
+        tfMsgAEnviar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tfMsgAEnviarKeyTyped(evt);
+            }
+        });
+        getContentPane().add(tfMsgAEnviar, new org.netbeans.lib.awtextra.AbsoluteConstraints(38, 327, 276, -1));
 
         bEnviar.setText("Enviar");
+        bEnviar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bEnviarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(bEnviar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 325, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(38, 38, 38)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(tfMsgAEnviar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(bEnviar))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 251, Short.MAX_VALUE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(39, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tfMsgAEnviar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(bEnviar))
-                .addContainerGap(34, Short.MAX_VALUE))
-        );
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/131306.jpg"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 430, 390));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
+    private void bEnviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEnviarActionPerformed
+        
         try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(VistaChat.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(VistaChat.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(VistaChat.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(VistaChat.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            flujoSalida = new PrintWriter(conexion.getOutputStream(), true);
+            mensajeAEnviar = tfMsgAEnviar.getText();
+            
+            
+            cifrar = new Cifrar(mensajeAEnviar);
+            flujoSalida.println(cifrar.getFraseCifrada());
+            
+            tfMsgAEnviar.setText("");
+            taChat.append("[Yo]> " + mensajeAEnviar + "\n");
+        } catch (IOException ex) {
+            Logger.getLogger(VistaChat.class.getName()).log(Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
+        taChat.setCaretPosition(taChat.getDocument().getLength()); //Scroll automatico
+    }//GEN-LAST:event_bEnviarActionPerformed
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new VistaChat(conexion).setVisible(true);
-            }
-        });
-    }
+    private void tfMsgAEnviarKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfMsgAEnviarKeyTyped
+        if(evt.getKeyChar() == KeyEvent.VK_ENTER){
+            bEnviar.doClick();
+        }
+    }//GEN-LAST:event_tfMsgAEnviarKeyTyped
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton bEnviar;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     public javax.swing.JTextArea taChat;
     public javax.swing.JTextField tfMsgAEnviar;

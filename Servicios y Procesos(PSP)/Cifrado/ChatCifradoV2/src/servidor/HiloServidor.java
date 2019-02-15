@@ -60,7 +60,7 @@ public class HiloServidor implements Runnable {
                 
                 //Le ponemos a la cadena al principio el cliente que la ha pasado
                 String mensajeCompletoDescifrado = "[" + miCli.getNombre() + "]> " + mensajeARecibirDescifrado;
-                
+
                 //Una vez que ya hemos mostrado esto en el servido lo ciframos pero ahora entero
                 cifrar = new Cifrar(mensajeCompletoDescifrado);
                 String mensajeCompletoCifrado = cifrar.getFraseCifrada();

@@ -22,8 +22,10 @@ public class HiloServidor implements Runnable {
     ArrayList<Cliente> losClientes;
     Cliente miCli;
     int id_cli;
-    BufferedReader IN;
-    PrintWriter OUT;
+    
+    BufferedReader flujoEntrada;
+    PrintWriter flujoSalida;
+    
     Socket conexion;
     DesCifrar descifrar;
     Cifrar cifrar;
@@ -36,26 +38,22 @@ public class HiloServidor implements Runnable {
 
     @Override
     public void run() {
-        try (
-                BufferedReader in = new BufferedReader(new InputStreamReader(conexion.getInputStream()));
-                PrintWriter out = new PrintWriter(conexion.getOutputStream(), true);
-        ) {
-            IN = in;
-            OUT = out;
+        try {
+            flujoEntrada = new BufferedReader(new InputStreamReader(conexion.getInputStream()));
+            flujoSalida = new PrintWriter(conexion.getOutputStream(), true);
             
             generaCliente();
-            
-            mostrarBanner(OUT);
-            
-            //System.out.println(miCli.getNombre() + " se ha conectado");
 
+            System.out.println("*** Se ha conectado " + miCli.getNombre() + " ***");
+
+            mostrarBanner(flujoSalida);
+            
             String mensajeARecibirCifrado = "";
             //Con esto el servidor recibe lo de todos los clientes
             while (mensajeARecibirCifrado != null && !mensajeARecibirCifrado.trim().equalsIgnoreCase("quit") && !mensajeARecibirCifrado.trim().equalsIgnoreCase("exit")) {
                 
                 //Recogemos y desciframos la cadena tal y como nos llega de los clientes
-                System.out.println(IN.readLine());
-                mensajeARecibirCifrado = IN.readLine();
+                mensajeARecibirCifrado = flujoEntrada.readLine().trim();
                 
                 descifrar = new DesCifrar(mensajeARecibirCifrado);
                 String mensajeARecibirDescifrado = descifrar.getFrase();
@@ -77,8 +75,11 @@ public class HiloServidor implements Runnable {
             System.out.println("\t\tDesconectando a cliente: " + miCli.getNombre());
             losClientes.remove(miCli);
             
+            flujoSalida.close();
+            flujoSalida.close();
+            
         } catch (Exception ex) {
-            System.err.println("ERROR EN HILO SERVIDOR: " + ex.getMessage());
+            System.out.println("*** Se ha desconectado " + miCli.getNombre() + " ***");
             losClientes.remove(miCli);
 
         }
@@ -98,7 +99,7 @@ public class HiloServidor implements Runnable {
     //--------------------------------------------------------------------------------------------------------------------------------------------
 
     public void generaCliente() {
-        miCli = new Cliente(id_cli, IN, OUT);
+        miCli = new Cliente(id_cli, flujoEntrada, flujoSalida);
         losClientes.add(miCli);
     }
 

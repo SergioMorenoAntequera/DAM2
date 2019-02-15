@@ -1,27 +1,21 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package vista;
 import java.awt.Color;
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
 import java.net.InetAddress;
 import java.net.Socket;
 import java.net.UnknownHostException;
-import static vista.VistaChat.conexion;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
-/**
- *
- * @author windiurno
- */
 public class VistaConectar extends javax.swing.JFrame {
     
     InetAddress direccionIP;
     int puerto;
+    Socket conexion;
+    
+    VistaChat vChat;
     
     public VistaConectar() {
         initComponents();
@@ -76,21 +70,27 @@ public class VistaConectar extends javax.swing.JFrame {
         tfDireccionIP = new javax.swing.JTextField();
         tfPuerto = new javax.swing.JTextField();
         bConectar = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Cliente");
         setBackground(new java.awt.Color(51, 153, 255));
+        setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Berlin Sans FB", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Dirección IP:");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 54, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Berlin Sans FB", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Puerto:");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(75, 111, -1, -1));
 
         tfDireccionIP.setFont(new java.awt.Font("Berlin Sans FB", 0, 18)); // NOI18N
         tfDireccionIP.setText("localhost");
+        getContentPane().add(tfDireccionIP, new org.netbeans.lib.awtextra.AbsoluteConstraints(152, 50, 146, -1));
 
         tfPuerto.setFont(new java.awt.Font("Berlin Sans FB", 0, 18)); // NOI18N
         tfPuerto.setText("15000");
@@ -99,6 +99,7 @@ public class VistaConectar extends javax.swing.JFrame {
                 tfPuertoActionPerformed(evt);
             }
         });
+        getContentPane().add(tfPuerto, new org.netbeans.lib.awtextra.AbsoluteConstraints(152, 107, 146, -1));
 
         bConectar.setFont(new java.awt.Font("Britannic Bold", 0, 18)); // NOI18N
         bConectar.setText("Conectar");
@@ -107,42 +108,10 @@ public class VistaConectar extends javax.swing.JFrame {
                 bConectarActionPerformed(evt);
             }
         });
+        getContentPane().add(bConectar, new org.netbeans.lib.awtextra.AbsoluteConstraints(114, 157, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(tfDireccionIP, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(tfPuerto, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(92, 92, 92)
-                        .addComponent(bConectar)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(tfDireccionIP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(25, 25, 25)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(tfPuerto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(bConectar)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/131306.jpg"))); // NOI18N
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -4, 330, 210));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -161,6 +130,13 @@ public class VistaConectar extends javax.swing.JFrame {
         try {
             direccionIP = InetAddress.getByName(ipCad);
             puerto = Integer.parseInt(puertoCad);
+            
+            conexion = new Socket(direccionIP, puerto);
+            
+            
+            this.setVisible(false);
+            vChat = new VistaChat(conexion);
+            vChat.setVisible(true);
 
         } catch (UnknownHostException ex) {
             System.err.println("Formato de Dirreción IP Errorneo o Desconocido");
@@ -168,40 +144,20 @@ public class VistaConectar extends javax.swing.JFrame {
         } catch (NumberFormatException ex) {
             System.err.println("Formato Puerto Erroneo!!!!");
             System.exit(-1);
-        }
-
-        //--------------------------------------------------------------
-        //Establecemos la conexion
-        try (
-                Socket con = new Socket(direccionIP, puerto);
-                BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
-                PrintWriter out = new PrintWriter(con.getOutputStream(), true);
-        ) {
-            
-            VistaChat vChat = new VistaChat(con);
-            vChat.setVisible(true);
-            this.setVisible(false);
-
         } catch (IOException ex) {
-            System.err.println("Error en Run Cliente: " + ex.getMessage());
-            System.exit(-1);
+            Logger.getLogger(VistaConectar.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception e){
+            JOptionPane.showMessageDialog(null, "Imposible conectar al servidor");
         }
-        
     }//GEN-LAST:event_bConectarActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton bConectar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     public javax.swing.JTextField tfDireccionIP;
     public javax.swing.JTextField tfPuerto;
     // End of variables declaration//GEN-END:variables
 
-    public String getIP(){
-        return tfDireccionIP.getText();
-    }
-    public String getPuerto(){
-        return tfPuerto.getText();
-    }
-    
 }

@@ -8,6 +8,7 @@ package cliente;
 import cifrado.DesCifrar;
 import java.io.BufferedReader;
 import java.io.IOException;
+import javax.swing.JTextArea;
 
 /**
  *
@@ -18,10 +19,12 @@ public class LeerCliente extends Thread {
     BufferedReader flujoEntrada;
     String mensajeLlegadoCifrado;
     DesCifrar descifrar;
+    JTextArea ta;
 
-    public LeerCliente(BufferedReader flujoEntrada) {
+    public LeerCliente(BufferedReader flujoEntrada, JTextArea ta) {
         this.flujoEntrada = flujoEntrada;
         this.mensajeLlegadoCifrado = null;
+        this.ta = ta;
     }
 
     @Override
@@ -35,9 +38,8 @@ public class LeerCliente extends Thread {
                 
                 descifrar = new DesCifrar(mensajeLlegadoCifrado);
                 
-                System.out.println(mensajeLlegadoCifrado);
-                System.out.println(descifrar.getFrase());
-                
+                ta.append(descifrar.getFrase()+"\n");
+
             } catch (IOException ex) {
                 System.err.println("Error en Leer Cliente: " + ex.getMessage());
                 break;
