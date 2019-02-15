@@ -1,24 +1,15 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package cliente;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.ObjectInputStream;
 import java.io.PrintWriter;
 import java.net.InetAddress;
 import java.net.Socket;
 import java.net.UnknownHostException;
 import java.util.Scanner;
 
-/**
- *
- * @author seran
- */
 public class RunCliente {
    
     public static void main(String[] args) {
@@ -29,9 +20,11 @@ public class RunCliente {
         
         Scanner sc = new Scanner(System.in);
         System.out.println("Introduce la dirección IP a la que conectarte(puede ser localhost)");
-        String ipCad = sc.next();
+        //String ipCad = sc.next();
+        String ipCad = "localhost";
         System.out.println("Introduce el puerto(15000 por lo general)");
-        String puertoCad = sc.next();
+        //String puertoCad = sc.next();
+        String puertoCad = "15000";
         
         BufferedReader flujoEntrada = null;
         PrintWriter flujoSalida = null;
@@ -57,17 +50,13 @@ public class RunCliente {
                 BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
                 PrintWriter out = new PrintWriter(con.getOutputStream(), true);
         ) {
-            flujoEntrada = in;
-            flujoSalida = out;
+            LeerCliente hElClienteLee = new LeerCliente(in);
+            hElClienteLee.start();
             
-            EscribirCliente hElClienteEscribe = new EscribirCliente(flujoSalida);
+            EscribirCliente hElClienteEscribe = new EscribirCliente(out);
             hElClienteEscribe.start();
             
-            //La siguiente parte pone al cliente en escucha de lo que diga el server
-            while(true){
-                String mensajeRecibido = flujoEntrada.readLine();
-                System.out.println(mensajeRecibido);
-            }
+            while(true){}
             
         } catch (IOException ex) {
             System.err.println("Error");

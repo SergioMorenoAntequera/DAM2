@@ -35,9 +35,12 @@ public class EscribirServidor extends Thread {
             cifrar = new Cifrar(mensajeCompleto);
             String mensajeAEnviarCifrado = cifrar.getFraseCifrada();
             
+            
+            
             for(Cliente c : misClientes){
                 c.getFlujoSalida().println(mensajeAEnviarCifrado);
             }
+            System.out.println(mensajeAEnviarCifrado);
             
             //Si el servidor manda el mensaje de cierre, la ejecucion finaliza
             if (mensajeAEnviar.equalsIgnoreCase("exit")) {
