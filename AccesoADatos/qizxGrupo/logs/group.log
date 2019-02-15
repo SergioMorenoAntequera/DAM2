@@ -1,0 +1,5 @@
+10:45:47.271  INFO  [LibraryManager] ---- group creation in C:\Repositorios2\DAM2\AccesoADatos\qizxGrupo
+10:45:47.287  INFO  [LibraryManager]  100
+12:07:41.705  INFO  [LibraryManager] shutdown begins
+12:07:41.736  INFO  [LibraryManager]  closed library Cursos
+12:07:41.736  INFO  [LibraryManager] shutdown complete.
