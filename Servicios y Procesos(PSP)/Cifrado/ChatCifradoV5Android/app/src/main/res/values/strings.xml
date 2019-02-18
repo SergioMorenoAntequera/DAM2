@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">ChatCifradoV5Android</string>
+
+    <string name="ip">IP:</string>
+    <string name="puerto">Puerto:</string>
+
+
+</resources>

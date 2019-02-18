@@ -58,7 +58,6 @@ public class D_iniciar extends DialogFragment implements DialogInterface.OnClick
 
 
     // interfaz ////////////////////////////////////////////////////////////////
-
     // interfaz para pasar los parametros a la activity
     public interface OnD_iniciar {
         public void onDIniciar(String nombre);
@@ -66,7 +65,6 @@ public class D_iniciar extends DialogFragment implements DialogInterface.OnClick
 
 
     // Metodos acciones ////////////////////////////////////////////////////////
-
     @Override
     public void onClick(DialogInterface dialogInterface, int i) {
         etNombre = (EditText) ((Dialog)dialogInterface).findViewById(R.id.etNombre);

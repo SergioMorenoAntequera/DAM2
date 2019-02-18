@@ -173,13 +173,12 @@ public class ControladorProductos implements ActionListener{
                 productoV.tfDescripcion.setText(producto.getDescripcion()+"");
                 productoV.tfPrecio.setText(producto.getPrecio()+"");
                 productoV.tfDescuento.setText(producto.getDescuento()+"");
-                
+                } else {
+                    JOptionPane.showMessageDialog(null, "Registro no encontrado");
+                    limpiar();
+                }
             } else {
-                JOptionPane.showMessageDialog(null, "Error al buscar");
-                limpiar();
-            }
-            } else {
-                JOptionPane.showMessageDialog(null, "Por favor, rellene el campo 'codigo'");
+                JOptionPane.showMessageDialog(null, "Por favor, rellene el campo 'Referencia'");
             }
             
             

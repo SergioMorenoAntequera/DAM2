@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="50bce058-f26f-4af7-aa00-012967933505">
 	<property name="ireport.zoom" value="1.4641000000000013"/>
-        
-	<property name="ireport.x" value="12"/>
+	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
 	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
 	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
@@ -37,7 +36,7 @@ FROM
 	<field name="productos_descuento" class="java.math.BigDecimal"/>
 	<field name="comerciales_codigo" class="java.lang.String"/>
 	<field name="comerciales_nombre" class="java.lang.String"/>
-	<variable name="ventaPorComercial" class="java.lang.Integer" calculation="Count">
+	<variable name="ventaPorComercial" class="java.lang.Integer" resetType="Group" resetGroup="comerciales_codigo" calculation="Count">
 		<variableExpression><![CDATA[$F{productos_referencia}]]></variableExpression>
 	</variable>
 	<group name="comerciales_codigo">

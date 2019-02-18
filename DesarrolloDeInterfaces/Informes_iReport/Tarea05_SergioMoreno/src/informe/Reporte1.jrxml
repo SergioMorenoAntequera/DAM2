@@ -54,11 +54,11 @@ FROM
 			<staticText>
 				<reportElement style="Title" x="0" y="13" width="263" height="33" uuid="d4076ee1-f348-487b-bac7-d3716f4a2b92"/>
 				<textElement verticalAlignment="Middle"/>
-				<text><![CDATA[Leaf Gray Title]]></text>
+				<text><![CDATA[Reporte 1]]></text>
 			</staticText>
 			<staticText>
 				<reportElement style="SubTitle" x="117" y="46" width="157" height="22" uuid="8930cb35-bb6b-412f-9d3c-125bf972a2b6"/>
-				<text><![CDATA[Leaf Gray SubTitle]]></text>
+				<text><![CDATA[Lista de productos]]></text>
 			</staticText>
 		</band>
 	</title>
@@ -75,19 +75,19 @@ FROM
 			</line>
 			<staticText>
 				<reportElement style="Column header" x="0" y="19" width="138" height="15" uuid="eb311506-5360-4f69-88b5-5a631bd07a4f"/>
-				<text><![CDATA[productos_nombre]]></text>
+				<text><![CDATA[nombre]]></text>
 			</staticText>
 			<staticText>
 				<reportElement style="Column header" x="138" y="19" width="138" height="15" uuid="01f67082-298b-4aec-b0d8-1718c8f9765e"/>
-				<text><![CDATA[productos_descripcion]]></text>
+				<text><![CDATA[descripcion]]></text>
 			</staticText>
 			<staticText>
 				<reportElement style="Column header" x="276" y="19" width="138" height="15" uuid="ec531189-fcea-4307-8045-60149d761378"/>
-				<text><![CDATA[productos_precio]]></text>
+				<text><![CDATA[precio]]></text>
 			</staticText>
 			<staticText>
 				<reportElement style="Column header" x="414" y="19" width="138" height="15" uuid="2f66ec36-9375-4674-8637-7ef23bb64805"/>
-				<text><![CDATA[productos_descuento]]></text>
+				<text><![CDATA[descuento]]></text>
 			</staticText>
 		</band>
 	</columnHeader>

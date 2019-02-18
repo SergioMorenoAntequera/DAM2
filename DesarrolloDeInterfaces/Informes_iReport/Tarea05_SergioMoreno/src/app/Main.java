@@ -16,8 +16,8 @@ public class Main {
     
     public static void main(String[] args){
         
-        
         MainFrame mf = new MainFrame();
+        mf.setTitle("Practica oblgatoria 5");
         ControladorMainFrame cmf = new ControladorMainFrame(mf);
         
         mf.setLocationRelativeTo(null);

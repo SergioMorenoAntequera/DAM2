@@ -42,43 +42,56 @@ public class VistaVehiculos extends javax.swing.JFrame {
         bBuscar = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         tfNumKm = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Matricula:");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(63, 83, -1, -1));
 
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Marca:");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 125, -1, -1));
 
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Modelo:");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(75, 167, -1, -1));
 
         tffRevision.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tffRevisionActionPerformed(evt);
             }
         });
+        getContentPane().add(tffRevision, new org.netbeans.lib.awtextra.AbsoluteConstraints(137, 247, 101, -1));
 
+        Precio.setForeground(new java.awt.Color(0, 0, 0));
         Precio.setText("Num Km:");
+        getContentPane().add(Precio, new org.netbeans.lib.awtextra.AbsoluteConstraints(68, 209, -1, -1));
 
         tfMatricula.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tfMatriculaActionPerformed(evt);
             }
         });
+        getContentPane().add(tfMatricula, new org.netbeans.lib.awtextra.AbsoluteConstraints(137, 79, 101, -1));
 
         tfMarca.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tfMarcaActionPerformed(evt);
             }
         });
+        getContentPane().add(tfMarca, new org.netbeans.lib.awtextra.AbsoluteConstraints(137, 121, 101, -1));
 
         tfModelo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tfModeloActionPerformed(evt);
             }
         });
+        getContentPane().add(tfModelo, new org.netbeans.lib.awtextra.AbsoluteConstraints(137, 163, 101, -1));
 
         bGuardar.setText("Guardar");
         bGuardar.addActionListener(new java.awt.event.ActionListener() {
@@ -86,12 +99,16 @@ public class VistaVehiculos extends javax.swing.JFrame {
                 bGuardarActionPerformed(evt);
             }
         });
+        getContentPane().add(bGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 303, -1, -1));
 
         bModificar.setText("Modificar");
+        getContentPane().add(bModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(214, 303, -1, -1));
 
         bEliminar.setText("Eliminar");
+        getContentPane().add(bEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(315, 303, -1, -1));
 
         bLimpiar.setText("Limpiar campos");
+        getContentPane().add(bLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(146, 347, -1, -1));
 
         bBuscar.setText("Buscar");
         bBuscar.addActionListener(new java.awt.event.ActionListener() {
@@ -99,104 +116,30 @@ public class VistaVehiculos extends javax.swing.JFrame {
                 bBuscarActionPerformed(evt);
             }
         });
+        getContentPane().add(bBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 303, -1, -1));
 
+        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Fecha Revision:");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 251, -1, -1));
 
         tfNumKm.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tfNumKmActionPerformed(evt);
             }
         });
+        getContentPane().add(tfNumKm, new org.netbeans.lib.awtextra.AbsoluteConstraints(137, 205, 101, -1));
 
-        jLabel4.setText("Ejemplo: 0000AAA");
-
+        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("Ejemplo: 2000-12-31");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(256, 251, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("Vehiculos");
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(158, 23, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(31, 31, 31)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(Precio)
-                                    .addComponent(jLabel5)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jLabel1))
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(tfMatricula, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jLabel4))
-                                    .addComponent(tfMarca, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(tfModelo, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(tfNumKm, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(tffRevision, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jLabel6))))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(bBuscar)
-                                .addGap(18, 18, 18)
-                                .addComponent(bGuardar)
-                                .addGap(18, 18, 18)
-                                .addComponent(bModificar)
-                                .addGap(18, 18, 18)
-                                .addComponent(bEliminar))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(158, 158, 158)
-                        .addComponent(jLabel7))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(146, 146, 146)
-                        .addComponent(bLimpiar)))
-                .addContainerGap(31, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(jLabel7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(tfMatricula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(tfMarca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(tfModelo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Precio)
-                    .addComponent(tfNumKm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(tffRevision, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6))
-                .addGap(32, 32, 32)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(bBuscar)
-                    .addComponent(bGuardar)
-                    .addComponent(bModificar)
-                    .addComponent(bEliminar))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(bLimpiar)
-                .addGap(14, 14, 14))
-        );
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/fondoPapel.jpg"))); // NOI18N
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 420, 400));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -277,10 +220,10 @@ public class VistaVehiculos extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     public javax.swing.JTextField tfMarca;
     public javax.swing.JTextField tfMatricula;
     public javax.swing.JTextField tfModelo;

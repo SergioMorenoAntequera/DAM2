@@ -34,26 +34,36 @@ public class MainFrame extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         bProductos = new javax.swing.JButton();
         bVehiculos = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
         menuBar = new javax.swing.JMenuBar();
         ejercicio02 = new javax.swing.JMenu();
         miProductos = new javax.swing.JMenuItem();
         miVehiculos = new javax.swing.JMenuItem();
         ejercicio03 = new javax.swing.JMenu();
+        jmInformes = new javax.swing.JMenuItem();
 
         jMenuItem1.setText("jMenuItem1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Tarea Obligatoria del T5: Informes");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(85, 36, -1, -1));
 
         bEj02.setText("Informes");
+        getContentPane().add(bEj02, new org.netbeans.lib.awtextra.AbsoluteConstraints(297, 146, 130, 76));
 
         jLabel2.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Ejercicio 03");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(317, 111, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Ejercicio 02");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(89, 111, -1, -1));
 
         bProductos.setText("Productos");
         bProductos.addActionListener(new java.awt.event.ActionListener() {
@@ -61,8 +71,15 @@ public class MainFrame extends javax.swing.JFrame {
                 bProductosActionPerformed(evt);
             }
         });
+        getContentPane().add(bProductos, new org.netbeans.lib.awtextra.AbsoluteConstraints(41, 168, -1, -1));
 
         bVehiculos.setText("Vehiculos");
+        getContentPane().add(bVehiculos, new org.netbeans.lib.awtextra.AbsoluteConstraints(148, 168, -1, -1));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/fondoPapel.jpg"))); // NOI18N
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 310));
+
+        menuBar.setBackground(new java.awt.Color(255, 255, 255));
 
         ejercicio02.setText("Ejercicio02");
 
@@ -80,50 +97,13 @@ public class MainFrame extends javax.swing.JFrame {
         menuBar.add(ejercicio02);
 
         ejercicio03.setText("Ejercicio03");
+
+        jmInformes.setText("Informes");
+        ejercicio03.add(jmInformes);
+
         menuBar.add(ejercicio03);
 
         setJMenuBar(menuBar);
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(89, 89, 89)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel2)
-                .addGap(91, 91, 91))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(41, 41, 41)
-                        .addComponent(bProductos)
-                        .addGap(18, 18, 18)
-                        .addComponent(bVehiculos)
-                        .addGap(63, 63, 63)
-                        .addComponent(bEj02, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(66, 66, 66))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(36, 36, 36)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(bEj02, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(bProductos)
-                    .addComponent(bVehiculos))
-                .addGap(83, 83, 83))
-        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -183,7 +163,9 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JMenuItem jMenuItem1;
+    public javax.swing.JMenuItem jmInformes;
     public javax.swing.JMenuBar menuBar;
     public javax.swing.JMenuItem miProductos;
     public javax.swing.JMenuItem miVehiculos;

@@ -12,6 +12,7 @@ import modelo.ConsultasVehiculos;
 import modelo.Productos;
 import modelo.Vehiculos;
 import vista.MainFrame;
+import vista.VistaInformes;
 import vista.VistaProductos;
 import vista.VistaVehiculos;
 
@@ -31,7 +32,8 @@ public class ControladorMainFrame implements ActionListener {
         this.mainFrame.bVehiculos.addActionListener(this);
         this.mainFrame.miVehiculos.addActionListener(this);
         this.mainFrame.miProductos.addActionListener(this);
-        
+        this.mainFrame.bEj02.addActionListener(this);
+        this.mainFrame.jmInformes.addActionListener(this);
     }
     
     
@@ -62,7 +64,12 @@ public class ControladorMainFrame implements ActionListener {
             frm.setVisible(true);
         }
         
-        
+        if(e.getSource() == mainFrame.bEj02 || e.getSource() == mainFrame.jmInformes){
+            VistaInformes vista = new VistaInformes();
+            
+            ControladorInformes ctrn = new ControladorInformes(vista);
+            ctrn.informesV.setVisible(true);
+        }
 
     }
     
