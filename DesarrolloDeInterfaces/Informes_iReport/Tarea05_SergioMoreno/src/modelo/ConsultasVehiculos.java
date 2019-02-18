@@ -27,10 +27,8 @@ public class ConsultasVehiculos extends Conexion {
             ps.setString(5, vehiculos.getfRevision());
             ps.execute();
             return true;
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Llave primaria duplicada");
-            System.err.println(e.getMessage());
-            return false;
+        } catch(SQLException es) {
+            JOptionPane.showMessageDialog(null, "Formato de datos incorrecto o matricula ya existente", "Error al guardar", JOptionPane.ERROR_MESSAGE);
         } finally {
             try {
                 con.close();
@@ -38,6 +36,7 @@ public class ConsultasVehiculos extends Conexion {
                 System.err.println("Error al cerrar la conexion: " + e);
             }
         }
+        return false;
     }
     
     //--------------------------------------------------------------------------

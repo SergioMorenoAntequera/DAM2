@@ -27,12 +27,20 @@ public class MainFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jMenuItem1 = new javax.swing.JMenuItem();
         jLabel1 = new javax.swing.JLabel();
         bEj02 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         bProductos = new javax.swing.JButton();
         bVehiculos = new javax.swing.JButton();
+        menuBar = new javax.swing.JMenuBar();
+        ejercicio02 = new javax.swing.JMenu();
+        miProductos = new javax.swing.JMenuItem();
+        miVehiculos = new javax.swing.JMenuItem();
+        ejercicio03 = new javax.swing.JMenu();
+
+        jMenuItem1.setText("jMenuItem1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -55,6 +63,26 @@ public class MainFrame extends javax.swing.JFrame {
         });
 
         bVehiculos.setText("Vehiculos");
+
+        ejercicio02.setText("Ejercicio02");
+
+        miProductos.setText("Productos");
+        miProductos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                miProductosActionPerformed(evt);
+            }
+        });
+        ejercicio02.add(miProductos);
+
+        miVehiculos.setText("Vehiculos");
+        ejercicio02.add(miVehiculos);
+
+        menuBar.add(ejercicio02);
+
+        ejercicio03.setText("Ejercicio03");
+        menuBar.add(ejercicio03);
+
+        setJMenuBar(menuBar);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -85,7 +113,7 @@ public class MainFrame extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(36, 36, 36)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(jLabel3))
@@ -103,6 +131,10 @@ public class MainFrame extends javax.swing.JFrame {
     private void bProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bProductosActionPerformed
           
     }//GEN-LAST:event_bProductosActionPerformed
+
+    private void miProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miProductosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_miProductosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -146,8 +178,14 @@ public class MainFrame extends javax.swing.JFrame {
     public javax.swing.JButton bEj02;
     public javax.swing.JButton bProductos;
     public javax.swing.JButton bVehiculos;
+    public javax.swing.JMenu ejercicio02;
+    public javax.swing.JMenu ejercicio03;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JMenuItem jMenuItem1;
+    public javax.swing.JMenuBar menuBar;
+    public javax.swing.JMenuItem miProductos;
+    public javax.swing.JMenuItem miVehiculos;
     // End of variables declaration//GEN-END:variables
 }

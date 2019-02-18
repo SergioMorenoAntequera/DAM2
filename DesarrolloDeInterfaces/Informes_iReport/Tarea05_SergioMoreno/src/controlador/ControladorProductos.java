@@ -8,7 +8,6 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import modelo.ConsultasProductos;
 import modelo.Productos;
-import vista.MainFrame;
 import vista.VistaProductos;
 
 
@@ -30,11 +29,31 @@ public class ControladorProductos implements ActionListener{
         this.productoV.bGuardar.addActionListener(this);
         this.productoV.bLimpiar.addActionListener(this);
         this.productoV.bModificar.addActionListener(this);
-        
-        KeyListener filtrarCaracteres = new KeyListener() {
+
+        this.productoV.tfReferencia.addKeyListener(new KeyListener() {
+
             @Override
             public void keyTyped(KeyEvent e) {
-                if(!Character.isDigit(e.getKeyChar())){
+                
+                if(Character.isLowerCase(e.getKeyChar())){
+                    e.consume();
+                    productoV.tfReferencia.setText(productoV.tfReferencia.getText() + Character.toUpperCase(e.getKeyChar()));
+                }
+                
+            }
+            @Override
+            public void keyPressed(KeyEvent e) {}
+            @Override
+            public void keyReleased(KeyEvent e) {}
+        });
+        this.productoV.tfPrecio.addKeyListener(new KeyListener() {
+
+            @Override
+            public void keyTyped(KeyEvent e) {
+                if (!Character.isDigit(e.getKeyChar()) && e.getKeyChar() != '.') {
+                    e.consume();
+                }
+                if (productoV.tfPrecio.getText().indexOf(".") != -1 && e.getKeyChar() == '.') {
                     e.consume();
                 }
             }
@@ -42,10 +61,23 @@ public class ControladorProductos implements ActionListener{
             public void keyPressed(KeyEvent e) {}
             @Override
             public void keyReleased(KeyEvent e) {}
-        };
-        
-        this.productoV.tfPrecio.addKeyListener(filtrarCaracteres);
-        this.productoV.tfDescuento.addKeyListener(filtrarCaracteres);
+        });
+        this.productoV.tfDescuento.addKeyListener(new KeyListener() {
+
+            @Override
+            public void keyTyped(KeyEvent e) {
+                if (!Character.isDigit(e.getKeyChar()) && e.getKeyChar() != '.') {
+                    e.consume();
+                }
+                if (productoV.tfDescuento.getText().indexOf(".") != -1 && e.getKeyChar() == '.') {
+                    e.consume();
+                }
+            }
+            @Override
+            public void keyPressed(KeyEvent e) {}
+            @Override
+            public void keyReleased(KeyEvent e) {}
+        });
     }
 
     //--------------------------------------------------------------------------
@@ -75,7 +107,7 @@ public class ControladorProductos implements ActionListener{
                 producto.setReferencia(productoV.tfReferencia.getText());
                 producto.setNombre(productoV.tfNombre.getText());
                 producto.setDescripcion(productoV.tfDescripcion.getText());
-                producto.setPrecio(Integer.parseInt(productoV.tfPrecio.getText()));
+                producto.setPrecio(Double.parseDouble(productoV.tfPrecio.getText()));
                 producto.setDescuento(Double.parseDouble(productoV.tfDescuento.getText()));
 
                 if (productoC.registrar(producto)) {

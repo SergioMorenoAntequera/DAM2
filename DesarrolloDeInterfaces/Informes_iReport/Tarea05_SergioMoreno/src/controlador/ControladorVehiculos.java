@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import javafx.scene.input.KeyCharacterCombination;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import modelo.ConsultasVehiculos;
@@ -33,7 +34,7 @@ public class ControladorVehiculos implements ActionListener{
         KeyListener filtrarCaracteres = new KeyListener() {
             @Override
             public void keyTyped(KeyEvent e) {
-                if(!Character.isDigit(e.getKeyChar())){
+                if(!Character.isDigit(e.getKeyChar()) || vehiculoV.tfNumKm.getText().length() >= 8){
                     e.consume();
                 }
             }
@@ -42,17 +43,18 @@ public class ControladorVehiculos implements ActionListener{
             @Override
             public void keyReleased(KeyEvent e) {}
         };
-        
         this.vehiculoV.tfNumKm.addKeyListener(filtrarCaracteres);
     }
 
     //--------------------------------------------------------------------------
     
     public void iniciar(){
-        vehiculoV.setTitle("Productos");
+        vehiculoV.setTitle("Vehiculo");
         vehiculoV.setLocationRelativeTo(null);
         vehiculoV.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
     }
+    
+    //--------------------------------------------------------------------------
     
     public void limpiar(){
         vehiculoV.tfMarca.setText("");
@@ -77,14 +79,14 @@ public class ControladorVehiculos implements ActionListener{
                 vehiculo.setfRevision(vehiculoV.tffRevision.getText());
 
                 if (vehiculoC.registrar(vehiculo)) {
-                    JOptionPane.showMessageDialog(null, "Registro Guardado");
+                    JOptionPane.showMessageDialog(null, "Registro Guardado satisfactoriamente");
                     limpiar();
                 } else {
-                    JOptionPane.showMessageDialog(null, "Error al guardar");
+                    JOptionPane.showMessageDialog(null, "Error al guardar", "Error al guardar", JOptionPane.ERROR_MESSAGE);
                     //limpiar();
                 }
             } else {
-                JOptionPane.showMessageDialog(null, "Por favor, rellene todos los campos");
+                JOptionPane.showMessageDialog(null, "Por favor, rellene todos los campos para poder guardar el registro", "Error al guardar", JOptionPane.ERROR_MESSAGE);
             }
         }
 
@@ -97,14 +99,14 @@ public class ControladorVehiculos implements ActionListener{
                 vehiculo.setfRevision(vehiculoV.tffRevision.getText());
 
                 if (vehiculoC.modificar(vehiculo)) {
-                    JOptionPane.showMessageDialog(null, "Registro Modificado");
+                    JOptionPane.showMessageDialog(null, "Registro Modificado satisfactoriamente");
                     limpiar();
                 } else {
-                    JOptionPane.showMessageDialog(null, "Error al modificar");
+                    JOptionPane.showMessageDialog(null, "Error al modificar", "Error al modificar", JOptionPane.ERROR_MESSAGE);
                     limpiar();
                 }
             } else {
-                JOptionPane.showMessageDialog(null, "Por favor, rellene todos los campos");
+                JOptionPane.showMessageDialog(null, "Por favor, rellene todos los campos para poder modificar el registro", "Error al modificar", JOptionPane.ERROR_MESSAGE);
             }
         }
 
@@ -116,14 +118,14 @@ public class ControladorVehiculos implements ActionListener{
                 vehiculo.setMatricula(vehiculoV.tfMatricula.getText());
                 
                 if (vehiculoC.eliminar(vehiculo)) {
-                    JOptionPane.showMessageDialog(null, "Registro elimnado");
+                    JOptionPane.showMessageDialog(null, "Registro elimnado satisfactoriamente");
                     limpiar();
                 } else {
-                    JOptionPane.showMessageDialog(null, "Error al eliminar");
+                    JOptionPane.showMessageDialog(null, "Error al eliminar", "Error al eliminar", JOptionPane.ERROR_MESSAGE);
                     limpiar();
                 }
             } else {
-                JOptionPane.showMessageDialog(null, "Por favor, rellene el campo 'codigo'");
+                JOptionPane.showMessageDialog(null, "Por favor, rellene el campo 'Matricula' para poder eliminar el registro", "Error al eliminar", JOptionPane.ERROR_MESSAGE);
             }
             
         }
@@ -137,15 +139,13 @@ public class ControladorVehiculos implements ActionListener{
                 vehiculoV.tfMatricula.setText(vehiculo.getMatricula());
                 vehiculoV.tfMarca.setText(vehiculo.getMarca()+"");
                 vehiculoV.tfModelo.setText(vehiculo.getModelo()+"");
-                vehiculoV.tfNumKm.setText(vehiculo.getnKilometros()+"");
-                vehiculoV.tffRevision.setText(vehiculo.getfRevision()+"");
-                
+                vehiculoV.tfNumKm.setText(vehiculo.getnKilometros() + "");
+                vehiculoV.tffRevision.setText(vehiculo.getfRevision() + "");
+                } else {
+                    JOptionPane.showMessageDialog(null, "Vehiculo no encontrado", "Error al buscar", JOptionPane.ERROR_MESSAGE);
+                }
             } else {
-                JOptionPane.showMessageDialog(null, "Error al buscar");
-                limpiar();
-            }
-            } else {
-                JOptionPane.showMessageDialog(null, "Por favor, rellene el campo 'codigo'");
+                JOptionPane.showMessageDialog( null, "Por favor, rellene el campo 'Matricula' para poder realizar la busqueda", "Error al buscar", JOptionPane.ERROR_MESSAGE);
             }
             
             

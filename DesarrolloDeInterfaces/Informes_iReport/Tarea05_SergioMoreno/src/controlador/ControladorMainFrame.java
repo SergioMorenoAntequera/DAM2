@@ -29,6 +29,9 @@ public class ControladorMainFrame implements ActionListener {
         
         this.mainFrame.bProductos.addActionListener(this);
         this.mainFrame.bVehiculos.addActionListener(this);
+        this.mainFrame.miVehiculos.addActionListener(this);
+        this.mainFrame.miProductos.addActionListener(this);
+        
     }
     
     
@@ -37,7 +40,7 @@ public class ControladorMainFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
 
-        if (e.getSource() == mainFrame.bProductos) {
+        if (e.getSource() == mainFrame.bProductos || e.getSource() == mainFrame.miProductos) {
             Productos mod = new Productos();
             ConsultasProductos con = new ConsultasProductos();
             VistaProductos frm = new VistaProductos();
@@ -49,7 +52,7 @@ public class ControladorMainFrame implements ActionListener {
         
         //----------------------------------------------------------------------
         
-        if (e.getSource() == mainFrame.bVehiculos) {
+        if (e.getSource() == mainFrame.bVehiculos || e.getSource() == mainFrame.miVehiculos) {
             Vehiculos mod = new Vehiculos();
             ConsultasVehiculos con = new ConsultasVehiculos();
             VistaVehiculos frm = new VistaVehiculos();
