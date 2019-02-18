@@ -1,0 +1,72 @@
+10:46:13.880  INFO  [lib Cursos] Qizx 4.4 creating new XML Library in C:\Repositorios2\DAM2\AccesoADatos\qizxGrupo\Cursos
+10:46:13.896  INFO  [lib Cursos] create storage in C:\Repositorios2\DAM2\AccesoADatos\qizxGrupo\Cursos\contents.qdb
+10:46:13.896  INFO  [lib Cursos] storage created
+10:46:14.469  INFO  [lib Cursos] library creation done
+10:47:53.297  INFO  [lib Cursos] commit start Cursos (session 1)
+10:47:53.328  INFO  [lib Cursos] commit 1 on Cursos (session 1)
+10:47:53.390  INFO  [lib Cursos] commit 1 done
+10:47:53.390  INFO  [lib Cursos] commit end Cursos (session 1) -> state: [ 1 ][ 1 2 ]
+10:47:53.390  INFO  [lib Cursos] sweeper deleted 1/1 metadocs: 5
+10:48:33.247  INFO  [lib Cursos] commit start Cursos (session 1)
+10:48:33.263  INFO  [lib Cursos] commit 2 on Cursos (session 1)
+10:48:33.294  INFO  [lib Cursos] commit 2 done
+10:48:33.294  INFO  [lib Cursos] commit end Cursos (session 1) -> state: [ 1 ][ 1 2 3 ]
+10:48:55.667  INFO  [lib Cursos] commit start Cursos (session 1)
+10:48:55.667  INFO  [lib Cursos] commit 3 on Cursos (session 1)
+10:48:55.714  INFO  [lib Cursos] commit 3 done
+10:48:55.714  INFO  [lib Cursos] commit end Cursos (session 1) -> state: [ 1 ][ 1 2 3 4 ]
+10:48:55.714  INFO  [lib Cursos] sweeper deleted 1/1 docs: 11 in ms 0.210064
+10:48:55.714  INFO  [lib Cursos] sweeper deleted 2/2 metadocs: 15, 17
+10:48:59.183  INFO  [lib Cursos] commit start Cursos (session 1)
+10:48:59.183  INFO  [lib Cursos] commit 4 on Cursos (session 1)
+10:48:59.214  INFO  [lib Cursos] commit 4 done
+10:48:59.214  INFO  [lib Cursos] sweeper deleted 1/1 docs: 9 in ms 0.191589
+10:48:59.214  INFO  [lib Cursos] commit end Cursos (session 1) -> state: [ 1 ][ 1 2 3 4 5 ]
+10:48:59.214  INFO  [lib Cursos] sweeper deleted 2/2 metadocs: 13, 23
+10:49:01.526  INFO  [lib Cursos] commit start Cursos (session 1)
+10:49:01.526  INFO  [lib Cursos] commit 5 on Cursos (session 1)
+10:49:01.589  INFO  [lib Cursos] commit 5 done
+10:49:01.589  INFO  [lib Cursos] sweeper deleted 1/1 docs: 10 in ms 0.211432
+10:49:01.589  INFO  [lib Cursos] commit end Cursos (session 1) -> state: [ 1 ][ 1 2 3 4 5 6 ]
+10:49:01.589  INFO  [lib Cursos] sweeper deleted 2/2 metadocs: 14, 27
+10:49:03.448  INFO  [lib Cursos] commit start Cursos (session 1)
+10:49:03.448  INFO  [lib Cursos] commit 6 on Cursos (session 1)
+10:49:03.511  INFO  [lib Cursos] commit 6 done
+10:49:03.511  INFO  [lib Cursos] commit end Cursos (session 1) -> state: [ 1 ][ 1 2 3 4 5 6 7 ]
+10:49:03.511  INFO  [lib Cursos] sweeper deleted 1/1 docs: 8 in ms 0.041055
+10:49:03.511  INFO  [lib Cursos] sweeper deleted 2/2 metadocs: 12, 31
+10:49:14.369  INFO  [lib Cursos] commit start Cursos (session 1)
+10:49:14.416  INFO  [lib Cursos] commit 7 on Cursos (session 1)
+10:49:14.463  INFO  [lib Cursos] commit 7 done
+10:49:14.463  INFO  [lib Cursos] commit end Cursos (session 1) -> state: [ 1 2 ][ 1 2 3 4 5 6 7 8 ]
+10:49:14.463  INFO  [lib Cursos] sweeper deleted 1/1 metadocs: 20
+10:50:04.672  INFO  [lib Cursos] commit start Cursos (session 1)
+10:50:04.672  INFO  [lib Cursos] commit 8 on Cursos (session 1)
+10:50:04.687  INFO  [lib Cursos] commit 8 done
+10:50:04.687  INFO  [lib Cursos] commit end Cursos (session 1) -> state: [ 1 2 ][ 1 2 3 4 5 6 7 8 ]
+10:50:04.687  INFO  [lib Cursos] sweeper deleted 4/4 docs: 38 to 41 in ms 0.201511
+10:50:04.687  INFO  [lib Cursos] sweeper deleted 5/5 metadocs: 42 to 46
+10:50:25.237  INFO  [lib Cursos] commit start Cursos (session 1)
+10:50:25.237  INFO  [lib Cursos] commit 9 on Cursos (session 1)
+10:50:25.284  INFO  [lib Cursos] commit 9 done
+10:50:25.284  INFO  [lib Cursos] commit end Cursos (session 1) -> state: [ 1 2 ][ 1 2 3 4 5 6 7 8 9 ]
+10:50:34.190  INFO  [lib Cursos] commit start Cursos (session 1)
+10:50:34.190  INFO  [lib Cursos] commit 10 on Cursos (session 1)
+10:50:34.221  INFO  [lib Cursos] commit 10 done
+10:50:34.221  INFO  [lib Cursos] commit end Cursos (session 1) -> state: [ 1 2 ][ 1 2 3 4 5 6 7 8 9 a ]
+10:50:34.237  INFO  [lib Cursos] start auto compaction of 10 M segments to 000B: 0001 0002 0003 0004 0005 0006 0007 0008 0009 000A
+10:50:34.268  INFO  [lib Cursos] compaction done -> state: [ 1 2 ][ b ]
+10:50:45.408  INFO  [lib Cursos] commit start Cursos (session 1)
+10:50:45.455  INFO  [lib Cursos] commit 11 on Cursos (session 1)
+10:50:45.502  INFO  [lib Cursos] commit 11 done
+10:50:45.502  INFO  [lib Cursos] commit end Cursos (session 1) -> state: [ 1 2 3 ][ b c ]
+10:50:45.502  INFO  [lib Cursos] sweeper deleted 1/1 metadocs: 51
+10:50:45.533  INFO  [lib Cursos] sweeper deleted M segments: 0001 to 000A
+10:50:59.110  INFO  [lib Cursos] commit start Cursos (session 1)
+10:50:59.157  INFO  [lib Cursos] commit 12 on Cursos (session 1)
+10:50:59.188  INFO  [lib Cursos] commit 12 done
+10:50:59.188  INFO  [lib Cursos] commit end Cursos (session 1) -> state: [ 1 2 3 4 ][ b c d ]
+10:50:59.188  INFO  [lib Cursos] sweeper deleted 1/1 metadocs: 53
+12:07:41.721  INFO  [lib Cursos] All sessions closed
+12:07:41.721  INFO  [lib Cursos] Sweeper stopped
+12:07:41.736  INFO  [lib Cursos] library closed 
