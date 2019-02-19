@@ -39,7 +39,7 @@ public class Asimetrico {
        
        try(
                FileInputStream fis = new FileInputStream(almacen);
-                FileInputStream fis2 = new FileInputStream(almacen2);
+               FileInputStream fis2 = new FileInputStream(almacen2);
                )
        {
            //1.- Abrimos almacen de claves
