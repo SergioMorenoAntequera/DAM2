@@ -13,6 +13,7 @@ public class D_iniciar extends DialogFragment implements DialogInterface.OnClick
 
     protected EditText etNombre;
     protected String nombre;
+
     OnD_iniciar miListener;
 
     public static D_iniciar newInstance(){
@@ -27,7 +28,6 @@ public class D_iniciar extends DialogFragment implements DialogInterface.OnClick
         if(context instanceof Activity){
             activity = (Activity)context;
         }
-
         // Verify that the host activity implements the callback interface
         try {
             // Instantiate the NoticeDialogListener so we can send events to the host
@@ -42,9 +42,10 @@ public class D_iniciar extends DialogFragment implements DialogInterface.OnClick
     // Creacion del dialogo ///////////////////////////////////////////////////////
     @Override
     public Dialog onCreateDialog(Bundle bundle){
+        //Layout builder
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 
-        // layout inflater
+        //Layout inflater
         LayoutInflater inf = getActivity().getLayoutInflater();
 
         // inflate

@@ -14,24 +14,22 @@ import android.widget.Toast;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 
-public class Dialogo_conexion extends DialogFragment implements DialogInterface.OnClickListener {
+public class DConexion extends DialogFragment implements DialogInterface.OnClickListener {
 
     private EditText etIp, etPuerto;
     private String puertoCad, ipCad;
 
-    InetAddress direccionIP;
-    int puerto;
-
-    OnDialogo_conexion miListener;
+    OnDConexion miListener;
 
     //----------------------------------------------------------------------------------------------
 
-    public static Dialogo_conexion newInstance(){
-        return new Dialogo_conexion();
+    public static DConexion newInstance() {
+        return new DConexion();
     }
 
     //----------------------------------------------------------------------------------------------
 
+    //Esto sucede cuando le añadimos un dialogo al Activity ////////////////////////////////////////
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
@@ -44,14 +42,15 @@ public class Dialogo_conexion extends DialogFragment implements DialogInterface.
         // Verify that the host activity implements the callback interface
         try {
             // Instantiate the NoticeDialogListener so we can send events to the host
-            miListener = (OnDialogo_conexion) activity;
+            miListener = (OnDConexion) activity;
         } catch (ClassCastException e) {
             // The activity doesn't implement the interface, throw exception
             throw new ClassCastException(activity.toString() + " must implement NoticeDialogListener");
         }
     }
 
-    // Creacion del dialogo ///////////////////////////////////////////////////////
+
+    // Esto sucede cuando se llama al Dialogo, para crearlo ////////////////////////////////////////
     @Override
     public Dialog onCreateDialog(Bundle bundle){
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
@@ -60,7 +59,7 @@ public class Dialogo_conexion extends DialogFragment implements DialogInterface.
         LayoutInflater inf = getActivity().getLayoutInflater();
 
         //Inflate
-        builder.setView(inf.inflate(R.layout.dialogo_conexion,null))
+        builder.setView(inf.inflate(R.layout.d_conexion,null))
                 .setTitle("Configuracion de la conexion")
                 .setPositiveButton("Aceptar", this)
                 .setNegativeButton("Retroceder", this)
@@ -68,11 +67,12 @@ public class Dialogo_conexion extends DialogFragment implements DialogInterface.
         return builder.create();
     }
 
+
     //----------------------------------------------------------------------------------------------
 
     // interfaz para pasar los parametros a la activity
-    public interface OnDialogo_conexion {
-        public void OnDialogo_conexion(String ip, String puerto);
+    public interface OnDConexion {
+        public void OnDConexion(String ip, String puerto);
     }
 
 
@@ -88,18 +88,9 @@ public class Dialogo_conexion extends DialogFragment implements DialogInterface.
          ipCad = etIp.getText().toString();
          puertoCad = etPuerto.getText().toString();
 
-        try {
-            direccionIP = InetAddress.getByName(ipCad);
-            puerto = Integer.parseInt(puertoCad);
-
-        } catch (UnknownHostException e) {
-            Toast.makeText(null, "Error al introducir los datos", Toast.LENGTH_SHORT).show();
-        }
-
-
         switch(i){
             case DialogInterface.BUTTON_POSITIVE:
-                miListener.onDIniciar(nombre);
+                miListener.OnDConexion(ipCad, puertoCad);
                 break;
             case DialogInterface.BUTTON_NEGATIVE:
                 getActivity().finish();
