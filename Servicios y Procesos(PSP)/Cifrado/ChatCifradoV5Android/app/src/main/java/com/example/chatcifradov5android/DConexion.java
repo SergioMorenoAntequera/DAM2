@@ -19,7 +19,7 @@ public class DConexion extends DialogFragment implements DialogInterface.OnClick
     private EditText etIp, etPuerto;
     private String puertoCad, ipCad;
 
-    OnDConexion miListener;
+    private OnDConexion miListener;
 
     //----------------------------------------------------------------------------------------------
 
@@ -49,6 +49,7 @@ public class DConexion extends DialogFragment implements DialogInterface.OnClick
         }
     }
 
+    //----------------------------------------------------------------------------------------------
 
     // Esto sucede cuando se llama al Dialogo, para crearlo ////////////////////////////////////////
     @Override
@@ -67,14 +68,12 @@ public class DConexion extends DialogFragment implements DialogInterface.OnClick
         return builder.create();
     }
 
-
     //----------------------------------------------------------------------------------------------
 
     // interfaz para pasar los parametros a la activity
     public interface OnDConexion {
-        public void OnDConexion(String ip, String puerto);
+        public void OnConectar(String ip, String puerto);
     }
-
 
     //-----------------------------------------
 
@@ -90,11 +89,15 @@ public class DConexion extends DialogFragment implements DialogInterface.OnClick
 
         switch(i){
             case DialogInterface.BUTTON_POSITIVE:
-                miListener.OnDConexion(ipCad, puertoCad);
+                miListener.OnConectar(ipCad, puertoCad);
                 break;
             case DialogInterface.BUTTON_NEGATIVE:
                 getActivity().finish();
                 break;
         }
+    }
+
+    public void setMiListener(OnDConexion miListener) {
+        this.miListener = miListener;
     }
 }
