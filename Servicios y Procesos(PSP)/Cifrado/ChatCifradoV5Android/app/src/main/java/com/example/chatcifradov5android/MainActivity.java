@@ -35,6 +35,7 @@ public class MainActivity extends BaseActivity implements DConexion.OnDConexion 
     String mensajeLlegadoCifrado;
     Cifrar cifrar;
     DesCifrar descifrar;
+    String mensajeAEnviar;
 
     private ControlTask controlTask;
 
@@ -71,14 +72,15 @@ public class MainActivity extends BaseActivity implements DConexion.OnDConexion 
     public void hablarClick(View v){
         try {
             flujoSalida = new PrintWriter(conexion.getOutputStream(), true);
-            String mensajeAEnviar = etMensaje.getText().toString();
 
-
+            mensajeAEnviar = etMensaje.getText().toString().trim();
             cifrar = new Cifrar(mensajeAEnviar);
             flujoSalida.println(cifrar.getFraseCifrada());
 
+            tvChat.append("[Yo]> " + mensajeAEnviar + "\n");
+
             etMensaje.setText("");
-            tvChat.append("[Yo]> " + mensajeAEnviar);
+            mensajeAEnviar = "";
         } catch (IOException ex) {}
     }
 
@@ -134,7 +136,7 @@ public class MainActivity extends BaseActivity implements DConexion.OnDConexion 
         protected void onProgressUpdate(String... values) {
             super.onProgressUpdate(values);
 
-            tvChat.append(values[0]+"\n");
+            tvChat.append(values[0] + "\n");
         }
 
         //----------------------------------------------------------------------------------------------
