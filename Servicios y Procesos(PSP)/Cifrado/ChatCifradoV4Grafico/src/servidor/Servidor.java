@@ -1,6 +1,5 @@
 package servidor;
 
-
 import cliente.Cliente;
 import java.net.ServerSocket;
 import java.util.ArrayList;
