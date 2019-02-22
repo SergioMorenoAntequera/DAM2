@@ -4,14 +4,13 @@
  * and open the template in the editor.
  */
 package servidor;
-
-import cifrado.*;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
 import java.util.ArrayList;
 import cliente.*;
+import javax.net.ssl.SSLSocket;
 
 /**
  *
@@ -19,16 +18,14 @@ import cliente.*;
  */
 public class HiloServidor implements Runnable {
 
-    ArrayList<Cliente> losClientes;
-    Cliente miCli;
+    ArrayList<PlantillaCliente> losClientes;
+    PlantillaCliente miCli;
     int id_cli;
     BufferedReader IN;
     PrintWriter OUT;
-    Socket conexion;
-    DesCifrar descifrar;
-    Cifrar cifrar;
+    SSLSocket conexion;
 
-    public HiloServidor(Socket s, ArrayList<Cliente> cli, int id) {
+    HiloServidor(SSLSocket s, ArrayList<PlantillaCliente> cli, int id) {
         conexion = s;
         losClientes = cli;
         id_cli = id;
@@ -47,29 +44,19 @@ public class HiloServidor implements Runnable {
             
             mostrarBanner(OUT);
             
-            System.out.println(miCli.getNombre() + " se ha conectado");
+            System.out.println("***** " + miCli.getNombre() + " se ha conectado *****");
 
-            String mensajeARecibirCifrado = "";
+            String mensajeRecibido = "";
             //Con esto el servidor recibe lo de todos los clientes
-            while (mensajeARecibirCifrado != null && !mensajeARecibirCifrado.trim().equalsIgnoreCase("quit") && !mensajeARecibirCifrado.trim().equalsIgnoreCase("exit")) {
+            while (mensajeRecibido != null && !mensajeRecibido.trim().equalsIgnoreCase("quit") && !mensajeRecibido.trim().equalsIgnoreCase("exit")) {
                 
-                //Recogemos y desciframos la cadena tal y como nos llega de los clientes
-                mensajeARecibirCifrado = IN.readLine();
-                descifrar = new DesCifrar(mensajeARecibirCifrado);
-                String mensajeARecibirDescifrado = descifrar.getFrase();
+                //Recogemos los mensajes de los clientes
+                mensajeRecibido = IN.readLine();
                 
-                //Le ponemos a la cadena al principio el cliente que la ha pasado
-                String mensajeCompletoDescifrado = "[" + miCli.getNombre() + "]> " + mensajeARecibirDescifrado;
+                String mensajeCompleto = "[" + miCli.getNombre() + "]> " + mensajeRecibido;
 
-                //Una vez que ya hemos mostrado esto en el servido lo ciframos pero ahora entero
-                cifrar = new Cifrar(mensajeCompletoDescifrado);
-                String mensajeCompletoCifrado = cifrar.getFraseCifrada();
-                
-                System.out.println(mensajeCompletoCifrado);
-                System.out.println(mensajeCompletoDescifrado);
-                
-                
-                publicarMensaje(mensajeCompletoCifrado);
+                System.out.println(mensajeCompleto);
+                publicarMensaje(mensajeCompleto);
             }
             
             System.out.println("\t\tDesconectando a cliente: " + miCli.getNombre());
@@ -78,15 +65,13 @@ public class HiloServidor implements Runnable {
         } catch (Exception ex) {
             System.err.println("ERROR EN HILO SERVIDOR: " + ex.getMessage());
             losClientes.remove(miCli);
-
         }
     }
 
     //--------------------------------------------------------------------------
     
     public void publicarMensaje(String textoCompletoCifrado) {
-
-        for (Cliente c : losClientes) {
+        for (PlantillaCliente c : losClientes) {
             if (c != miCli) {
                 c.getFlujoSalida().println(textoCompletoCifrado);
             }
@@ -96,7 +81,7 @@ public class HiloServidor implements Runnable {
     //--------------------------------------------------------------------------------------------------------------------------------------------
 
     public void generaCliente() {
-        miCli = new Cliente(id_cli, IN, OUT);
+        miCli = new PlantillaCliente(id_cli, IN, OUT);
         losClientes.add(miCli);
     }
 
@@ -106,9 +91,6 @@ public class HiloServidor implements Runnable {
         String banner = "+-----------------------------+\n"
                 + "|---   << CLIENTE " + id_cli + " >>    ---|\n"
                 + "+-----------------------------+";
-        
-        Cifrar cifrar = new Cifrar(banner);
-        
-        salida.println(cifrar.getFraseCifrada());
+        salida.println(banner);
     }
 }

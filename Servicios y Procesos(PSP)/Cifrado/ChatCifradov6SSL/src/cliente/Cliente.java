@@ -1,5 +1,7 @@
-//keytool -export -alias claveSSL -file C:\Users\windiurno\certificado.cer  -keystore AlmacenSSL -deststoretype pkcs12
-//keytool -import -alias claveSSL -file C:\Users\windiurno\certificado.cer  -keystore AlmacenClienteSSL -deststoretype pkcs12
+//Con esto creamos el cerificado para poder hacer las claves publicas
+//keytool -export -alias claveSSL -file C:\Users\seran\certificado.cer  -keystore AlmacenSSL -deststoretype pkcs12
+//Generamos las clacves publicas
+//keytool -import -alias claveSSL -file C:\Users\seran\certificado.cer  -keystore AlmacenClienteSSL -deststoretype pkcs12
 
 package cliente;
 import java.io.BufferedReader;
@@ -16,7 +18,7 @@ public class Cliente {
         String serv = "localhost";
         int puerto = 11000;
 
-        System.setProperty("javax.net.ssl.trustStore", "C:/Users/windiurno/AlmacenClienteSSL");
+        System.setProperty("javax.net.ssl.trustStore", "C:/Users/seran/AlmacenClienteSSL");
         System.setProperty("javax.net.ssl.trustStorePassword", "contrasenia");
         System.out.println("Iniciando Cliente......");
 
@@ -37,7 +39,7 @@ public class Cliente {
             HiloRecibir hr = new HiloRecibir(entrada);
             hr.start();
 
-            //Para poder mandar mensajes
+            //Para poder mandar mensajes(Esto puede ir en un hilo a parte)
             while (cad != null) {
                 cad = teclado.nextLine();
                 salida.println(cad);

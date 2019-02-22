@@ -1,6 +1,6 @@
 package servidor;
 
-import cliente.Cliente;
+import cliente.PlantillaCliente;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -11,11 +11,11 @@ public class EscribirServidor extends Thread {
 
     Scanner teclado;
     String mensajeAEnviar;
-    ArrayList<Cliente> misClientes;
+    ArrayList<PlantillaCliente> misClientes;
 
     //--------------------------------------------------------------------------
     
-    public EscribirServidor(ArrayList<Cliente> mc) {
+    public EscribirServidor(ArrayList<PlantillaCliente> mc) {
         misClientes = mc;
         teclado = new Scanner(System.in);
     }
@@ -25,15 +25,18 @@ public class EscribirServidor extends Thread {
     @Override
     public void run() {  
         do {
+            
             //Leer texto y enviar
             mensajeAEnviar = teclado.nextLine();
-            String mensajeCompleto = "[Servidor]> " + mensajeAEnviar;
             
-            
-            for(Cliente c : misClientes){
-                c.getFlujoSalida().println(mensajeCompleto);
+            if(misClientes.size() == 0){
+                System.out.println("No hay ningún cliente todavía!");
+                continue;
             }
-            System.out.println(mensajeCompleto);
+            
+            for(PlantillaCliente c : misClientes){
+                c.getFlujoSalida().println("[Servidor]> " + mensajeAEnviar);
+            }
             
             //Si el servidor manda el mensaje de cierre, la ejecucion finaliza
             if (mensajeAEnviar.equalsIgnoreCase("exit")) {
