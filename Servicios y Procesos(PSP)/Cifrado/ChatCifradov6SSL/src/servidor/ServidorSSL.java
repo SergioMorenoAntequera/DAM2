@@ -18,7 +18,7 @@ public class ServidorSSL {
         ArrayList<PlantillaCliente> misClientes = new ArrayList<PlantillaCliente>();
         int idCliente = 1;
         
-        System.setProperty("javax.net.ssl.keyStore", "C:/Users/seran/AlmacenSSL");
+        System.setProperty("javax.net.ssl.keyStore", "src/servidor/AlmacenSSL");
         System.setProperty("javax.net.ssl.keyStorePassword", "contrasenia");
         
         SSLServerSocketFactory sfact = (SSLServerSocketFactory) SSLServerSocketFactory.getDefault();

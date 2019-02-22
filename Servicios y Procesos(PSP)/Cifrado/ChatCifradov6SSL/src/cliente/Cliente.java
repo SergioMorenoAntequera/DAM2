@@ -18,11 +18,11 @@ public class Cliente {
         String serv = "localhost";
         int puerto = 11000;
 
-        System.setProperty("javax.net.ssl.trustStore", "C:/Users/seran/AlmacenClienteSSL");
+        System.setProperty("javax.net.ssl.trustStore", "src/cliente/AlmacenClienteSSL");
         System.setProperty("javax.net.ssl.trustStorePassword", "contrasenia");
         System.out.println("Iniciando Cliente......");
-
         System.out.println("Conectando a : " + serv + ", puerto: " + puerto + " Conexion cifrada pto a pto");
+        
         Scanner teclado = new Scanner(System.in);
         SSLSocketFactory sfact = (SSLSocketFactory) SSLSocketFactory.getDefault();
         try (
