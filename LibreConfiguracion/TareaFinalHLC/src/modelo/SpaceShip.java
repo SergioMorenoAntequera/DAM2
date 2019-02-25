@@ -34,6 +34,7 @@ public class SpaceShip {
     
     public void paintSpaceShip(Graphics2D g2d) {
         g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+        //Aqui es donde se gira todo
         g2d.rotate(Math.toRadians(rotation), (this.cv.getWidth()/2)-i.getIconWidth()/2, this.cv.getHeight()/2-i.getIconHeight()/2);
         g2d.drawImage(spaceShip, (this.cv.getWidth()/2)-i.getIconWidth(), this.cv.getHeight()/2-i.getIconHeight(), null);
     }
@@ -43,10 +44,10 @@ public class SpaceShip {
     //Si nos llega un -1 gira hacia la izquierda, un 1 hacia la derecha
     public void rotateSpaceShip(int direction) {
         if (direction == 1) {
-            this.rotation++;
+            this.rotation+=5;
         } else {
             if (direction == -1) {
-                this.rotation--;
+                this.rotation-=5;
             } else {
                 System.out.println("Direccion no valida");
             }

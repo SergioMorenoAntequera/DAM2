@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
-<toc version="1.0">
-   <tocitem text="Ejemplo JavaHelp" target="aplicacion2019">
-      <tocitem text="Ventana principal" target="ventana_principal2019"/>
-      <tocitem text="Ventana secundaria" target="ventana_secundaria2019"/>
-   </tocitem>
-</toc>

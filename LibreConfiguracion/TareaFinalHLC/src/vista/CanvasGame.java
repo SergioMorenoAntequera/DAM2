@@ -9,6 +9,7 @@ import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
+import modelo.Enemy;
 import modelo.SpaceShip;
 
 /**
@@ -42,10 +43,14 @@ public class CanvasGame extends Canvas {
     @Override
     public void update(Graphics g) {
         Graphics2D g2d = (Graphics2D) g;
+        Graphics2D g2dNave = (Graphics2D) g;
         crearCapas(g2d);
 
-        spaceShip.paintSpaceShip(g2d);
+        spaceShip.paintSpaceShip(g2dNave);
         
+        for(Enemy e : frameGame.hiloGenerarEnemigos.enemies){
+            e.paintEnemy(g2d);
+        }
         
     }
 
@@ -60,6 +65,9 @@ public class CanvasGame extends Canvas {
             imaux = createImage(frameGame.getWidth(), frameGame.getHeight());
             gaux = imaux.getGraphics();
         }
+        super.paint(gaux);
+        
+        
         g2d.drawImage(imaux, 0, 0, this);
     }
     

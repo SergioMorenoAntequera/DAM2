@@ -5,6 +5,7 @@
  */
 package vista;
 import controlador.GameMaster;
+import controlador.GenerateEnemies;
 import java.awt.Dimension;
 import javax.swing.JFrame;
 import modelo.Sleep;
@@ -17,6 +18,7 @@ public class Frame extends JFrame implements Runnable {
     
     Dimension frameDimensions;
     String title;
+    public GenerateEnemies hiloGenerarEnemigos;
     
     public CanvasGame cv;
     public GameMaster gm;
@@ -31,6 +33,9 @@ public class Frame extends JFrame implements Runnable {
         
         Thread hiloPintar = new Thread(this);
         hiloPintar.start();
+        
+        hiloGenerarEnemigos = new GenerateEnemies(cv);
+        hiloGenerarEnemigos.start();
         
         this.setVisible(true);
     }
