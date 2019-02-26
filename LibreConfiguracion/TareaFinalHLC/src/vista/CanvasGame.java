@@ -4,12 +4,14 @@
  * and open the template in the editor.
  */
 package vista;
+import controlador.MoveEnemy;
 import java.awt.Canvas;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
 import modelo.Enemy;
+import modelo.Sleep;
 import modelo.SpaceShip;
 
 /**
@@ -19,9 +21,10 @@ import modelo.SpaceShip;
 public class CanvasGame extends Canvas {
     
     Frame frameGame;
-    Dimension canvasDimensions;
-    Dimension auxCanvasDimensions;
+    Dimension dimaux;
+    Graphics2D g2daux;
     Image imaux;
+    
     Graphics gaux;
     
     public SpaceShip spaceShip;
@@ -42,43 +45,30 @@ public class CanvasGame extends Canvas {
     
     @Override
     public void update(Graphics g) {
-        Graphics2D g2d = (Graphics2D) g;
-        Graphics2D g2dNave = (Graphics2D) g;
-        crearCapas(g2d);
-
-        spaceShip.paintSpaceShip(g2dNave);
+        //Estas lienas son para que no parpadee la pantalla
+        if (dimaux == null || g2daux == null) {
+            dimaux = new Dimension(400, 700);
+            imaux = createImage(dimaux.width, dimaux.height);
+            g2daux = (Graphics2D) imaux.getGraphics();
+        }
+        super.paint(g2daux);
+        //----------------------------------------------------------------------
         
-        for(Enemy e : frameGame.hiloGenerarEnemigos.enemies){
-            e.paintEnemy(g2d);
+        //Pintamos nuestra nave
+        spaceShip.paintSpaceShip(g2daux);
+        
+        //Pintamos los enemigos
+        for(Enemy enemy : frameGame.hiloGenerarEnemigos.enemies){
+            enemy.paintEnemy(g2daux);
         }
         
+        g.drawImage(imaux, 0, 0, this);
     }
 
-    //--------------------------------------------------------------------------
-    
-    //Este metodo nos permite que se vayan creando distintas capas para que
-    //Se vea como se mueve en lugar de dibujar muchas
-    private void crearCapas(Graphics2D g2d) {
-        //Esto es para crear una imagen e ir superponiéndola
-        if (canvasDimensions == null || auxCanvasDimensions == null) {
-            auxCanvasDimensions = canvasDimensions;
-            imaux = createImage(frameGame.getWidth(), frameGame.getHeight());
-            gaux = imaux.getGraphics();
-        }
-        super.paint(gaux);
-        
-        
-        g2d.drawImage(imaux, 0, 0, this);
-    }
-    
     //--------------------------------------------------------------------------
 
     @Override
     public void paint(Graphics g) {
         update(g);
     }
-    
-    //--------------------------------------------------------------------------
-    
-    
 }

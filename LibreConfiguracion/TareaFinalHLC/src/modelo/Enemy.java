@@ -7,6 +7,7 @@ package modelo;
 
 import java.awt.Graphics2D;
 import java.awt.Image;
+import java.awt.Rectangle;
 import java.awt.RenderingHints;
 import javax.swing.ImageIcon;
 import vista.CanvasGame;
@@ -20,7 +21,7 @@ public class Enemy {
     int enemyID;
     int xPosition;
     int yPosition;
-    int wall; //1 arriba, 2 derecha, 3 abajo, 4 izquierda
+    int wall; 
     ImageIcon i;
     Image enemy;
     
@@ -40,37 +41,19 @@ public class Enemy {
     
     //--------------------------------------------------------------------------
     
+    //1 arriba, 2 derecha, 3 abajo, 4 izquierda
     private void getRandomPosition() {
-        this.wall = (int)(Math.random()*4)+1;
-        switch(this.wall){
-            case 1:{
-                this.xPosition = (int)(Math.random()*800)+1;
-                this.yPosition = 0;
-            }
-            break;
-            case 2:{
-                this.xPosition = 700;
-                this.yPosition = (int)(Math.random()*500)+1;
-            }
-            break;
-            case 3:{
-                this.xPosition = (int)(Math.random()*800)+1;
-                this.yPosition = 400;
-            }
-            break;
-            case 4:{
-                this.xPosition = 0;
-                this.yPosition = (int)(Math.random()*500)+1;;
-            }
-            break;
-            default:{
-                System.out.println("Aqui no debe entrar");
-            }
-        }
+        xPosition = (int) (Math.random() * 300) + 1;
+        System.out.println(xPosition);
+        yPosition = 0;
     }
     
     //--------------------------------------------------------------------------
 
+    public Rectangle getEnemy(){
+        return new Rectangle(xPosition, yPosition, 99, 50);
+    }
+    
     public int getxPosition() {
         return xPosition;
     }

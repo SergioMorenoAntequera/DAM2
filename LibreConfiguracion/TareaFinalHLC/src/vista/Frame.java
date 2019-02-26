@@ -6,6 +6,7 @@
 package vista;
 import controlador.GameMaster;
 import controlador.GenerateEnemies;
+import controlador.MoveEnemy;
 import java.awt.Dimension;
 import javax.swing.JFrame;
 import modelo.Sleep;
@@ -25,7 +26,7 @@ public class Frame extends JFrame implements Runnable {
     
     public Frame(){
          
-        frameDimensions = new Dimension(800, 500);
+        frameDimensions = new Dimension(400, 700);
         title = "Juego en pañales";
         
         initFrame();

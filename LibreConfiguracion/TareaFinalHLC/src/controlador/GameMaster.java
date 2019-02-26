@@ -39,11 +39,12 @@ public class GameMaster implements ActionListener, KeyListener{
     @Override
     public void keyPressed(KeyEvent e) {
         if(e.getKeyCode() == KeyEvent.VK_RIGHT){
-            spaceShip.rotateSpaceShip(1);
+            spaceShip.moveSpaceShip(1);
             System.out.println("DERECHA");
-            
-        } else if(e.getKeyCode() == KeyEvent.VK_LEFT) {
-            spaceShip.rotateSpaceShip(-1);
+        }
+        
+        if(e.getKeyCode() == KeyEvent.VK_LEFT) {
+            spaceShip.moveSpaceShip(-1);
             System.out.println("IZQUIERDA");
         } 
     }

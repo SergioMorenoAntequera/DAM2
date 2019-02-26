@@ -6,6 +6,7 @@
 package modelo;
 import java.awt.Graphics2D;
 import java.awt.Image;
+import java.awt.Rectangle;
 import java.awt.RenderingHints;
 import javax.swing.ImageIcon;
 import vista.CanvasGame;
@@ -16,51 +17,50 @@ import vista.CanvasGame;
  */
 public class SpaceShip {
     
-    private double rotation;
     ImageIcon i;
     Image spaceShip;
     private boolean shooting;
     CanvasGame cv;
+    
+    public int xPosition;
+    public int yPosition;
 
     public SpaceShip(CanvasGame cv) {
         this.cv = cv;
-        rotation = 0;
         
         i = new ImageIcon("src/resource/ship.png");
         spaceShip = i.getImage();
         
+        this.xPosition = 180;
+        this.yPosition = 600;
+        
         shooting = false;
     }
+    
+    //--------------------------------------------------------------------------
     
     public void paintSpaceShip(Graphics2D g2d) {
         g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
         //Aqui es donde se gira todo
-        g2d.rotate(Math.toRadians(rotation), (this.cv.getWidth()/2)-i.getIconWidth()/2, this.cv.getHeight()/2-i.getIconHeight()/2);
-        g2d.drawImage(spaceShip, (this.cv.getWidth()/2)-i.getIconWidth(), this.cv.getHeight()/2-i.getIconHeight(), null);
+        g2d.drawImage(spaceShip, xPosition, yPosition, null);
     }
     
     //--------------------------------------------------------------------------
     
-    //Si nos llega un -1 gira hacia la izquierda, un 1 hacia la derecha
-    public void rotateSpaceShip(int direction) {
+    //Si nos llega un -1 mueve hacia la izquierda, un 1 hacia la derecha
+    public void moveSpaceShip(int direction) {
         if (direction == 1) {
-            this.rotation+=5;
-        } else {
-            if (direction == -1) {
-                this.rotation-=5;
-            } else {
-                System.out.println("Direccion no valida");
-            }
+            this.xPosition += 3;
+        }
+        if (direction == -1) {
+            this.xPosition -= 3;
         }
     }
 
     //--------------------------------------------------------------------------
-
-    public double getRotation() {
-        return rotation;
-    }
-    public void setRotation(double rotation) {
-        this.rotation = rotation;
+    
+    public Rectangle getSpaceShip(){
+        return new Rectangle((this.cv.getWidth()/2)-i.getIconWidth(), this.cv.getHeight()/2-i.getIconHeight(), 30, 45);
     }
 
     public boolean isShooting() {
@@ -68,8 +68,5 @@ public class SpaceShip {
     }
     public void setShooting(boolean shooting) {
         this.shooting = shooting;
-    }
-    
-    
-    
+    }    
 }
