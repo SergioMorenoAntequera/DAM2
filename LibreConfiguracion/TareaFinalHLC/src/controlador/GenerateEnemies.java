@@ -28,13 +28,13 @@ public class GenerateEnemies extends Thread {
     @Override
     public void run() {
         super.run();
-        while (id < 10000) {
+        while (id < 10) {
             Enemy enemy = new Enemy(id++);
-            MoveEnemy moveHim = new MoveEnemy(enemy);
+            MoveEnemy moveHim = new MoveEnemy(enemy, cv);
             moveHim.start();
 
             enemies.add(enemy);
-            Sleep.sleep(1300);
+            Sleep.sleep(1800);
         }
     }
 }

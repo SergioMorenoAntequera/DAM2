@@ -19,7 +19,6 @@ public class SpaceShip {
     
     ImageIcon i;
     Image spaceShip;
-    private boolean shooting;
     CanvasGame cv;
     
     public int xPosition;
@@ -34,7 +33,6 @@ public class SpaceShip {
         this.xPosition = 180;
         this.yPosition = 600;
         
-        shooting = false;
     }
     
     //--------------------------------------------------------------------------
@@ -50,23 +48,16 @@ public class SpaceShip {
     //Si nos llega un -1 mueve hacia la izquierda, un 1 hacia la derecha
     public void moveSpaceShip(int direction) {
         if (direction == 1) {
-            this.xPosition += 3;
+            this.xPosition += 5;
         }
         if (direction == -1) {
-            this.xPosition -= 3;
+            this.xPosition -= 5;
         }
     }
 
     //--------------------------------------------------------------------------
     
     public Rectangle getSpaceShip(){
-        return new Rectangle((this.cv.getWidth()/2)-i.getIconWidth(), this.cv.getHeight()/2-i.getIconHeight(), 30, 45);
-    }
-
-    public boolean isShooting() {
-        return shooting;
-    }
-    public void setShooting(boolean shooting) {
-        this.shooting = shooting;
-    }    
+        return new Rectangle(this.xPosition, this.yPosition, 30, 45);
+    }   
 }

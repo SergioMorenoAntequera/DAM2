@@ -10,7 +10,6 @@ import java.awt.Image;
 import java.awt.Rectangle;
 import java.awt.RenderingHints;
 import javax.swing.ImageIcon;
-import vista.CanvasGame;
 
 /**
  *
@@ -18,18 +17,22 @@ import vista.CanvasGame;
  */
 public class Enemy {
     
-    int enemyID;
+    public int enemyID;
     int xPosition;
-    int yPosition;
-    int wall; 
+    public int yPosition;
+    public boolean dead;
+    public boolean llegado;
     ImageIcon i;
     Image enemy;
     
+    
     public Enemy(int id){
         this.enemyID = id;
+        dead = false;
         getRandomPosition();
         i = new ImageIcon("src/resource/enemy.png");
         enemy = i.getImage();
+        llegado = false;
     }
 
     //--------------------------------------------------------------------------
@@ -44,7 +47,6 @@ public class Enemy {
     //1 arriba, 2 derecha, 3 abajo, 4 izquierda
     private void getRandomPosition() {
         xPosition = (int) (Math.random() * 300) + 1;
-        System.out.println(xPosition);
         yPosition = 0;
     }
     

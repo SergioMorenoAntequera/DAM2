@@ -4,12 +4,19 @@
  * and open the template in the editor.
  */
 package vista;
-import controlador.GameMaster;
+import controlador.Controller;
 import controlador.GenerateEnemies;
-import controlador.MoveEnemy;
+import controlador.HiloCancionDeFondo;
 import java.awt.Dimension;
+import java.io.BufferedInputStream;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
+import javazoom.jl.decoder.JavaLayerException;
 import modelo.Sleep;
+import javazoom.jl.player.*;
 
 /**
  *
@@ -20,17 +27,19 @@ public class Frame extends JFrame implements Runnable {
     Dimension frameDimensions;
     String title;
     public GenerateEnemies hiloGenerarEnemigos;
-    
     public CanvasGame cv;
-    public GameMaster gm;
+    public Controller gm;
+
     
     public Frame(){
-         
         frameDimensions = new Dimension(400, 700);
-        title = "Juego en pañales";
+        title = "INVASORES DEL ESPACIO";
         
         initFrame();
         initComponentes();
+        
+        HiloCancionDeFondo cancion = new HiloCancionDeFondo();
+        cancion.start();
         
         Thread hiloPintar = new Thread(this);
         hiloPintar.start();
@@ -41,13 +50,19 @@ public class Frame extends JFrame implements Runnable {
         this.setVisible(true);
     }
 
+    //--------------------------------------------------------------------------
     private void initComponentes() {
+
         cv = new CanvasGame(this);
-        gm = new GameMaster(this);
+        gm = new Controller(this);
+
         this.addKeyListener(gm);
         cv.addKeyListener(gm);
+
     }
 
+    //--------------------------------------------------------------------------
+    
     //Metodo que se encarga de la creación de la ventana
     //Mostrarla y todas sus propiedades
     private void initFrame() {
@@ -59,10 +74,11 @@ public class Frame extends JFrame implements Runnable {
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
-
+    
+    //--------------------------------------------------------------------------
     @Override
     public void run() {
-        while (true) {
+        while (!cv.end) {
             cv.repaint();
             Sleep.sleep(10);
         }

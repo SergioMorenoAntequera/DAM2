@@ -4,14 +4,16 @@
  * and open the template in the editor.
  */
 package vista;
-import controlador.MoveEnemy;
 import java.awt.Canvas;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
+import java.awt.RenderingHints;
+import java.util.ArrayList;
+import javax.swing.ImageIcon;
+import modelo.Ball;
 import modelo.Enemy;
-import modelo.Sleep;
 import modelo.SpaceShip;
 
 /**
@@ -20,14 +22,17 @@ import modelo.SpaceShip;
  */
 public class CanvasGame extends Canvas {
     
-    Frame frameGame;
+   
     Dimension dimaux;
-    Graphics2D g2daux;
+    public Graphics2D g2daux;
     Image imaux;
-    
     Graphics gaux;
     
+    public boolean end = false;
+    
+    public Frame frameGame;
     public SpaceShip spaceShip;
+    public ArrayList<Ball> balls;
     
     public CanvasGame(Frame fg){
         this.frameGame = fg;
@@ -39,6 +44,7 @@ public class CanvasGame extends Canvas {
         this.setFocusable(true);
         
         spaceShip = new SpaceShip(this);
+        balls = new ArrayList<>();
     }
 
     //--------------------------------------------------------------------------
@@ -54,13 +60,28 @@ public class CanvasGame extends Canvas {
         super.paint(g2daux);
         //----------------------------------------------------------------------
         
+        //Pintamos la imagen de fondo
+        paintBackground(g2daux);
+        
+        //----------------------------------------------------------------------
+        
         //Pintamos nuestra nave
         spaceShip.paintSpaceShip(g2daux);
         
         //Pintamos los enemigos
         for(Enemy enemy : frameGame.hiloGenerarEnemigos.enemies){
-            enemy.paintEnemy(g2daux);
+            if(!enemy.dead){
+                enemy.paintEnemy(g2daux);
+            }
         }
+        
+        for(Ball b : balls){
+            if(!b.inpacted){
+                b.paintBall(g2daux);
+                b.moveBall();    
+            }
+        }
+        
         
         g.drawImage(imaux, 0, 0, this);
     }
@@ -70,5 +91,18 @@ public class CanvasGame extends Canvas {
     @Override
     public void paint(Graphics g) {
         update(g);
+    }
+
+    //----------------
+    
+    private void paintBackground(Graphics2D g2d) {
+        ImageIcon i;
+        Image backGround;
+        
+        i = new ImageIcon("src/resource/fondo.jpg");
+        backGround = i.getImage();
+        
+        g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+        g2d.drawImage(backGround, 0, 0, null);
     }
 }
