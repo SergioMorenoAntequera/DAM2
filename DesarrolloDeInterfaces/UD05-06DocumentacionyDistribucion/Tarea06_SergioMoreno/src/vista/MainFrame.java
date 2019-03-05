@@ -4,18 +4,45 @@
  * and open the template in the editor.
  */
 package vista;
+import java.io.File;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.help.HelpBroker;
+import javax.help.HelpSet;
+import javax.help.HelpSetException;
 
 /**
- *
+ * Frame crado con una interfaz grafica de NetBeans para la ventana principal.
  * @author seran
  */
 public class MainFrame extends javax.swing.JFrame {
 
+    public URL hsURL;
+    public HelpSet helpset;
+    public HelpBroker hb;
+             
     /**
      * Creates new form mainFrame
      */
     public MainFrame() {
         initComponents();
+        
+        File fichero = new File("src/help/help_set.hs");
+        try {
+            hsURL = fichero.toURI().toURL();
+
+            // Crea el HelpSet
+            helpset = new HelpSet(getClass().getClassLoader(), hsURL);
+            hb = helpset.createHelpBroker();
+            
+        } catch (HelpSetException ex) {
+            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (MalformedURLException ex) {
+            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
     }
 
     /**
@@ -28,6 +55,7 @@ public class MainFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         jMenuItem1 = new javax.swing.JMenuItem();
+        jCheckBoxMenuItem1 = new javax.swing.JCheckBoxMenuItem();
         jLabel1 = new javax.swing.JLabel();
         bEj02 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
@@ -41,8 +69,13 @@ public class MainFrame extends javax.swing.JFrame {
         miVehiculos = new javax.swing.JMenuItem();
         ejercicio03 = new javax.swing.JMenu();
         jmInformes = new javax.swing.JMenuItem();
+        jMenu1 = new javax.swing.JMenu();
+        itemAyuda = new javax.swing.JMenuItem();
 
         jMenuItem1.setText("jMenuItem1");
+
+        jCheckBoxMenuItem1.setSelected(true);
+        jCheckBoxMenuItem1.setText("jCheckBoxMenuItem1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -103,6 +136,19 @@ public class MainFrame extends javax.swing.JFrame {
 
         menuBar.add(ejercicio03);
 
+        jMenu1.setText("Ayuda");
+
+        itemAyuda.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F1, 0));
+        itemAyuda.setText("Mostrar Ayuda");
+        itemAyuda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemAyudaActionPerformed(evt);
+            }
+        });
+        jMenu1.add(itemAyuda);
+
+        menuBar.add(jMenu1);
+
         setJMenuBar(menuBar);
 
         pack();
@@ -115,6 +161,10 @@ public class MainFrame extends javax.swing.JFrame {
     private void miProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miProductosActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_miProductosActionPerformed
+
+    private void itemAyudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemAyudaActionPerformed
+        hb.enableHelpOnButton(itemAyuda, "ventana_principal", helpset);
+    }//GEN-LAST:event_itemAyudaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -160,10 +210,13 @@ public class MainFrame extends javax.swing.JFrame {
     public javax.swing.JButton bVehiculos;
     public javax.swing.JMenu ejercicio02;
     public javax.swing.JMenu ejercicio03;
+    private javax.swing.JMenuItem itemAyuda;
+    private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuItem jMenuItem1;
     public javax.swing.JMenuItem jmInformes;
     public javax.swing.JMenuBar menuBar;

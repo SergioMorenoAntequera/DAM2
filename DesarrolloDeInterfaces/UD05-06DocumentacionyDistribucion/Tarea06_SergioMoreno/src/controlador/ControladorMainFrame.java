@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package controlador;
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import modelo.ConsultasProductos;
@@ -17,13 +16,17 @@ import vista.VistaProductos;
 import vista.VistaVehiculos;
 
 /**
- *
+ * ActionListemer para la ventana principal.
  * @author seran
  */
 public class ControladorMainFrame implements ActionListener {
     
     MainFrame mainFrame;
             
+    /**
+     * La ventana principal tendrá el siguiente actionListener
+     * @param mf Ventana principal
+     */
     public ControladorMainFrame(MainFrame mf){
         
         this.mainFrame = mf;
@@ -63,6 +66,8 @@ public class ControladorMainFrame implements ActionListener {
             ctrl.iniciar();
             frm.setVisible(true);
         }
+        
+        //----------------------------------------------------------------------
         
         if(e.getSource() == mainFrame.bEj02 || e.getSource() == mainFrame.jmInformes){
             VistaInformes vista = new VistaInformes();

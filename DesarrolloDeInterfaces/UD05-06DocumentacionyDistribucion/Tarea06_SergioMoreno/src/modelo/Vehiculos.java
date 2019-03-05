@@ -5,10 +5,8 @@
  */
 package modelo;
 
-import java.text.SimpleDateFormat;
-
 /**
- *
+ * Plantilla para la creacion de Objetos de este tipo
  * @author seran
  */
 public class Vehiculos {

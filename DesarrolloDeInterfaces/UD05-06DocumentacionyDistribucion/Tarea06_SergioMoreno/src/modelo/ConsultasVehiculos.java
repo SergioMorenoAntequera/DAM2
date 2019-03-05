@@ -7,11 +7,17 @@ import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
 /**
- *
+ * Clase donde se preparan y ejecutan distintos comando en SQL para Su utilización 
+ * por el controlador e interactuar con la base de datos.
  * @author seran
  */
 public class ConsultasVehiculos extends Conexion {
     
+    /**
+     * Realizar una nuevo registro
+     * @param vehiculos Vehiculo para registrar
+     * @return true si se ha realizado con exitos, false si no
+     */
     public boolean registrar(Vehiculos vehiculos){
         PreparedStatement ps = null;
         Connection con = getConexion();
@@ -41,6 +47,11 @@ public class ConsultasVehiculos extends Conexion {
     
     //--------------------------------------------------------------------------
     
+    /**
+     * Realizar una nueva modificacion
+     * @param vehiculo Vehiculo para modificar
+     * @return true si se ha realizado con exitos, false si no
+     */
     public boolean modificar(Vehiculos vehiculo){
         
         PreparedStatement ps = null;
@@ -72,6 +83,11 @@ public class ConsultasVehiculos extends Conexion {
     
     //--------------------------------------------------------------------------
     
+    /**
+     * Eliminar un registro.
+     * @param vehiculo Vehiculo para registrar
+     * @return true si se ha realizado con exitos, false si no
+     */
     public boolean eliminar(Vehiculos vehiculo){
         PreparedStatement ps = null;
         Connection con = getConexion();
@@ -97,6 +113,11 @@ public class ConsultasVehiculos extends Conexion {
     
     //--------------------------------------------------------------------------
     
+    /**
+     * Buscar y rellenar los distintos campos con un registro.
+     * @param vehiculo Vehiculo al qu ebuscar por id
+     * @return true si se ha realizado con exitos, false si no
+     */
     public boolean buscar(Vehiculos vehiculo){
         
         PreparedStatement ps = null;

@@ -10,14 +10,13 @@ import java.sql.Connection;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
 import modelo.Conexion;
-import net.sf.jasperreports.engine.JasperExportManager;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.view.JasperViewer;
 import vista.VistaInformes;
 
 /**
- *
+ * Controlador el cual le da las acciones necesarias a los botones relacionados con los informes
  * @author seran
  */
 public class ControladorInformes implements ActionListener {
@@ -31,6 +30,10 @@ public class ControladorInformes implements ActionListener {
     JasperViewer viewer;
     JDialog jasperDialog;
     
+    /**
+     * Contructor al que le pasamos la vista de la que sacaremos los botones
+     * @param infV vista para conseguir los botones a los que poner listener
+     */
     public ControladorInformes(VistaInformes infV){
         this.informesV = infV;
         
@@ -67,6 +70,10 @@ public class ControladorInformes implements ActionListener {
         }
     }
 
+    /**
+     * Método al que le pasamos un informe para poder visualizarlo en un nuevo JDialog
+     * @param informe1 informe a mostrar
+     */
     public void mostrarInforme(String informe1) {
         try{
             printer =  JasperFillManager.fillReport(informe1, null, con);
@@ -82,6 +89,9 @@ public class ControladorInformes implements ActionListener {
         }
     }
 
+    /**
+     * Método para dejar el codigo más limpio e inicializar la ventana
+     */
     private void iniciar() {
         this.informesV.setLocationRelativeTo(null);
         this.informesV.setTitle("Informes");

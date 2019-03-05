@@ -9,11 +9,15 @@ import controlador.ControladorMainFrame;
 import vista.MainFrame;
 
 /**
- *
+ * clase principal
  * @author seran
  */
 public class Main {
     
+    /**
+     * main con la única función de hacer la ventana e inicializar el constructor
+     * @param args argumentos del main
+     */
     public static void main(String[] args){
         
         MainFrame mf = new MainFrame();

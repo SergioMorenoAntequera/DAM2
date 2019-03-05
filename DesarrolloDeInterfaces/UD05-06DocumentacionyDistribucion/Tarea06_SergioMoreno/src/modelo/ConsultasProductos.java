@@ -7,17 +7,22 @@ import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
 /**
- *
+ * Clase donde se preparan y ejecutan distintos comando en SQL para Su utilización 
+ * por el controlador e interactuar con la base de datos.
  * @author seran
  */
 public class ConsultasProductos extends Conexion {
     
+    /**
+     * Realizar una nuevo registro
+     * @param productos Producto que registrar
+     * @return true si se ha realizado con exitos, false si no
+     */
     public boolean registrar(Productos productos){
         PreparedStatement ps = null;
         Connection con = getConexion();
         
         String sql = "INSERT INTO productos (referencia, nombre, descripcion, precio, descuento) VALUES(?,?,?,?,?)";
-        
         try {
             ps = con.prepareStatement(sql);
             ps.setString(1, productos.getReferencia());
@@ -42,6 +47,11 @@ public class ConsultasProductos extends Conexion {
     
     //--------------------------------------------------------------------------
     
+    /**
+     * Realizar una nueva modificacion
+     * @param producto Producto para modificar
+     * @return true si se ha realizado con exitos, false si no
+     */
     public boolean modificar(Productos producto){
         
         PreparedStatement ps = null;
@@ -73,6 +83,11 @@ public class ConsultasProductos extends Conexion {
     
     //--------------------------------------------------------------------------
     
+    /**
+     * Eliminar un registro.
+     * @param producto Producto para eliminar
+     * @return true si se ha realizado con exitos, false si no
+     */
     public boolean eliminar(Productos producto){
         PreparedStatement ps = null;
         Connection con = getConexion();
@@ -96,6 +111,11 @@ public class ConsultasProductos extends Conexion {
         }
     }
     
+    /**
+     * Buscar y rellenar los distintos campos con un registro.
+     * @param producto Prodcto al que buscar por id
+     * @return true si se ha realizado con exitos, false si no
+     */
     public boolean buscar(Productos producto){
         
         PreparedStatement ps = null;

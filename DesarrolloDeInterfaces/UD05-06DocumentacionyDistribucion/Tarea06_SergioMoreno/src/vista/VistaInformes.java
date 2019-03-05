@@ -5,17 +5,44 @@
  */
 package vista;
 
+import java.io.File;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.help.HelpBroker;
+import javax.help.HelpSet;
+import javax.help.HelpSetException;
+
 /**
- *
+ * Frame crado con una interfaz grafica de NetBeans para la ventana de informes.
  * @author seran
  */
 public class VistaInformes extends javax.swing.JFrame {
 
+    public URL hsURL;
+    public HelpSet helpset;
+    public HelpBroker hb;
+    
     /**
      * Creates new form VistaInformes
      */
     public VistaInformes() {
         initComponents();
+        
+        File fichero = new File("src/help/help_set.hs");
+        try {
+            URL hsURL = fichero.toURI().toURL();
+
+            // Crea el HelpSet
+            helpset = new HelpSet(getClass().getClassLoader(), hsURL);
+            hb = helpset.createHelpBroker();
+            
+        } catch (HelpSetException ex) {
+            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (MalformedURLException ex) {
+            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -27,6 +54,9 @@ public class VistaInformes extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        jMenu2 = new javax.swing.JMenu();
         tvtitulo = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -35,6 +65,15 @@ public class VistaInformes extends javax.swing.JFrame {
         bInforme2 = new javax.swing.JButton();
         bInforme3 = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
+        jMenuBar2 = new javax.swing.JMenuBar();
+        jMenu3 = new javax.swing.JMenu();
+        itemAyuda = new javax.swing.JMenuItem();
+
+        jMenu1.setText("File");
+        jMenuBar1.add(jMenu1);
+
+        jMenu2.setText("Edit");
+        jMenuBar1.add(jMenu2);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -66,10 +105,29 @@ public class VistaInformes extends javax.swing.JFrame {
         getContentPane().add(bInforme3, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 100, -1, -1));
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/fondoPapel.jpg"))); // NOI18N
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 510, 250));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 510, 250));
+
+        jMenu3.setText("Ayuda");
+
+        itemAyuda.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F1, 0));
+        itemAyuda.setText("Mostrar Ayuda");
+        itemAyuda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemAyudaActionPerformed(evt);
+            }
+        });
+        jMenu3.add(itemAyuda);
+
+        jMenuBar2.add(jMenu3);
+
+        setJMenuBar(jMenuBar2);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void itemAyudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemAyudaActionPerformed
+        hb.enableHelpOnButton(itemAyuda, "ventana_informes", helpset);
+    }//GEN-LAST:event_itemAyudaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -110,10 +168,16 @@ public class VistaInformes extends javax.swing.JFrame {
     public javax.swing.JButton bInforme1;
     public javax.swing.JButton bInforme2;
     public javax.swing.JButton bInforme3;
+    private javax.swing.JMenuItem itemAyuda;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JLabel tvtitulo;
     // End of variables declaration//GEN-END:variables
 }

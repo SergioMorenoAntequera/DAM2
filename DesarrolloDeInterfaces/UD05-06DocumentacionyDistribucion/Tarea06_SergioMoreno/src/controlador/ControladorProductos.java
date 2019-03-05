@@ -10,7 +10,12 @@ import modelo.ConsultasProductos;
 import modelo.Productos;
 import vista.VistaProductos;
 
-
+/**
+ * ActionListener para la evntana en la cual se realizan distintas operaciones 
+ * sobre los productos.
+ * 
+ * @author seran
+ */
 public class ControladorProductos implements ActionListener{
     
     private Productos producto;
@@ -19,6 +24,12 @@ public class ControladorProductos implements ActionListener{
 
     //--------------------------------------------------------------------------
     
+    /**
+     * Constructor de la clase. 
+     * @param mod Modelo de producto
+     * @param modC Consultas de productos
+     * @param frm Vista de producto
+     */   
     public ControladorProductos(Productos mod, ConsultasProductos modC, VistaProductos frm) {
         this.producto = mod;
         this.productoC = modC;
@@ -29,9 +40,8 @@ public class ControladorProductos implements ActionListener{
         this.productoV.bGuardar.addActionListener(this);
         this.productoV.bLimpiar.addActionListener(this);
         this.productoV.bModificar.addActionListener(this);
-
+        
         this.productoV.tfReferencia.addKeyListener(new KeyListener() {
-
             @Override
             public void keyTyped(KeyEvent e) {
                 
@@ -82,12 +92,18 @@ public class ControladorProductos implements ActionListener{
 
     //--------------------------------------------------------------------------
     
+    /**
+     * Inicializamos algunas caracteristicas de la ventana.
+     */
     public void iniciar(){
         productoV.setTitle("Productos");
         productoV.setLocationRelativeTo(null);
         productoV.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
     }
     
+    /**
+     * Metodo que elimina los distintos datos de la interfaz gráfica.
+     */
     public void limpiar(){
         productoV.tfDescuento.setText("");
         productoV.tfReferencia.setText("");
@@ -142,10 +158,7 @@ public class ControladorProductos implements ActionListener{
             }
         }
 
-        
-        
         if (e.getSource() == productoV.bEliminar) {//----------------------------
-
             if (!productoV.tfReferencia.getText().equalsIgnoreCase("")) {
                 producto.setReferencia(productoV.tfReferencia.getText());
                 
@@ -163,7 +176,6 @@ public class ControladorProductos implements ActionListener{
         }
         
         if(e.getSource() == productoV.bBuscar){//------------------------------
-            
             if (!productoV.tfReferencia.getText().equalsIgnoreCase("")) {
                 producto.setReferencia(productoV.tfReferencia.getText());
 
@@ -180,8 +192,6 @@ public class ControladorProductos implements ActionListener{
             } else {
                 JOptionPane.showMessageDialog(null, "Por favor, rellene el campo 'Referencia'");
             }
-            
-            
         }
         
         if(e.getSource() == productoV.bLimpiar){//-----------------------------

@@ -5,17 +5,44 @@
  */
 package vista;
 
+import java.io.File;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.help.HelpBroker;
+import javax.help.HelpSet;
+import javax.help.HelpSetException;
+
 /**
- *
+ * Frame crado con una interfaz grafica de NetBeans para la ventana de vehiculos.
  * @author seran
  */
 public class VistaVehiculos extends javax.swing.JFrame {
 
+    public URL hsURL;
+    public HelpSet helpset;
+    public HelpBroker hb;
+    
     /**
      * Creates new form VustaProductos
      */
     public VistaVehiculos() {
         initComponents();
+        
+        File fichero = new File("src/help/help_set.hs");
+        try {
+            hsURL = fichero.toURI().toURL();
+
+            // Crea el HelpSet
+            helpset = new HelpSet(getClass().getClassLoader(), hsURL);
+            hb = helpset.createHelpBroker();
+            
+        } catch (HelpSetException ex) {
+            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (MalformedURLException ex) {
+            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -45,6 +72,9 @@ public class VistaVehiculos extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
+        jMenuBar2 = new javax.swing.JMenuBar();
+        jMenu3 = new javax.swing.JMenu();
+        itemAyuda = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -141,6 +171,21 @@ public class VistaVehiculos extends javax.swing.JFrame {
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/fondoPapel.jpg"))); // NOI18N
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 420, 400));
 
+        jMenu3.setText("Ayuda");
+
+        itemAyuda.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F1, 0));
+        itemAyuda.setText("Mostrar Ayuda");
+        itemAyuda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemAyudaActionPerformed(evt);
+            }
+        });
+        jMenu3.add(itemAyuda);
+
+        jMenuBar2.add(jMenu3);
+
+        setJMenuBar(jMenuBar2);
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -171,6 +216,10 @@ public class VistaVehiculos extends javax.swing.JFrame {
     private void tfNumKmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfNumKmActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tfNumKmActionPerformed
+
+    private void itemAyudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemAyudaActionPerformed
+        hb.enableHelpOnButton(itemAyuda, "ventana_vehiculos", helpset);
+    }//GEN-LAST:event_itemAyudaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -217,6 +266,7 @@ public class VistaVehiculos extends javax.swing.JFrame {
     public javax.swing.JButton bGuardar;
     public javax.swing.JButton bLimpiar;
     public javax.swing.JButton bModificar;
+    private javax.swing.JMenuItem itemAyuda;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -224,6 +274,8 @@ public class VistaVehiculos extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenuBar jMenuBar2;
     public javax.swing.JTextField tfMarca;
     public javax.swing.JTextField tfMatricula;
     public javax.swing.JTextField tfModelo;

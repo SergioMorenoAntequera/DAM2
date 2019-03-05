@@ -6,7 +6,7 @@
 package modelo;
 
 /**
- *
+ * Plantilla para la creacion de Objetos de este tipo
  * @author seran
  */
 public class Productos {

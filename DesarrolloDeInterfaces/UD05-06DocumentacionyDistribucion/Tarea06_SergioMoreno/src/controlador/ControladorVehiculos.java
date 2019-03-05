@@ -4,14 +4,18 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import javafx.scene.input.KeyCharacterCombination;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import modelo.ConsultasVehiculos;
 import modelo.Vehiculos;
 import vista.VistaVehiculos;
 
-
+/**
+ * ActionListener para la evntana en la cual se realizan distintas operaciones
+ * sobre los vehiculos.
+ *
+ * @author seran
+ */
 public class ControladorVehiculos implements ActionListener{
     
     private Vehiculos vehiculo;
@@ -20,6 +24,12 @@ public class ControladorVehiculos implements ActionListener{
 
     //--------------------------------------------------------------------------
     
+    /**
+     * Contructor de la clase.
+     * @param mod Modulo de vehiculo
+     * @param modC Consultas de Vehiculos
+     * @param frm Vista de Vehiculos
+     */
     public ControladorVehiculos(Vehiculos mod, ConsultasVehiculos modC, VistaVehiculos frm) {
         this.vehiculo = mod;
         this.vehiculoC = modC;
@@ -48,6 +58,9 @@ public class ControladorVehiculos implements ActionListener{
 
     //--------------------------------------------------------------------------
     
+    /**
+     * Inicializamos algunas caracteristicas de la ventana.
+     */
     public void iniciar(){
         vehiculoV.setTitle("Vehiculo");
         vehiculoV.setLocationRelativeTo(null);
@@ -56,6 +69,9 @@ public class ControladorVehiculos implements ActionListener{
     
     //--------------------------------------------------------------------------
     
+    /**
+     * Metodo que elimina los distintos datos de la interfaz gráfica.
+     */
     public void limpiar(){
         vehiculoV.tfMarca.setText("");
         vehiculoV.tfMatricula.setText("");
