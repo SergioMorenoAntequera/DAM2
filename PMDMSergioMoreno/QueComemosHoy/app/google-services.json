@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "66097141957",
+    "firebase_url": "https://que-comemos-hoy-4bc53.firebaseio.com",
+    "project_id": "que-comemos-hoy-4bc53",
+    "storage_bucket": "que-comemos-hoy-4bc53.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:66097141957:android:e526f480611b9ee2",
+        "android_client_info": {
+          "package_name": "com.example.quecomemoshoy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "66097141957-iiaiqmopfk4probrmh836d2s0bn3iq3p.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.quecomemoshoy",
+            "certificate_hash": "e3372a1885bb82a1399b5b8bc2ee9d6ff9baa922"
+          }
+        },
+        {
+          "client_id": "66097141957-3h0s95q705sgtj3gv3hmpehq54njsh6r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_ON4Yj6X86lv7wuI51ePBTZ_iVs6c7IA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "66097141957-3h0s95q705sgtj3gv3hmpehq54njsh6r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
