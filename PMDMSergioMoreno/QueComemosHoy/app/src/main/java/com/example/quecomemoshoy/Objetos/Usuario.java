@@ -2,7 +2,6 @@ package com.example.quecomemoshoy.Objetos;
 
 public class Usuario {
 
-    int codigo;
     String correo;
     String pass;
 
@@ -10,14 +9,12 @@ public class Usuario {
     //----------------------------------------------------------------------------------------------
     // Constructor ---------------------------------------------------------------------------------
 
-    public Usuario(int codigo, String correo, String pass) {
-        this.codigo = codigo;
+    public Usuario(String correo, String pass) {
         this.correo = correo;
         this.pass = pass;
     }
 
     public Usuario() {
-        this.codigo = 0;
         this.correo = "Sin Correo";
         this.pass = "Sin Nombre";
 
@@ -25,14 +22,6 @@ public class Usuario {
 
     //----------------------------------------------------------------------------------------------
     // Getter y Setter -----------------------------------------------------------------------------
-
-    public int getCodigo() {
-        return codigo;
-    }
-
-    public void setCodigo(int codigo) {
-        this.codigo = codigo;
-    }
 
     public String getCorreo() {
         return correo;

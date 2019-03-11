@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="5e35bcda-8d30-4d83-9860-31db0fa181f2">
+	<property name="ireport.zoom" value="1.4641000000000006"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     comerciales.`codigo` AS comerciales_codigo,
+     comerciales.`nombre` AS comerciales_nombre,
+     comerciales.`salario` AS comerciales_salario,
+     comerciales.`hijos` AS comerciales_hijos,
+     comerciales.`fNacimiento` AS comerciales_fNacimiento,
+     comerciales.`codOficina` AS comerciales_codOficina,
+     comerciales.`vehiculoAsig` AS comerciales_vehiculoAsig,
+     oficinas.`codigo` AS oficinas_codigo,
+     oficinas.`direccion` AS oficinas_direccion,
+     oficinas.`localidad` AS oficinas_localidad,
+     oficinas.`provincia` AS oficinas_provincia
+FROM
+     `oficinas` oficinas INNER JOIN `comerciales` comerciales ON oficinas.`codigo` = comerciales.`codOficina`]]>
+	</queryString>
+	<field name="comerciales_codigo" class="java.lang.String"/>
+	<field name="comerciales_nombre" class="java.lang.String"/>
+	<field name="comerciales_salario" class="java.math.BigDecimal"/>
+	<field name="comerciales_hijos" class="java.lang.Integer"/>
+	<field name="comerciales_fNacimiento" class="java.sql.Date"/>
+	<field name="comerciales_codOficina" class="java.lang.String"/>
+	<field name="comerciales_vehiculoAsig" class="java.lang.String"/>
+	<field name="oficinas_codigo" class="java.lang.String"/>
+	<variable name="ComercialesPorOficina" class="java.lang.Integer" resetType="Group" resetGroup="oficinas_codigo" calculation="Count"/>
+	<group name="oficinas_codigo">
+		<groupExpression><![CDATA[$F{oficinas_codigo}]]></groupExpression>
+		<groupHeader>
+			<band height="40">
+				<textField>
+					<reportElement style="SubTitle" x="47" y="13" width="506" height="24" forecolor="#000000" uuid="2431b5e7-7e58-4bdb-8c32-2ebb177b9858"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{oficinas_codigo}]]></textFieldExpression>
+				</textField>
+				<rectangle>
+					<reportElement mode="Opaque" x="0" y="13" width="36" height="24" forecolor="#CCCCCC" backcolor="#CCCCCC" uuid="253ce376-ec78-43d2-993a-a00255c6828d"/>
+				</rectangle>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="25">
+				<textField>
+					<reportElement x="126" y="0" width="39" height="20" uuid="51599ffe-1db7-46fd-80e9-5c451382b604"/>
+					<textFieldExpression><![CDATA[$V{oficinas_codigo_COUNT}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="11" y="0" width="115" height="20" uuid="1574732d-15a5-4b35-a0c0-7c7aecc9d0a5"/>
+					<text><![CDATA[Numero de comerciales:]]></text>
+				</staticText>
+			</band>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="70" splitType="Stretch">
+			<image>
+				<reportElement x="275" y="0" width="300" height="64" uuid="ca0dedcf-b9d2-4ae5-8308-c554ad575f35"/>
+				<imageExpression><![CDATA["leaf_banner_gray.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement style="Title" x="0" y="13" width="263" height="33" uuid="b420b6bc-2dbe-4185-9df3-f3fa47554012"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Reporte 3]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="79" y="46" width="195" height="22" uuid="bbec2eb7-d2c1-4c94-9abe-ab8d79115f56"/>
+				<text><![CDATA[Comerciales por oficina]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="36" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="35" width="555" height="1" uuid="a0cb6b03-0aef-42e8-8dcd-79d08a206944"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="0" y="19" width="79" height="15" uuid="4100db33-3b02-4c67-a663-d46fead1c9a5"/>
+				<text><![CDATA[codigo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="79" y="19" width="79" height="15" uuid="f111c761-5a9d-46b8-8ca0-e017afd990a8"/>
+				<text><![CDATA[nombre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="158" y="19" width="79" height="15" uuid="7bed9efd-80c7-48b7-a1c0-a5b5a6019d81"/>
+				<text><![CDATA[salario]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="237" y="19" width="79" height="15" uuid="3098df6e-e7ac-402c-9e28-013c64852143"/>
+				<text><![CDATA[hijos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="295" y="19" width="79" height="15" uuid="81828518-d68f-4e6c-9af6-d990f01caadf"/>
+				<text><![CDATA[fNacimiento]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="395" y="19" width="79" height="15" uuid="912879e7-cd6b-4dc8-b664-8a37b3f59020"/>
+				<text><![CDATA[codOficina]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="474" y="19" width="79" height="15" uuid="a722dc2f-4099-4b3b-9126-2d0306cfa409"/>
+				<text><![CDATA[vehiculoAsig]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1" uuid="f4ef3a75-66b2-486e-b1e0-fbed9b752fa2"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement style="Detail" x="0" y="0" width="79" height="15" uuid="43180e4a-d778-4901-b675-8a5f6c98d56a"/>
+				<textFieldExpression><![CDATA[$F{comerciales_codigo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="79" y="0" width="79" height="15" uuid="ad9ece79-aa3d-4d20-b690-5d5ce5725f38"/>
+				<textFieldExpression><![CDATA[$F{comerciales_nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="158" y="0" width="79" height="15" uuid="e7c8ddf2-5cb7-408d-8589-3855e89142bb"/>
+				<textFieldExpression><![CDATA[$F{comerciales_salario}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="237" y="0" width="79" height="15" uuid="3cf2b490-71a4-4196-8dd0-2f2db51b00f4"/>
+				<textFieldExpression><![CDATA[$F{comerciales_hijos}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="295" y="0" width="79" height="15" uuid="ce1b58e5-1169-496a-99f5-d66fabf3cd28"/>
+				<textFieldExpression><![CDATA[$F{comerciales_fNacimiento}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="395" y="0" width="79" height="15" uuid="2a314d8e-d395-42e1-8616-8cef32619518"/>
+				<textFieldExpression><![CDATA[$F{comerciales_codOficina}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="474" y="0" width="79" height="15" uuid="4b3f4cbb-6ee4-4216-a31c-9bc4c894d65d"/>
+				<textFieldExpression><![CDATA[$F{comerciales_vehiculoAsig}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="c69ed3ce-5869-4769-a17a-36761880f21a"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement style="Column header" x="433" y="0" width="80" height="20" uuid="ea058acc-7a80-4b5f-83f4-5cec0d533f05"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement style="Column header" x="513" y="0" width="40" height="20" uuid="4faceb9f-ae43-4016-9f71-15b8a17be168"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="0" y="0" width="197" height="20" uuid="57b8235d-846f-4382-b2ae-9e223854e48a"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

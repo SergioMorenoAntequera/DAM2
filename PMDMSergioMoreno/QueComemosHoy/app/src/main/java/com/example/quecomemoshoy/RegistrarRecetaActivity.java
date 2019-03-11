@@ -15,9 +15,7 @@ import com.example.quecomemoshoy.Objetos.Usuario;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import java.util.ArrayList;
-
-public class MainActivity extends AppCompatActivity {
+public class RegistrarRecetaActivity extends AppCompatActivity {
 
     EditText etNombreReceta, etIngrediente, etInstrucciones, etTiempo;
     Button bAniadir, bAniadir2;
@@ -25,7 +23,6 @@ public class MainActivity extends AppCompatActivity {
     ArrayAdapter arrayAdapter, arrayAdapter2;
 
     FirebaseDatabase database;
-    DatabaseReference usuariosRef;
     DatabaseReference recetasRef;
 
     Receta receta;
@@ -34,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_registrarReceta);
 
         initThings();
         //String s = (String)lvIngredientes.getAdapter().getItem(0);
