@@ -57,11 +57,10 @@ public class LoginActivity extends AppCompatActivity {
         // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if(currentUser != null){
-            Toast.makeText(getApplicationContext(), "Todavía estás logeado, por favor, desconectate en el menú de opciones", Toast.LENGTH_SHORT).show();
             Intent i = new Intent(getApplicationContext(), ListadoActivity.class);
             startActivity(i);
         } else {
-            Toast.makeText(getApplicationContext(), "Ya no estás logeado", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Usuario desconectado", Toast.LENGTH_SHORT).show();
         }
 
     }
@@ -86,13 +85,16 @@ public class LoginActivity extends AppCompatActivity {
                                 // Sign in success, update UI with the signed-in user's information
                                 Log.d("TAGGGGG", "createUserWithEmail:success");
                                 FirebaseUser user = mAuth.getCurrentUser();
-                                Toast.makeText(getApplicationContext(), user.getEmail(), Toast.LENGTH_SHORT );
-
                                 Toast.makeText(getApplicationContext(), "Usuario registrado exitosamente", Toast.LENGTH_SHORT).show();
 
                                 String[] aux = email.split("@");
                                 usuariosRef.child(user.getUid()).child("email").setValue(email);
                                 usuariosRef.child(user.getUid()).child("pass").setValue(pass);
+
+                                //Creamos el intent para pasar el usuario y pasar de activity
+                                Intent i = new Intent(getApplicationContext(), ListadoActivity.class);
+                                //Iniciamos el otro activity
+                                startActivity(i);
 
                             } else {
                                 // If sign in fails, display a message to the user.

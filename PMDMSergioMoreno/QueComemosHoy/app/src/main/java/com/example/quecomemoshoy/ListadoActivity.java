@@ -1,6 +1,11 @@
 package com.example.quecomemoshoy;
 
 import android.content.Intent;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
+import android.media.MediaPlayer;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -34,6 +39,12 @@ public class ListadoActivity extends AppCompatActivity {
     DatabaseReference recetasRef;
     FirebaseAuth fAuth;
     ArrayAdapter arrayAdapter;
+    Intent pasarAReceta;
+
+    // Todo lo relacionado con sensores
+    SensorManager sensorManager;
+    Sensor sensor;
+    SensorEventListener sensorEventListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,7 +60,6 @@ public class ListadoActivity extends AppCompatActivity {
         database = FirebaseDatabase.getInstance();
         recetasRef = database.getReference(FirebaseReferences.RECETAS_REFERENCE);
         fAuth = FirebaseAuth.getInstance();
-
 
         recetasRef.addValueEventListener(new ValueEventListener() {
             @Override
@@ -72,7 +82,10 @@ public class ListadoActivity extends AppCompatActivity {
         lvRecetas.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getApplicationContext(), , Toast.LENGTH_SHORT).show();
+                pasarAReceta = new Intent(getApplicationContext(), RecetaActivity.class);
+
+                pasarAReceta.putExtra("receta", parent.getItemAtPosition(position)+"");
+                startActivity(pasarAReceta);
             }
         });
     }
@@ -81,6 +94,47 @@ public class ListadoActivity extends AppCompatActivity {
         arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_expandable_list_item_1, nombresRecetas);
         lvRecetas.setAdapter(arrayAdapter);
 
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        // Sensores
+        sensorManager = (SensorManager)getSystemService(SENSOR_SERVICE);
+        sensor = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+        if(sensor == null){
+            Toast.makeText(getApplicationContext(), "Su dispositivo no dispone de Acelerómetro", Toast.LENGTH_SHORT).show();
+        } else {
+            sensorEventListener = new SensorEventListener() {
+                @Override
+                public void onSensorChanged(SensorEvent event) {
+                    float x = event.values[0];
+                    if(x>15){
+                        int elegido = (int) (Math.random() * recetas.size()-1);
+                        pasarAReceta = new Intent(getApplicationContext(), RecetaActivity.class);
+                        pasarAReceta.putExtra("receta", recetas.get(elegido).getNombre()+"");
+                        startActivity(pasarAReceta);
+                        sound();
+                    }
+                }
+                @Override
+                public void onAccuracyChanged(Sensor sensor, int accuracy) {}
+            };
+        }
+        sensorManager.registerListener(sensorEventListener, sensor, SensorManager.SENSOR_DELAY_NORMAL);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+
+        sensorManager.unregisterListener(sensorEventListener );
+    }
+
+    private void sound(){
+        MediaPlayer mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.dados);
+        mediaPlayer.start();
     }
 
     //----------------------------------------------------------------------------------------------

@@ -2,11 +2,11 @@
 <menu xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:id="@+id/registrarReceta" android:title="Ingresar receta"
+    <item android:id="@+id/registrarReceta" android:title="@string/mAniadir"
         android:orderInCategory="100"
         app:showAsAction="never" />
 
-    <item android:id="@+id/cerrarSesion" android:title="CerrarSesion"
+    <item android:id="@+id/cerrarSesion" android:title="@string/mSalir"
         android:orderInCategory="100"
         app:showAsAction="never" />
 

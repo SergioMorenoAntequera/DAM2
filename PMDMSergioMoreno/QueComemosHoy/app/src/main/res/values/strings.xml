@@ -1,3 +1,38 @@
 <resources>
     <string name="app_name">QueComemosHoy</string>
+    <string name="vacio"></string>
+
+
+    <!-- Activity login -->
+    <string name="etemail">EMail</string>
+    <string name="etpass">Contraseña</string>
+    <string name="bEntrar">Entrar</string>
+    <string name="bREgistrarse">Registrarse</string>
+
+    <!-- Activity Listado (Menu) -->
+    <string name="mAniadir">Ingresar Nueva Receta</string>
+    <string name="mSalir">Cerrar Sesion...</string>
+
+    <!-- Activity Receta -->
+    <string name="tvIng">Ingredientes</string>
+    <string name="tvIns">Instrucciones</string>
+    <string name="tiempo">Tiempo</string>
+    <string name="propietario">Propietario</string>
+    <string name="bAyuda">AYUDA</string>
+    <string name="bBorrar">ELIMINAR</string>
+
+    <!-- Activity Registrar Receta -->
+    <string name="tvIngresa">Ingresa Receta</string>
+    <string name="etNomReceta">Nombre de la Receta</string>
+    <string name="tvIngresa2">Ingresa Ingrediente</string>
+    <string name="tvIngresa3">Ingresa Instruccion</string>
+    <string name="ing">Ingrediente</string>
+    <string name="ins">Instruccion</string>
+    <string name="mas">+</string>
+    <string name="ingAhora">Ingredientes hasta ahora</string>
+    <string name="instAhora">Instrucciones hasta ahora</string>
+    <string name="tvTiempo">Introduce el tiempo</string>
+    <string name="etTiem">Tiempo</string>
+    <string name="bIng">Ingresar</string>
+
 </resources>

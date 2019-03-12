@@ -26,6 +26,7 @@ public class Receta {
         this.ingredientes = new ArrayList<String>();
         this.instrucciones = new ArrayList<String>();;
         this.tiempo = "Sin tiempo";
+        this.propietario = "Sin propietario";
     }
 
     //----------------------------------------------------------------------------------------------
@@ -53,6 +54,14 @@ public class Receta {
 
     public void setInstrucciones(ArrayList<String> instrucciones) {
         this.instrucciones = instrucciones;
+    }
+
+    public String getPropietario() {
+        return propietario;
+    }
+
+    public void setPropietario(String propietario) {
+        this.propietario = propietario;
     }
 
     public String getTiempo() {
