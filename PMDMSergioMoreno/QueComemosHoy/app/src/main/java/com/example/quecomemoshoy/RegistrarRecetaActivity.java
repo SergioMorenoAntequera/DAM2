@@ -31,7 +31,7 @@ public class RegistrarRecetaActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_registrarReceta);
+        setContentView(R.layout.activity_registrarreceta);
 
         initThings();
         //String s = (String)lvIngredientes.getAdapter().getItem(0);
