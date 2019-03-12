@@ -11,11 +11,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.quecomemoshoy.Objetos.FirebaseReferences;
-import com.example.quecomemoshoy.Objetos.Usuario;
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.ActionCodeSettings;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -31,16 +28,14 @@ public class LoginActivity extends AppCompatActivity {
     FirebaseDatabase database;
     DatabaseReference usuariosRef;
 
-    Usuario usuario;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
         initThings();
-
     }
+
 
     private void initThings() {
         etEmail = findViewById(R.id.etEmail);
@@ -49,7 +44,6 @@ public class LoginActivity extends AppCompatActivity {
         bLogin = findViewById(R.id.bLogin);
 
         mAuth = FirebaseAuth.getInstance();
-        Toast.makeText(getApplicationContext(), mAuth.getUid(), Toast.LENGTH_SHORT).show();
         database = FirebaseDatabase.getInstance();
 
         usuariosRef = database.getReference(FirebaseReferences.USUARIOS_REFERENCE);
@@ -61,7 +55,14 @@ public class LoginActivity extends AppCompatActivity {
     public void onStart() {
         super.onStart();
         // Check if user is signed in (non-null) and update UI accordingly.
-        // FirebaseUser currentUser = mAuth.getCurrentUser();
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        if(currentUser != null){
+            Toast.makeText(getApplicationContext(), "Todavía estás logeado, por favor, desconectate en el menú de opciones", Toast.LENGTH_SHORT).show();
+            Intent i = new Intent(getApplicationContext(), ListadoActivity.class);
+            startActivity(i);
+        } else {
+            Toast.makeText(getApplicationContext(), "Ya no estás logeado", Toast.LENGTH_SHORT).show();
+        }
 
     }
 
@@ -80,7 +81,7 @@ public class LoginActivity extends AppCompatActivity {
                     .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
-                            Log.d("TAGGGGG", "Entra en el onComplete");
+
                             if (task.isSuccessful()) {
                                 // Sign in success, update UI with the signed-in user's information
                                 Log.d("TAGGGGG", "createUserWithEmail:success");
@@ -88,8 +89,11 @@ public class LoginActivity extends AppCompatActivity {
                                 Toast.makeText(getApplicationContext(), user.getEmail(), Toast.LENGTH_SHORT );
 
                                 Toast.makeText(getApplicationContext(), "Usuario registrado exitosamente", Toast.LENGTH_SHORT).show();
+
                                 String[] aux = email.split("@");
-                                usuariosRef.child(user.getUid()).setValue(new Usuario(user.getEmail(), pass));
+                                usuariosRef.child(user.getUid()).child("email").setValue(email);
+                                usuariosRef.child(user.getUid()).child("pass").setValue(pass);
+
                             } else {
                                 // If sign in fails, display a message to the user.
                                 Log.w("TAGGGGG", "createUserWithEmail:failure", task.getException());
@@ -109,20 +113,18 @@ public class LoginActivity extends AppCompatActivity {
         final String email = etEmail.getText().toString();
         final String pass = etPass.getText().toString();
 
+        if(pass.length() < 6){
+            Toast.makeText(getApplicationContext(), "Contraseña no valida", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
         mAuth.signInWithEmailAndPassword(email, pass)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            //Creamos el objeto usuario para mandarlo
-                            usuario = new Usuario(email, pass);
-
                             //Creamos el intent para pasar el usuario y pasar de activity
                             Intent i = new Intent(getApplicationContext(), ListadoActivity.class);
-
-                            //Ponemos el usuario que vamos a trabajar al otro lado
-                            i.putExtra("email", email);
-                            i.putExtra("pass", pass);
 
                             //Iniciamos el otro activity
                             startActivity(i);
@@ -132,4 +134,6 @@ public class LoginActivity extends AppCompatActivity {
                     }
                 });
     }
+
+
 }

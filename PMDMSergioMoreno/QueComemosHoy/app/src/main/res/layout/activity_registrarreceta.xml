@@ -10,9 +10,10 @@
         android:id="@+id/textView10"
         android:layout_width="wrap_content"
         android:layout_height="17dp"
-        android:layout_marginTop="364dp"
+        android:layout_marginTop="360dp"
         android:text="Tiempo:"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.102"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etNombreReceta" />
 
@@ -149,12 +150,13 @@
         android:id="@+id/bIngresar"
         android:layout_width="wrap_content"
         android:layout_height="46dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="45dp"
         android:onClick="ingresarReceta"
         android:text="Ingresar"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.825"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etTiempo" />
+        app:layout_constraintTop_toBottomOf="@+id/lvInstrucciones" />
 
     <ListView
         android:id="@+id/lvInstrucciones"
@@ -171,11 +173,12 @@
         android:id="@+id/etTiempo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="17dp"
+        android:layout_marginTop="20dp"
         android:ems="10"
         android:hint="Tiempo"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.055"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView10" />
 

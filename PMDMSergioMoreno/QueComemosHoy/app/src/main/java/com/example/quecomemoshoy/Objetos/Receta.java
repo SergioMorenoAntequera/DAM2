@@ -5,25 +5,24 @@ import java.util.ArrayList;
 public class Receta {
 
     String nombre;
-    Usuario usuario;
     ArrayList<String> ingredientes;
     ArrayList<String> instrucciones;
     String tiempo;
+    String propietario;
 
     //----------------------------------------------------------------------------------------------
     // Constructor ---------------------------------------------------------------------------------
 
-    public Receta(String nombre, Usuario usuario, ArrayList<String> ingredientes, ArrayList<String> instrucciones, String tiempo) {
+    public Receta(String nombre, ArrayList<String> ingredientes, ArrayList<String> instrucciones, String tiempo, String propietario) {
         this.nombre = nombre;
-        this.usuario = usuario;
         this.ingredientes = ingredientes;
         this.instrucciones = instrucciones;
         this.tiempo = tiempo;
+        this.propietario = propietario;
     }
 
     public Receta() {
         this.nombre = "Sin Nombre";
-        this.usuario = new Usuario();
         this.ingredientes = new ArrayList<String>();
         this.instrucciones = new ArrayList<String>();;
         this.tiempo = "Sin tiempo";
@@ -38,14 +37,6 @@ public class Receta {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
-    }
-
-    public Usuario getUsuario() {
-        return usuario;
-    }
-
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
     }
 
     public ArrayList<String> getIngredientes() {

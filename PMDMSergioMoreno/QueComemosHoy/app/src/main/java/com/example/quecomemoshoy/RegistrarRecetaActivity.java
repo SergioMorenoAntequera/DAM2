@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 import com.example.quecomemoshoy.Objetos.FirebaseReferences;
 import com.example.quecomemoshoy.Objetos.Receta;
-import com.example.quecomemoshoy.Objetos.Usuario;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -24,9 +24,9 @@ public class RegistrarRecetaActivity extends AppCompatActivity {
 
     FirebaseDatabase database;
     DatabaseReference recetasRef;
+    FirebaseAuth fAuth;
 
     Receta receta;
-    Usuario usuario;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,10 +65,25 @@ public class RegistrarRecetaActivity extends AppCompatActivity {
 
     public void ingresarReceta(View v){
         String nombreReceta = etNombreReceta.getText().toString();
-        Usuario usuario = new Usuario();
         String tiempo = etTiempo.getText().toString();
+        if(nombreReceta.trim().isEmpty()){
+            Toast.makeText(getApplicationContext(), "La receta necesita un nombre", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if(tiempo.trim().isEmpty()){
+            Toast.makeText(getApplicationContext(), "Introduce el tiempo que se tarda en hacer la receta", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if(receta.getIngredientes().size() == 0){
+            Toast.makeText(getApplicationContext(), "Introduce ingredientes", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if(receta.getInstrucciones().size() == 0){
+            Toast.makeText(getApplicationContext(), "Introduce instrucciones", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
-        recetasRef.child(nombreReceta).setValue(new Receta(nombreReceta, usuario, receta.getIngredientes(), receta.getInstrucciones(), tiempo));
+        recetasRef.child(nombreReceta).setValue(new Receta(nombreReceta, receta.getIngredientes(), receta.getInstrucciones(), tiempo, fAuth.getCurrentUser().getEmail()));
         Toast.makeText(this, "Registro guardado", Toast.LENGTH_SHORT).show();
 
         reset();
@@ -98,7 +113,6 @@ public class RegistrarRecetaActivity extends AppCompatActivity {
         //Objetos
         receta = new Receta();
         //Este objeto se llena con la info que le llega del activity de login
-        usuario = new Usuario();
 
         //Cosas de la ventana
         etNombreReceta = findViewById(R.id.etNombreReceta);
@@ -114,5 +128,6 @@ public class RegistrarRecetaActivity extends AppCompatActivity {
         database = FirebaseDatabase.getInstance();
         //usuariosRef = database.getReference(FirebaseReferences.USUARIOS_REFERENCE);
         recetasRef = database.getReference(FirebaseReferences.RECETAS_REFERENCE);
+        fAuth = FirebaseAuth.getInstance();
     }
 }
