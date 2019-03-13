@@ -12,9 +12,9 @@
         android:layout_height="40dp"
         android:layout_marginTop="136dp"
         android:ems="10"
-        android:hint="E-Mail"
+        android:hint="@string/etemail"
         android:inputType="textEmailAddress"
-        android:text="seranmoreno500@gmail.com"
+        android:text="@string/vacio"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -25,8 +25,9 @@
         android:layout_height="40dp"
         android:layout_marginTop="32dp"
         android:ems="10"
-        android:hint="Contraseña"
+        android:hint="@string/etpass"
         android:inputType="textPassword"
+        android:text="@string/vacio"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etEmail" />
@@ -37,7 +38,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="23dp"
         android:onClick="crearUsuario"
-        android:text="Registrarse"
+        android:text="@string/bREgistrarse"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bLogin" />
@@ -48,7 +49,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="13dp"
         android:onClick="logIn"
-        android:text="Login"
+        android:text="@string/bEntrar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etPass" />

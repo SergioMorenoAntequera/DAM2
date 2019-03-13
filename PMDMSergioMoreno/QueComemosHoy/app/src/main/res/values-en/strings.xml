@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Activity login -->
+    <string name="etemail">EMail</string>
+    <string name="etpass">PassWord</string>
+    <string name="bEntrar">Log In</string>
+    <string name="bREgistrarse">Register</string>
+
+    <!-- Activity Listado (Menu) -->
+    <string name="mAniadir">Insert New Recipe</string>
+    <string name="mSalir">Log off...</string>
+
+    <!-- Activity Receta -->
+    <string name="tvIng">Ingredients</string>
+    <string name="tvIns">Instructions</string>
+    <string name="tiempo">Time</string>
+    <string name="propietario">Owner</string>
+    <string name="bAyuda">HELP</string>
+    <string name="bBorrar">DELETE</string>
+
+    <!-- Activity Registrar Receta -->
+    <string name="tvIngresa">Insert new Recipe</string>
+    <string name="etNomReceta">Name</string>
+    <string name="tvIngresa2">Insert Ingredients</string>
+    <string name="tvIngresa3">Insert Instructions</string>
+    <string name="ing">Ingredient</string>
+    <string name="ins">Instruction</string>
+    <string name="mas">+</string>
+    <string name="ingAhora">Ingredients by now</string>
+    <string name="instAhora">Instructions by now</string>
+    <string name="tvTiempo">Introduce the time</string>
+    <string name="etTiem">Time</string>
+    <string name="bIng">Register</string>
+
+</resources>
