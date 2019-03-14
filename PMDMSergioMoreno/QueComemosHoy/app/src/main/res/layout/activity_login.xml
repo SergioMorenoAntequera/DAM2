@@ -4,42 +4,52 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity">
+    tools:context=".LoginActivity"
+    android:background="@drawable/fondo1">
 
     <EditText
         android:id="@+id/etEmail"
         android:layout_width="207dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="136dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="132dp"
+        android:layout_marginEnd="45dp"
         android:ems="10"
         android:hint="@string/etemail"
         android:inputType="textEmailAddress"
         android:text="@string/vacio"
+        android:textColor="@color/colorPrimary"
+        android:textColorHint="@color/colorPrimary"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/etPass"
         android:layout_width="207dp"
         android:layout_height="40dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="45dp"
         android:ems="10"
         android:hint="@string/etpass"
         android:inputType="textPassword"
         android:text="@string/vacio"
+        android:textColor="@color/colorPrimary"
+        android:textColorHint="@color/colorPrimary"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView2"
         app:layout_constraintTop_toBottomOf="@+id/etEmail" />
 
     <Button
         android:id="@+id/bRegistrarse"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="23dp"
+        android:layout_marginTop="20dp"
         android:onClick="crearUsuario"
         android:text="@string/bREgistrarse"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.562"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bLogin" />
 
@@ -47,13 +57,33 @@
         android:id="@+id/bLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="13dp"
+        android:layout_marginTop="36dp"
         android:onClick="logIn"
         android:text="@string/bEntrar"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.554"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etPass" />
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="39dp"
+        android:layout_marginTop="117dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/user" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="39dp"
+        android:layout_marginTop="11dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:srcCompat="@drawable/password" />
 
 
 </android.support.constraint.ConstraintLayout>
