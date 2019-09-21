@@ -8,6 +8,7 @@
     <string name="bREgistrarse">Register</string>
 
     <!-- Activity Listado (Menu) -->
+    <string name="tvIntro">Saved Recipes</string>
     <string name="mAniadir">Insert New Recipe</string>
     <string name="mSalir">Log off...</string>
 

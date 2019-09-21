@@ -7,14 +7,31 @@
     tools:context=".ListadoActivity"
     android:background="@drawable/fondo">
 
+    <TextView
+        android:id="@+id/tvNombreReceta2"
+        android:layout_width="353dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center_horizontal|top"
+        android:text="@string/tvIntro"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ListView
         android:id="@+id/lvRecetas"
+        style="@style/Widget.AppCompat.ListView"
         android:layout_width="395dp"
-        android:layout_height="715dp"
+        android:layout_height="434dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="68dp"
         android:layout_marginEnd="8dp"
+        android:scrollbarStyle="insideInset"
+        android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

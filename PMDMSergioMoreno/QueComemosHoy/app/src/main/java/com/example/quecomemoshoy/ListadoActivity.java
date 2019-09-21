@@ -9,6 +9,7 @@ import android.media.MediaPlayer;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -45,6 +46,9 @@ public class ListadoActivity extends AppCompatActivity {
     SensorManager sensorManager;
     Sensor sensor;
     SensorEventListener sensorEventListener;
+
+    //----------------------------------------------------------------------------------------------
+    // OnCreate ------------------------------------------------------------------------------------
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -90,11 +94,8 @@ public class ListadoActivity extends AppCompatActivity {
         });
     }
 
-    private void actualizarLista() {
-        arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_expandable_list_item_1, nombresRecetas);
-        lvRecetas.setAdapter(arrayAdapter);
-
-    }
+    //----------------------------------------------------------------------------------------------
+    // OnCosas -------------------------------------------------------------------------------------
 
     @Override
     protected void onStart() {
@@ -129,7 +130,16 @@ public class ListadoActivity extends AppCompatActivity {
     protected void onStop() {
         super.onStop();
 
-        sensorManager.unregisterListener(sensorEventListener );
+        sensorManager.unregisterListener(sensorEventListener);
+    }
+
+
+    //----------------------------------------------------------------------------------------------
+    // Metodos variados ----------------------------------------------------------------------------
+
+    private void actualizarLista() {
+        arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_expandable_list_item_1, nombresRecetas);
+        lvRecetas.setAdapter(arrayAdapter);
     }
 
     private void sound(){
@@ -163,20 +173,10 @@ public class ListadoActivity extends AppCompatActivity {
             fAuth.signOut();
 
             Log.i("ActionBar", "Cerrar sesion!");
-            Intent i = new Intent(getApplicationContext(), LoginActivity.class);
-            startActivity(i);
-
+            finish();
             return true;
         }
 
         return super.onOptionsItemSelected(item);
-    }
-
-    //----------------------------------------------------------------------------------------------
-    // Métodos variados ----------------------------------------------------------------------------
-    @Override
-    public void onBackPressed() {
-        fAuth.signOut();
-        super.onBackPressed();
     }
 }
